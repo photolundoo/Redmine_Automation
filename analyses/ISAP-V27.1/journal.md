@@ -17,3 +17,18 @@
 - 2026-10-16 13:47 — #9014 — Analyse de l’erreur ActionManager ; contrôle des journaux et du nettoyage ajouté à INT03 avec #8717.
 - 2026-10-16 13:47 — #8965 — Analyse du choix de serveur MobileApp ; proposition de fiche dédiée soumise à décision humaine.
 - 2026-10-16 13:48 — #8717 — Correction de la fiche cible après contrôle du plan : INT03 — Tests avec simulateur (et non INT01).
+- 2026-10-16 14:50 — #8772 — Reprise complète après signalement du contrôleur ; procédure PluginWizard réécrite à partir du ticket et du plan courant.
+- 2026-10-16 14:50 — #9087 — Reprise complète après signalement du contrôleur ; cible corrigée vers Affectation Types / Places.
+- 2026-10-16 14:50 — #9049 — Reprise complète après signalement du contrôleur ; intégration confirmée dans UPD02 — Monter de version.
+- 2026-10-16 14:50 — #9079 — Reprise complète après signalement du contrôleur ; intégration confirmée dans UPD02 — Monter de version.
+- 2026-10-16 14:50 — #8717 — Reprise complète après signalement du contrôleur ; procédure limitée à #8717 dans INT03 — Tests avec simulateur.
+- 2026-10-16 14:51 — #8898 — Analyse de l’envoi de cartographie par SendMailOnIncident ; intégration proposée dans MC13.
+- 2026-10-16 14:51 — #7987 — Analyse de la réactivité des cônes caméra sous charge ; intégration proposée dans WVID03.
+- 2026-10-16 14:51 — #9030 — Analyse du masquage DisplayLabel ; intégration proposée dans MC05.
+- 2026-10-16 14:51 — #6918 — Analyse de migration POCO ; passe de non-régression Linux proposée dans UPD02.
+- 2026-10-16 14:51 — #8080 — Analyse de compilation Debian 13 ; passe de non-régression Linux proposée dans UPD02.
+- 2026-10-16 14:52 — #8939 — Analyse du mode HTTP Tomcat ; intégration proposée dans la fiche de configuration serveur.
+- 2026-10-16 14:52 — #7122 — Analyse de la migration Tomcat 11 ; intégration proposée dans INS04.
+- 2026-10-16 14:52 — #8805 — Analyse de la mise à jour OpenSSL ; passe de non-régression proposée dans UPD02.
+- 2026-10-16 14:53 — #8970 — Analyse de la création d’incident WebAPI par entityid ; intégration proposée dans SmartShieldWebAPI.
+- 2026-10-16 14:53 — #8990 — Analyse de robustesse des licences ; intégration proposée dans UPD02.

@@ -1,27 +1,30 @@
 # Synthèse des analyses — ISAP-V27.1
 
-Générée le 16/10/2026 13:48 par `python analyses.py synthese`. Ne pas modifier à la main : le fichier est régénéré à chaque passage.
+Générée le 16/10/2026 14:53 par `python analyses.py synthese`. Ne pas modifier à la main : le fichier est régénéré à chaque passage.
 
-- Tickets dans la sélection : 56
-- Analysés : 14 (dont 0 à reprendre : ticket modifié ou analyse non conforme)
-- Non analysés : 42
+- Tickets dans la sélection : 58
+- Analysés : 24 (dont 0 à reprendre : ticket modifié ou analyse non conforme)
+- Non analysés : 34
 - Décisions en attente dans `decisions.md` : 1
+- Décisions à reformuler par l'humain : 2 (#9026, #9063)
 
 ## Répartition — Nature du test
 
 | Nature du test | Tickets |
 |---|---|
-| Re-test ciblé | 5 |
-| Nouveau test | 5 |
+| Re-test ciblé | 9 |
+| Nouveau test | 8 |
+| Non-régression technique | 4 |
 | Configuration d'environnement | 3 |
-| Non-régression technique | 1 |
 
 ## Répartition — Environnement
 
 | Environnement | Tickets |
 |---|---|
-| Serveur / grille | 10 |
+| Serveur / grille | 17 |
+| WebApp | 2 |
 | Simulateur | 2 |
+| WinApp | 1 |
 | Serveur / grille + Matériel | 1 |
 | Mobile | 1 |
 
@@ -29,7 +32,7 @@ Générée le 16/10/2026 13:48 par `python analyses.py synthese`. Ne pas modifie
 
 | Automatisabilité | Tickets |
 |---|---|
-| Hors outillage actuel | 14 |
+| Hors outillage actuel | 24 |
 
 ## Ordre de campagne
 
@@ -37,15 +40,25 @@ Tickets regroupés par environnement, puis par plan et par fiche, pour limiter l
 
 | Ticket | Sujet | Environnement | Plan | Fiche | Nature | Automatisabilité | Décision requise |
 |---|---|---|---|---|---|---|---|
+| [#9030](9030.md) | WebApp : Paramètre permettant de masquer les labels de certaines caméras | WebApp | 01 WebApp | MC04 — Onglet Situation | Nouveau test | Hors outillage actuel | Non |
+| [#8898](8898.md) | Le script SendMailOnIncident.py n'envoi pas la cartographie dans le mail | WebApp | 01 WebApp | MC13 — Manipulation des fichiers | Re-test ciblé | Hors outillage actuel | Non |
+| [#7987](7987.md) | [DesktopApp] Lenteur d'affichage des cônes caméras sur ville de Paris | WinApp | 03 WinApp Vidéo | WVID03 — Couverture vidéo | Re-test ciblé | Hors outillage actuel | Non |
+| [#7122](7122.md) | [IsapReporting] Migration vers tomcat 11 | Serveur / grille | 11 Installation client sur PC | INS04 — Configuration serveur | Nouveau test | Hors outillage actuel | Non |
+| [#8939](8939.md) | Tomcat ne fonctionne plus en mode non https | Serveur / grille | 11 Installation client sur PC | INS04 — Configuration serveur | Re-test ciblé | Hors outillage actuel | Non |
+| [#6918](6918.md) | Migration POCO 1.15.3 | Serveur / grille | 12 Update version | UPD02 — Monter de version | Non-régression technique | Hors outillage actuel | Non |
+| [#8080](8080.md) | Compilation linux sur un environnement récent (Debian 13) | Serveur / grille | 12 Update version | UPD02 — Monter de version | Non-régression technique | Hors outillage actuel | Non |
+| [#8805](8805.md) | Mise à jour openSSL 3.5.8 | Serveur / grille | 12 Update version | UPD02 — Monter de version | Non-régression technique | Hors outillage actuel | Non |
+| [#8990](8990.md) | Crash applicatif si la licence contient une limite non reconnue | Serveur / grille | 12 Update version | UPD02 — Monter de version | Re-test ciblé | Hors outillage actuel | Non |
 | [#9049](9049.md) | [ServerConfiguration] Lors du remplissage initial de la base, le configurateur cherche des fichiers dans le dossier Fingerprint | Serveur / grille | 12 Update version | UPD02 — Monter de version | Re-test ciblé | Hors outillage actuel | Non |
 | [#9079](9079.md) | Migration Ice 3.7 : IsapGridGUI | Serveur / grille | 12 Update version | UPD02 — Monter de version | Non-régression technique | Hors outillage actuel | Non |
-| [#9087](9087.md) | AffectationTool v2 | Serveur / grille | 13 Outils externes | AffectationTool | Nouveau test | Hors outillage actuel | Non |
+| [#9087](9087.md) | AffectationTool v2 | Serveur / grille | 13 Outils externes | Affectation Types / Places | Nouveau test | Hors outillage actuel | Non |
 | [#8772](8772.md) | Outils d'ajout de plugin | Serveur / grille | 13 Outils externes | PluginWizard | Re-test ciblé | Hors outillage actuel | Non |
-| [#9089](9089.md) | Amélioration de l'outils d'import de planification | Serveur / grille | 14 Planification | À créer | Nouveau test | Hors outillage actuel | Oui |
+| [#8970](8970.md) | SmartShieldWebAPI : Pouvoir demander la création d'un incident à partir de l'entityid de l'IncidentType | Serveur / grille | 13 Outils externes | SmartShieldWebAPI | Nouveau test | Hors outillage actuel | Non |
+| [#9089](9089.md) | Amélioration de l'outils d'import de planification | Serveur / grille | 14 Planification | À créer | Nouveau test | Hors outillage actuel | Non |
 | [#8844](8844.md) | Configurer le site ACME avec les caméra Hanwha | Serveur / grille + Matériel | Aucun | Aucune | Configuration d'environnement | Hors outillage actuel | Non |
 | [#9006](9006.md) | Installation et configuration de SecurityCenter 5.14 | Serveur / grille | Aucun | Aucune | Configuration d'environnement | Hors outillage actuel | Non |
 | [#9094](9094.md) | [PAVPlugin] PAV en doublons | Serveur / grille | Aucun | Aucune | Configuration d'environnement | Hors outillage actuel | Non |
-| [#9001](9001.md) | [Ansible] Anomalies constatés dont templates non à jours | Serveur / grille | À décider | À décider | Re-test ciblé | Hors outillage actuel | Oui |
+| [#9001](9001.md) | [Ansible] Anomalies constatés dont templates non à jours | Serveur / grille | À décider | À décider | Re-test ciblé | Hors outillage actuel | Non |
 | [#9026](9026.md) | [Ansible] Prendre en compte WebAPI/Iris | Serveur / grille | À décider | À décider | Nouveau test | Hors outillage actuel | Oui |
 | [#9063](9063.md) | [ServerSetup] L'option "début différé" n'est pas prise en compte pour tous les services | Serveur / grille | À décider | À décider | Re-test ciblé | Hors outillage actuel | Oui |
 | [#8717](8717.md) | [IntrusionProcessor] Inhibition avec temporisation | Simulateur | 06 Intrusion | INT03 — Tests avec simulateur | Nouveau test | Hors outillage actuel | Non |
@@ -54,15 +67,7 @@ Tickets regroupés par environnement, puis par plan et par fiche, pour limiter l
 
 ## Tickets non encore analysés
 
-- #8898 — ISAP Core - Main Courante — Le script SendMailOnIncident.py n'envoi pas la cartographie dans le mail
-- #7987 — ISAP Core - Navigation 3D — [DesktopApp] Lenteur d'affichage des cônes caméras sur ville de Paris
-- #9030 — ISAP Core - Navigation 3D — WebApp : Paramètre permettant de masquer les labels de certaines caméras
-- #6918 — ISAP Core - SDK — Migration POCO 1.15.3
-- #8080 — ISAP Core - SDK — Compilation linux sur un environnement récent (Debian 13)
-- #8805 — ISAP Core - SDK — Mise à jour openSSL 3.5.8
 - #8947 — ISAP Core - SDK — Evolution du modèle de licence : une licence par app WebApp
-- #8970 — ISAP Core - SDK — SmartShieldWebAPI : Pouvoir demander la création d'un incident à partir de l'entityid de l'IncidentType
-- #8990 — ISAP Core - SDK — Crash applicatif si la licence contient une limite non reconnue
 - #9016 — ISAP Core - SDK — [SmartShieldWebAPI] Erreur HTTP 500 si le mot de passe du compte API contient un caractère "deux-points"
 - #9033 — ISAP Core - SDK — Migration Ice 3.7 : Java
 - #9039 — ISAP Core - SDK — Migration Ice 3.7 : C++ - Slice2VT

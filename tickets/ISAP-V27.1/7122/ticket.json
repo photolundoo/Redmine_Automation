@@ -1,0 +1,905 @@
+{
+  "issue": {
+    "id": 7122,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 6,
+      "name": "Urgent"
+    },
+    "author": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "assigned_to": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "category": {
+      "id": 26,
+      "name": "com.egidium.tools.java"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "[IsapReporting] Migration vers tomcat 11",
+    "description": "Idem avec :\r\n* Java SDK\r\n* com.egidium.isap.gui.web/public/bin/consignes.war\"\r\n* com.egidium.isap.reporting/public/bin/IsapReporting.war\r\n* com.egidium.s2icr.gui.web/public/bin/s2icr.war\r\n* com.egidium.s2icr.new.gui.web/public/bin/s2icrNew.war\r\n* com.egidium.sitairsoft/public/bin/sitairsoft.war\r\n* com.egidium.tools.java/public/bin/IsapReporting.war\r\n* com.egidium.webservice/public/bin/EgidiumWebServices.war\r\n* Configurateur serveur ?\r\n\r\nEn lien avec #7120\r\n",
+    "start_date": null,
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 40.0,
+    "total_estimated_hours": 40.0,
+    "spent_hours": 45.0,
+    "total_spent_hours": 45.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - Reporting"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": "Oui"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": "Nous ne supportons plus Tomcat 9. Il faut migrer en Tomcat 11.\r\nPar ailleurs cela implique qu'il faut aussi migrer vers Geoserver 3.0.\r\nNos applications Servlet (dont IsapReporting) et Geoserver 3 nécessitent désormais un serveur Web Servlet 6.0 comme Tomcat 11."
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": "0"
+      }
+    ],
+    "created_on": "2022-09-01T08:35:13Z",
+    "updated_on": "2026-10-16T11:43:26Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 3701,
+        "filename": "clipboard-202503311049-ducum.png",
+        "filesize": 67075,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/3701/clipboard-202503311049-ducum.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/3701",
+        "author": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "created_on": "2025-03-31T08:49:01Z"
+      },
+      {
+        "id": 3757,
+        "filename": "clipboard-202504291818-1b3th.png",
+        "filesize": 73457,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/3757/clipboard-202504291818-1b3th.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/3757",
+        "author": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "created_on": "2025-04-29T16:18:30Z"
+      },
+      {
+        "id": 3758,
+        "filename": "clipboard-202504291819-yixgz.png",
+        "filesize": 29807,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/3758/clipboard-202504291819-yixgz.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/3758",
+        "author": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "created_on": "2025-04-29T16:19:01Z"
+      },
+      {
+        "id": 3951,
+        "filename": "clipboard-202508261353-um4gd.png",
+        "filesize": 93331,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/3951/clipboard-202508261353-um4gd.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/3951",
+        "author": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "created_on": "2025-08-26T11:53:12Z"
+      }
+    ],
+    "relations": [
+      {
+        "id": 2187,
+        "issue_id": 7120,
+        "issue_to_id": 7122,
+        "relation_type": "relates",
+        "delay": null
+      },
+      {
+        "id": 2203,
+        "issue_id": 7122,
+        "issue_to_id": 7159,
+        "relation_type": "relates",
+        "delay": null
+      },
+      {
+        "id": 2207,
+        "issue_id": 7078,
+        "issue_to_id": 7122,
+        "relation_type": "relates",
+        "delay": null
+      },
+      {
+        "id": 2753,
+        "issue_id": 7122,
+        "issue_to_id": 7960,
+        "relation_type": "relates",
+        "delay": null
+      },
+      {
+        "id": 2757,
+        "issue_id": 7122,
+        "issue_to_id": 8366,
+        "relation_type": "relates",
+        "delay": null
+      },
+      {
+        "id": 2759,
+        "issue_id": 7122,
+        "issue_to_id": 8377,
+        "relation_type": "relates",
+        "delay": null
+      },
+      {
+        "id": 2992,
+        "issue_id": 7122,
+        "issue_to_id": 8392,
+        "relation_type": "relates",
+        "delay": null
+      }
+    ],
+    "journals": [
+      {
+        "id": 60797,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2022-09-01T08:35:24Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "7120"
+          }
+        ]
+      },
+      {
+        "id": 60798,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2022-09-01T08:35:47Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "9",
+            "old_value": "",
+            "new_value": "993"
+          }
+        ]
+      },
+      {
+        "id": 61119,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": null,
+        "created_on": "2022-09-26T12:21:36Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "62",
+            "new_value": "63"
+          }
+        ]
+      },
+      {
+        "id": 61156,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "h1. Préparation de réponse que j'amenderais au fur et à mesure ici\r\n\r\nh2. Tomcat\r\n\r\nDans le cadre Passdef, 2 war sont déployés sous Tomcat :\r\n* *com.egidium.tools.java/public/bin/IsapReporting.war* : nécessite un serveur web compatible *\"Servlet 4.0\"* comme Tomcat (voir https://tomcat.apache.org/tomcat-9.0-doc/index.html). Codé en Java avec des pages JSP (Java Servlet Pages).\r\n* *com.egidium.isap.reporting/public/bin/IsapReporting.war* : pas de prérequis, tout serveur web comme Apache suffit. Codé sous forme de pages html incluant du JS.\r\n\r\nLa documentation a été mise à jour pour être plus claires sur ces points.\r\n\r\nTomcat 10 a migré vers l'architecture *\"Servlet 5.0\"* (voir https://tomcat.apache.org/tomcat-10.0-doc/index.html) et *\"Servlet 6.0\"* en cours dans la version beta 10.1.0 (voir https://tomcat.apache.org/tomcat-10.1-doc/index.html).\r\nEn particulier le nom des classes servlet passe de javax.servlet à jakarta.servlet. Le war actuel ne peut donc fonctionner sous Tomcat 10 même en mettant à jour les jar servlet.\r\nMais tout autre serveur web compatible *\"Servlet 4.0\"* fera l'affaire.\r\nLa migration va donc être un peu plus compliquée que prévu et ne pourra pas être incluse dans la version Smart Shield 5.5.1.0 en cours de validation.\r\n\r\nAu sujet des vulnérabilités, Tomcat 9 en compte effectivement un certain nombre :\r\n* https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=tomcat+9\r\n* https://www.cvedetails.com/vulnerability-list/vendor_id-45/product_id-887/Apache-Tomcat.html\r\n\r\nMais le produit est toujours maintenu et les vulnérabilités sont régulièrement corrigées tout comme dans Tomcat 10 :\r\n* https://tomcat.apache.org/security-9.html\r\n* https://tomcat.apache.org/security-10.html\r\n\r\n%{background:orange}Question : Mais comment savoir ce qu'il reste en 9.0.67 ? Alan, Mathieu une idée ?%\r\n\r\nTomcat 9 est l'outil utilisé en interne pour déployer ces 2 war et supporté par le configurateur. Rien n'empêche l'intégrateur d'en utiliser un autre compatible avec la norme *\"Servlet 4.0\"* et en y déployant les 2 war.\r\n\r\nh2. Java\r\n\r\nDes tests ont aussi été effectués avec *java 19* et la version actuelle de com.egidium.tools.java/public/bin/IsapReporting.war (5.5.0.0) et cela fonctionne correctement.\r\nPar contre le raccourci IsapGridGUI doit être modifié en :\r\n<pre>\r\njavaw --add-exports=java.desktop/com.sun.java.swing.plaf.windows=ALL-UNNAMED -jar \"C:\\Program Files (x86)\\EGIDIUM Technologies\\com.egidium.grid\\public\\bin\\IsapGridGUI.jar\"\r\n</pre>\r\n\r\nh2. Python\r\n\r\nConcernant Python, nous livrons un distribuable que nous ne mettons pas systématiquement à jour. Libre à l'intégrateur d'en utiliser un autre. Les librairies nécessaires sont décrites ici : https://support.egidium.fr/redmine/projects/common/wiki/PythonSDK.\r\n\r\nDe votre côté quel Tomcat et quel Java aviez-vous testé ?",
+        "created_on": "2022-09-28T14:34:07Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "10"
+          }
+        ]
+      },
+      {
+        "id": 61157,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2022-09-28T14:57:32Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          }
+        ]
+      },
+      {
+        "id": 61184,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Pour IceGridGUI, j'ai trouvé 1 site (et 1 seul) donnant la solution en tapant l'erreur retourné par Java 17 : zeroc java.lang.IllegalAccessError: superclass access check failed: class \"com.jgoodies.looks.windows.WindowsLookAndFeel\"\r\nhttps://community.axonivy.com/u/Christian_Strebel\r\n\r\nIl faut lancer avec :\r\n<pre>\r\njavaw --add-exports=java.desktop/com.sun.java.swing.plaf.windows=ALL-UNNAMED -jar IsapGridGUI.jar\r\n</pre>\r\n\r\nJe vais essayer avec Java 19. Mais de mémoire Java 19 ne donnait même pas de message d'erreur. Ça sortait sans rien faire.",
+        "created_on": "2022-09-29T17:29:19Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 61185,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Par contre l'option n'est pas disponible en Java 1.8 :\r\n<pre>\r\n/c/DEV/EGIDIUM/com.egidium.grid/public/bin) javaw --add-exports=java.desktop/com.sun.java.swing.plaf.windows=ALL-UNNAMED -jar IsapGridGUI.jar\r\nUnrecognized option: --add-exports=java.desktop/com.sun.java.swing.plaf.windows=ALL-UNNAMED\r\n/c/DEV/EGIDIUM/com.egidium.grid/public/bin)\r\n</pre>\r\n\r\nFaudra configurer le raccourci en fonction du Java présent sur la machine.",
+        "created_on": "2022-09-29T17:31:32Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 61186,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Top ! Ca marche aussi en Java 19. Le @--add-exports@ doit être placé avant le @-jar file.jar@\r\n\r\nOn va pouvoir répondre à GTD.",
+        "created_on": "2022-09-29T17:38:04Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "10",
+            "new_value": "50"
+          }
+        ]
+      },
+      {
+        "id": 61187,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Laurent préfère quelque chose de plus simple :\r\n\r\nDans le cadre Passdef, 2 war (Web Application Archive) sont déployés sous Tomcat : \r\n# Les outils Tomcat et Java ne pas parti des livrables Egidium. Bien qu’Egidium ne soit pas tenu d'alerter sur d’éventuelles failles de sécurité en dehors de ses livrables, nous faisons nos meilleurs efforts pour alerter sur d’éventuelles failles sur les composants externes.\r\n# Les prérequis pour l'utilisation des 2 war, sont d'utiliser un serveur web compatible \"Serlvet 4.0\" comme Tomcat 9.\r\n# Notre recommandation est d'être à jour pour Java et le serveur web que vous choisissez. Tomcat 9 par exemple, est régulièrement mis à jour.\r\n# Nous avons testé avec Java 19 et nous n'avons pas rencontré de problème.\r\n\r\nAfin d’optimiser encore la sécurité, l’architecture suivante peut être retenue pour les deux composants web :\r\n# Le module IsapReporting nécessite un serveur web compatible \"Serlvet 4.0\" pour permettre la configuration depuis le serveur (ports non ouverts vers l’extérieur)\r\n# Le nouveau module web (main courante, statistiques ...) est du pur HTML/JS et peut  être déployée sur n’importe quel serveur web.\r\n\r\nConcernant python, nous livrons effectivement un interpréteur python sur le CD pour faciliter son utilisation mais il peut être remplacé facilement par l'intégrateur comme indiquer dans le wiki : https://support.egidium.fr/redmine/projects/common/wiki/PythonSDK\r\n\r\nPI, l'utilisation de Java 19 nécessite de changer la façon de lancer IsapGridGUi:\r\n<pre>\r\njavaw --add-exports=java.desktop/com.sun.java.swing.plaf.windows=ALL-UNNAMED -jar IsapGridGUI.jar\r\n</pre>\r\n",
+        "created_on": "2022-09-30T08:43:26Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 61188,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Je mets ici aussi une proposition pour le case externe https://support.egidium.fr/redmine/issues/956 :\r\n\r\nNous sommes abonné au flux RSS de l'ANSSI : https://www.cert.ssi.gouv.fr/alerte/feed\r\nLa liste des failles importante peut-être consulté ici : https://www.cert.ssi.gouv.fr\r\n\r\nNous utilisons également le site CVE qui regroupe l'ensemble des failles de sécurité des librairies utilisées : https://cve.mitre.org",
+        "created_on": "2022-09-30T08:47:42Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 61203,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2022-09-30T11:01:39Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "7159"
+          }
+        ]
+      },
+      {
+        "id": 61205,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "J'ai mis à jour 00-Prerequis.docx et 01_Installation_AppliWeb.doc",
+        "created_on": "2022-09-30T11:02:06Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 61265,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2022-10-05T16:21:43Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "7078"
+          }
+        ]
+      },
+      {
+        "id": 61308,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2022-10-07T15:43:12Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "1",
+            "old_value": "Interne",
+            "new_value": "Client"
+          }
+        ]
+      },
+      {
+        "id": 62708,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2023-01-13T15:29:32Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "3",
+            "old_value": "Produit",
+            "new_value": "PASSDEF"
+          }
+        ]
+      },
+      {
+        "id": 62713,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2023-01-13T15:39:08Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "63",
+            "new_value": "16"
+          }
+        ]
+      },
+      {
+        "id": 73426,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Le case externe n'avait rien à voir finalement. Il a été fermé mais ce case interne reste d'actualité",
+        "created_on": "2025-03-14T11:46:56Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "1",
+            "old_value": "Client",
+            "new_value": "Interne"
+          },
+          {
+            "property": "cf",
+            "name": "3",
+            "old_value": "PASSDEF",
+            "new_value": "Produit"
+          },
+          {
+            "property": "cf",
+            "name": "9",
+            "old_value": "993",
+            "new_value": ""
+          }
+        ]
+      },
+      {
+        "id": 73547,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2025-03-31T08:47:02Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "7960"
+          }
+        ]
+      },
+      {
+        "id": 73549,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "J'ai repris les travaux fait il y a plus 2 ans et j'y suis presque :\r\n* Passage en tomcat 11\r\n* Projet plus moderne en maven (permet de récupérer automatiquement les paquets de dépendances).\r\n* Tous les jars ont été mis à jour vers leur dernières versions dans le projets.\r\n* Reste un warning (à voir si bloquant lors de l’exécution) :\r\n!clipboard-202503311049-ducum.png!\r\n\r\nMaven permet aussi de récupérer les dépendances JS sous forme de Webjars mais j'arrive pas à le faire fonctionner.\r\nD'ailleurs est-ce vraiment utile ? Car il pourrait y avoir un gros impact sur le code d'IsapReporting : par exemple on utilise 2 jquery (1.9.1 et 2.1.4), pourquoi ? Sans doute pour ne pas revenir sur le code et sans doute jamais mis à jour ?\r\n\r\nFaudra aussi refaire :\r\n* com.egidium.webservice/public/bin/EgidiumWebServices.war\r\n* ./com.egidium.lostpassword/public/bin/LostPassword.war\r\n\r\nLes autres projets sont obsolètes.",
+        "created_on": "2025-03-31T08:55:20Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "3701",
+            "old_value": null,
+            "new_value": "clipboard-202503311049-ducum.png"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "50",
+            "new_value": "60"
+          },
+          {
+            "property": "attr",
+            "name": "estimated_hours",
+            "old_value": "16.0",
+            "new_value": "40.0"
+          }
+        ]
+      },
+      {
+        "id": 73591,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2025-04-03T15:46:22Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "60",
+            "new_value": "70"
+          }
+        ]
+      },
+      {
+        "id": 73592,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "J'avais modifié le mauvais case",
+        "created_on": "2025-04-03T15:46:43Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "70",
+            "new_value": "60"
+          }
+        ]
+      },
+      {
+        "id": 73603,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2025-04-07T09:05:26Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "8366"
+          }
+        ]
+      },
+      {
+        "id": 73605,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Les 3 projets ont été migrés :\n* com.egidium.tools.java/public/bin/IsapReporting.war\n* com.egidium.webservice/public/bin/EgidiumWebServices.war\n* com.egidium.lostpassword/public/bin/LostPassword.war\n\nReste à tester un peu plus et commiter.\n\nTous le monde devra migrer son tomcat :\n* Tout effacer dans C:\\Program Files\\Java\\apache-tomcat sauf :\n** webapps\\ROOT\\maincourante.config.js pour ne pas perdre le lien symbolique qu'il faut créer en mode admin.\n* Copier le contenu de ce que je mettrais dans \"T:\\apache-tomcat-11.0.5-do-mklink.zip\"",
+        "created_on": "2025-04-07T09:17:29Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "60",
+            "new_value": "90"
+          }
+        ]
+      },
+      {
+        "id": 73606,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2025-04-07T09:19:51Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "66"
+          }
+        ]
+      },
+      {
+        "id": 73629,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Reste à faire dans : #8377",
+        "created_on": "2025-04-09T16:34:01Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "90",
+            "new_value": "100"
+          }
+        ]
+      },
+      {
+        "id": 73630,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2025-04-09T16:34:07Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "8377"
+          }
+        ]
+      },
+      {
+        "id": 73687,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2025-04-17T12:06:59Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "8392"
+          }
+        ]
+      },
+      {
+        "id": 73696,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2025-04-22T08:05:45Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": "8392",
+            "new_value": null
+          }
+        ]
+      },
+      {
+        "id": 73699,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2025-04-22T08:06:10Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "blocked",
+            "old_value": null,
+            "new_value": "8392"
+          }
+        ]
+      },
+      {
+        "id": 73700,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2025-04-22T08:06:22Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "3",
+            "new_value": "7"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "100",
+            "new_value": "80"
+          }
+        ]
+      },
+      {
+        "id": 73701,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2025-04-22T08:06:45Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "66",
+            "new_value": "16"
+          },
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": "2022-09-02",
+            "new_value": null
+          }
+        ]
+      },
+      {
+        "id": 73787,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "PI voici comment générer le war :\r\n!clipboard-202504291818-1b3th.png!\r\n\r\n!clipboard-202504291819-yixgz.png!\r\n",
+        "created_on": "2025-04-29T16:19:44Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "3757",
+            "old_value": null,
+            "new_value": "clipboard-202504291818-1b3th.png"
+          },
+          {
+            "property": "attachment",
+            "name": "3758",
+            "old_value": null,
+            "new_value": "clipboard-202504291819-yixgz.png"
+          }
+        ]
+      },
+      {
+        "id": 74761,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Et pour lancer en mode debug (stop IsapReporting dans la grille avant) :\r\n!clipboard-202508261353-um4gd.png!\r\n\r\nS'il n'y a pas de serveur, Eclipse vous proposera d'en créer un.",
+        "created_on": "2025-08-26T11:54:26Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "3951",
+            "old_value": null,
+            "new_value": "clipboard-202508261353-um4gd.png"
+          }
+        ]
+      },
+      {
+        "id": 80699,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-10-16T11:38:55Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "blocked",
+            "old_value": "8392",
+            "new_value": null
+          }
+        ]
+      },
+      {
+        "id": 80700,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-10-16T11:39:00Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "8392"
+          }
+        ]
+      },
+      {
+        "id": 80702,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Désormais Tomcat 3.0.1 est sorti et compatible avec Tomcat 11",
+        "created_on": "2026-10-16T11:43:26Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "subject",
+            "old_value": "[IsapReporting] Support d'un java et tomcat plus récent",
+            "new_value": "[IsapReporting] Migration vers tomcat 11"
+          },
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "7",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "67"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "80",
+            "new_value": "100"
+          },
+          {
+            "property": "cf",
+            "name": "13",
+            "old_value": "",
+            "new_value": "Nous ne supportons plus Tomcat 9. Il faut migrer en Tomcat 11.\r\nPar ailleurs cela implique qu'il faut aussi migrer vers Geoserver 3.0.\r\nNos applications Servlet (dont IsapReporting) et Geoserver 3 nécessitent désormais un serveur Web Servlet 6.0 comme Tomcat 11."
+          },
+          {
+            "property": "cf",
+            "name": "14",
+            "old_value": null,
+            "new_value": "0"
+          }
+        ]
+      }
+    ]
+  }
+}

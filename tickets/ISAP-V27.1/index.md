@@ -1,7 +1,7 @@
 # Tickets à tester — ISAP-V27.1
 
 Sélection : projet isapv2, statut Résolu, version ISAP-V27.1, assigné différent de l'utilisateur n° 21.
-Dernière récupération : 16/10/2026 10:37 — 56 tickets.
+Dernière récupération : 16/10/2026 14:50 — 58 tickets.
 
 | Ticket | Sujet | Tracker | Fonction | Mis à jour le |
 |---|---|---|---|---|
@@ -22,9 +22,11 @@ Dernière récupération : 16/10/2026 10:37 — 56 tickets.
 | [#8898](8898/ticket.md) | Le script SendMailOnIncident.py n'envoi pas la cartographie dans le mail | Anomalie | ISAP Core - Main Courante | 07/10/2026 10:47 |
 | [#7987](7987/ticket.md) | [DesktopApp] Lenteur d'affichage des cônes caméras sur ville de Paris | Anomalie | ISAP Core - Navigation 3D | 25/09/2026 15:47 |
 | [#9030](9030/ticket.md) | WebApp : Paramètre permettant de masquer les labels de certaines caméras | Evolution | ISAP Core - Navigation 3D | 13/10/2026 16:10 |
+| [#7122](7122/ticket.md) | [IsapReporting] Migration vers tomcat 11 | Evolution | ISAP Core - Reporting | 16/10/2026 13:43 |
 | [#6918](6918/ticket.md) | Migration POCO 1.15.3 | Evolution | ISAP Core - SDK | 02/10/2026 09:35 |
 | [#8080](8080/ticket.md) | Compilation linux sur un environnement récent (Debian 13) | Evolution | ISAP Core - SDK | 25/09/2026 15:44 |
 | [#8805](8805/ticket.md) | Mise à jour openSSL 3.5.8 | Evolution | ISAP Core - SDK | 01/10/2026 14:37 |
+| [#8939](8939/ticket.md) | Tomcat ne fonctionne plus en mode non https | Anomalie | ISAP Core - SDK | 16/10/2026 13:35 |
 | [#8947](8947/ticket.md) | Evolution du modèle de licence : une licence par app WebApp | Evolution | ISAP Core - SDK | 03/08/2026 13:48 |
 | [#8970](8970/ticket.md) | SmartShieldWebAPI : Pouvoir demander la création d'un incident à partir de l'entityid de l'IncidentType | Evolution | ISAP Core - SDK | 24/07/2026 15:03 |
 | [#8990](8990/ticket.md) | Crash applicatif si la licence contient une limite non reconnue | Anomalie | ISAP Core - SDK | 04/08/2026 16:37 |

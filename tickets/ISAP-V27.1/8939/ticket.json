@@ -1,0 +1,166 @@
+{
+  "issue": {
+    "id": 8939,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 1,
+      "name": "Anomalie"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 4,
+      "name": "Normal"
+    },
+    "author": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "assigned_to": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "category": {
+      "id": 26,
+      "name": "com.egidium.tools.java"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "Tomcat ne fonctionne plus en mode non https",
+    "description": "Le fichier de configuration fourni est KO.\r\nVu sur VGP.\r\nL'utilisation de l'ancien fichier de 2024 a permis de contourner.\r\n\r\nEn même temps c'est pas très conseillé d'utiliser http ...",
+    "start_date": null,
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 4.0,
+    "total_estimated_hours": 4.0,
+    "spent_hours": 1.0,
+    "total_spent_hours": 1.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 6,
+        "name": "Version source",
+        "value": "ISAP-V25.1"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - SDK"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      }
+    ],
+    "created_on": "2026-06-29T12:53:09Z",
+    "updated_on": "2026-10-16T11:35:43Z",
+    "closed_on": null,
+    "attachments": [],
+    "journals": [
+      {
+        "id": 78939,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-07-21T09:12:47Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "description",
+            "old_value": "Le fichier de configuration fourni est KO.\r\nVu sur VGP.\r\nL'utilisation de l'ancien de 2024 a permis de contourner.\r\n\r\nEN même temps c'est pas très conseillé ...",
+            "new_value": "Le fichier de configuration fourni est KO.\r\nVu sur VGP.\r\nL'utilisation de l'ancien fichier de 2024 a permis de contourner.\r\n\r\nEN même temps c'est pas très conseillé ..."
+          }
+        ]
+      },
+      {
+        "id": 80537,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-10-06T14:34:34Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "description",
+            "old_value": "Le fichier de configuration fourni est KO.\r\nVu sur VGP.\r\nL'utilisation de l'ancien fichier de 2024 a permis de contourner.\r\n\r\nEN même temps c'est pas très conseillé ...",
+            "new_value": "Le fichier de configuration fourni est KO.\r\nVu sur VGP.\r\nL'utilisation de l'ancien fichier de 2024 a permis de contourner.\r\n\r\nEn même temps c'est pas très conseillé d'utiliser http ..."
+          }
+        ]
+      },
+      {
+        "id": 80696,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "C'était à cause de ça :\r\n<pre><code class=\"diff\">\r\n<       <transport-guarantee>CONFIDENTIAL</transport-guarantee>\r\n---\r\n>       <transport-guarantee>NONE</transport-guarantee>\r\n4794c4774\r\n<   <!-- Enable HSTS -->\r\n---\r\n>   <!-- HTTP header security -->\r\n4801c4781\r\n<     <param-value>true</param-value>\r\n---\r\n>     <param-value>false</param-value>\r\n</code></pre>\r\n",
+        "created_on": "2026-10-16T11:35:43Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

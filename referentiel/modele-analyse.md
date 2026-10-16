@@ -14,7 +14,7 @@
 | Automatisabilité | Automatisable |
 | Environnement | WebApp |
 | Prérequis particuliers | Plugin CCTV lancé, caméra PTZ (Atlantique) |
-| Déjà au plan | Oui — #8887 présent dans MC06 |
+| Issue | B — Adapter l'existant |
 | Confiance | Élevée |
 | Décision humaine requise | Non |
 
@@ -34,17 +34,37 @@
 
 **Recherche dans les plans.** `#8887` : trouvé dans le plan 01, fiche MC06 « Onglet Vidéo », sous-titre « Live ». « joystick » : plan 03, fiche WVID07 « Tests Joystick » (WinApp, hors sujet ici). (Chaque recherche effectuée et son résultat, y compris quand elle ne donne rien.)
 
-(Ce que le plan couvre déjà : fiche, sous-titre, étapes citant le ticket ou la fonctionnalité. Verdicts QA précédents relevés dans l'historique du ticket. Ce qui manque ou devient obsolète, et pourquoi.)
+**Comparaison des procédures.** (Issues A et B seulement. Confronter, point par point, ce que teste la fiche existante et ce que demande le ticket : même parcours, mêmes données, même résultat observé ? Ce qui est identique, ce qui diffère, ce qui manque. C'est ce paragraphe qui justifie A plutôt que B.)
+
+**Issue retenue.** (Une phrase : A, B, C ou D, et pourquoi.)
 
 ## 4. Procédure de test proposée
+
+**Écarts avec la procédure existante.** (Issue B : étapes de la fiche conservées, modifiées, ajoutées. Issue A : remplacer ce paragraphe par « **Procédure existante à rejouer.** » suivi de la fiche, du sous-titre et des étapes du plan à exécuter telles quelles.)
 
 **Sous-titre de la procédure**
 - Action à réaliser. Résultat attendu : comportement observable. (#8887)
 - Action suivante. Résultat attendu : comportement observable. (#8887)
 
+### Spécification Playwright
+
+(Obligatoire pour l'issue C, et pour l'issue B quand l'automatisabilité est « Automatisable » ou « Difficile ». Une ligne par champ, valeurs « Aucun » ou « Aucune » si rien.)
+
+- Type : @lecture
+- Compte : Playwright
+- Dossier : racine
+- Référentiel : caméra PTZ Atlantique déclarée, plugin CCTV lancé
+- Données créées : Aucune
+
+### Prérequis et moyens
+
+(Obligatoire pour l'issue D, à supprimer sinon. Tout ce qu'il faut réunir avant de jouer la procédure : matériel, simulateur, machine, accès, données, personne à solliciter.)
+
+- Élément nécessaire et où le trouver.
+
 ## 5. Intégration proposée
 
-(Où et comment intégrer la procédure : plan, fiche, sous-titre, position par rapport aux étapes existantes. Nouvelle fiche, ajout d'étapes, ou modification d'étapes existantes, en citant celles à modifier.)
+(Où et comment intégrer la procédure : plan, fiche, sous-titre, position par rapport aux étapes existantes. Nouvelle fiche, ajout d'étapes, ou modification d'étapes existantes, en citant celles à modifier. Issue A : indiquer seulement d'ajouter le numéro du ticket aux étapes rejouées.)
 
 ## Points ouverts
 

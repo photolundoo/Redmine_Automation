@@ -32,3 +32,6 @@
 - 2026-10-16 14:52 — #8805 — Analyse de la mise à jour OpenSSL ; passe de non-régression proposée dans UPD02.
 - 2026-10-16 14:53 — #8970 — Analyse de la création d’incident WebAPI par entityid ; intégration proposée dans SmartShieldWebAPI.
 - 2026-10-16 14:53 — #8990 — Analyse de robustesse des licences ; intégration proposée dans UPD02.
+- 2026-10-16 15:15 — #8947 — Analyse des licences par application WebApp ; proposition de fiche dédiée soumise à décision.
+- 2026-10-16 15:15 — #9016 — Analyse de l’authentification API avec deux-points ; intégration proposée dans SmartShieldWebAPI.
+- 2026-10-16 15:15 — #9033 — Analyse de la migration Ice Java ; intégration proposée dans NRT01.

@@ -16,6 +16,8 @@ Utilisation (depuis le dossier Redmine_Automation) :
     python analyses.py etat [--max N]             idem etat, limité aux N premiers tickets de la liste
     python analyses.py reprendre --ticket N       archive l'analyse du ticket avant de la refaire entièrement
     python analyses.py appliquer --ticket N       date les décisions appliquées pour ce ticket, après contrôle
+    python analyses.py couverture [--depuis F]    lit le projet Playwright (PLAYWRIGHT_DIR du .env) ou un rapport, écrit referentiel/couverture-playwright.*
+    python analyses.py exporter                   écrit export/<version>/campagne.json pour le projet de campagne Playwright
 
 Fichiers techniques tenus par le script (ne pas modifier) :
     analyses/<version>/.preparation     date de la dernière préparation, lot du passage et tickets déjà comptés
@@ -59,11 +61,17 @@ VALEURS = {
                          "Hors outillage actuel", "Non applicable"],
     "Confiance": ["Élevée", "Moyenne", "Faible"],
     "Décision humaine requise": ["Oui", "Non"],
+    "Issue": ["A — Reproduire l'existant", "B — Adapter l'existant", "C — Nouvelle procédure automatisable",
+              "D — Nouvelle procédure manuelle", "Sans objet"],
 }
+
+AUTOMATISABLES = ("Automatisable", "Difficile")
+TYPES_PLAYWRIGHT = ("@lecture", "@ecriture", "@perturbateur")
+CHAMPS_PLAYWRIGHT = ["Type", "Compte", "Dossier", "Référentiel", "Données créées"]
 
 CHAMPS_OBLIGATOIRES = ["Fonction Redmine", "Application", "Module", "Plan cible", "Fiche cible",
                        "Nature du test", "Automatisabilité", "Environnement", "Prérequis particuliers",
-                       "Déjà au plan", "Confiance", "Décision humaine requise"]
+                       "Issue", "Confiance", "Décision humaine requise"]
 
 SECTIONS = ["## Fiche signalétique", "## 1. Étude du sujet", "## 2. Compte rendu de la situation",
             "## 3. Comparaison avec l'existant", "## 4. Procédure de test proposée",
@@ -402,6 +410,8 @@ def exiger_preparation(version, numero=None):
     if not preparation or (datetime.now() - preparation["date"]).total_seconds() > DUREE_PREPARATION_H * 3600:
         sys.exit(f"Préparation absente ou datant de plus de {DUREE_PREPARATION_H} h : "
                  "lancer d'abord python analyses.py preparer --lot N (étape 0), puis reprendre.")
+    if numero is not None and not preparation["lot"]:
+        sys.exit("Préparation sans lot : lancer python analyses.py preparer --lot N (étape 0) au début de chaque passage.")
     if numero is None or numero in preparation["tickets"]:
         return
     lot = preparation["lot"]
@@ -430,6 +440,81 @@ def ecrire_reprises(version, reprises):
 # --------------------------------------------------------------------------
 # Contrôle d'une analyse
 # --------------------------------------------------------------------------
+
+def sous_bloc(section, titre):
+    """Contenu d'un bloc « ### titre » à l'intérieur d'une section, jusqu'au bloc ou à la section suivante."""
+    trouve = re.search(r"(?m)^###\s+" + re.escape(titre) + r"\s*\n(.*?)(?=^###\s|^##\s|\Z)", section, re.DOTALL)
+    return trouve.group(1) if trouve else None
+
+
+def lire_playwright(section):
+    """Champs de la spécification Playwright (dict), ou None si le bloc est absent."""
+    bloc = sous_bloc(section, "Spécification Playwright")
+    if bloc is None:
+        return None
+    champs = {}
+    for ligne in bloc.splitlines():
+        trouve = re.match(r"\s*-\s*([^:]+?)\s*:\s*(.+)$", ligne)
+        if trouve:
+            champs[trouve.group(1).strip()] = trouve.group(2).strip()
+    return champs
+
+
+def controler_issue(texte, champs, numero):
+    """Cohérence entre l'issue retenue, la fiche cible, l'automatisabilité et le contenu de la section 4."""
+    issue = champs.get("Issue", "")
+    if not issue:
+        return []
+    erreurs = []
+    lettre = issue[:1]
+    nature = champs.get("Nature du test", "")
+    fiche = champs.get("Fiche cible", "")
+    automatisabilite = champs.get("Automatisabilité", "")
+    procedure = section_de(texte, "## 4. Procédure de test proposée")
+    comparaison = section_de(texte, "## 3. Comparaison avec l'existant")
+
+    if (nature in SANS_PROCEDURE) != (issue == "Sans objet"):
+        erreurs.append("« Issue » : « Sans objet » est réservé aux natures « Relecture documentaire » et « Hors campagne », "
+                       "et seulement à elles")
+    if lettre in "AB" and (not fiche or fiche_sans_cible(fiche)):
+        erreurs.append(f"« Issue » {issue} : une procédure existante est rejouée ou adaptée, donc « Fiche cible » "
+                       "désigne la fiche existante (identifiant et titre)")
+    if lettre in "AB" and "**Comparaison des procédures.**" not in comparaison:
+        erreurs.append("section 3 : avec une procédure existante, ajouter le paragraphe « **Comparaison des procédures.** » "
+                       "qui confronte, point par point, ce que teste la fiche et ce que demande le ticket")
+    if lettre == "A" and "**Procédure existante à rejouer.**" not in procedure:
+        erreurs.append("section 4 : issue A, ouvrir la section par « **Procédure existante à rejouer.** » suivi de la fiche, "
+                       "du sous-titre et des étapes du plan à exécuter telles quelles")
+    if lettre == "B" and "**Écarts avec la procédure existante.**" not in procedure:
+        erreurs.append("section 4 : issue B, ouvrir la section par « **Écarts avec la procédure existante.** » "
+                       "(étapes conservées, modifiées, ajoutées)")
+    parties_env = re.split(r"\s*\+\s*", champs.get("Environnement", ""))
+    if lettre == "C":
+        if "WebApp" not in parties_env or automatisabilite not in AUTOMATISABLES:
+            erreurs.append("« Issue » C : réservée aux procédures entièrement jouables dans le navigateur "
+                           "(Environnement WebApp, Automatisabilité « Automatisable » ou « Difficile ») ; sinon l'issue est D")
+    if lettre == "D" and automatisabilite in AUTOMATISABLES:
+        erreurs.append("« Issue » D : procédure manuelle, l'automatisabilité ne peut pas être « Automatisable » ni « Difficile » ; sinon l'issue est C")
+
+    playwright = lire_playwright(procedure)
+    if lettre == "C" or (lettre == "B" and automatisabilite in AUTOMATISABLES):
+        if playwright is None:
+            erreurs.append("section 4 : bloc « ### Spécification Playwright » absent ; il est obligatoire pour une procédure "
+                           "automatisable (issue C, ou issue B automatisable)")
+        else:
+            for nom in CHAMPS_PLAYWRIGHT:
+                if not playwright.get(nom):
+                    erreurs.append(f"spécification Playwright : ligne « - {nom} : … » absente ou vide")
+            if playwright.get("Type") and playwright["Type"] not in TYPES_PLAYWRIGHT:
+                erreurs.append(f"spécification Playwright : « Type » vaut « {playwright['Type']} », valeurs autorisées : "
+                               + " · ".join(TYPES_PLAYWRIGHT))
+    if lettre == "D":
+        bloc = sous_bloc(procedure, "Prérequis et moyens")
+        if bloc is None or not any(l.strip().startswith("- ") for l in bloc.splitlines()):
+            erreurs.append("section 4 : issue D, bloc « ### Prérequis et moyens » absent ou vide (matériel, simulateur, "
+                           "accès, données, machines, personnes nécessaires)")
+    return erreurs
+
 
 def verifier_analyse(version, numero, decisions):
     chemin = ANALYSES / version / f"{numero}.md"
@@ -470,6 +555,10 @@ def verifier_analyse(version, numero, decisions):
     if champs.get("Environnement") and "WebApp" not in parties_env and \
             champs.get("Automatisabilité") not in ("Hors outillage actuel", "Non applicable"):
         erreurs.append("« Automatisabilité » : sans WebApp dans l'environnement, la valeur doit être « Hors outillage actuel » ou « Non applicable »")
+    if "WebApp" in parties_env and champs.get("Automatisabilité") == "Hors outillage actuel":
+        erreurs.append("« Automatisabilité » : avec WebApp dans l'environnement, la valeur est « Automatisable », « Difficile » "
+                       "ou « Impossible sans script externe » (étape hors navigateur), jamais « Hors outillage actuel » ; "
+                       "si rien ne se passe dans le navigateur, l'environnement n'est pas WebApp")
 
     comparaison = section_de(texte, "## 3. Comparaison avec l'existant")
     if "Recherche dans les plans" not in comparaison:
@@ -484,7 +573,7 @@ def verifier_analyse(version, numero, decisions):
 
     nature = champs.get("Nature du test", "")
     if nature not in SANS_PROCEDURE:
-        procedure = section_de(texte, "## 4. Procédure de test proposée")
+        procedure = re.split(r"(?m)^###\s", section_de(texte, "## 4. Procédure de test proposée"))[0]
         etapes = [l for l in procedure.splitlines() if l.strip().startswith("- ")]
         if not etapes:
             erreurs.append("procédure de test : aucune étape (lignes commençant par « - »)")
@@ -493,6 +582,8 @@ def verifier_analyse(version, numero, decisions):
                            "à un autre ticket va dans l'analyse de ce ticket, et la section 5 indique de les exécuter ensemble")
         elif not any("Résultat attendu" in l for l in etapes):
             erreurs.append("procédure de test : aucune étape ne précise de « Résultat attendu »")
+
+    erreurs += controler_issue(texte, champs, numero)
 
     if "referentiel/plans/" not in section_de(texte, "## Sources").replace("\\", "/"):
         erreurs.append("sources : aucun plan de referentiel/plans/ cité ; la recherche dans les plans est obligatoire, même sans fiche cible")
@@ -686,6 +777,12 @@ def preparer(version_demandee, lot=None):
             print(f"Échec de {script} : poursuite avec les plans déjà convertis.")
         print()
     version = choisir_version(version_demandee)
+    if lire_env("PLAYWRIGHT_DIR"):
+        print("=== couverture Playwright ===")
+        resultat = subprocess.run([sys.executable, str(DOSSIER / "analyses.py"), "couverture", "--version", version], cwd=DOSSIER)
+        if resultat.returncode != 0:
+            print("Échec de la lecture du projet Playwright : poursuite avec la couverture déjà connue.")
+        print()
     ecrire_preparation(version, {"date": datetime.now(), "lot": lot, "tickets": []})
     print("=== état ===")
     if lot:
@@ -773,6 +870,309 @@ def cellule(texte):
     return str(texte or "").replace("|", "\\|").strip()
 
 
+# --------------------------------------------------------------------------
+# Couverture Playwright : lecture du projet de campagne
+# --------------------------------------------------------------------------
+
+COUVERTURE_JSON = DOSSIER / "referentiel" / "couverture-playwright.json"
+COUVERTURE_MD = DOSSIER / "referentiel" / "couverture-playwright.md"
+CORRESPONDANCE_PLAYWRIGHT = DOSSIER / "referentiel" / "correspondance-playwright.md"
+MOTS_VIDES = {"onglet", "tests", "test", "de", "des", "du", "la", "le", "les", "et", "a", "via", "sur", "en", "d", "l",
+              "mc", "apparence", "fonctionnalite", "fonctionnalites", "interface", "acces"}
+
+
+def lire_env(nom):
+    """Valeur d'une variable de l'environnement ou du fichier .env (jamais affichée)."""
+    import os
+    if os.environ.get(nom):
+        return os.environ[nom]
+    chemin = DOSSIER / ".env"
+    if chemin.exists():
+        for ligne in chemin.read_text(encoding="utf-8").splitlines():
+            trouve = re.match(r"\s*([^#=]+?)\s*=\s*(.*?)\s*$", ligne)
+            if trouve and trouve.group(1) == nom:
+                return trouve.group(2)
+    return ""
+
+
+def jetons(texte):
+    texte = unicodedata.normalize("NFKD", texte or "").encode("ascii", "ignore").decode().lower()
+    return {m for m in re.findall(r"[a-z0-9]+", texte) if m not in MOTS_VIDES and not re.fullmatch(r"mc\d+|g\d+", m)}
+
+
+def fiches_du_plan(numero_plan="01"):
+    """Fiches d'un plan : identifiant, titre, intitulé (titre de section), sous-titres de la fiche, fiche (« ID — titre »)."""
+    _, fichier = fichier_plan(numero_plan)
+    if not fichier:
+        return []
+    texte = fichier.read_text(encoding="utf-8")
+    trouves = list(re.finditer(rf"ID\s*:\s*({MOTIF_ID})\b[\s\S]{{0,300}}?Titre\s*:\s*([^|\n·*]+)", texte))
+    fiches = []
+    for i, m in enumerate(trouves):
+        avant = texte[:m.start()].splitlines()
+        intitule = next((l.lstrip("#").strip() for l in reversed(avant) if l.startswith("#")), "")
+        fin = texte.rfind("\n", 0, trouves[i + 1].start()) if i + 1 < len(trouves) else len(texte)
+        lignes_corps = texte[m.end():fin].splitlines()
+        while lignes_corps and (not lignes_corps[-1].strip() or lignes_corps[-1].startswith("#")):
+            lignes_corps.pop()                  # titres qui introduisent la fiche suivante
+        corps = "\n".join(lignes_corps)
+        sous_titres = [l.lstrip("#").strip() for l in corps.splitlines() if l.startswith("#")]
+        sous_titres += re.findall(r"(?m)^\*\*(.+?)\*\*\s*$", corps)
+        titre = m.group(2).strip()
+        fiches.append({"identifiant": m.group(1), "titre": titre, "intitule": intitule,
+                       "sous_titres": sous_titres, "fiche": f"{m.group(1)} — {titre}"})
+    return fiches
+
+
+def tests_du_rapport(donnees):
+    """Tests [(fichier, chemin de describe, titre, tags)] d'un rapport JSON de Playwright (reporter json ou rapport HTML)."""
+    tests = []
+    if "files" in donnees:                      # rapport HTML (report.json embarqué)
+        for f in donnees["files"]:
+            for t in f.get("tests", []):
+                tests.append((f["fileName"], list(t.get("path", [])), t["title"], list(t.get("tags", []))))
+    else:                                       # npx playwright test --list --reporter=json
+        def parcourir(suite, fichier, chemin):
+            fichier = suite.get("file", fichier)
+            titre = suite.get("title", "")
+            chemin2 = chemin + ([titre] if titre and titre != fichier and not titre.endswith((".ts", ".js")) else [])
+            for spec in suite.get("specs", []):
+                tags = ["@" + t.lstrip("@") for t in spec.get("tags", [])]
+                tests.append((spec.get("file", fichier), chemin2, spec["title"], tags))
+            for sous in suite.get("suites", []):
+                parcourir(sous, fichier, chemin2)
+        for suite in donnees.get("suites", []):
+            parcourir(suite, suite.get("file", ""), [])
+    vus, uniques = set(), []
+    for t in tests:                             # un test joué par plusieurs projets n'est compté qu'une fois
+        cle = (t[0], tuple(t[1]), t[2])
+        if cle not in vus:
+            vus.add(cle)
+            uniques.append(t)
+    return uniques
+
+
+def charger_rapport(depuis):
+    """Données du rapport Playwright : fichier JSON, rapport HTML, ou liste obtenue dans PLAYWRIGHT_DIR."""
+    import base64, io, zipfile
+    if depuis:
+        chemin = Path(depuis)
+        texte = chemin.read_text(encoding="utf-8")
+        if chemin.suffix.lower() in (".html", ".htm"):
+            bloc = re.search(r'<template id="playwrightReportBase64">(.*?)</template>', texte, re.S)
+            if not bloc:
+                sys.exit(f"{chemin} n'est pas un rapport HTML de Playwright.")
+            archive = zipfile.ZipFile(io.BytesIO(base64.b64decode(bloc.group(1).split(",", 1)[-1])))
+            return json.loads(archive.read("report.json"))
+        return json.loads(texte[texte.index("{"):])
+    dossier = lire_env("PLAYWRIGHT_DIR")
+    if not dossier or not Path(dossier).is_dir():
+        sys.exit("PLAYWRIGHT_DIR absent du .env ou introuvable : ajouter PLAYWRIGHT_DIR=<dossier du projet Playwright>, "
+                 "ou passer --depuis <rapport HTML ou JSON>.")
+    npx = shutil.which("npx.cmd") or shutil.which("npx") or "npx"
+    resultat = subprocess.run([npx, "playwright", "test", "--list", "--reporter=json"], cwd=dossier,
+                              capture_output=True, text=True, encoding="utf-8", errors="replace")
+    if resultat.returncode != 0 or "{" not in resultat.stdout:
+        sys.exit("Échec de « npx playwright test --list --reporter=json » dans PLAYWRIGHT_DIR :\n" + resultat.stderr[-1500:])
+    return json.loads(resultat.stdout[resultat.stdout.index("{"):])
+
+
+def lire_correspondance_playwright():
+    """Rattachements imposés par l'humain : {groupe Playwright normalisé: fiche du plan, ou "" pour aucune}."""
+    if not CORRESPONDANCE_PLAYWRIGHT.exists():
+        return {}
+    imposes = {}
+    for ligne in CORRESPONDANCE_PLAYWRIGHT.read_text(encoding="utf-8").splitlines():
+        cellules = [c.strip() for c in ligne.strip().strip("|").split("|")]
+        if len(cellules) >= 2 and re.match(rf"{MOTIF_ID}\s*-", cellules[0]):
+            imposes[normaliser(cellules[0])] = "" if cellules[1].lower().startswith("aucune") else cellules[1]
+    return imposes
+
+
+def rattacher(groupe, fiches):
+    """(fiche, mode) pour un groupe « MCxx - Libellé ».
+
+    1. Fiche de même identifiant dont un titre ou sous-titre contient tout le libellé : « identifiant et libellé ».
+    2. Sinon, fiche dont le titre ou l'intitulé contient tout le libellé, la plus proche : « libellé » (numérotation différente).
+    3. Sinon, fiche de même identifiant si elle est unique : « identifiant seul », à confirmer.
+    """
+    ident = re.match(rf"({MOTIF_ID})", groupe).group(1)
+    libelle = jetons(re.sub(r"\(#[^)]*\)", "", groupe))
+    if not libelle:
+        libelle = {"_"}
+
+    def proximite(textes):
+        scores = [len(libelle) / len(libelle | jetons(t)) for t in textes if libelle <= jetons(t)]
+        return max(scores) if scores else 0
+
+    memes = [f for f in fiches if f["identifiant"] == ident]
+    # Le titre de section fait foi : dans le plan 01, plusieurs champs « Titre » sont des copier-coller.
+    meme = max(((proximite([f["intitule"] or f["titre"]] + f["sous_titres"]), f) for f in memes),
+               key=lambda c: c[0], default=(0, None))
+    autre = max(((proximite([f["intitule"] or f["titre"]]), f) for f in fiches if f["identifiant"] != ident),
+                key=lambda c: c[0], default=(0, None))
+    if meme[0] and not (autre[0] == 1 and meme[0] < 1):
+        return meme[1], "identifiant et libellé"
+    if autre[0]:
+        return autre[1], "libellé"
+    if len(memes) == 1:
+        return memes[0], "identifiant seul"
+    return None, None
+
+
+def couverture(version, depuis=None):
+    """Génère referentiel/couverture-playwright.json et .md à partir du projet de campagne Playwright."""
+    tests = tests_du_rapport(charger_rapport(depuis))
+    fiches = fiches_du_plan("01")
+    if not fiches:
+        sys.exit("Aucune fiche « ID : … Titre : … » trouvée dans le plan 01 de referentiel/plans/ : lancer convertir_plans.py.")
+    imposes = lire_correspondance_playwright()
+    groupes, par_fiche, par_ticket = {}, {}, {}
+    for fichier, chemin, titre, tags in tests:
+        racine = chemin[0] if chemin else ""
+        entete = re.match(rf"({MOTIF_ID})\s*-\s*([^-]+)", racine)
+        for ticket in re.findall(r"#(\d{3,5})", " ".join(chemin + [titre])):
+            par_ticket.setdefault(ticket, []).append({"fichier": fichier, "titre": titre})
+        if not entete:
+            continue
+        groupe = f"{entete.group(1)} - {entete.group(2).strip()}"
+        if groupe not in groupes:
+            cle = normaliser(groupe)
+            if cle in imposes:
+                fiche = next((f for f in fiches if normaliser(f["fiche"]) == normaliser(imposes[cle])), None)
+                groupes[groupe] = (fiche, "imposé" if imposes[cle] else "aucune fiche", imposes[cle])
+            else:
+                fiche, mode = rattacher(groupe, fiches)
+                groupes[groupe] = (fiche, mode, "")
+        fiche = groupes[groupe][0]
+        if fiche:
+            entree = par_fiche.setdefault(fiche["fiche"], {"fiche": fiche["fiche"], "fichiers": [], "groupes": [],
+                                                           "tests": 0, "a_valider": 0})
+            if fichier not in entree["fichiers"]:
+                entree["fichiers"].append(fichier)
+            if groupe not in entree["groupes"]:
+                entree["groupes"].append(groupe)
+            entree["tests"] += 1
+            entree["a_valider"] += any("a-valider" in t for t in tags)
+
+    COUVERTURE_JSON.write_text(json.dumps({"genere_le": datetime.now().isoformat(timespec="seconds"),
+                                           "fiches": par_fiche, "tickets": par_ticket},
+                                          ensure_ascii=False, indent=1), encoding="utf-8")
+    lignes = ["# Couverture Playwright", "",
+              f"Générée le {datetime.now().strftime('%d/%m/%Y %H:%M')} par `python analyses.py couverture`. "
+              "Ne pas modifier à la main : corriger les rattachements dans `referentiel/correspondance-playwright.md`.", "",
+              f"- Tests lus : {len(tests)}", f"- Fiches du plan 01 couvertes : {len(par_fiche)} sur {len(fiches)}",
+              f"- Tickets cités dans les titres de test : {len(par_ticket)}", "",
+              "## Fiches couvertes", "", "| Fiche | Tests | Dont @a-valider | Fichiers |", "|---|---|---|---|"]
+    for f in fiches:
+        e = par_fiche.get(f["fiche"])
+        if e:
+            lignes.append(f"| {cellule(e['fiche'])} | {e['tests']} | {e['a_valider']} | {cellule(', '.join(e['fichiers']))} |")
+    lignes += ["", "## Rattachement des groupes de tests", "",
+               "| Groupe Playwright | Fiche du plan | Rattachement | Remarque |", "|---|---|---|---|"]
+    for groupe, (fiche, mode, impose) in sorted(groupes.items()):
+        remarque = ""
+        if fiche and re.match(rf"({MOTIF_ID})", groupe).group(1) != fiche["identifiant"]:
+            remarque = f"numérotation différente du plan ({fiche['identifiant']})"
+        if mode == "identifiant seul":
+            remarque = "à confirmer dans correspondance-playwright.md"
+        if not fiche and mode != "aucune fiche":
+            remarque = "non rattaché : préciser la fiche dans correspondance-playwright.md"
+        lignes.append(f"| {cellule(groupe)} | {cellule(fiche['fiche'] if fiche else '—')} | {mode or '—'} | {remarque} |")
+    COUVERTURE_MD.write_text("\n".join(lignes) + "\n", encoding="utf-8")
+    print(f"Couverture écrite : {COUVERTURE_MD.relative_to(DOSSIER)} ({len(tests)} tests, {len(par_fiche)} fiches, "
+          f"{len(par_ticket)} tickets cités)")
+    ecarts = [g for g, (f, m, _) in groupes.items() if not f and m != "aucune fiche" or m == "identifiant seul"]
+    if ecarts:
+        print("Groupes à rattacher ou confirmer : " + " ; ".join(sorted(ecarts)))
+
+
+def lire_couverture():
+    try:
+        return json.loads(COUVERTURE_JSON.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {"fiches": {}, "tickets": {}}
+
+
+def test_existant(couverture_, fiche, numero=None):
+    """Résumé de ce qui existe déjà dans la campagne Playwright pour ce ticket et cette fiche."""
+    morceaux = []
+    if numero and str(numero) in couverture_.get("tickets", {}):
+        morceaux.append(f"ticket cité dans {len(couverture_['tickets'][str(numero)])} test(s)")
+    for cle, e in couverture_.get("fiches", {}).items():
+        if fiche and normaliser(cle) == normaliser(fiche):
+            morceaux.append(f"fiche couverte ({e['tests']} tests)")
+    return " ; ".join(morceaux) or "—"
+
+
+def etapes_de(procedure):
+    """Étapes « - action. Résultat attendu : … (#n) » de la procédure, hors blocs ### (spécification, prérequis)."""
+    principal = re.split(r"(?m)^###\s", procedure)[0]
+    etapes, sous_titre = [], ""
+    for ligne in principal.splitlines():
+        titre = re.match(r"\s*\*\*(.+?)\*\*\s*$", ligne)
+        if titre:
+            sous_titre = titre.group(1).strip()
+            continue
+        if ligne.strip().startswith("- "):
+            corps = ligne.strip()[2:].strip()
+            action, _, attendu = corps.partition("Résultat attendu :")
+            etapes.append({"sous_titre": sous_titre, "action": action.strip(), "attendu": attendu.strip()})
+    return etapes
+
+
+def exporter(version):
+    """Écrit export/<version>/campagne.json : contrat d'échange avec le projet de campagne Playwright."""
+    numeros = selection_courante(version)
+    _, decisions = lire_decisions(version)
+    couverture = lire_couverture()
+    tickets, ecartees = [], []
+    for numero in numeros:
+        chemin = ANALYSES / version / f"{numero}.md"
+        if not chemin.exists():
+            continue
+        if verifier_analyse(version, numero, decisions):
+            ecartees.append(numero)
+            continue
+        a = lire_analyse(chemin)
+        champs, texte = a["champs"], a["texte"]
+        procedure = section_de(texte, "## 4. Procédure de test proposée")
+        prerequis = sous_bloc(procedure, "Prérequis et moyens")
+        fiche = champs.get("Fiche cible", "")
+        tickets.append({
+            "ticket": numero,
+            "sujet": a["titre"],
+            "mis_a_jour": a["mis_a_jour"],
+            "issue": champs.get("Issue", "")[:1] or None,
+            "issue_libelle": champs.get("Issue", ""),
+            "application": champs.get("Application", ""),
+            "plan": champs.get("Plan cible", ""),
+            "fiche": fiche,
+            "playwright_existant": {
+                "fiche_couverte": next((e for k, e in couverture.get("fiches", {}).items()
+                                        if fiche and normaliser(k) == normaliser(fiche)), None),
+                "tests_citant_le_ticket": couverture.get("tickets", {}).get(str(numero), []),
+            },
+            "nature": champs.get("Nature du test", ""),
+            "automatisabilite": champs.get("Automatisabilité", ""),
+            "environnement": champs.get("Environnement", ""),
+            "prerequis": champs.get("Prérequis particuliers", ""),
+            "prerequis_et_moyens": [l.strip()[2:] for l in (prerequis or "").splitlines() if l.strip().startswith("- ")],
+            "playwright": lire_playwright(procedure),
+            "etapes": etapes_de(procedure),
+            "analyse": f"analyses/{version}/{numero}.md",
+        })
+    cible = DOSSIER / "export" / version / "campagne.json"
+    cible.parent.mkdir(parents=True, exist_ok=True)
+    cible.write_text(json.dumps({"version": version, "genere_le": datetime.now().isoformat(timespec="seconds"),
+                                 "format": 1, "tickets": tickets}, ensure_ascii=False, indent=2), encoding="utf-8")
+    compte = Counter(t["issue"] for t in tickets)
+    print(f"Export écrit : {cible.relative_to(DOSSIER)} ({len(tickets)} tickets : "
+          + ", ".join(f"{k} = {v}" for k, v in sorted(compte.items(), key=lambda e: str(e[0]))) + ")")
+    if ecartees:
+        print("Analyses non conformes, non exportées : " + ", ".join(f"#{n}" for n in ecartees))
+
+
 def synthese(version):
     numeros = selection_courante(version)
     dossier_analyses = ANALYSES / version
@@ -812,7 +1212,7 @@ def synthese(version):
         lignes.append(f"- Décisions à reformuler par l'humain : {len(a_reformuler)} ("
                       + ", ".join(f"#{d['ticket']}" for d in a_reformuler) + ")")
 
-    for nom in ("Nature du test", "Environnement", "Automatisabilité"):
+    for nom in ("Issue", "Nature du test", "Environnement", "Automatisabilité"):
         compte = Counter(champ(a, nom) or "(non renseigné)" for a in analyses)
         lignes += ["", f"## Répartition — {nom}", "", f"| {nom} | Tickets |", "|---|---|"]
         lignes += [f"| {cellule(valeur)} | {nombre} |" for valeur, nombre in compte.most_common()]
@@ -823,16 +1223,17 @@ def synthese(version):
         "",
         "Tickets regroupés par environnement, puis par plan et par fiche, pour limiter les changements de configuration.",
         "",
-        "| Ticket | Sujet | Environnement | Plan | Fiche | Nature | Automatisabilité | Décision requise |",
+        "| Ticket | Sujet | Environnement | Plan | Fiche | Issue | Test Playwright existant | Décision requise |",
         "|---|---|---|---|---|---|---|---|",
     ]
+    couverture = lire_couverture()
     for a in analyses:
         t = a["ticket"]
         marque = " (à reprendre)" if t["id"] in a_reprendre else ""
         lignes.append(
             f"| [#{t['id']}]({t['id']}.md){marque} | {cellule(t['sujet'])} | {cellule(champ(a, 'Environnement'))} | "
-            f"{cellule(champ(a, 'Plan cible'))} | {cellule(champ(a, 'Fiche cible'))} | {cellule(champ(a, 'Nature du test'))} | "
-            f"{cellule(champ(a, 'Automatisabilité'))} | {cellule(champ(a, 'Décision humaine requise'))} |"
+            f"{cellule(champ(a, 'Plan cible'))} | {cellule(champ(a, 'Fiche cible'))} | {cellule(champ(a, 'Issue'))} | "
+            f"{cellule(test_existant(couverture, champ(a, 'Fiche cible'), t['id']))} | {cellule(champ(a, 'Décision humaine requise'))} |"
         )
 
     if manquantes:
@@ -848,13 +1249,14 @@ def synthese(version):
 def main():
     analyseur = argparse.ArgumentParser(description="Suivi et contrôle des analyses de tickets.")
     analyseur.add_argument("commande", choices=["etat", "verifier", "question", "journal", "synthese", "reparer-decisions",
-                                                "preparer", "reprendre", "appliquer"])
+                                                "preparer", "reprendre", "appliquer", "exporter", "couverture"])
     analyseur.add_argument("--version", help="version à traiter (ex. ISAP-V27.1)")
     analyseur.add_argument("--ticket", type=int, help="numéro du ticket")
     analyseur.add_argument("--question", help="question à trancher (commande question)")
     analyseur.add_argument("--proposition", help="proposition de l'agent (commande question)")
     analyseur.add_argument("--texte", help="texte de la ligne de journal (commande journal)")
     analyseur.add_argument("--lot", type=int, help="nombre maximal de tickets traités pendant le passage (commande preparer)")
+    analyseur.add_argument("--depuis", help="rapport Playwright HTML ou JSON à lire (commande couverture)")
     analyseur.add_argument("--max", type=int, help="nombre de lignes de la liste « À analyser » affichées (commande etat)")
     args = analyseur.parse_args()
     if args.commande == "preparer":
@@ -876,6 +1278,10 @@ def main():
         reprendre(version, args.ticket)
     elif args.commande == "appliquer":
         appliquer(version, args.ticket)
+    elif args.commande == "couverture":
+        couverture(version, args.depuis)
+    elif args.commande == "exporter":
+        exporter(version)
     elif args.commande == "reparer-decisions":
         reparer_decisions(version)
     else:

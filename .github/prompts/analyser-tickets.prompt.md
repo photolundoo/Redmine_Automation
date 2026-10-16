@@ -81,8 +81,9 @@ Cette recherche est obligatoire pour tous les tickets, y compris de configuratio
 
 1. Détermine l'application et les plans à consulter avec `referentiel/correspondance-fonctions.md`, en appliquant ses règles.
 2. Cherche `#<n>` dans tous les fichiers de `referentiel/plans/`.
-3. Cherche ensuite les mots-clés du sujet et de la description (nom du composant, du logiciel tiers, du paramètre) dans les plans proposés, puis lis en entier la ou les sections pertinentes.
-4. Ouvre la section 3 de l'analyse par un paragraphe « **Recherche dans les plans.** » qui rapporte chaque recherche et son résultat : `#<n>` d'abord, puis chaque mot-clé, avec le plan, la fiche et le sous-titre trouvés, ou « aucune occurrence ». Ne cite dans « Sources » que les plans que tu as réellement lus et dont la section 3 rapporte le contenu. Ajouter un plan aux sources sans l'avoir exploité est une faute, même si le vérificateur le réclame.
+3. Cherche `#<n>` dans `referentiel/couverture-playwright.json` (clé `tickets`) : un test Playwright qui cite déjà le ticket se rapporte dans le paragraphe « Recherche dans les plans. », avec son fichier et son titre.
+4. Cherche ensuite les mots-clés du sujet et de la description (nom du composant, du logiciel tiers, du paramètre) dans les plans proposés, puis lis en entier la ou les sections pertinentes.
+5. Ouvre la section 3 de l'analyse par un paragraphe « **Recherche dans les plans.** » qui rapporte chaque recherche et son résultat : `#<n>` d'abord, puis chaque mot-clé, avec le plan, la fiche et le sous-titre trouvés, ou « aucune occurrence ». Ne cite dans « Sources » que les plans que tu as réellement lus et dont la section 3 rapporte le contenu. Ajouter un plan aux sources sans l'avoir exploité est une faute, même si le vérificateur le réclame.
 
 ### c. Qualifier le ticket
 
@@ -96,6 +97,7 @@ Chaque champ contrôlé de la fiche signalétique prend une seule des valeurs ci
 | Environnement | WebApp · WinApp · Serveur / grille · Simulateur · Matériel · Mobile · Aucun |
 | Confiance | Élevée · Moyenne · Faible |
 | Décision humaine requise | Oui · Non |
+| Issue | A — Reproduire l'existant · B — Adapter l'existant · C — Nouvelle procédure automatisable · D — Nouvelle procédure manuelle · Sans objet |
 
 Repères :
 1. **Application** : « Serveur et services » couvre les serveurs, processeurs, plugins, outils d'installation et de configuration ; « Transverse » couvre les bibliothèques et dépendances communes à plusieurs applications.
@@ -106,8 +108,37 @@ Repères :
    - Difficile : plusieurs utilisateurs simultanés, attentes longues, données à préparer.
    - Impossible sans script externe : une étape sort du navigateur (fichier de configuration, grille, simulateur, IsapReporting).
    - Hors outillage actuel : WinApp, application mobile, serveur ou matériel, y compris les tickets de configuration et de non-régression technique.
+   - Un ticket dont l'environnement comprend WebApp n'est jamais « Hors outillage actuel ». Si une étape sort du navigateur (attribut modifié dans IsapReporting, licence, script), il est « Impossible sans script externe ». Si rien ne se passe dans le navigateur (script SDK, envoi de courriel), l'environnement n'est pas WebApp.
    - Non applicable : relecture documentaire ou ticket hors campagne.
 5. **Confiance** : Élevée seulement si le ticket dit clairement ce qui a été livré et comment l'observer. Moyenne si la procédure repose en partie sur des hypothèses. Faible si le ticket ne permet pas de savoir ce qui a été livré.
+
+### b bis. Choisir l'issue
+
+L'issue décide de ce que contient la section 4. Elle se choisit dans cet ordre, à partir de la recherche de l'étape b :
+
+1. **Une fiche existante couvre la fonctionnalité du ticket ?** Lis-la en entier, puis écris en section 3 le paragraphe « **Comparaison des procédures.** » : même parcours, mêmes données, même résultat observé que ce que demande le ticket ? Point par point.
+   - **Elle teste exactement la même chose : issue A — Reproduire l'existant.** Pas de nouvelle procédure. La section 4 s'ouvre par « **Procédure existante à rejouer.** », cite la fiche, le sous-titre et les étapes du plan, puis reprend ces étapes en lignes « - … Résultat attendu : … (#<n>) ». La section 5 indique seulement d'ajouter `#<n>` aux étapes rejouées.
+   - **Elle couvre la fonctionnalité, mais pas de la même manière : issue B — Adapter l'existant.** La section 4 s'ouvre par « **Écarts avec la procédure existante.** » (étapes conservées, modifiées, ajoutées), puis donne la procédure adaptée.
+2. **Aucune fiche ne couvre la fonctionnalité :** une nouvelle procédure est écrite à partir des prérequis du test.
+   - **Tout se joue dans le navigateur (WebApp) : issue C — Nouvelle procédure automatisable.** La procédure est écrite pour être transcrite en test Playwright sans réinterprétation : une action par étape (clic, saisie, navigation), un résultat attendu vérifiable à l'écran (texte, élément, état).
+   - **Une partie sort du navigateur : issue D — Nouvelle procédure manuelle.** La section 4 contient en plus le bloc « ### Prérequis et moyens » : matériel, simulateur, machine, accès, données, personne à solliciter.
+3. **Relecture documentaire ou hors campagne : « Sans objet ».**
+
+Pour toute procédure automatisable (issue C, et issue B quand l'automatisabilité est « Automatisable » ou « Difficile »), ajoute en fin de section 4 le bloc « ### Spécification Playwright », destiné au projet de campagne Playwright :
+
+```
+### Spécification Playwright
+
+- Type : @lecture, @ecriture ou @perturbateur
+- Compte : compte utilisé (Playwright, Operator, AA…)
+- Dossier : dossier de travail (racine, A, AA…)
+- Référentiel : données qui doivent exister avant le test, ou « Aucun »
+- Données créées : ce que le test crée et devra supprimer, ou « Aucune »
+```
+
+`@lecture` ne modifie rien ; `@ecriture` crée ses propres données et les supprime ; `@perturbateur` modifie un état partagé (droits, options, mot de passe, alerte, hors ligne, purge serveur).
+
+Le vérificateur contrôle la cohérence : A et B exigent une fiche existante et le paragraphe de comparaison ; C exige l'environnement WebApp et une automatisabilité « Automatisable » ou « Difficile » ; D l'interdit ; les blocs obligatoires doivent être présents et remplis.
 
 ### c bis. Désigner la fiche cible
 
@@ -145,6 +176,7 @@ python analyses.py journal --ticket <n> --texte "analysé — nature du test, fi
 
 1. Lance `python analyses.py verifier` (sans `--ticket`). Corrige les écarts qui concernent les analyses de ce passage.
 2. Lance `python analyses.py synthese` (avec `--version` si le paramètre est donné). Ne modifie pas `synthese.md` toi-même.
+3. Lance `python analyses.py exporter`. Il écrit `export/<version>/campagne.json`, lu par le projet de campagne Playwright. Ne modifie jamais ce fichier toi-même.
 
 ## Conditions d'arrêt
 

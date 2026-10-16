@@ -1,0 +1,1051 @@
+{
+ "genere_le": "2026-10-16T16:07:17",
+ "fiches": {
+  "MC10 — Onglet Administration": {
+   "fiche": "MC10 — Onglet Administration",
+   "fichiers": [
+    "administration/Automatique_mc10-00-controle-page-object.spec.ts",
+    "administration/Automatique_mc10a-dossiers-comptes.spec.ts",
+    "administration/Automatique_mc10b-referentiels.spec.ts"
+   ],
+   "groupes": [
+    "MC10 - Administration"
+   ],
+   "tests": 67,
+   "a_valider": 50
+  },
+  "MC07 — Onglet Evénements": {
+   "fiche": "MC07 — Onglet Evénements",
+   "fichiers": [
+    "evenements/Automatique_mc07-evenements.spec.ts"
+   ],
+   "groupes": [
+    "MC07 - Évènements"
+   ],
+   "tests": 7,
+   "a_valider": 6
+  },
+  "MC06 — Onglet Evénements": {
+   "fiche": "MC06 — Onglet Evénements",
+   "fichiers": [
+    "evenements-planifies/Automatique_mc06-evenements-planifies.spec.ts"
+   ],
+   "groupes": [
+    "MC06 - Évènements planifiés"
+   ],
+   "tests": 16,
+   "a_valider": 12
+  },
+  "MC13 — Manipulation des fichiers": {
+   "fiche": "MC13 — Manipulation des fichiers",
+   "fichiers": [
+    "fichiers-et-scripts/Automatique_mc13-fichiers-scripts.spec.ts"
+   ],
+   "groupes": [
+    "MC13 - Perte de connexion (#8739)",
+    "MC13 - Python SDK",
+    "MC13 - Test unitaire WebService (#8366)",
+    "MC13 - IsapReportingServer",
+    "MC13 - TestIsapServer (#8570)",
+    "MC13 - Log démarrage serveur et PermissionsVerifier"
+   ],
+   "tests": 13,
+   "a_valider": 12
+  },
+  "MC11 — Onglet Mode expert (IsapReporting)": {
+   "fiche": "MC11 — Onglet Mode expert (IsapReporting)",
+   "fichiers": [
+    "isap-reporting/Automatique_mc11-isap-reporting.spec.ts"
+   ],
+   "groupes": [
+    "MC11 - IsapReporting"
+   ],
+   "tests": 19,
+   "a_valider": 19
+  },
+  "MC01 — Généraux": {
+   "fiche": "MC01 — Généraux",
+   "fichiers": [
+    "main-courante/Automatique_mc01-generaux-connexion.spec.ts"
+   ],
+   "groupes": [
+    "MC01 - Généraux"
+   ],
+   "tests": 9,
+   "a_valider": 1
+  },
+  "MC02 — Onglet Main Courante": {
+   "fiche": "MC02 — Onglet Main Courante",
+   "fichiers": [
+    "main-courante/Automatique_mc02-01-presence-elements.spec.ts",
+    "main-courante/Automatique_mc02-01b-traduction.spec.ts",
+    "main-courante/Automatique_mc02-01c-parametres-avances.spec.ts",
+    "main-courante/Automatique_mc02-02-applications.spec.ts",
+    "main-courante/Automatique_mc02-03-mode-lecture.spec.ts",
+    "main-courante/Automatique_mc02-04-options-affichage.spec.ts",
+    "main-courante/Automatique_mc02-05-comportement-lignes.spec.ts",
+    "main-courante/Automatique_mc02-06-parametres-incidents.spec.ts",
+    "main-courante/Automatique_mc02-07-session-timeout.spec.ts",
+    "main-courante/Automatique_mc02-08-lieux-adresse.spec.ts",
+    "main-courante/Automatique_mc02-09-bandeau-superieur.spec.ts",
+    "main-courante/Automatique_mc02-10-bulletin.spec.ts",
+    "../fixtures/plan.ts",
+    "main-courante/Automatique_mc02-11-activites.spec.ts",
+    "main-courante/Automatique_mc02-12-administration.spec.ts"
+   ],
+   "groupes": [
+    "MC02 - Présence des éléments",
+    "MC02 - Traduction de l'interface",
+    "MC02 - Paramètres avancés",
+    "MC02 - Applications",
+    "MC02 - Bandeau inférieur de la Main Courante",
+    "MC02 - Mode Lecture",
+    "MC02 - Mode lecture",
+    "MC02 - Options d'affichage et générales de la table",
+    "MC02 - Comportement des lignes",
+    "MC02 - Paramètres incidents & formulaires",
+    "MC02 - Paramètres incidents",
+    "MC02 - Session & Timeout Multi",
+    "MC02 - Lieux, Intervenants & Champs adresse",
+    "MC02 - Bandeau supérieur",
+    "MC02 - Bulletin",
+    "MC02 - Activités",
+    "MC02 - Onglet Administration"
+   ],
+   "tests": 159,
+   "a_valider": 76
+  },
+  "MC12 — Tests à plusieurs personnes": {
+   "fiche": "MC12 — Tests à plusieurs personnes",
+   "fichiers": [
+    "multi-utilisateurs/Automatique_mc12-multi-utilisateurs.spec.ts"
+   ],
+   "groupes": [
+    "MC12 - Tests à plusieurs personnes"
+   ],
+   "tests": 16,
+   "a_valider": 15
+  },
+  "MC04 — Onglet Situation": {
+   "fiche": "MC04 — Onglet Situation",
+   "fichiers": [
+    "situation/Automatique_mc04-situation.spec.ts"
+   ],
+   "groupes": [
+    "MC04 - Situation"
+   ],
+   "tests": 35,
+   "a_valider": 35
+  },
+  "MC03 — Onglet Statistiques": {
+   "fiche": "MC03 — Onglet Statistiques",
+   "fichiers": [
+    "statistiques/Automatique_mc03-statistiques.spec.ts"
+   ],
+   "groupes": [
+    "MC03 - Statistiques"
+   ],
+   "tests": 40,
+   "a_valider": 35
+  },
+  "MC05 — Onglet Vidéo": {
+   "fiche": "MC05 — Onglet Vidéo",
+   "fichiers": [
+    "video/Automatique_mc05-video.spec.ts"
+   ],
+   "groupes": [
+    "MC05 - Vidéo"
+   ],
+   "tests": 26,
+   "a_valider": 25
+  }
+ },
+ "tickets": {
+  "7650": [
+   {
+    "fichier": "administration/Automatique_mc10a-dossiers-comptes.spec.ts",
+    "titre": "[MC10-002 / MC10-003] « Arborescence du dossier » : affichage en arbre, persistant après fermeture / réouverture et F5 (#7650)"
+   }
+  ],
+  "7850": [
+   {
+    "fichier": "administration/Automatique_mc10a-dossiers-comptes.spec.ts",
+    "titre": "[MC10-008] Incident créé depuis le dossier AA : position hors région parisienne (Limoges) (#7850)"
+   },
+   {
+    "fichier": "main-courante/Automatique_mc02-03-mode-lecture.spec.ts",
+    "titre": "[MC02-061 à MC02-066] Un incident PlaywrightAdmin apparaît chez Operator, sauf en Mode lecture"
+   },
+   {
+    "fichier": "main-courante/Automatique_mc02-03-mode-lecture.spec.ts",
+    "titre": "[MC02-067] Modifier l'incident depuis Operator : affichage orange temporaire des champs modifiés"
+   }
+  ],
+  "7162": [
+   {
+    "fichier": "administration/Automatique_mc10a-dossiers-comptes.spec.ts",
+    "titre": "[MC10-009] Raccourcis : Ctrl+I (LocalAdmin) crée un incident dans A ; Entrée (Operator) une mention dans AA (#7162)"
+   }
+  ],
+  "8056": [
+   {
+    "fichier": "administration/Automatique_mc10a-dossiers-comptes.spec.ts",
+    "titre": "[MC10-013] Le dossier A n'a accès qu'aux dossiers A et AA (#8056)"
+   }
+  ],
+  "7585": [
+   {
+    "fichier": "administration/Automatique_mc10a-dossiers-comptes.spec.ts",
+    "titre": "[MC10-031] LocalAdmin : 3 intervenants assignables ; 3 lieux assignables si « Pertinent » (#7585)"
+   }
+  ],
+  "7796": [
+   {
+    "fichier": "administration/Automatique_mc10a-dossiers-comptes.spec.ts",
+    "titre": "[MC10-047 à MC10-051] Emulator : tous droits à Aucun = connexion impossible (#7796) ; Stats seul = onglet Stats seul ; chaque module consultable ; compte désactivé refusé ; dernière connexion correcte"
+   }
+  ],
+  "7652": [
+   {
+    "fichier": "administration/Automatique_mc10a-dossiers-comptes.spec.ts",
+    "titre": "[MC10-055 à MC10-060] Droits par niveau d'Ope2 (N1-N2 Admin, N3 Édition, N4 Consultation, N5 Aucun) : capacités et cases orange (#7652)"
+   }
+  ],
+  "8002": [
+   {
+    "fichier": "administration/Automatique_mc10a-dossiers-comptes.spec.ts",
+    "titre": "[MC10-061] Sans droit d'admin N4-N5 : la création N4-N5 affiche un popup d'interdiction (#8002)"
+   }
+  ],
+  "8013": [
+   {
+    "fichier": "administration/Automatique_mc10a-dossiers-comptes.spec.ts",
+    "titre": "[MC10-062] Compte OPAAA (Edge, droits restreints) : incident sans niveau visible ; escalade 1→5 : disparaît quand le niveau n'est pas autorisé (MC, Bulletin, Stats) (#8013)"
+   }
+  ],
+  "6963": [
+   {
+    "fichier": "administration/Automatique_mc10b-referentiels.spec.ts",
+    "titre": "[MC10-080 / MC10-081] « Alarme intrusion » assignable, « Accident autre » non assignable : seul le premier est sélectionnable (#6963)"
+   },
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-006 / MC11-007] CanBeManual : « Alarme intrusion » = 1 proposé, « Accident autre » = 0 absent (#6963 #8983)"
+   }
+  ],
+  "8852": [
+   {
+    "fichier": "administration/Automatique_mc10b-referentiels.spec.ts",
+    "titre": "[MC10-083 à MC10-087] Intervenant « Simon » (téléphone existant, notifier + prendre en charge) : assignable dans Relevé par / Pris en charge par ; présent dans IsapReporting (#8852)"
+   }
+  ],
+  "8047": [
+   {
+    "fichier": "administration/Automatique_mc10b-referentiels.spec.ts",
+    "titre": "[MC10-104 à MC10-107] Évènement englobant un incident passé fermé : période et tableau mis à jour, nom de l'évènement en haut à gauche (#8047)"
+   }
+  ],
+  "7817": [
+   {
+    "fichier": "administration/Automatique_mc10b-referentiels.spec.ts",
+    "titre": "[MC10-109 à MC10-111] Sous-dossier vidéo « Test Sous Dossier Vidéo » avec Pacifique (32), Arctique (238), Atlantique (239) (#7817)"
+   }
+  ],
+  "8851": [
+   {
+    "fichier": "administration/Automatique_mc10b-referentiels.spec.ts",
+    "titre": "[MC10-116b à MC10-116d] Type d'une mention modifié : colonne Type, enregistrement, activités de la ligne et du champ (#8851)"
+   }
+  ],
+  "7356": [
+   {
+    "fichier": "evenements/Automatique_mc07-evenements.spec.ts",
+    "titre": "[MC07-007] L'onglet Évènements s'ouvre depuis la WebApp (#7356)"
+   }
+  ],
+  "7396": [
+   {
+    "fichier": "evenements/Automatique_mc07-evenements.spec.ts",
+    "titre": "[MC07-009 à MC07-011] Interphone déplacé dans un sous-dossier (IsapReporting) : ses SecurityEvents sont créés dans le sous-dossier"
+   }
+  ],
+  "8448": [
+   {
+    "fichier": "evenements/Automatique_mc07-evenements.spec.ts",
+    "titre": "[MC07-012 à MC07-014] Sensor simulé : DisplayName, Label, SystemID remplis ; après modification en base, Label et SystemID réécrits, DisplayName conservé"
+   }
+  ],
+  "7000": [
+   {
+    "fichier": "evenements-planifies/Automatique_mc06-evenements-planifies.spec.ts",
+    "titre": "[MC06-001] Le raccourci « Évènements planifiés » ouvre la page (#7000)"
+   }
+  ],
+  "7323": [
+   {
+    "fichier": "evenements-planifies/Automatique_mc06-evenements-planifies.spec.ts",
+    "titre": "[MC06-019 à MC06-026] Dossier enfant : PlanifiedEventsCsvDefinition présente (héritée), aucune erreur ; import CSV depuis le dossier enfant"
+   }
+  ],
+  "7110": [
+   {
+    "fichier": "evenements-planifies/Automatique_mc06-evenements-planifies.spec.ts",
+    "titre": "[MC06-043 / MC06-044] Le lendemain : tâches de la veille visibles et assignées ; un nouvel import supprime les anciennes (#7110)"
+   }
+  ],
+  "7782": [
+   {
+    "fichier": "evenements-planifies/Automatique_mc06-evenements-planifies.spec.ts",
+    "titre": "[MC06-045 à MC06-061] Group1 / Ope2 : réception, acceptation / refus, mentions, propagation selon iceMap_propagate*"
+   },
+   {
+    "fichier": "evenements-planifies/Automatique_mc06-evenements-planifies.spec.ts",
+    "titre": "[MC06-062 / MC06-063] Mode silencieux : iceMap_createLineOnActionValidated = True, iceMap_createLineOnActionRejected = false (#7645)"
+   },
+   {
+    "fichier": "evenements-planifies/Automatique_mc06-evenements-planifies.spec.ts",
+    "titre": "[MC06-064 à MC06-067] Workflow : incident « Feux » / « Incident technique » → tâches ; validation (Actions menées, étape suivante) ; refus selon abort_on_task_cancelled (#8594 #8494)"
+   }
+  ],
+  "7533": [
+   {
+    "fichier": "evenements-planifies/Automatique_mc06-evenements-planifies.spec.ts",
+    "titre": "[MC06-045 à MC06-061] Group1 / Ope2 : réception, acceptation / refus, mentions, propagation selon iceMap_propagate*"
+   },
+   {
+    "fichier": "evenements-planifies/Automatique_mc06-evenements-planifies.spec.ts",
+    "titre": "[MC06-062 / MC06-063] Mode silencieux : iceMap_createLineOnActionValidated = True, iceMap_createLineOnActionRejected = false (#7645)"
+   },
+   {
+    "fichier": "evenements-planifies/Automatique_mc06-evenements-planifies.spec.ts",
+    "titre": "[MC06-064 à MC06-067] Workflow : incident « Feux » / « Incident technique » → tâches ; validation (Actions menées, étape suivante) ; refus selon abort_on_task_cancelled (#8594 #8494)"
+   }
+  ],
+  "7645": [
+   {
+    "fichier": "evenements-planifies/Automatique_mc06-evenements-planifies.spec.ts",
+    "titre": "[MC06-062 / MC06-063] Mode silencieux : iceMap_createLineOnActionValidated = True, iceMap_createLineOnActionRejected = false (#7645)"
+   }
+  ],
+  "8594": [
+   {
+    "fichier": "evenements-planifies/Automatique_mc06-evenements-planifies.spec.ts",
+    "titre": "[MC06-064 à MC06-067] Workflow : incident « Feux » / « Incident technique » → tâches ; validation (Actions menées, étape suivante) ; refus selon abort_on_task_cancelled (#8594 #8494)"
+   }
+  ],
+  "8494": [
+   {
+    "fichier": "evenements-planifies/Automatique_mc06-evenements-planifies.spec.ts",
+    "titre": "[MC06-064 à MC06-067] Workflow : incident « Feux » / « Incident technique » → tâches ; validation (Actions menées, étape suivante) ; refus selon abort_on_task_cancelled (#8594 #8494)"
+   }
+  ],
+  "8739": [
+   {
+    "fichier": "fichiers-et-scripts/Automatique_mc13-fichiers-scripts.spec.ts",
+    "titre": "[MC13-001 / MC13-002] iceMap_timeoutItf aléatoire [2-59] : message de perte de connexion au bout de X s hors réseau"
+   },
+   {
+    "fichier": "fichiers-et-scripts/Automatique_mc13-fichiers-scripts.spec.ts",
+    "titre": "[MC13-003] iceMap_timeoutItf = 0 : avertissement désactivé"
+   }
+  ],
+  "7988": [
+   {
+    "fichier": "fichiers-et-scripts/Automatique_mc13-fichiers-scripts.spec.ts",
+    "titre": "[MC13-004 à MC13-006] SendMailOnIncident.py : incident niveau ≥ 3 (nom, type, description, position) → mail avec attributs et carte (#7988)"
+   }
+  ],
+  "8003": [
+   {
+    "fichier": "fichiers-et-scripts/Automatique_mc13-fichiers-scripts.spec.ts",
+    "titre": "[MC13-007 / MC13-008] AutoUpdateIncident.py --folder_to_place always : la colonne Lieu prend le nom du dossier (#8003)"
+   }
+  ],
+  "8176": [
+   {
+    "fichier": "fichiers-et-scripts/Automatique_mc13-fichiers-scripts.spec.ts",
+    "titre": "[MC13-009 à MC13-013] Deux types « test1 » (même DisplayName) ; CreateIncident.py target_type = \"test1\" : incident créé avec l'un des deux (#8176)"
+   }
+  ],
+  "8628": [
+   {
+    "fichier": "fichiers-et-scripts/Automatique_mc13-fichiers-scripts.spec.ts",
+    "titre": "[MC13-014 / MC13-015] Scripts lynx, Geocoder, Geofencing lancés depuis la grille : leurs logs existent (#8628)"
+   }
+  ],
+  "8343": [
+   {
+    "fichier": "fichiers-et-scripts/Automatique_mc13-fichiers-scripts.spec.ts",
+    "titre": "[MC13-016] validate_PythonSDK : aucune erreur (#8343)"
+   }
+  ],
+  "8366": [
+   {
+    "fichier": "fichiers-et-scripts/Automatique_mc13-fichiers-scripts.spec.ts",
+    "titre": "[MC13-017 à MC13-024] sqlsfillisap fr.adp.uae ; SecurityEventType LOST_LUGGAGE ; test_webservice.py = 0 (sinon ajout SituationAwarenessProcessor et nouvel essai)"
+   }
+  ],
+  "7054": [
+   {
+    "fichier": "fichiers-et-scripts/Automatique_mc13-fichiers-scripts.spec.ts",
+    "titre": "[MC13-025 à MC13-028] Topics storm réinitialisés ; démo géoloc sans main_serveur : erreur attendue côté WinApp et WebApp (#7054)"
+   }
+  ],
+  "6705": [
+   {
+    "fichier": "fichiers-et-scripts/Automatique_mc13-fichiers-scripts.spec.ts",
+    "titre": "[MC13-029 à MC13-034] intrusion_simulator : AlarmSystem et SensorGroup créés avec Identifier, Name et DisplayName = « Pannel-<Identifier> » (#6705)"
+   }
+  ],
+  "8570": [
+   {
+    "fichier": "fichiers-et-scripts/Automatique_mc13-fichiers-scripts.spec.ts",
+    "titre": "[MC13-035 à MC13-040] eventstring <entityid> Comment \"toto\\ntata\\ntiti\" : à la suite en mode compact, retours à la ligne dans la description et en mode normal"
+   }
+  ],
+  "5674": [
+   {
+    "fichier": "fichiers-et-scripts/Automatique_mc13-fichiers-scripts.spec.ts",
+    "titre": "[MC13-041 à MC13-043] log-on-initialized-type = Manual : au redémarrage d'IsapServer, mention « Serveur SmartShield démarré » (#5674)"
+   },
+   {
+    "fichier": "multi-utilisateurs/Automatique_mc12-multi-utilisateurs.spec.ts",
+    "titre": "[MC12-046 à MC12-048] log-on-initialized-type = Manual : au redémarrage d'«PLUGIN_ISAPSERVER», incident « Serveur SmartShield démarré » (#5674)"
+   }
+  ],
+  "7689": [
+   {
+    "fichier": "fichiers-et-scripts/Automatique_mc13-fichiers-scripts.spec.ts",
+    "titre": "[MC13-044 à MC13-048] PermissionsVerifier (#7689) : grille, « Mauvais identifiant », routeur vidé, connexion après F5, remise en état"
+   },
+   {
+    "fichier": "main-courante/Automatique_mc00-prerequis.spec.ts",
+    "titre": "Prérequis - PermissionsVerifier Smart Shield ERP (#7689)"
+   }
+  ],
+  "9011": [
+   {
+    "fichier": "iris/Automatique_mc09-iris.spec.ts",
+    "titre": "[MC09-001 / MC09-002] Incident créé via Iris : la source est le compte connecté ; les activités mentionnent ce compte"
+   }
+  ],
+  "7319": [
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-003 à MC11-005] « Fermer tous les incidents » : intervalle 30 000 ms, un incident fermé toutes les 30 s (#7319)"
+   }
+  ],
+  "8983": [
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-006 / MC11-007] CanBeManual : « Alarme intrusion » = 1 proposé, « Accident autre » = 0 absent (#6963 #8983)"
+   }
+  ],
+  "7722": [
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-008 à MC11-010] [35]-Procédure avec pièce jointe : « Voir la procédure » au clic droit, document accessible et conforme (#7722)"
+   }
+  ],
+  "7721": [
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-011 à MC11-013] [80]-PDF avec pièce jointe : « Voir les informations du site » au clic droit, document accessible et conforme (#7721)"
+   }
+  ],
+  "8089": [
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-014 / MC11-015] Interphone_Central_Disconnection apparenté à plusieurs dossiers : pas de doublon dans la colonne Sources (#8089)"
+   }
+  ],
+  "3032": [
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-016 à MC11-019] Clôture des incidents ; Triggered = 1 : incident créé, source = le capteur, présent dans Situation à l'emplacement du capteur"
+   },
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-020 à MC11-023] DefaultLevel du type = 0 : Triggered = 1 ne crée aucun incident"
+   },
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-024 / MC11-025] Nouveau Sensor, Triggered = 1 : aucun incident déclaré (#8434)"
+   },
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-026 / MC11-027] Incident créé dans IsapReporting avec un capteur actif en enfant : la source affichée est ce capteur (#8811)"
+   }
+  ],
+  "8434": [
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-016 à MC11-019] Clôture des incidents ; Triggered = 1 : incident créé, source = le capteur, présent dans Situation à l'emplacement du capteur"
+   },
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-020 à MC11-023] DefaultLevel du type = 0 : Triggered = 1 ne crée aucun incident"
+   },
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-024 / MC11-025] Nouveau Sensor, Triggered = 1 : aucun incident déclaré (#8434)"
+   },
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-024 / MC11-025] Nouveau Sensor, Triggered = 1 : aucun incident déclaré (#8434)"
+   },
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-026 / MC11-027] Incident créé dans IsapReporting avec un capteur actif en enfant : la source affichée est ce capteur (#8811)"
+   }
+  ],
+  "8811": [
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-016 à MC11-019] Clôture des incidents ; Triggered = 1 : incident créé, source = le capteur, présent dans Situation à l'emplacement du capteur"
+   },
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-020 à MC11-023] DefaultLevel du type = 0 : Triggered = 1 ne crée aucun incident"
+   },
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-024 / MC11-025] Nouveau Sensor, Triggered = 1 : aucun incident déclaré (#8434)"
+   },
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-026 / MC11-027] Incident créé dans IsapReporting avec un capteur actif en enfant : la source affichée est ce capteur (#8811)"
+   },
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-026 / MC11-027] Incident créé dans IsapReporting avec un capteur actif en enfant : la source affichée est ce capteur (#8811)"
+   }
+  ],
+  "8477": [
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-028 à MC11-030] Historique de plusieurs entités (liste d'entityID séparés par des virgules) (#8477)"
+   }
+  ],
+  "8478": [
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-031 à MC11-033] Position ressources sur carte : MobilityPlugin.py, modification des précisions min / max sans anomalie (#8478)"
+   }
+  ],
+  "8583": [
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-034 à MC11-044] Bus A_Events, testisapserver + msgon ; sensor déplacé A → A1 → A2 → B : deleterelation sans deleteentity, sauf vers B ; aucun doublon"
+   }
+  ],
+  "8584": [
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-034 à MC11-044] Bus A_Events, testisapserver + msgon ; sensor déplacé A → A1 → A2 → B : deleterelation sans deleteentity, sauf vers B ; aucun doublon"
+   }
+  ],
+  "7471": [
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-034 à MC11-044] Bus A_Events, testisapserver + msgon ; sensor déplacé A → A1 → A2 → B : deleterelation sans deleteentity, sauf vers B ; aucun doublon"
+   }
+  ],
+  "7899": [
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-045 à MC11-050] Purge Incident;0 : incidents fermés purgés, Ouvert / Pris en compte non archivés (#7899) ; PJ conservées (#8037)"
+   },
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-060 à MC11-065] Nouveaux incidents, purge Incident;0 : lignes archivées affichées avec colonne Archivé + option ; Ouvert / Pris en compte non archivés (#6498 #7899)"
+   }
+  ],
+  "8037": [
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-045 à MC11-050] Purge Incident;0 : incidents fermés purgés, Ouvert / Pris en compte non archivés (#7899) ; PJ conservées (#8037)"
+   }
+  ],
+  "6261": [
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-051 à MC11-059] Reorgs / runstats : AutoPurgeActivated, ExecuteStats, AutoPurgeHour ; log runStatsTable ; incidents archivés, hors 2D et IHM ; variante PoliceLog;0 (#6261 #6735)"
+   }
+  ],
+  "6735": [
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-051 à MC11-059] Reorgs / runstats : AutoPurgeActivated, ExecuteStats, AutoPurgeHour ; log runStatsTable ; incidents archivés, hors 2D et IHM ; variante PoliceLog;0 (#6261 #6735)"
+   }
+  ],
+  "6498": [
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-060 à MC11-065] Nouveaux incidents, purge Incident;0 : lignes archivées affichées avec colonne Archivé + option ; Ouvert / Pris en compte non archivés (#6498 #7899)"
+   }
+  ],
+  "6163": [
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-066 / MC11-067] time-to-live et incident-auto-close-acknowlEdge : fermeture automatique des incidents non acquittés / pris en compte (#6163 #6403 #6404)"
+   }
+  ],
+  "6403": [
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-066 / MC11-067] time-to-live et incident-auto-close-acknowlEdge : fermeture automatique des incidents non acquittés / pris en compte (#6163 #6403 #6404)"
+   }
+  ],
+  "6404": [
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-066 / MC11-067] time-to-live et incident-auto-close-acknowlEdge : fermeture automatique des incidents non acquittés / pris en compte (#6163 #6403 #6404)"
+   }
+  ],
+  "6458": [
+   {
+    "fichier": "isap-reporting/Automatique_mc11-isap-reporting.spec.ts",
+    "titre": "[MC11-068 à MC11-072] Simulateur ACS (> 1000 évènements), purge SecurityEvent;0 : les évènements purgés n'ont pas tous le même deleted_time (#6458)"
+   }
+  ],
+  "7310": [
+   {
+    "fichier": "main-courante/Automatique_mc01-generaux-connexion.spec.ts",
+    "titre": "[MC01-12] Le message personnalisé (iceMap_connectionPageMessage) s'affiche (#7310)"
+   }
+  ],
+  "4589": [
+   {
+    "fichier": "main-courante/Automatique_mc02-01-presence-elements.spec.ts",
+    "titre": "[MC02-002] Le menu utilisateur affiche Administration, Mode expert, Aide, Déconnexion, Thème, FR/EN, Paramètres avancés (#4589)"
+   }
+  ],
+  "7950": [
+   {
+    "fichier": "main-courante/Automatique_mc02-01c-parametres-avances.spec.ts",
+    "titre": "[MC02-011] Deux mots de passe différents ne provoquent pas de freeze de la page (#7950)"
+   }
+  ],
+  "7933": [
+   {
+    "fichier": "main-courante/Automatique_mc02-01c-parametres-avances.spec.ts",
+    "titre": "[MC02-019] Échanger les colonnes Niveau et Type par drag'n drop (#7933)"
+   }
+  ],
+  "8142": [
+   {
+    "fichier": "main-courante/Automatique_mc02-02-applications.spec.ts",
+    "titre": "[MC02-032] Ajouter une ligne incident contenant un # dans la description (#8142)"
+   },
+   {
+    "fichier": "main-courante/Automatique_mc02-02-applications.spec.ts",
+    "titre": "[MC02-033 / MC02-034] Export CSV de plusieurs lignes : fichier créé, colonnes affichées présentes (#8142)"
+   },
+   {
+    "fichier": "main-courante/Automatique_mc02-02-applications.spec.ts",
+    "titre": "[MC02-035] Le contenu du fichier exporté est lisible, sans erreur d'affichage (#8142)"
+   }
+  ],
+  "8638": [
+   {
+    "fichier": "main-courante/Automatique_mc02-02-applications.spec.ts",
+    "titre": "[MC02-040 / MC02-041] Le sélecteur propose 10/25/50, pas 100/200/500 (#8638)"
+   }
+  ],
+  "8022": [
+   {
+    "fichier": "main-courante/Automatique_mc02-03-mode-lecture.spec.ts",
+    "titre": "[MC02-056] En Mode lecture, la page de détail reste non éditable (#8022)"
+   }
+  ],
+  "7846": [
+   {
+    "fichier": "main-courante/Automatique_mc02-04-options-affichage.spec.ts",
+    "titre": "[MC02-068] Le menu Options présente les options générales et d'affichage (#7846)"
+   }
+  ],
+  "7882": [
+   {
+    "fichier": "main-courante/Automatique_mc02-04-options-affichage.spec.ts",
+    "titre": "[MC02-071 à MC02-073] Option « Mettre une position » : position initiale, adresse vide puis mise à jour (#7882 #7907)"
+   }
+  ],
+  "7907": [
+   {
+    "fichier": "main-courante/Automatique_mc02-04-options-affichage.spec.ts",
+    "titre": "[MC02-071 à MC02-073] Option « Mettre une position » : position initiale, adresse vide puis mise à jour (#7882 #7907)"
+   }
+  ],
+  "8855": [
+   {
+    "fichier": "main-courante/Automatique_mc02-05-comportement-lignes.spec.ts",
+    "titre": "[MC02-086] Une vidéo uploadée est accessible depuis le détail (#8855)"
+   }
+  ],
+  "8686": [
+   {
+    "fichier": "main-courante/Automatique_mc02-05-comportement-lignes.spec.ts",
+    "titre": "[MC02-087] La pièce jointe est téléchargeable (#8686)"
+   }
+  ],
+  "7927": [
+   {
+    "fichier": "main-courante/Automatique_mc02-05-comportement-lignes.spec.ts",
+    "titre": "[MC02-101] Sélectionner une valeur l'ajoute dans « Pris en charge par » (#7927)"
+   }
+  ],
+  "8632": [
+   {
+    "fichier": "main-courante/Automatique_mc02-05-comportement-lignes.spec.ts",
+    "titre": "[MC02-099] Par défaut, la colonne Relevé par est vide (#8632)"
+   },
+   {
+    "fichier": "main-courante/Automatique_mc02-09-bandeau-superieur.spec.ts",
+    "titre": "[MC02-146 / MC02-147] Le filtre Lieux liste les lieux, dont « Incident sans lieu » (#8632)"
+   },
+   {
+    "fichier": "main-courante/Automatique_mc02-09-bandeau-superieur.spec.ts",
+    "titre": "[MC02-148] Le choix « Incident sans lieu » perdure après fermeture du filtre (#8632)"
+   }
+  ],
+  "6865": [
+   {
+    "fichier": "main-courante/Automatique_mc02-05-comportement-lignes.spec.ts",
+    "titre": "[MC02-105] Supprimer une valeur de Relevé par / Pris en charge par / Lieu affiche la confirmation (#6865)"
+   }
+  ],
+  "7633": [
+   {
+    "fichier": "main-courante/Automatique_mc02-06-parametres-incidents.spec.ts",
+    "titre": "[MC02-117] iceMap_newIncidentNoLevel = true : incident créé sans niveau de gravité (#7633)"
+   }
+  ],
+  "7883": [
+   {
+    "fichier": "main-courante/Automatique_mc02-06-parametres-incidents.spec.ts",
+    "titre": "[MC02-118] iceMap_mandatoryFieldsOpenIncident : le formulaire affiche les champs obligatoires (#7883 #8001)"
+   }
+  ],
+  "8001": [
+   {
+    "fichier": "main-courante/Automatique_mc02-06-parametres-incidents.spec.ts",
+    "titre": "[MC02-118] iceMap_mandatoryFieldsOpenIncident : le formulaire affiche les champs obligatoires (#7883 #8001)"
+   }
+  ],
+  "8794": [
+   {
+    "fichier": "main-courante/Automatique_mc02-06-parametres-incidents.spec.ts",
+    "titre": "[MC02-119] Création via formulaire possible avec « Détail au clic » activé (#8794)"
+   }
+  ],
+  "7608": [
+   {
+    "fichier": "main-courante/Automatique_mc02-06-parametres-incidents.spec.ts",
+    "titre": "[MC02-120] iceMap_maxDelayToModify = 10 : incident non modifiable après 10 minutes (#7608)"
+   }
+  ],
+  "8303": [
+   {
+    "fichier": "main-courante/Automatique_mc02-06-parametres-incidents.spec.ts",
+    "titre": "[MC02-121] Clic droit → « Voir dans l'application Situation » ouvre correctement Situation (#8303)"
+   }
+  ],
+  "8760": [
+   {
+    "fichier": "main-courante/Automatique_mc02-06-parametres-incidents.spec.ts",
+    "titre": "[MC02-122 / MC02-123] Enter dans la Description d'un incident valide simplement la saisie"
+   },
+   {
+    "fichier": "main-courante/Automatique_mc02-06-parametres-incidents.spec.ts",
+    "titre": "[MC02-124 / MC02-125] Enter hors de tout champ crée une mention, à chaque appui"
+   }
+  ],
+  "7801": [
+   {
+    "fichier": "main-courante/Automatique_mc02-07-session-timeout.spec.ts",
+    "titre": "[MC02-126] Timeout par défaut (15 s) : bascule de session vers le 2e navigateur (#7801)"
+   }
+  ],
+  "7924": [
+   {
+    "fichier": "main-courante/Automatique_mc02-08-lieux-adresse.spec.ts",
+    "titre": "[MC02-128] Création de Lieu / Relevé par désactivée : aucune création à la volée, message d'erreur (#7924)"
+   }
+  ],
+  "8164": [
+   {
+    "fichier": "main-courante/Automatique_mc02-08-lieux-adresse.spec.ts",
+    "titre": "[MC02-131] iceMap_addressManagerFieldLinked = ['CustomReport1'] : « circonstance » devient un champ d'adresse (#8164)"
+   }
+  ],
+  "7969": [
+   {
+    "fichier": "main-courante/Automatique_mc02-09-bandeau-superieur.spec.ts",
+    "titre": "[MC02-155] Afficher + Trier par + Lieux + Niveau cumulés : aucune incohérence (#7969)"
+   }
+  ],
+  "7862": [
+   {
+    "fichier": "main-courante/Automatique_mc02-10-bulletin.spec.ts",
+    "titre": "[MC02-159] « Trier par » Heure / Niveau présent et fonctionnel (#7862)"
+   }
+  ],
+  "7857": [
+   {
+    "fichier": "main-courante/Automatique_mc02-10-bulletin.spec.ts",
+    "titre": "[MC02-177 / MC02-178] 3 incidents niveau ≥ 2, F5 : option décochée ; baisse de niveau puis bascule actuel / max (#7857)"
+   }
+  ],
+  "7461": [
+   {
+    "fichier": "main-courante/Automatique_mc02-10-bulletin.spec.ts",
+    "titre": "[MC02-184] PDF exportés : logo Egidium lisible, aucun élément illisible, « Pris en charge par » sans bug graphique (#7461)"
+   }
+  ],
+  "7639": [
+   {
+    "fichier": "main-courante/Automatique_mc02-11-activites.spec.ts",
+    "titre": "[MC02-189] 3 modifications successives du niveau d'un incident apparaissent dans ses Activités (#7639)"
+   }
+  ],
+  "5474": [
+   {
+    "fichier": "multi-utilisateurs/Automatique_mc12-multi-utilisateurs.spec.ts",
+    "titre": "[MC12-041 à MC12-045] LDAP : droits par défaut des nouveaux utilisateurs (user : pas de Stats ; admin : Stats) (#5474)"
+   }
+  ],
+  "7778": [
+   {
+    "fichier": "multi-utilisateurs/Automatique_mc12-multi-utilisateurs.spec.ts",
+    "titre": "[MC12-049 / MC12-050] Macro-objet créé dans IsapReporting : présent à la position géo paramétrée dans la Situation (#7778)"
+   }
+  ],
+  "7777": [
+   {
+    "fichier": "situation/Automatique_mc04-situation.spec.ts",
+    "titre": "[MC04-004] Les StandardAccess sont disponibles dans le menu des calques ressource (#7777)"
+   }
+  ],
+  "7295": [
+   {
+    "fichier": "situation/Automatique_mc04-situation.spec.ts",
+    "titre": "[MC04-006] Les incidents créés au cours des tests sont visibles dans la Situation (#7295)"
+   },
+   {
+    "fichier": "situation/Automatique_mc04-situation.spec.ts",
+    "titre": "[MC04-023 à MC04-026] Geofencing : zones I_ / O_, plugin Python, alarmes entrée / sortie (#7126 #7295)"
+   }
+  ],
+  "8786": [
+   {
+    "fichier": "situation/Automatique_mc04-situation.spec.ts",
+    "titre": "[MC04-008] Rechercher une adresse recentre la Situation sur l'adresse (#8786)"
+   },
+   {
+    "fichier": "situation/Automatique_mc04-situation.spec.ts",
+    "titre": "[MC04-009] Depuis une autre ville, les lieux locaux sont proposés en priorité (#8786)"
+   }
+  ],
+  "8423": [
+   {
+    "fichier": "situation/Automatique_mc04-situation.spec.ts",
+    "titre": "[MC04-017 à MC04-019] En plein écran, une tâche planifiée créée apparaît : bandeau inférieur et menu Tâches à jour (#8423)"
+   }
+  ],
+  "7126": [
+   {
+    "fichier": "situation/Automatique_mc04-situation.spec.ts",
+    "titre": "[MC04-023 à MC04-026] Geofencing : zones I_ / O_, plugin Python, alarmes entrée / sortie (#7126 #7295)"
+   }
+  ],
+  "7429": [
+   {
+    "fichier": "situation/Automatique_mc04-situation.spec.ts",
+    "titre": "[MC04-027 / MC04-028] Clic droit sur un capteur : commandes (vision vidéo, nom, simuler une alarme) (#7429)"
+   }
+  ],
+  "8788": [
+   {
+    "fichier": "situation/Automatique_mc04-situation.spec.ts",
+    "titre": "[MC04-036 à MC04-038] Vidéo dans un nouvel onglet : glisser-déposer d'une caméra sur une tuile vide puis remplie (#8788)"
+   }
+  ],
+  "7433": [
+   {
+    "fichier": "situation/Automatique_mc04-situation.spec.ts",
+    "titre": "[MC04-048] Les capteurs sont présents dans le synoptique 2D (#7433)"
+   }
+  ],
+  "7766": [
+   {
+    "fichier": "situation/Automatique_mc04-situation.spec.ts",
+    "titre": "[MC04-050 à MC04-053] Rapport flottant SensorsReport : config, FormattedDataProvider.py, Ctrl+F5, états des capteurs en temps réel (#7766)"
+   }
+  ],
+  "7365": [
+   {
+    "fichier": "situation/Automatique_mc04-situation.spec.ts",
+    "titre": "[MC04-054 à MC04-060] Comptage sur zone 2D : zone « Hall », Counting.Density.Update2DZones, instance [59], position 3D, couleur selon la densité (#7365 #7272)"
+   }
+  ],
+  "7272": [
+   {
+    "fichier": "situation/Automatique_mc04-situation.spec.ts",
+    "titre": "[MC04-054 à MC04-060] Comptage sur zone 2D : zone « Hall », Counting.Density.Update2DZones, instance [59], position 3D, couleur selon la densité (#7365 #7272)"
+   }
+  ],
+  "7930": [
+   {
+    "fichier": "situation/Automatique_mc04-situation.spec.ts",
+    "titre": "[MC04-061 à MC04-065] Geolayers : fichier .cisap, testisapserver, calques visibles et fonctionnels (#7930 #8735)"
+   }
+  ],
+  "8735": [
+   {
+    "fichier": "situation/Automatique_mc04-situation.spec.ts",
+    "titre": "[MC04-061 à MC04-065] Geolayers : fichier .cisap, testisapserver, calques visibles et fonctionnels (#7930 #8735)"
+   },
+   {
+    "fichier": "situation/Automatique_mc04-situation.spec.ts",
+    "titre": "[MC04-066 / MC04-067] Calque satellite paramétré dans maincourante.config.js : ON / OFF (#8735)"
+   }
+  ],
+  "7809": [
+   {
+    "fichier": "situation/Automatique_mc04-situation.spec.ts",
+    "titre": "[MC04-069 / MC04-070] iceMap_consignesEnableZone : True = calque Zone présent, false = absent (#7809)"
+   }
+  ],
+  "8271": [
+   {
+    "fichier": "situation/Automatique_mc04-situation.spec.ts",
+    "titre": "[MC04-071 à MC04-073] iceMap_enableBuzzer = True : alarme sonore à la création d'incident capteur, arrêtée par une action dans Situation (#8271)"
+   }
+  ],
+  "7954": [
+   {
+    "fichier": "situation/Automatique_mc04-situation.spec.ts",
+    "titre": "[MC04-074] Au dézoom les labels disparaissent et sont regroupés par catégorie ; ils réapparaissent au zoom initial (#7954)"
+   }
+  ],
+  "8007": [
+   {
+    "fichier": "statistiques/Automatique_mc03-statistiques.spec.ts",
+    "titre": "[MC03-001] La page d'accueil des Statistiques présente bandeau, compteurs et sections (#8007 #8035)"
+   }
+  ],
+  "8035": [
+   {
+    "fichier": "statistiques/Automatique_mc03-statistiques.spec.ts",
+    "titre": "[MC03-001] La page d'accueil des Statistiques présente bandeau, compteurs et sections (#8007 #8035)"
+   }
+  ],
+  "7855": [
+   {
+    "fichier": "statistiques/Automatique_mc03-statistiques.spec.ts",
+    "titre": "[MC03-015] Simuler des incidents via SimulationMainCourante.py --auto_users 8 (#7855 #6178 #7918)"
+   }
+  ],
+  "6178": [
+   {
+    "fichier": "statistiques/Automatique_mc03-statistiques.spec.ts",
+    "titre": "[MC03-015] Simuler des incidents via SimulationMainCourante.py --auto_users 8 (#7855 #6178 #7918)"
+   }
+  ],
+  "7918": [
+   {
+    "fichier": "statistiques/Automatique_mc03-statistiques.spec.ts",
+    "titre": "[MC03-015] Simuler des incidents via SimulationMainCourante.py --auto_users 8 (#7855 #6178 #7918)"
+   }
+  ],
+  "7911": [
+   {
+    "fichier": "statistiques/Automatique_mc03-statistiques.spec.ts",
+    "titre": "[MC03-021 / MC03-022] newIncidentNoLevel = True : un incident sans niveau s'affiche correctement dans Stats"
+   }
+  ],
+  "6863": [
+   {
+    "fichier": "statistiques/Automatique_mc03-statistiques.spec.ts",
+    "titre": "[MC03-028 / MC03-029] Période = Mois, Granularité = Jour, Groupé par = Niveau : options conservées au mois suivant"
+   },
+   {
+    "fichier": "statistiques/Automatique_mc03-statistiques.spec.ts",
+    "titre": "[MC03-040 / MC03-041] Période = Mois, Granularité = Jour, Groupé par = Niveau : persistance au mois suivant (#6863)"
+   }
+  ],
+  "7998": [
+   {
+    "fichier": "statistiques/Automatique_mc03-statistiques.spec.ts",
+    "titre": "[MC03-030] L'export PDF contient titres, légendes et valeurs identiques à l'onglet"
+   },
+   {
+    "fichier": "statistiques/Automatique_mc03-statistiques.spec.ts",
+    "titre": "[MC03-031] Aucune anomalie visuelle dans le PDF (superpositions, illisibilité)"
+   },
+   {
+    "fichier": "statistiques/Automatique_mc03-statistiques.spec.ts",
+    "titre": "[MC03-042] L'export PDF contient titres, légendes et valeurs identiques (#7998)"
+   }
+  ],
+  "1234": [
+   {
+    "fichier": "video/Automatique_mc05-video.spec.ts",
+    "titre": "[MC05-003] Mode Live : mur d'images de 9 tuiles (#1234)"
+   }
+  ],
+  "8887": [
+   {
+    "fichier": "video/Automatique_mc05-video.spec.ts",
+    "titre": "[MC05-015] Molette avant = zoom, arrière = dézoom (PTZ)"
+   },
+   {
+    "fichier": "video/Automatique_mc05-video.spec.ts",
+    "titre": "[MC05-016] Touches + / - du clavier : même comportement que la molette"
+   },
+   {
+    "fichier": "video/Automatique_mc05-video.spec.ts",
+    "titre": "[MC05-017] Les flèches déplacent la caméra"
+   },
+   {
+    "fichier": "video/Automatique_mc05-video.spec.ts",
+    "titre": "[MC05-018 / MC05-019] Saisir l'ID d'une autre caméra actualise l'interface ; Entrée affiche cette caméra"
+   },
+   {
+    "fichier": "video/Automatique_mc05-video.spec.ts",
+    "titre": "[MC05-020] Un ID inexistant affiche un message d'erreur"
+   },
+   {
+    "fichier": "video/Automatique_mc05-video.spec.ts",
+    "titre": "[MC05-021] Touche Suppr sur une tuile active : flux retiré, tuile vide"
+   },
+   {
+    "fichier": "video/Automatique_mc05-video.spec.ts",
+    "titre": "[MC05-022 à MC05-025] Presets « P<n> » : positionnement sur 3 presets ; preset inexistant sans crash"
+   }
+  ],
+  "6424": [
+   {
+    "fichier": "administration/Automatique_mc10c-sdk-python.spec.ts",
+    "titre": "[MC10-117 à MC10-123] Tâche Windows « Exports incidents » (+5 min, python ExportIncidents.py) : présente, exécution manuelle, CSV créé, suppression"
+   }
+  ],
+  "7095": [
+   {
+    "fichier": "administration/Automatique_mc10c-sdk-python.spec.ts",
+    "titre": "[MC10-133 à MC10-137] CreatePoliceLog.py : mention « Name » puis « Test1 » après modification du script (#7095)"
+   }
+  ],
+  "6719": [
+   {
+    "fichier": "administration/Automatique_mc10c-sdk-python.spec.ts",
+    "titre": "[MC10-124 à MC10-128] Incidents avec pièces jointes ; ExportAttachedDocuments.py ; PJ exportées dans …\\data\\Export"
+   },
+   {
+    "fichier": "administration/Automatique_mc10c-sdk-python.spec.ts",
+    "titre": "[MC10-129 à MC10-132] Purge (grille Incident;0), 2 incidents + PJ purgés, export_archived=True : PJ archivées exportées"
+   }
+  ]
+ }
+}

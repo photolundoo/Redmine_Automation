@@ -24,6 +24,9 @@
 | `analyses/<version>/archives/` | Analyses remplacées lors d'une reprise | Script uniquement ; l'agent ne les lit pas |
 | `analyses/<version>/synthese.md` | Vue d'ensemble et ordre de campagne | Script uniquement |
 | `analyses/<version>/journal.md` | Une ligne par action de l'agent | Script, appelé par l'agent |
+| `referentiel/couverture-playwright.md` et `.json` | Fiches et tickets déjà couverts par la campagne Playwright, lus dans le projet Playwright | Script uniquement (`python analyses.py couverture`) |
+| `referentiel/correspondance-playwright.md` | Rattachements imposés entre groupes de tests Playwright et fiches du plan | Humain |
+| `export/<version>/campagne.json` | Analyses conformes exportées pour le projet de campagne Playwright | Script uniquement |
 
 ## Sources de vérité
 
@@ -34,7 +37,7 @@
 ## Interdits
 
 1. Ne jamais écrire dans Redmine. Ne jamais appeler l'API Redmine autrement que par `recuperer_tickets.py`.
-2. Ne jamais modifier à la main `tickets/`, `referentiel/plans/` ni `synthese.md` : ils sont régénérés par les scripts.
+2. Ne jamais modifier à la main `tickets/`, `referentiel/plans/`, `referentiel/couverture-playwright.*`, `synthese.md` ni `export/` : ils sont régénérés par les scripts.
 3. Ne jamais modifier les plans de validation Word.
 4. Ne jamais ouvrir, afficher ni recopier le contenu de `.env`.
 5. Ne jamais recopier d'identifiant ni de mot de passe lu dans un ticket ou un plan. Les remplacer par un repère explicite, par exemple `<MDP_LOCALADMIN>` ou `<IDENTIFIANT_SMTP>`.

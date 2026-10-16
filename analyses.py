@@ -1020,6 +1020,20 @@ def rattacher(groupe, fiches):
     return None, None
 
 
+def fiche_imposee(texte, fiches):
+    """Fiche du plan désignée dans correspondance-playwright.md : texte exact, ou même identifiant et titre proche."""
+    exacte = next((f for f in fiches if normaliser(f["fiche"]) == normaliser(texte)), None)
+    if exacte:
+        return exacte
+    ident = re.match(rf"\s*({MOTIF_ID})\b", texte)
+    if not ident:
+        return None
+    mots = jetons(texte[ident.end():])
+    proches = [(len(mots & (jetons(f["titre"]) | jetons(f["intitule"]))), f) for f in fiches if f["identifiant"] == ident.group(1)]
+    proches = [p for p in proches if p[0]]
+    return max(proches, key=lambda p: p[0])[1] if proches else None
+
+
 def couverture(version, depuis=None):
     """Génère referentiel/couverture-playwright.json et .md à partir du projet de campagne Playwright."""
     tests = tests_du_rapport(charger_rapport(depuis))
@@ -1039,7 +1053,7 @@ def couverture(version, depuis=None):
         if groupe not in groupes:
             cle = normaliser(groupe)
             if cle in imposes:
-                fiche = next((f for f in fiches if normaliser(f["fiche"]) == normaliser(imposes[cle])), None)
+                fiche = fiche_imposee(imposes[cle], fiches) if imposes[cle] else None
                 groupes[groupe] = (fiche, "imposé" if imposes[cle] else "aucune fiche", imposes[cle])
             else:
                 fiche, mode = rattacher(groupe, fiches)
@@ -1076,13 +1090,21 @@ def couverture(version, depuis=None):
             remarque = f"numérotation différente du plan ({fiche['identifiant']})"
         if mode == "identifiant seul":
             remarque = "à confirmer dans correspondance-playwright.md"
-        if not fiche and mode != "aucune fiche":
+        if not fiche and mode == "imposé":
+            remarque = (f"fiche imposée « {impose} » introuvable dans le plan 01 : la recopier depuis la liste "
+                        "« Fiches du plan 01 » ci-dessous, ou écrire « Aucune »")
+        elif not fiche and mode != "aucune fiche":
             remarque = "non rattaché : préciser la fiche dans correspondance-playwright.md"
         lignes.append(f"| {cellule(groupe)} | {cellule(fiche['fiche'] if fiche else '—')} | {mode or '—'} | {remarque} |")
+    lignes += ["", "## Fiches du plan 01", "",
+               "Désignations exactes, à recopier telles quelles dans `correspondance-playwright.md`.", "",
+               "| Fiche | Titre de section | Couverte |", "|---|---|---|"]
+    for f in fiches:
+        lignes.append(f"| {cellule(f['fiche'])} | {cellule(f['intitule'])} | {'oui' if f['fiche'] in par_fiche else 'non'} |")
     COUVERTURE_MD.write_text("\n".join(lignes) + "\n", encoding="utf-8")
     print(f"Couverture écrite : {COUVERTURE_MD.relative_to(DOSSIER)} ({len(tests)} tests, {len(par_fiche)} fiches, "
           f"{len(par_ticket)} tickets cités)")
-    ecarts = [g for g, (f, m, _) in groupes.items() if not f and m != "aucune fiche" or m == "identifiant seul"]
+    ecarts = [g for g, (f, m, _) in groupes.items() if (not f and m != "aucune fiche") or m == "identifiant seul"]
     if ecarts:
         print("Groupes à rattacher ou confirmer : " + " ; ".join(sorted(ecarts)))
 

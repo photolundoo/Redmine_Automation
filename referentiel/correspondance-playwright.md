@@ -6,7 +6,7 @@ Colonne « Fiche du plan » : la fiche telle qu'elle figure dans le plan (`ID �
 
 | Groupe Playwright | Fiche du plan | Remarque |
 |---|---|---|
-| MC09 - Iris (#9011) | Aucune | Le plan 01 n'a pas de fiche Iris ; MC09 y est la fiche Planification. |
+| MC09 - Iris (#9011) | Aucune | Aucune fiche |
 | MC02 - Bandeau inférieur de la Main Courante | MC02 — Onglet Main Courante | identifiant seul | à confirmer dans correspondance-playwright.md |
 | MC02 - Bandeau supérieur | MC02 — Onglet Main Courante | identifiant seul | à confirmer dans correspondance-playwright.md |
 | MC02 - Lieux, Intervenants & Champs adresse | MC02 — Onglet Main Courante | identifiant seul | à confirmer dans correspondance-playwright.md |
@@ -18,11 +18,11 @@ Colonne « Fiche du plan » : la fiche telle qu'elle figure dans le plan (`ID �
 | MC02 - Session & Timeout Multi | MC02 — Onglet Main Courante | identifiant seul | à confirmer dans correspondance-playwright.md |
 | MC02 - Traduction de l'interface | MC02 — Onglet Main Courante | identifiant seul | à confirmer dans correspondance-playwright.md ||
 | MC09 - Iris (#9011) | — | aucune fiche |  |
-| MC10 - SDK Python | — | — | non rattaché : préciser la fiche dans correspondance-playwright.md |
+| MC10 - SDK Python | — | — | MC10 — Export de données |
 | MC13 - IsapReportingServer | MC13 — Manipulation des fichiers | identifiant seul | à confirmer dans correspondance-playwright.md |
 | MC13 - Log démarrage serveur et PermissionsVerifier | MC13 — Manipulation des fichiers | identifiant seul | à confirmer dans correspondance-playwright.md |
 | MC13 - Perte de connexion (#8739) | MC13 — Manipulation des fichiers | identifiant seul | à confirmer dans correspondance-playwright.md |
-| MC13 - Python SDK | MC13 — Manipulation des fichiers | identifiant seul | à confirmer dans correspondance-playwright.md |
+| MC13 - Python SDK | MC13 — Manipulation des fichiers | identifiant seul | MC10 — Export de données  |
 | MC13 - Test unitaire WebService (#8366) | MC13 — Manipulation des fichiers | identifiant seul | à confirmer dans correspondance-playwright.md |
 | MC13 - TestIsapServer (#8570) | MC13 — Manipulation des fichiers | identifiant seul | à confirmer dans correspondance-playwright.md |
 

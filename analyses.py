@@ -12,12 +12,13 @@ Utilisation (depuis le dossier Redmine_Automation) :
                                                   ajoute une ligne au journal
     python analyses.py synthese                   régénère analyses/<version>/synthese.md
     python analyses.py reparer-decisions          remet decisions.md au format attendu (numéros en #N, colonne « Appliquée le »)
-    python analyses.py preparer                   récupère les tickets, convertit les plans, puis affiche l'état
+    python analyses.py preparer [--lot N]         récupère les tickets, convertit les plans, fixe le lot du passage, puis affiche l'état
+    python analyses.py etat [--max N]             idem etat, limité aux N premiers tickets de la liste
     python analyses.py reprendre --ticket N       archive l'analyse du ticket avant de la refaire entièrement
     python analyses.py appliquer --ticket N       date les décisions appliquées pour ce ticket, après contrôle
 
 Fichiers techniques tenus par le script (ne pas modifier) :
-    analyses/<version>/.preparation     date de la dernière préparation réussie
+    analyses/<version>/.preparation     date de la dernière préparation, lot du passage et tickets déjà comptés
     analyses/<version>/.reprises.json   analyses signalées à reprendre entièrement
 
 Option commune :
@@ -370,15 +371,47 @@ def chemin_preparation(version):
     return ANALYSES / version / ".preparation"
 
 
-def exiger_preparation(version):
-    chemin = chemin_preparation(version)
+def lire_preparation(version):
+    """{"date": datetime, "lot": int ou None, "tickets": [numéros comptés dans le lot]} ou None."""
     try:
-        date = datetime.fromisoformat(chemin.read_text(encoding="utf-8").strip())
-    except (OSError, ValueError):
-        date = None
-    if not date or (datetime.now() - date).total_seconds() > DUREE_PREPARATION_H * 3600:
+        brut = chemin_preparation(version).read_text(encoding="utf-8").strip()
+    except OSError:
+        return None
+    try:
+        donnees = json.loads(brut)
+        return {"date": datetime.fromisoformat(donnees["date"]), "lot": donnees.get("lot"),
+                "tickets": donnees.get("tickets", [])}
+    except (ValueError, KeyError, TypeError):
+        try:
+            return {"date": datetime.fromisoformat(brut), "lot": None, "tickets": []}
+        except ValueError:
+            return None
+
+
+def ecrire_preparation(version, preparation):
+    chemin = chemin_preparation(version)
+    chemin.parent.mkdir(parents=True, exist_ok=True)
+    chemin.write_text(json.dumps({"date": preparation["date"].isoformat(timespec="seconds"),
+                                  "lot": preparation["lot"], "tickets": preparation["tickets"]}),
+                      encoding="utf-8")
+
+
+def exiger_preparation(version, numero=None):
+    """Refuse si la préparation est absente ou ancienne ; compte le ticket dans le lot et refuse au-delà."""
+    preparation = lire_preparation(version)
+    if not preparation or (datetime.now() - preparation["date"]).total_seconds() > DUREE_PREPARATION_H * 3600:
         sys.exit(f"Préparation absente ou datant de plus de {DUREE_PREPARATION_H} h : "
-                 "lancer d'abord python analyses.py preparer (étape 0), puis reprendre.")
+                 "lancer d'abord python analyses.py preparer --lot N (étape 0), puis reprendre.")
+    if numero is None or numero in preparation["tickets"]:
+        return
+    lot = preparation["lot"]
+    if lot and len(preparation["tickets"]) >= lot:
+        sys.exit(f"Lot atteint : {lot} ticket(s) traité(s) depuis la préparation du "
+                 f"{preparation['date'].strftime('%d/%m/%Y %H:%M')} ({', '.join('#' + str(n) for n in preparation['tickets'])}). "
+                 f"Le ticket #{numero} n'est pas traité pendant ce passage : passer à l'étape 3 "
+                 "(python analyses.py verifier, puis python analyses.py synthese) et s'arrêter.")
+    preparation["tickets"].append(numero)
+    ecrire_preparation(version, preparation)
 
 
 def lire_reprises(version):
@@ -501,7 +534,7 @@ def verifier_analyse(version, numero, decisions):
 # Commandes
 # --------------------------------------------------------------------------
 
-def etat(version):
+def etat(version, maximum=None):
     numeros = selection_courante(version)
     dossier_analyses = ANALYSES / version
     conforme, decisions = lire_decisions(version)
@@ -547,8 +580,10 @@ def etat(version):
     print()
     if a_faire:
         print("À analyser, dans cet ordre (numéro | Fonction | motif | sujet) :")
-        for ticket, motif in a_faire:
+        for ticket, motif in a_faire[:maximum] if maximum else a_faire:
             print(f"  {ticket['id']} | {ticket['fonction'] or '(vide)'} | {motif} | {ticket['sujet']}")
+        if maximum and len(a_faire) > maximum:
+            print(f"  … et {len(a_faire) - maximum} autre(s).")
     else:
         print("Toutes les analyses sont à jour.")
     if orphelines:
@@ -592,7 +627,7 @@ def nettoyer(texte):
 
 
 def question(version, numero, texte_question, proposition):
-    exiger_preparation(version)
+    exiger_preparation(version, numero)
     if not texte_question or not proposition:
         sys.exit("Préciser --question et --proposition.")
     chemin = chemin_decisions(version)
@@ -610,7 +645,7 @@ def question(version, numero, texte_question, proposition):
 
 
 def journal(version, numero, texte):
-    exiger_preparation(version)
+    exiger_preparation(version, numero)
     if not texte:
         sys.exit("Préciser --texte.")
     chemin = ANALYSES / version / "journal.md"
@@ -637,7 +672,11 @@ def reparer_decisions(version):
     print(f"decisions.md réécrit au format attendu ({len(lignes)} ligne(s) conservée(s), décisions intactes).")
 
 
-def preparer(version_demandee):
+LOT_PAR_DEFAUT = 8
+
+
+def preparer(version_demandee, lot=None):
+    lot = lot or LOT_PAR_DEFAUT
     for script in ("recuperer_tickets.py", "convertir_plans.py"):
         print(f"=== {script} ===")
         resultat = subprocess.run([sys.executable, str(DOSSIER / script)], cwd=DOSSIER)
@@ -647,17 +686,18 @@ def preparer(version_demandee):
             print(f"Échec de {script} : poursuite avec les plans déjà convertis.")
         print()
     version = choisir_version(version_demandee)
-    chemin = chemin_preparation(version)
-    chemin.parent.mkdir(parents=True, exist_ok=True)
-    chemin.write_text(datetime.now().isoformat(timespec="seconds"), encoding="utf-8")
+    ecrire_preparation(version, {"date": datetime.now(), "lot": lot, "tickets": []})
     print("=== état ===")
-    etat(version)
+    if lot:
+        print(f"Lot de ce passage : {lot} ticket(s) au plus (décisions, reprises et nouvelles analyses confondues).")
+    etat(version, lot)
 
 
 def reprendre(version, numero):
     chemin = ANALYSES / version / f"{numero}.md"
     if not chemin.exists():
         sys.exit(f"Aucune analyse à reprendre pour #{numero}.")
+    exiger_preparation(version, numero)
     archives = ANALYSES / version / "archives"
     archives.mkdir(parents=True, exist_ok=True)
     cible = archives / f"{numero}_{datetime.now().strftime('%Y%m%d-%H%M%S')}.md"
@@ -669,7 +709,7 @@ def reprendre(version, numero):
 
 
 def appliquer(version, numero):
-    exiger_preparation(version)
+    exiger_preparation(version, numero)
     chemin = chemin_decisions(version)
     conforme, decisions = lire_decisions(version)
     if not conforme:
@@ -814,16 +854,18 @@ def main():
     analyseur.add_argument("--question", help="question à trancher (commande question)")
     analyseur.add_argument("--proposition", help="proposition de l'agent (commande question)")
     analyseur.add_argument("--texte", help="texte de la ligne de journal (commande journal)")
+    analyseur.add_argument("--lot", type=int, help="nombre maximal de tickets traités pendant le passage (commande preparer)")
+    analyseur.add_argument("--max", type=int, help="nombre de lignes de la liste « À analyser » affichées (commande etat)")
     args = analyseur.parse_args()
     if args.commande == "preparer":
-        preparer(args.version)
+        preparer(args.version, args.lot)
         return
     version = choisir_version(args.version)
 
     if args.commande in ("question", "journal", "reprendre", "appliquer") and not args.ticket:
         sys.exit("Préciser --ticket.")
     if args.commande == "etat":
-        etat(version)
+        etat(version, args.max)
     elif args.commande == "verifier":
         verifier(version, args.ticket)
     elif args.commande == "question":

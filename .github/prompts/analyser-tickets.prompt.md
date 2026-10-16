@@ -26,10 +26,14 @@ Dans la suite, `<version>` désigne ce dossier, par exemple `ISAP-V27.1`, et `<n
 À chaque passage, y compris quand tu reprends un passage interrompu, lance une seule commande :
 
 ```
-python analyses.py preparer
+python analyses.py preparer --lot <lot>
 ```
 
-Elle récupère les tickets, convertit les plans modifiés et affiche l'état. Si la récupération échoue, elle s'arrête : arrête-toi aussi. Sans préparation de moins de 12 heures, les commandes `question`, `journal` et `appliquer` refusent de s'exécuter : ne cherche pas à les contourner, lance `preparer`. Si `decisions.md` n'a pas le format attendu, lance `python analyses.py reparer-decisions`, puis `python analyses.py etat`.
+avec la valeur du paramètre `lot` (8 par défaut ; 1 avec le paramètre `ticket=`). Elle récupère les tickets, convertit les plans modifiés, fixe le lot du passage et affiche l'état. Si la récupération échoue, elle s'arrête : arrête-toi aussi.
+
+Le script tient le compte du lot : `appliquer`, `reprendre`, `question` et `journal` comptent chacun le ticket concerné, et refusent tout nouveau ticket une fois le lot atteint. Ce refus est la condition d'arrêt : passe alors à l'étape 3 et arrête-toi, sans relancer `preparer` pour ouvrir un nouveau lot. Sans préparation de moins de 12 heures, ces mêmes commandes refusent de s'exécuter.
+
+Pour revoir le début de la file sans tout afficher : `python analyses.py etat --max 10`. N'utilise jamais `Select-Object` ni de tube sur la sortie des scripts. Si `decisions.md` n'a pas le format attendu, lance `python analyses.py reparer-decisions`, puis `python analyses.py etat`.
 
 La liste « À analyser » donne l'ordre de traitement : d'abord les décisions à appliquer, puis les analyses à reprendre, puis les nouvelles. Respecte cet ordre.
 
@@ -145,7 +149,7 @@ python analyses.py journal --ticket <n> --texte "analysé — nature du test, fi
 ## Conditions d'arrêt
 
 Passe à l'étape 3 puis arrête-toi dès que :
-- `lot` tickets ont été analysés ;
+- un script refuse un ticket parce que le lot est atteint ;
 - la liste « À analyser » est vide ;
 - deux tickets de suite ne peuvent pas être analysés (fichier absent ou illisible).
 

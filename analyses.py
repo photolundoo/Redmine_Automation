@@ -16,6 +16,10 @@ Utilisation (depuis le dossier Redmine_Automation) :
     python analyses.py reprendre --ticket N       archive l'analyse du ticket avant de la refaire entièrement
     python analyses.py appliquer --ticket N       date les décisions appliquées pour ce ticket, après contrôle
 
+Fichiers techniques tenus par le script (ne pas modifier) :
+    analyses/<version>/.preparation     date de la dernière préparation réussie
+    analyses/<version>/.reprises.json   analyses signalées à reprendre entièrement
+
 Option commune :
     --version ISAP-V27.1   version à traiter ; par défaut, la seule présente dans tickets/
 
@@ -69,14 +73,17 @@ SANS_PROCEDURE = ("Relecture documentaire", "Hors campagne")
 ENTETE_DECISIONS = """# Décisions à prendre — {version}
 
 Remplir la colonne « Décision » avec l'une des formes suivantes, puis relancer `/analyser-tickets` :
-- `valider` : la proposition de l'agent est retenue ;
+- `valider` (ou `validé`, `approuvé`) : la proposition de l'agent est retenue telle quelle. Sans effet si la proposition contient une alternative (« ou », « soit », « à défaut ») : trancher alors avec `fiche :` ou `nouveau plan :` ;
 - `corriger :` suivi de la correction, par exemple `corriger : la procédure doit aussi couvrir le mode Rejeu` ;
 - `fiche :` suivi de la fiche à retenir, par exemple `fiche : MC02 Onglet Main Courante` ;
-- `réanalyser` : l'agent refait l'analyse complète du ticket ;
+- `nouveau plan :` suivi de l'intitulé du plan à créer, par exemple `nouveau plan : Installation serveur` ;
+- `réanalyser`, éventuellement suivi de `:` et d'une consigne : l'agent refait l'analyse complète du ticket ;
 - `hors campagne` : le ticket n'est pas testé dans cette campagne ;
 - `ignorer` : la question est sans objet.
 
-Toute autre formulation (« Approuvé », « OK », texte libre…) n'est pas appliquée par l'agent : elle reste en attente jusqu'à reformulation.
+Toute autre formulation (« OK », « Nouveau Plan » sans intitulé, texte libre…) n'est pas appliquée : elle reste en attente jusqu'à reformulation.
+
+Pour une remarque de relecture sur un ticket sans question, ajouter une ligne : `| #9006 | Relecture | — | corriger : … |  |`.
 
 | Ticket | Question | Proposition de l'agent | Décision | Appliquée le |
 |---|---|---|---|---|
@@ -190,13 +197,16 @@ def lire_decisions(version, avec_ecarts=False):
 
 
 FORMES_DECISION = [
-    ("valider", r"valider"),
+    ("valider", r"valid(?:er|é|ée|e)|approuv(?:er|é|ée)"),
     ("corriger", r"corriger\s*:\s*\S.*"),
     ("fiche", r"fiche\s*:\s*\S.*"),
-    ("réanalyser", r"r[ée]analyser"),
+    ("nouveau plan", r"nouveau plan\s*:\s*\S.*"),
+    ("réanalyser", r"r[ée]analyser(?:\s*:\s*\S.*)?"),
     ("hors campagne", r"hors campagne"),
     ("ignorer", r"ignorer"),
 ]
+
+ALTERNATIVE = re.compile(r"(?i)\b(ou|soit|à défaut|a defaut|sinon)\b")
 
 
 def forme_decision(texte):
@@ -207,12 +217,27 @@ def forme_decision(texte):
     return None
 
 
+def refus_decision(d):
+    """None si la décision peut être appliquée, sinon la raison pour laquelle l'humain doit la reformuler."""
+    forme = forme_decision(d["decision"])
+    if not forme:
+        return "formulation non reconnue"
+    if forme == "valider" and ALTERNATIVE.search(d["proposition"] or ""):
+        return ("« valider » ne tranche pas une proposition qui contient une alternative : "
+                "répondre par « fiche : … » ou « nouveau plan : … »")
+    return None
+
+
+def applicable(d):
+    return bool(d["decision"]) and not d["appliquee"] and refus_decision(d) is None
+
+
 def decisions_a_appliquer(decisions):
-    """Décisions renseignées, non encore appliquées, réparties en (reconnues, non reconnues)."""
+    """Décisions renseignées, non encore appliquées, réparties en (applicables, à reformuler par l'humain)."""
     reconnues, inconnues = [], []
     for d in decisions:
         if d["decision"] and not d["appliquee"]:
-            (reconnues if forme_decision(d["decision"]) else inconnues).append(d)
+            (reconnues if refus_decision(d) is None else inconnues).append(d)
     return reconnues, inconnues
 
 
@@ -235,31 +260,138 @@ def ecarts_journal(version):
 def normaliser(texte):
     texte = unicodedata.normalize("NFKC", texte or "").replace("’", "'").replace("`", "")
     texte = re.sub(r"[«»\"*_]", " ", texte)
+    texte = re.sub(r"\s*[—–]\s*|\s+-\s+", " — ", texte)
     return re.sub(r"\s+", " ", texte).strip().lower()
+
+
+MOTIF_ID = r"[A-Z][A-Z_]*\d+[a-z]?"
+FICHES_SANS_CIBLE = ("À décider", "Aucune")
+
+
+def fiche_sans_cible(fiche):
+    return fiche in FICHES_SANS_CIBLE or fiche.startswith("À créer")
+
+
+def fichier_plan(plan):
+    numero_plan = re.match(r"\s*(\d{2})\b", plan or "")
+    if not numero_plan:
+        return None, None
+    fichiers = sorted((DOSSIER / "referentiel" / "plans").glob(numero_plan.group(1) + "*.md"))
+    return numero_plan.group(1), (fichiers[0] if fichiers else None)
+
+
+def identifiants_du_plan(texte):
+    """Identifiants de fiches déclarés dans le plan (« ID : XXX » ou « [XXX] »)."""
+    return set(re.findall(rf"ID\s*:\s*({MOTIF_ID})\b", texte)) | set(re.findall(rf"\[({MOTIF_ID})\]", texte))
 
 
 def controler_fiche(champs):
     """Vérifie que la fiche cible existe dans le plan cible et que son titre est le bon."""
     plan, fiche = champs.get("Plan cible", ""), champs.get("Fiche cible", "")
-    numero_plan = re.match(r"\s*(\d{2})\b", plan)
-    identifiant = re.match(r"\s*([A-Z][A-Z_]*\d+[a-z]?)\b", fiche)
-    if not numero_plan or not identifiant:
+    if not fiche or fiche_sans_cible(fiche):
         return []
-    fichiers = sorted((DOSSIER / "referentiel" / "plans").glob(numero_plan.group(1) + "*.md"))
-    if not fichiers:
-        return [f"fiche cible : aucun plan {numero_plan.group(1)} dans referentiel/plans/"]
-    texte = fichiers[0].read_text(encoding="utf-8")
+    numero_plan, fichier = fichier_plan(plan)
+    if not numero_plan:
+        return [f"fiche cible « {fiche} » sans plan cible numéroté : indiquer le plan (par exemple « 13 Outils externes »), "
+                "ou mettre « À décider », « À créer » ou « Aucune »"]
+    if not fichier:
+        return [f"fiche cible : aucun plan {numero_plan} dans referentiel/plans/"]
+    texte = fichier.read_text(encoding="utf-8")
+    identifiant = re.match(rf"\s*({MOTIF_ID})\b", fiche)
+    if not identifiant:
+        # Fiche sans identifiant : son titre doit être un titre ou un sous-titre du plan.
+        titres = [normaliser(m) for m in re.findall(r"(?m)^#+\s+(.+)$", texte) + re.findall(r"(?m)^\*\*(.+?)\*\*\s*$", texte)]
+        if not any(normaliser(fiche) == t or normaliser(fiche) in t for t in titres):
+            return [f"fiche cible : « {fiche} » n'est ni un identifiant ni un titre de section de {fichier.name} ; "
+                    "reprendre l'identifiant et le titre, ou le titre de section, tels qu'ils figurent dans le plan"]
+        return []
     positions = [m.start() for m in re.finditer(rf"\b{re.escape(identifiant.group(1))}\b", texte)]
     if not positions:
-        return [f"fiche cible : {identifiant.group(1)} introuvable dans {fichiers[0].name}"]
+        return [f"fiche cible : {identifiant.group(1)} introuvable dans {fichier.name}"]
     titre = re.split(r"\s+[—–-]\s+", fiche, maxsplit=1)
     if len(titre) < 2 or not titre[1].strip():
         return [f"fiche cible : préciser le titre après l'identifiant, par exemple « {identifiant.group(1)} — titre de la fiche »"]
     attendu = normaliser(titre[1])[:40]
     if not any(attendu in normaliser(texte[max(0, p - 400):p + 800]) for p in positions):
         return [f"fiche cible : le titre « {titre[1].strip()} » ne correspond pas à la fiche {identifiant.group(1)} "
-                f"de {fichiers[0].name} ; reprendre l'identifiant et le titre tels qu'ils figurent dans le plan"]
+                f"de {fichier.name} ; reprendre l'identifiant et le titre tels qu'ils figurent dans le plan"]
     return []
+
+
+VERBES_INTEGRATION = re.compile(r"(?i)compl[eèé]t|ajout|int[eèé]gr|rattach")
+
+
+def controler_coherence_fiche(texte, champs):
+    """La fiche cible de la fiche signalétique est celle que désignent les sections 3 et 5."""
+    fiche = champs.get("Fiche cible", "")
+    if not fiche or fiche_sans_cible(fiche):
+        return []
+    erreurs = []
+    integration = section_de(texte, "## 5. Intégration proposée")
+    if normaliser(fiche) not in normaliser(integration):
+        erreurs.append(f"section 5 : la fiche cible « {fiche} » n'y est pas désignée telle quelle ; "
+                       "la section 5 doit nommer la même fiche que la fiche signalétique")
+    _, fichier = fichier_plan(champs.get("Plan cible", ""))
+    if not fichier:
+        return erreurs
+    identifiant = re.match(rf"\s*({MOTIF_ID})\b", fiche)
+    autres = identifiants_du_plan(fichier.read_text(encoding="utf-8")) - {identifiant.group(1) if identifiant else None}
+    for autre in sorted(autres):
+        if re.search(rf"\b{autre}\b", integration):
+            erreurs.append(f"section 5 : la fiche {autre} est citée alors que la fiche cible est « {fiche} »")
+        for phrase in re.split(r"(?<=[.!?])\s+", section_de(texte, "## 3. Comparaison avec l'existant")):
+            if re.search(rf"\b{autre}\b", phrase) and VERBES_INTEGRATION.search(phrase):
+                erreurs.append(f"section 3 : la phrase « {phrase.strip()[:90]} » rattache le ticket à {autre}, "
+                               f"alors que la fiche cible est « {fiche} »")
+    return erreurs
+
+
+def paragraphes_redondants(section):
+    """Paires de paragraphes qui disent pour l'essentiel la même chose."""
+    paragraphes = [p.strip() for p in re.split(r"\n\s*\n", section) if p.strip()]
+    mots = [set(re.findall(r"\w{4,}", normaliser(p))) for p in paragraphes]
+    doublons = []
+    for i in range(len(paragraphes)):
+        for j in range(i + 1, len(paragraphes)):
+            a, b = mots[i], mots[j]
+            if min(len(a), len(b)) >= 10 and len(a & b) / min(len(a), len(b)) >= 0.7:
+                doublons.append((i + 1, j + 1))
+    return doublons
+
+
+# --------------------------------------------------------------------------
+# Fichiers techniques : préparation et reprises
+# --------------------------------------------------------------------------
+
+DUREE_PREPARATION_H = 12
+
+
+def chemin_preparation(version):
+    return ANALYSES / version / ".preparation"
+
+
+def exiger_preparation(version):
+    chemin = chemin_preparation(version)
+    try:
+        date = datetime.fromisoformat(chemin.read_text(encoding="utf-8").strip())
+    except (OSError, ValueError):
+        date = None
+    if not date or (datetime.now() - date).total_seconds() > DUREE_PREPARATION_H * 3600:
+        sys.exit(f"Préparation absente ou datant de plus de {DUREE_PREPARATION_H} h : "
+                 "lancer d'abord python analyses.py preparer (étape 0), puis reprendre.")
+
+
+def lire_reprises(version):
+    try:
+        return json.loads((ANALYSES / version / ".reprises.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
+def ecrire_reprises(version, reprises):
+    chemin = ANALYSES / version / ".reprises.json"
+    chemin.parent.mkdir(parents=True, exist_ok=True)
+    chemin.write_text(json.dumps(reprises, ensure_ascii=False, indent=1, sort_keys=True), encoding="utf-8")
 
 
 # --------------------------------------------------------------------------
@@ -314,6 +446,8 @@ def verifier_analyse(version, numero, decisions):
     for plan in re.findall(r"referentiel/plans/(\d{2})", section_de(texte, "## Sources").replace("\\", "/")):
         if not re.search(rf"\b({plan}|{int(plan)})\b", comparaison):
             erreurs.append(f"sources : le plan {plan} est cité mais la section 3 n'en rapporte rien")
+    for i, j in paragraphes_redondants(comparaison):
+        erreurs.append(f"section 3 : les paragraphes {i} et {j} disent la même chose ; n'en garder qu'un")
 
     nature = champs.get("Nature du test", "")
     if nature not in SANS_PROCEDURE:
@@ -321,8 +455,9 @@ def verifier_analyse(version, numero, decisions):
         etapes = [l for l in procedure.splitlines() if l.strip().startswith("- ")]
         if not etapes:
             erreurs.append("procédure de test : aucune étape (lignes commençant par « - »)")
-        elif not any(f"#{numero}" in l for l in etapes):
-            erreurs.append(f"procédure de test : les étapes doivent citer le ticket (#{numero})")
+        elif not all(f"#{numero}" in l for l in etapes):
+            erreurs.append(f"procédure de test : chaque étape doit citer le ticket analysé (#{numero}) ; une étape propre "
+                           "à un autre ticket va dans l'analyse de ce ticket, et la section 5 indique de les exécuter ensemble")
         elif not any("Résultat attendu" in l for l in etapes):
             erreurs.append("procédure de test : aucune étape ne précise de « Résultat attendu »")
 
@@ -330,14 +465,24 @@ def verifier_analyse(version, numero, decisions):
         erreurs.append("sources : aucun plan de referentiel/plans/ cité ; la recherche dans les plans est obligatoire, même sans fiche cible")
 
     erreurs += controler_fiche(champs)
+    erreurs += controler_coherence_fiche(texte, champs)
+
+    reprise = lire_reprises(version).get(str(numero))
+    if reprise:
+        erreurs.append(f"analyse signalée à reprendre le {reprise} : lancer python analyses.py reprendre --ticket {numero}, "
+                       "puis la réécrire entièrement ; une retouche de l'analyse existante ne lève pas ce signalement")
 
     lignes_ticket = [d for d in decisions if d["ticket"] == numero]
     for d in lignes_ticket:
-        if d["decision"] and not d["appliquee"] and forme_decision(d["decision"]):
+        if applicable(d):
             erreurs.append(f"décision « {d['decision']} » non appliquée : l'appliquer à l'analyse, puis lancer python analyses.py appliquer --ticket {numero}")
     en_attente = [d for d in lignes_ticket if not d["decision"]]
     if champs.get("Décision humaine requise") == "Oui" and not lignes_ticket:
         erreurs.append("« Décision humaine requise » vaut Oui mais aucune question n'est inscrite dans decisions.md")
+    ouvertes = [d for d in lignes_ticket if not d["decision"] or (not d["appliquee"] and refus_decision(d))]
+    if champs.get("Décision humaine requise") == "Oui" and lignes_ticket and not ouvertes:
+        erreurs.append("toutes les questions de ce ticket sont tranchées : reporter les décisions dans l'analyse "
+                       "et mettre « Décision humaine requise » à « Non »")
     if champs.get("Décision humaine requise") == "Non" and en_attente:
         erreurs.append("« Décision humaine requise » vaut Non alors qu'une question attend une décision dans decisions.md")
 
@@ -363,6 +508,7 @@ def etat(version):
     a_faire, a_jour = [], []
     reconnues, inconnues = decisions_a_appliquer(decisions)
     a_appliquer = {d["ticket"]: d for d in reconnues}
+    reprises = lire_reprises(version)
     for numero in numeros:
         ticket = lire_ticket(version, numero)
         chemin = dossier_analyses / f"{numero}.md"
@@ -372,11 +518,16 @@ def etat(version):
         if numero in a_appliquer:
             a_faire.append((ticket, f"décision à appliquer : {a_appliquer[numero]['decision']}"))
         elif lire_analyse(chemin)["mis_a_jour"] != ticket["mis_a_jour"]:
-            a_faire.append((ticket, "ticket modifié depuis l'analyse"))
+            a_faire.append((ticket, "ticket modifié depuis l'analyse : reprise complète"))
+            reprises.setdefault(str(numero), datetime.now().strftime("%d/%m/%Y %H:%M"))
         elif verifier_analyse(version, numero, decisions):
-            a_faire.append((ticket, "analyse non conforme (voir python analyses.py verifier)"))
+            a_faire.append((ticket, "analyse non conforme : reprise complète (python analyses.py reprendre)"))
+            reprises.setdefault(str(numero), datetime.now().strftime("%d/%m/%Y %H:%M"))
         else:
             a_jour.append(ticket)
+
+    if reprises != lire_reprises(version):
+        ecrire_reprises(version, reprises)
 
     orphelines = []
     if dossier_analyses.is_dir():
@@ -392,7 +543,7 @@ def etat(version):
     if not conforme:
         print("ATTENTION : decisions.md n'a pas le format attendu ; lancer python analyses.py reparer-decisions avant de poursuivre.")
     for d in inconnues:
-        print(f"Décision non reconnue pour #{d['ticket']} (« {d['decision']} ») : à reformuler par l'humain, ne pas l'appliquer.")
+        print(f"Décision à reformuler par l'humain pour #{d['ticket']} (« {d['decision']} ») : {refus_decision(d)}. Ne pas l'appliquer.")
     print()
     if a_faire:
         print("À analyser, dans cet ordre (numéro | Fonction | motif | sujet) :")
@@ -416,7 +567,7 @@ def verifier(version, numero=None):
     if ecarts:
         print("  → lancer python analyses.py reparer-decisions")
     for d in decisions_a_appliquer(decisions)[1]:
-        print(f"avertissement : décision non reconnue pour #{d['ticket']} (« {d['decision']} »), à reformuler par l'humain")
+        print(f"avertissement : décision à reformuler par l'humain pour #{d['ticket']} (« {d['decision']} ») : {refus_decision(d)}")
     if numero:
         numeros = [numero]
     else:
@@ -441,6 +592,7 @@ def nettoyer(texte):
 
 
 def question(version, numero, texte_question, proposition):
+    exiger_preparation(version)
     if not texte_question or not proposition:
         sys.exit("Préciser --question et --proposition.")
     chemin = chemin_decisions(version)
@@ -458,6 +610,7 @@ def question(version, numero, texte_question, proposition):
 
 
 def journal(version, numero, texte):
+    exiger_preparation(version)
     if not texte:
         sys.exit("Préciser --texte.")
     chemin = ANALYSES / version / "journal.md"
@@ -493,8 +646,12 @@ def preparer(version_demandee):
                 sys.exit(f"Échec de {script} : arrêt, les tickets ne sont pas à jour.")
             print(f"Échec de {script} : poursuite avec les plans déjà convertis.")
         print()
+    version = choisir_version(version_demandee)
+    chemin = chemin_preparation(version)
+    chemin.parent.mkdir(parents=True, exist_ok=True)
+    chemin.write_text(datetime.now().isoformat(timespec="seconds"), encoding="utf-8")
     print("=== état ===")
-    etat(choisir_version(version_demandee))
+    etat(version)
 
 
 def reprendre(version, numero):
@@ -505,26 +662,46 @@ def reprendre(version, numero):
     archives.mkdir(parents=True, exist_ok=True)
     cible = archives / f"{numero}_{datetime.now().strftime('%Y%m%d-%H%M%S')}.md"
     shutil.move(str(chemin), str(cible))
+    reprises = lire_reprises(version)
+    if reprises.pop(str(numero), None):
+        ecrire_reprises(version, reprises)
     print(f"Analyse de #{numero} archivée dans {cible.relative_to(DOSSIER)}. Rédiger la nouvelle analyse à partir du ticket et des plans, sans relire l'archive.")
 
 
 def appliquer(version, numero):
+    exiger_preparation(version)
     chemin = chemin_decisions(version)
     conforme, decisions = lire_decisions(version)
     if not conforme:
         sys.exit("decisions.md n'a pas le format attendu : lancer python analyses.py reparer-decisions.")
-    lignes = [d for d in decisions if d["ticket"] == numero and d["decision"] and not d["appliquee"]
-              and forme_decision(d["decision"])]
+    lignes = [d for d in decisions if d["ticket"] == numero and applicable(d)]
     if not lignes:
-        sys.exit(f"Aucune décision reconnue à appliquer pour #{numero}.")
+        sys.exit(f"Aucune décision applicable pour #{numero} (les décisions à reformuler restent à l'humain).")
     analyse = ANALYSES / version / f"{numero}.md"
     if not analyse.exists():
         sys.exit(f"Analyse absente pour #{numero}.")
     champs = lire_analyse(analyse)["champs"]
     for d in lignes:
         forme = forme_decision(d["decision"])
-        if forme == "fiche" and champs.get("Fiche cible", "") in ("", "À décider", "Aucune"):
-            sys.exit(f"#{numero} : la décision « {d['decision']} » n'est pas reportée dans « Fiche cible ».")
+        valeur = re.sub(r"^[^:]*:\s*", "", d["decision"]).strip()
+        if forme == "fiche":
+            ident = re.match(rf"({MOTIF_ID})\b", valeur)
+            if champs.get("Fiche cible", "") in ("", "À décider", "Aucune") or \
+                    (ident and not champs.get("Fiche cible", "").startswith(ident.group(1))):
+                sys.exit(f"#{numero} : la décision « {d['decision']} » n'est pas reportée dans « Fiche cible ».")
+        if forme == "nouveau plan":
+            plan = champs.get("Plan cible", "")
+            if not plan.startswith("À créer") or normaliser(valeur)[:30] not in normaliser(plan):
+                sys.exit(f"#{numero} : la décision « {d['decision']} » doit être reportée dans « Plan cible » "
+                         f"sous la forme « À créer — {valeur} ».")
+            if champs.get("Fiche cible", "") in ("", "À décider"):
+                sys.exit(f"#{numero} : avec un nouveau plan, « Fiche cible » vaut « À créer — » suivi du titre proposé.")
+        if forme == "réanalyser":
+            archives = ANALYSES / version / "archives"
+            du_jour = list(archives.glob(f"{numero}_{datetime.now().strftime('%Y%m%d')}-*.md")) if archives.is_dir() else []
+            if not du_jour:
+                sys.exit(f"#{numero} : « réanalyser » impose python analyses.py reprendre --ticket {numero} "
+                         "puis une analyse entièrement réécrite.")
         if forme == "hors campagne" and champs.get("Nature du test") != "Hors campagne":
             sys.exit(f"#{numero} : la décision « hors campagne » n'est pas reportée dans « Nature du test ».")
     # Contrôle de l'analyse, hors écarts liés aux décisions qu'on s'apprête à dater.
@@ -539,8 +716,8 @@ def appliquer(version, numero):
     sortie = []
     for ligne in texte.splitlines():
         cellules = [c.strip() for c in ligne.strip().strip("|").split("|")]
-        if (len(cellules) >= 5 and cellules[0] == f"#{numero}" and cellules[3] and not cellules[4]
-                and forme_decision(cellules[3])):
+        if (len(cellules) >= 5 and cellules[0] == f"#{numero}"
+                and applicable({"decision": cellules[3], "appliquee": cellules[4], "proposition": cellules[2]})):
             ligne = f"| {cellules[0]} | {cellules[1]} | {cellules[2]} | {cellules[3]} | {aujourdhui} |"
         sortie.append(ligne)
     chemin.write_text("\n".join(sortie) + "\n", encoding="utf-8")
@@ -590,6 +767,10 @@ def synthese(version):
         f"- Non analysés : {len(manquantes)}",
         f"- Décisions en attente dans `decisions.md` : {decisions_en_attente(version)}",
     ]
+    a_reformuler = decisions_a_appliquer(decisions)[1]
+    if a_reformuler:
+        lignes.append(f"- Décisions à reformuler par l'humain : {len(a_reformuler)} ("
+                      + ", ".join(f"#{d['ticket']}" for d in a_reformuler) + ")")
 
     for nom in ("Nature du test", "Environnement", "Automatisabilité"):
         compte = Counter(champ(a, nom) or "(non renseigné)" for a in analyses)

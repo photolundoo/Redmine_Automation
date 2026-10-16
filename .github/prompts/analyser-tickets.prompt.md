@@ -29,7 +29,7 @@ Dans la suite, `<version>` désigne ce dossier, par exemple `ISAP-V27.1`, et `<n
 python analyses.py preparer
 ```
 
-Elle récupère les tickets, convertit les plans modifiés et affiche l'état. Si la récupération échoue, elle s'arrête : arrête-toi aussi. Si `decisions.md` n'a pas le format attendu, lance `python analyses.py reparer-decisions`, puis `python analyses.py etat`.
+Elle récupère les tickets, convertit les plans modifiés et affiche l'état. Si la récupération échoue, elle s'arrête : arrête-toi aussi. Sans préparation de moins de 12 heures, les commandes `question`, `journal` et `appliquer` refusent de s'exécuter : ne cherche pas à les contourner, lance `preparer`. Si `decisions.md` n'a pas le format attendu, lance `python analyses.py reparer-decisions`, puis `python analyses.py etat`.
 
 La liste « À analyser » donne l'ordre de traitement : d'abord les décisions à appliquer, puis les analyses à reprendre, puis les nouvelles. Respecte cet ordre.
 
@@ -41,10 +41,11 @@ Pour chaque ticket listé avec le motif « décision à appliquer » :
 
 | Décision | Ce que tu fais dans l'analyse du ticket |
 |---|---|
-| `valider` | Rien à changer dans le contenu. |
+| `valider` (ou `validé`, `approuvé`) | La proposition est retenue : reporte-la dans l'analyse si elle n'y figure pas déjà (section 5 et, le cas échéant, « Plan cible » et « Fiche cible »). |
 | `corriger :` suivi d'un texte | Applique exactement la correction décrite, dans les sections concernées. |
 | `fiche :` suivi d'une fiche | Remplace « Plan cible » et « Fiche cible » par la fiche indiquée, avec l'identifiant et le titre exacts du plan, puis reprends les sections 3 et 5 pour cette fiche. |
-| `réanalyser` | Lance `python analyses.py reprendre --ticket <n>`, puis refais l'analyse complète (étape 2). |
+| `nouveau plan :` suivi d'un intitulé | Mets « Plan cible » à « À créer — » suivi de l'intitulé, « Fiche cible » à « À créer — » suivi du titre que tu proposes, et reprends la section 5 pour ce nouveau plan. |
+| `réanalyser`, éventuellement suivi de `:` et d'une consigne | Lance `python analyses.py reprendre --ticket <n>`, puis refais l'analyse complète (étape 2) en suivant la consigne. |
 | `hors campagne` | Mets « Nature du test » à « Hors campagne », « Automatisabilité » à « Non applicable », et ajoute la décision en tête de la section 5. |
 | `ignorer` | Rien à changer. |
 
@@ -52,13 +53,15 @@ Puis :
 1. Mets « Décision humaine requise » à « Non » si plus aucune question de ce ticket n'attend de décision.
 2. Lance `python analyses.py appliquer --ticket <n>`. Le script contrôle l'analyse et date la décision ; tu n'écris jamais toi-même dans `decisions.md`. S'il refuse, corrige l'analyse et relance-le.
 
-Les décisions signalées « non reconnues » par `etat` sont à reformuler par l'humain : ne les applique pas, ne les modifie pas, et cite-les dans le message de fin.
+Une ligne de relecture (« Relecture » dans la colonne Question) s'applique de la même façon : l'humain l'a ajoutée sur un ticket dont l'analyse semblait conforme.
+
+Les décisions signalées « à reformuler par l'humain » par `etat` ne s'appliquent pas : ne les interprète pas, ne les modifie pas, et cite-les dans le message de fin.
 
 ## Étape 2 — Analyser les tickets
 
 Traite les tickets de la liste « À analyser », dans l'ordre, jusqu'à atteindre `lot`.
 
-Pour un ticket « non conforme » ou « modifié depuis l'analyse », commence par `python analyses.py reprendre --ticket <n>` : l'ancienne analyse est archivée et tu en écris une nouvelle, entièrement, à partir du ticket et des plans. Ne lis pas l'archive. Retoucher l'ancienne analyse pour faire disparaître les écarts n'est pas une reprise.
+Pour un ticket « non conforme » ou « modifié depuis l'analyse », commence par `python analyses.py reprendre --ticket <n>` : l'ancienne analyse est archivée et tu en écris une nouvelle, entièrement, à partir du ticket et des plans. Ne lis pas l'archive. Retoucher l'ancienne analyse pour faire disparaître les écarts n'est pas une reprise : le vérificateur maintient le signalement « à reprendre » tant que `reprendre` n'a pas été lancé.
 
 Pour chaque ticket :
 
@@ -104,7 +107,7 @@ Repères :
 
 ### c bis. Désigner la fiche cible
 
-« Fiche cible » reprend l'identifiant et le titre exacts de la fiche, tels qu'ils figurent dans le plan, sous la forme `INT03 — Tests avec simulateur`. Ne prends jamais la description de la fiche pour son titre. Pour une fiche sans identifiant, recopie son titre. Valeurs possibles sinon : « À décider » (question inscrite dans `decisions.md`), « À créer » ou « Aucune ». Le vérificateur contrôle que l'identifiant existe dans le plan cible et que le titre est le bon.
+« Fiche cible » reprend l'identifiant et le titre exacts de la fiche, tels qu'ils figurent dans le plan, sous la forme `INT03 — Tests avec simulateur`. Ne prends jamais la description de la fiche pour son titre. Pour une fiche sans identifiant, recopie son titre. Valeurs possibles sinon : « À décider » (question inscrite dans `decisions.md`), « À créer » ou « Aucune ». Le vérificateur contrôle que l'identifiant existe dans le plan cible, que le titre est le bon, que la section 5 nomme la fiche exactement de la même façon, et qu'aucune autre fiche du plan n'est présentée comme cible dans les sections 3 et 5.
 
 ### d. Rédiger l'analyse
 
@@ -112,7 +115,7 @@ Repères :
 
 1. Première ligne : `<!-- ticket: <n> | mis à jour : … -->`, avec la valeur exacte du champ `updated_on` de `tickets/<version>/<n>/ticket.json`.
 2. Les cinq sections numérotées suivent la méthode : étude du sujet, compte rendu de la situation, comparaison avec l'existant, procédure de test, intégration proposée.
-3. Chaque étape de la procédure est une ligne commençant par « - », décrit une action, précise « Résultat attendu : » et se termine par `(#<n>)`. Aucun identifiant ni mot de passe.
+3. Chaque étape de la procédure est une ligne commençant par « - », décrit une action, précise « Résultat attendu : » et se termine par `(#<n>)`. Une étape propre à un autre ticket appartient à l'analyse de cet autre ticket. Aucun identifiant ni mot de passe.
 4. « Sources » liste les fichiers lus, dont au moins un plan de `referentiel/plans/` avec la section concernée.
 5. Après avoir inscrit les éventuelles questions (étape e), lance `python analyses.py verifier --ticket <n>`. Corrige l'analyse jusqu'à obtenir « Aucun écart » avant de passer au ticket suivant.
 

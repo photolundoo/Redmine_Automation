@@ -8,7 +8,7 @@ Table de départ pour orienter l'analyse d'un ticket. Elle indique où chercher 
 2. Quand plusieurs plans sont proposés, chercher d'abord le numéro du ticket (`#NNNN`) dans tous les plans, puis les mots-clés du sujet dans les plans proposés, dans l'ordre de la colonne.
 3. Une Fonction absente de cette table, ou un ticket qu'aucun plan ne couvre, donne lieu à une proposition de l'agent et à une ligne dans `decisions.md`.
 4. Les tickets de tracker « Configuration » (Fonction souvent vide) décrivent la mise en place d'un environnement ou d'un site. Ils relèvent en général de la nature « Configuration d'environnement » : vérifier la mise en place, sans créer de fiche, sauf si le ticket décrit un comportement nouveau. La recherche dans les plans reste obligatoire : une fiche existante peut citer le composant concerné (version d’un logiciel tiers, machine de test, procédure d’installation) et devoir être mise à jour. Exemple : un ticket d’installation de Security Center se compare à la section « Genetec – SecurityCenter Video Plugin » du plan 03.
-5. Les migrations de bibliothèques et mises à jour de dépendances (Ice, POCO, OpenSSL, cryptopp, ImageMagick, net-snmp, maven, compilation) relèvent de la nature « Non-régression technique » : elles sont couvertes par une passe de non-régression commune et ne créent pas de fiche par ticket.
+5.Les migrations de bibliothèques et mises à jour de dépendances (Ice, POCO, OpenSSL, cryptopp, ImageMagick, net-snmp, maven, Tomcat, compilation) relèvent de la nature « Non-régression technique ». Elles se rattachent à la fiche NRT01 — Passe de non-régression technique du plan 12, chacune sous un sous-titre portant le nom du composant. Elles ne créent pas de fiche par ticket.
 
 ## Table
 

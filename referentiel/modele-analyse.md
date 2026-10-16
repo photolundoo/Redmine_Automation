@@ -32,6 +32,8 @@
 
 ## 3. Comparaison avec l'existant
 
+**Recherche dans les plans.** `#8887` : trouvé dans le plan 01, fiche MC06 « Onglet Vidéo », sous-titre « Live ». « joystick » : plan 03, fiche WVID07 « Tests Joystick » (WinApp, hors sujet ici). (Chaque recherche effectuée et son résultat, y compris quand elle ne donne rien.)
+
 (Ce que le plan couvre déjà : fiche, sous-titre, étapes citant le ticket ou la fonctionnalité. Verdicts QA précédents relevés dans l'historique du ticket. Ce qui manque ou devient obsolète, et pourquoi.)
 
 ## 4. Procédure de test proposée
@@ -51,4 +53,4 @@
 ## Sources
 
 - tickets/ISAP-V27.1/8887/ticket.md
-- referentiel/plans/01_Plan de validation 26.1 - WebApp.md — section « Onglet Vidéo - [MC06] »
+- referentiel/plans/01 V26.1 - WEBAPP.md — section « Onglet Vidéo - [MC06] »

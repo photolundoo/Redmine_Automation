@@ -14,15 +14,16 @@
 |---|---|---|
 | `recuperer_tickets.py` | Récupère les tickets de la version dans `tickets/` | Script, lancé par l'agent ou l'utilisateur |
 | `convertir_plans.py` | Convertit les plans de validation Word en Markdown dans `referentiel/plans/` | Script |
-| `analyses.py` | `etat` : tickets à analyser ; `synthese` : régénère `synthese.md` | Script |
+| `analyses.py` | `preparer` : récupération, conversion et état ; `etat` ; `verifier` : contrôle des analyses ; `reprendre` : archive une analyse à refaire ; `question`, `appliquer` et `journal` : seules écritures autorisées dans `decisions.md` et `journal.md` ; `synthese` ; `reparer-decisions` | Script |
 | `tickets/<version>/` | Tickets récupérés (`ticket.md`, `ticket.json`, pièces jointes) et `index.md` | Script uniquement |
 | `referentiel/plans/` | Copies de lecture des plans Word | Script uniquement |
 | `referentiel/correspondance-fonctions.md` | Fonction Redmine → plan et fiches à consulter | Humain |
 | `referentiel/modele-analyse.md` | Forme d'une analyse de ticket | Humain |
 | `analyses/<version>/<numéro>.md` | Analyse d'un ticket | Agent |
-| `analyses/<version>/decisions.md` | Questions à trancher et décisions humaines | Agent (questions), humain (décisions) |
+| `analyses/<version>/decisions.md` | Questions à trancher et décisions humaines | Script (questions et dates d'application), humain (décisions) |
+| `analyses/<version>/archives/` | Analyses remplacées lors d'une reprise | Script uniquement ; l'agent ne les lit pas |
 | `analyses/<version>/synthese.md` | Vue d'ensemble et ordre de campagne | Script uniquement |
-| `analyses/<version>/journal.md` | Une ligne par action de l'agent | Agent |
+| `analyses/<version>/journal.md` | Une ligne par action de l'agent | Script, appelé par l'agent |
 
 ## Sources de vérité
 
@@ -38,7 +39,10 @@
 4. Ne jamais ouvrir, afficher ni recopier le contenu de `.env`.
 5. Ne jamais recopier d'identifiant ni de mot de passe lu dans un ticket ou un plan. Les remplacer par un repère explicite, par exemple `<MDP_LOCALADMIN>` ou `<IDENTIFIANT_SMTP>`.
 6. Ne jamais trancher à la place de l'humain : une anomalie probable, un choix de fiche ambigu, une fiche à créer ou une procédure à supprimer passent par `decisions.md`.
-7. Ne jamais supprimer une ligne de `decisions.md`.
+7. Ne jamais écrire dans `decisions.md` : seules les commandes `python analyses.py question`, `appliquer` et `reparer-decisions` le modifient.
+8. Ne jamais écrire dans `journal.md` autrement que par `python analyses.py journal`.
+9. Ne jamais ajuster une analyse dans le seul but de satisfaire `python analyses.py verifier` : chaque écart signalé se corrige sur le fond, à partir du ticket et des plans.
+10. Une analyse n'est terminée que lorsque `python analyses.py verifier --ticket <numéro>` répond « Aucun écart ».
 
 ## Rédaction
 

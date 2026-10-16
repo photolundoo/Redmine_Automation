@@ -1,0 +1,98 @@
+# Synthèse des analyses — ISAP-V27.1
+
+Générée le 16/10/2026 13:48 par `python analyses.py synthese`. Ne pas modifier à la main : le fichier est régénéré à chaque passage.
+
+- Tickets dans la sélection : 56
+- Analysés : 14 (dont 0 à reprendre : ticket modifié ou analyse non conforme)
+- Non analysés : 42
+- Décisions en attente dans `decisions.md` : 1
+
+## Répartition — Nature du test
+
+| Nature du test | Tickets |
+|---|---|
+| Re-test ciblé | 5 |
+| Nouveau test | 5 |
+| Configuration d'environnement | 3 |
+| Non-régression technique | 1 |
+
+## Répartition — Environnement
+
+| Environnement | Tickets |
+|---|---|
+| Serveur / grille | 10 |
+| Simulateur | 2 |
+| Serveur / grille + Matériel | 1 |
+| Mobile | 1 |
+
+## Répartition — Automatisabilité
+
+| Automatisabilité | Tickets |
+|---|---|
+| Hors outillage actuel | 14 |
+
+## Ordre de campagne
+
+Tickets regroupés par environnement, puis par plan et par fiche, pour limiter les changements de configuration.
+
+| Ticket | Sujet | Environnement | Plan | Fiche | Nature | Automatisabilité | Décision requise |
+|---|---|---|---|---|---|---|---|
+| [#9049](9049.md) | [ServerConfiguration] Lors du remplissage initial de la base, le configurateur cherche des fichiers dans le dossier Fingerprint | Serveur / grille | 12 Update version | UPD02 — Monter de version | Re-test ciblé | Hors outillage actuel | Non |
+| [#9079](9079.md) | Migration Ice 3.7 : IsapGridGUI | Serveur / grille | 12 Update version | UPD02 — Monter de version | Non-régression technique | Hors outillage actuel | Non |
+| [#9087](9087.md) | AffectationTool v2 | Serveur / grille | 13 Outils externes | AffectationTool | Nouveau test | Hors outillage actuel | Non |
+| [#8772](8772.md) | Outils d'ajout de plugin | Serveur / grille | 13 Outils externes | PluginWizard | Re-test ciblé | Hors outillage actuel | Non |
+| [#9089](9089.md) | Amélioration de l'outils d'import de planification | Serveur / grille | 14 Planification | À créer | Nouveau test | Hors outillage actuel | Oui |
+| [#8844](8844.md) | Configurer le site ACME avec les caméra Hanwha | Serveur / grille + Matériel | Aucun | Aucune | Configuration d'environnement | Hors outillage actuel | Non |
+| [#9006](9006.md) | Installation et configuration de SecurityCenter 5.14 | Serveur / grille | Aucun | Aucune | Configuration d'environnement | Hors outillage actuel | Non |
+| [#9094](9094.md) | [PAVPlugin] PAV en doublons | Serveur / grille | Aucun | Aucune | Configuration d'environnement | Hors outillage actuel | Non |
+| [#9001](9001.md) | [Ansible] Anomalies constatés dont templates non à jours | Serveur / grille | À décider | À décider | Re-test ciblé | Hors outillage actuel | Oui |
+| [#9026](9026.md) | [Ansible] Prendre en compte WebAPI/Iris | Serveur / grille | À décider | À décider | Nouveau test | Hors outillage actuel | Oui |
+| [#9063](9063.md) | [ServerSetup] L'option "début différé" n'est pas prise en compte pour tous les services | Serveur / grille | À décider | À décider | Re-test ciblé | Hors outillage actuel | Oui |
+| [#8717](8717.md) | [IntrusionProcessor] Inhibition avec temporisation | Simulateur | 06 Intrusion | INT03 — Tests avec simulateur | Nouveau test | Hors outillage actuel | Non |
+| [#9014](9014.md) | [ActionManager] Erreur de traitement pour les desinhibitions automatiques | Simulateur | 06 Intrusion | INT03 — Tests avec simulateur | Re-test ciblé | Hors outillage actuel | Non |
+| [#8965](8965.md) | [MobileApp] Permettre de configurer son serveur au lancement | Mobile | 08 Tests spécifiques | À créer — configuration du serveur MobileApp | Nouveau test | Hors outillage actuel | Oui |
+
+## Tickets non encore analysés
+
+- #8898 — ISAP Core - Main Courante — Le script SendMailOnIncident.py n'envoi pas la cartographie dans le mail
+- #7987 — ISAP Core - Navigation 3D — [DesktopApp] Lenteur d'affichage des cônes caméras sur ville de Paris
+- #9030 — ISAP Core - Navigation 3D — WebApp : Paramètre permettant de masquer les labels de certaines caméras
+- #6918 — ISAP Core - SDK — Migration POCO 1.15.3
+- #8080 — ISAP Core - SDK — Compilation linux sur un environnement récent (Debian 13)
+- #8805 — ISAP Core - SDK — Mise à jour openSSL 3.5.8
+- #8947 — ISAP Core - SDK — Evolution du modèle de licence : une licence par app WebApp
+- #8970 — ISAP Core - SDK — SmartShieldWebAPI : Pouvoir demander la création d'un incident à partir de l'entityid de l'IncidentType
+- #8990 — ISAP Core - SDK — Crash applicatif si la licence contient une limite non reconnue
+- #9016 — ISAP Core - SDK — [SmartShieldWebAPI] Erreur HTTP 500 si le mot de passe du compte API contient un caractère "deux-points"
+- #9033 — ISAP Core - SDK — Migration Ice 3.7 : Java
+- #9039 — ISAP Core - SDK — Migration Ice 3.7 : C++ - Slice2VT
+- #9064 — ISAP Core - SDK — Migration cryptopp en 890
+- #8915 — ISAP Core - Sécurité IT — Mettre à jour les packages maven
+- #8966 — ISAP Fonctions - Iris — Iris : Lecture de mail HS pour curl < 7.62
+- #8971 — ISAP Fonctions - Iris — Iris/MCP : créer les incident à partir de l'entityid du type d'incident
+- #8765 — ISAP Fonctions mobiles - Gestion mobile d'incidents — [MobileApp] Éxécution de tâche en arrière plan
+- #8780 — ISAP Fonctions mobiles - Tracking mobile des positions — [IsapMobile] Les fonctionnalités utilisant des liens FTP(S) ne fonctionnent plus
+- #6017 — ISAP Plugins - Cameras & Encodeurs — Migrer vers ImageMagick++ 7.1.2
+- #9075 — ISAP Plugins - Capteurs experts — Simulateur SIA : envoyer les messages vers un recepteur secondaire
+- #9076 — ISAP Plugins - Capteurs experts — Migration net-snmp 5.9.5.2
+- #9093 — ISAP Plugins - Capteurs experts — [PAVPlugin] Pouvoir désactiver la création d'alarme indépendamment du seuil
+- #9082 — ISAP Plugins - Contrôle d'Accès — Simulateur AEOS
+- #8183 — ISAP Plugins - Détection Incendie — Pictogrammes des Sensor de type Sprinkler
+- #8816 — ISAP Plugins - Détection Intrusion — Plugin CSR SIA (Central Station Receiver) - Plan de validation officiel du standard DC-09
+- #8787 — ISAP Plugins - Géolocalisation — Maquette Polestar : gestion d'étage
+- #8982 — WebApp - Accès & Ressources — [WebApp] Timeout important sur les postes ne disposant pas du plugin vidéo en local
+- #8992 — WebApp - Accès & Ressources — [WebApp] Impossible de se connecter après avoir accepté les CGU
+- #8465 — WebApp - Administration — [WebApp/Administration] Bugs constatés dans la configuration d'un compte
+- #8206 — WebApp - Main Courante — [WebApp][MainCourante] Gestion des incidents sur capteurs
+- #8808 — WebApp - Main Courante — Plugin WhatsApp
+- #9035 — WebApp - Main Courante — [WebApp/Dashboard] Affichage des capteurs en fonction de leur type et de leur état
+- #9091 — WebApp - Main Courante — Migration Ice 3.7.11 - Javascript
+- #7812 — WebApp - Mobile — [Main Courante] Client léger spécifique à l'utilisation sur mobile V2
+- #9084 — WebApp - Mobile — [MobileApp] Score DEX inférieur au score minimum Playstore
+- #8577 — WebApp - Runsheet — Le paramètre propagateRejectedActions n'est pas correctement pris en compte
+- #9108 — WebApp - Runsheet — [WebApp][Runsheet] Changement non désiré des temps Durée et Pré-Affichage
+- #8977 — WebApp - Situation — [WebApp] Mauvaise gestion par dossiers des ressources/instances
+- #8838 — WebApp - Statistiques — [WebApp] Base du dashboard
+- #8887 — WebApp - Video — WebApp : Permettre une utilisation de la vidéo sans Joystick
+- #8941 — WebApp - Video — [WebApp] Droits spécifique pour la vidéo + gestion du plugin en local
+- #9090 — WebApp - Video — [WebApp] Vision NOK dans le cas d'incident ayant pour source un capteur relié à une place

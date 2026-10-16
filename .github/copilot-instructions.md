@@ -43,10 +43,13 @@
 8. Ne jamais écrire dans `journal.md` autrement que par `python analyses.py journal`.
 9. Ne jamais ajuster une analyse dans le seul but de satisfaire `python analyses.py verifier` : chaque écart signalé se corrige sur le fond, à partir du ticket et des plans.
 10. Une analyse n'est terminée que lorsque `python analyses.py verifier --ticket <numéro>` répond « Aucun écart ».
+11. Ne jamais lire ni modifier les scripts (`*.py`) ni les fichiers techniques `analyses/<version>/.preparation` et `.reprises.json`. Les messages des scripts et `python analyses.py --help` suffisent pour les utiliser.
+12. Ne jamais filtrer la sortie d'un script avec `Select-Object` ou un tube : lire la sortie complète.
 
 ## Rédaction
 
 1. Français soigné, phrases complètes, sans formule d'introduction ni de conclusion.
 2. Une procédure de test suit le format des fiches du plan : des sous-titres en gras, puis une ligne par étape, chacune décrivant une action et son résultat observable, avec le numéro de ticket en fin de ligne, par exemple `(#8887)`.
 3. Un résultat attendu est observable et vérifiable par un testeur : pas de « fonctionne correctement » sans préciser ce qui est constaté.
-4. Une fiche se désigne toujours par son identifiant suivi de son titre, car certains identifiants sont utilisés plusieurs fois.
+4. Une fiche se désigne toujours par son identifiant suivi de son titre, car certains identifiants sont utilisés plusieurs fois. La section 5 nomme la fiche exactement comme le champ « Fiche cible ».
+5. Une analyse ne contient que les étapes du ticket analysé. Quand deux tickets se testent ensemble, chaque analyse garde ses propres étapes et la section 5 indique de les exécuter à la suite.

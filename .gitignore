@@ -1,3 +1,4 @@
 .env
 referentiel/plans/
 __pycache__/
+analyses/*/.preparation

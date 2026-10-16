@@ -1,6 +1,6 @@
 {
   "version": "ISAP-V27.1",
-  "genere_le": "2026-10-16T16:47:17",
+  "genere_le": "2026-10-16T17:56:08",
   "format": 1,
   "tickets": [
     {
@@ -63,47 +63,52 @@
       "issue": "B",
       "issue_libelle": "B — Adapter l'existant",
       "application": "Serveur et services",
-      "plan": "03 WinApp Vidéo",
-      "fiche": "WVID01 — Module Vidéo WinApp",
+      "plan": "03 Plan de validation WINAPP_VIDEO",
+      "fiche": "Genetec – SecurityCenter Video Plugin",
       "playwright_existant": {
         "fiche_couverte": null,
         "tests_citant_le_ticket": []
       },
       "nature": "Configuration d'environnement",
       "automatisabilite": "Hors outillage actuel",
-      "environnement": "Serveur / grille + WinApp",
-      "prerequis": "Environnement isolé avec SecurityCenter 5.14, base SQL de test et WinApp configurée pour joindre le serveur",
+      "environnement": "Serveur / grille + Matériel",
+      "prerequis": "Environnement Genetec 5.14 de test réinitialisable, sauvegarde de la base Directory et accès aux journaux de mise à niveau",
       "prerequis_et_moyens": [
-        "Un serveur de test isolé et réinitialisable, SecurityCenter 5.14 et une base SQL de test.",
-        "Les droits nécessaires pour consulter les paramètres du compte de service SQL et les journaux Genetec ; utiliser `<IDENTIFIANT_COMPTE_SQL>` si un identifiant doit être reporté.",
-        "Une WinApp reliée au serveur Genetec et une caméra de test dont le flux est disponible."
+        "Environnement Genetec 5.14 isolé du site client, avec une base Directory sauvegardée.",
+        "Intervention d'un administrateur SQL pour vérifier ou modifier le login de service ; ne jamais consigner de compte ni de mot de passe dans les résultats.",
+        "Plugin SecurityCenter vidéo et WinApp disponibles pour les contrôles existants du plan 03."
       ],
       "playwright": null,
       "etapes": [
         {
-          "sous_titre": "Installation et migration de SecurityCenter 5.14",
-          "action": "Avant la migration, vérifier que le compte SQL utilisé par le service Genetec a la langue par défaut requise par l'installation, sans exposer ses identifiants.",
-          "attendu": "la configuration correspond aux prérequis du service. (#9006)"
+          "sous_titre": "Préparation de SecurityCenter 5.14",
+          "action": "Sur un environnement de test réinitialisable, sauvegarder la base Directory puis effectuer la mise à niveau vers SecurityCenter 5.14.",
+          "attendu": "la sauvegarde est disponible et le processus de mise à niveau se termine sans interruption. (#9006)"
         },
         {
-          "sous_titre": "Installation et migration de SecurityCenter 5.14",
-          "action": "Installer ou migrer SecurityCenter vers la version 5.14 dans l'environnement de test.",
-          "attendu": "l'installation ou la migration se termine sans erreur. (#9006)"
+          "sous_titre": "Préparation de SecurityCenter 5.14",
+          "action": "Avant le premier démarrage après migration, vérifier avec l'administrateur SQL que la langue par défaut du login de service utilisé par SecurityCenter est celle requise par la procédure de test ; si le contournement du ticket est nécessaire, appliquer `us_english` uniquement à ce compte de test.",
+          "attendu": "la configuration du login est vérifiée sans modifier un environnement partagé ou de production. (#9006)"
         },
         {
-          "sous_titre": "Installation et migration de SecurityCenter 5.14",
-          "action": "Démarrer les services Genetec puis consulter leurs journaux de démarrage.",
-          "attendu": "le service Directory termine la création de ses entités par défaut sans erreur de conversion de date ni erreur SQL associée. (#9006)"
+          "sous_titre": "Préparation de SecurityCenter 5.14",
+          "action": "Démarrer le service Genetec Server et consulter les journaux de mise à niveau et de démarrage.",
+          "attendu": "la base Directory s'initialise et le journal ne contient pas l'erreur SQL 242 de conversion `varchar` vers `datetime`. (#9006)"
         },
         {
-          "sous_titre": "Installation et migration de SecurityCenter 5.14",
-          "action": "Ouvrir SecurityDesk et afficher Surveillance.",
-          "attendu": "l'application s'ouvre, le serveur reste connecté et aucune erreur de base de données n'apparaît au démarrage. (#9006)"
+          "sous_titre": "Préparation de SecurityCenter 5.14",
+          "action": "Ouvrir Security Desk et vérifier la connexion à l'instance SecurityCenter mise à niveau.",
+          "attendu": "l'application se connecte à l'instance et les fonctions de supervision s'ouvrent sans erreur de base. (#9006)"
         },
         {
-          "sous_titre": "Installation et migration de SecurityCenter 5.14",
-          "action": "Depuis la WinApp, afficher un flux vidéo sur un moniteur externe configuré pour Genetec.",
-          "attendu": "le flux de la caméra est visible et reste disponible après un redémarrage des services. (#9006)"
+          "sous_titre": "Préparation de SecurityCenter 5.14",
+          "action": "Exécuter les étapes existantes de la section Genetec pour établir la connexion du plugin vidéo et afficher un flux caméra depuis la WinApp.",
+          "attendu": "le flux s'affiche dans le moniteur externe prévu et aucune erreur de connexion au plugin n'est enregistrée. (#9006)"
+        },
+        {
+          "sous_titre": "Préparation de SecurityCenter 5.14",
+          "action": "Après le test, restaurer la base Directory ou rétablir la configuration initiale du clone selon la procédure de l'environnement.",
+          "attendu": "l'environnement est prêt à être réinitialisé et aucun changement de configuration n'est reporté sur un système partagé. (#9006)"
         }
       ],
       "analyse": "analyses/ISAP-V27.1/9006.md"
@@ -533,54 +538,53 @@
       "mis_a_jour": "2026-09-25T08:26:34Z",
       "issue": "B",
       "issue_libelle": "B — Adapter l'existant",
-      "application": "WinApp",
+      "application": "Serveur et services",
       "plan": "12 Update version",
       "fiche": "NRT01 — Passe de non-régression technique",
       "playwright_existant": {
         "fiche_couverte": null,
         "tests_citant_le_ticket": []
       },
-      "nature": "Nouveau test",
+      "nature": "Non-régression technique",
       "automatisabilite": "Hors outillage actuel",
       "environnement": "Serveur / grille",
-      "prerequis": "Version ISAP-V27.1 installée, services de la grille démarrés, JDK 17 disponible pour vérifier la construction Java, accès au fichier IsapGridGUI.jar et à la configuration de déploiement",
+      "prerequis": "Mise à jour serveur ISAP-V27.1 installée, registre de grille de test, accès à un fichier de déploiement présentant quatre niveaux d'imbrication",
       "prerequis_et_moyens": [
-        "Une installation réinitialisable d'ISAP-V27.1 et un registre de grille de test.",
-        "JDK 17 et les outils de construction Java nécessaires uniquement si le JAR doit être reconstruit pour l'essai ; ne pas remplacer le JAR d'un environnement partagé.",
-        "Une configuration de déploiement de test comportant quatre niveaux d'imbrication, sans données sensibles.",
-        "Accès en lecture aux journaux Java et de la grille."
+        "Installation ISAP-V27.1 réinitialisable, registre de grille de test et configuration de déploiement dédiée.",
+        "Accès aux journaux Java et de la grille.",
+        "Ne pas reconstruire ni remplacer le JAR dans un environnement partagé ; le contrôle porte sur le livrable inclus dans l'installateur."
       ],
       "playwright": null,
       "etapes": [
         {
           "sous_titre": "IsapGridGUI — migration Ice 3.7",
-          "action": "Vérifier que la mise à jour a installé le fichier `IsapGridGUI.jar` livré pour ISAP-V27.1.",
-          "attendu": "le JAR est présent à l'emplacement de déploiement de la grille et sa date/version correspond à la livraison testée. (#9079)"
+          "action": "Installer ou mettre à jour ISAP-V27.1 avec l'installateur serveur destiné au test.",
+          "attendu": "le JAR `IsapGridGUI.jar` issu de la livraison est présent à l'emplacement prévu pour la grille. (#9079)"
         },
         {
           "sous_titre": "IsapGridGUI — migration Ice 3.7",
-          "action": "Lancer IsapGridGUI dans la configuration Java standard de la grille, sans ajouter de paramètre `--add-exports` spécifique.",
-          "attendu": "la fenêtre principale s'ouvre et aucune erreur Java n'apparaît dans la console ou les journaux. (#9079)"
+          "action": "Lancer IsapGridGUI dans la configuration Java standard de l'installation, sans ajouter le paramètre `--add-exports` cité dans l'historique.",
+          "attendu": "la fenêtre principale s'ouvre sans erreur de chargement Java. (#9079)"
         },
         {
           "sous_titre": "IsapGridGUI — migration Ice 3.7",
-          "action": "Dans la fenêtre principale et dans la boîte de dialogue « À propos », contrôler le nom affiché, la version et le copyright.",
-          "attendu": "l'interface porte la marque ISAP Grid, affiche la version 27.1 et mentionne Egidium Technologies ; les intitulés de fenêtres ne réintroduisent pas la marque IceGrid GUI. (#9079)"
+          "action": "Dans la fenêtre principale et dans la boîte de dialogue « À propos », vérifier le nom, la version et la mention de copyright.",
+          "attendu": "les textes visibles identifient ISAP Grid, la version 27.1 et Egidium Technologies. (#9079)"
         },
         {
           "sous_titre": "IsapGridGUI — migration Ice 3.7",
-          "action": "Se connecter au registre de la grille avec une configuration de test, ouvrir le déploiement et consulter une application dont la configuration comporte quatre niveaux d'imbrication.",
-          "attendu": "la connexion est établie et les quatre niveaux sont accessibles sans erreur de profondeur. (#9079)"
+          "action": "Se connecter au registre de grille de test et ouvrir le déploiement contenant une configuration imbriquée sur quatre niveaux.",
+          "attendu": "la connexion est établie et le quatrième niveau est accessible sans erreur de profondeur. (#9079)"
         },
         {
           "sous_titre": "IsapGridGUI — migration Ice 3.7",
-          "action": "Enregistrer une configuration de déploiement de test, puis la rouvrir.",
-          "attendu": "le fichier est produit et relu sans erreur, et son commentaire de génération utilise la marque ISAP Grid. (#9079)"
+          "action": "Enregistrer la configuration de test, fermer IsapGridGUI, puis la rouvrir.",
+          "attendu": "le fichier de déploiement est relu sans erreur et son commentaire de génération porte la marque ISAP Grid. (#9079)"
         },
         {
           "sous_titre": "IsapGridGUI — migration Ice 3.7",
-          "action": "Fermer IsapGridGUI et consulter les journaux de la grille.",
-          "attendu": "aucune erreur liée à Ice 3.7 ou au chargement d'IsapGridGUI n'est enregistrée. (#9079)"
+          "action": "Consulter les journaux de l'outil et de la grille après ces opérations.",
+          "attendu": "aucune erreur de lancement, de connexion ou de lecture de la configuration n'est enregistrée. (#9079)"
         }
       ],
       "analyse": "analyses/ISAP-V27.1/9079.md"
@@ -591,7 +595,7 @@
       "mis_a_jour": "2026-08-13T12:16:20Z",
       "issue": "B",
       "issue_libelle": "B — Adapter l'existant",
-      "application": "WebApp",
+      "application": "Serveur et services",
       "plan": "06 Intrusion",
       "fiche": "INT03 — Tests avec simulateur",
       "playwright_existant": {
@@ -600,45 +604,45 @@
       },
       "nature": "Re-test ciblé",
       "automatisabilite": "Hors outillage actuel",
-      "environnement": "Serveur / grille",
-      "prerequis": "Démo ACME réinitialisable, IntrusionProcessor, simulateur `intrusion_simulator`, capteur simulé visible dans Smart Shield et accès en écriture contrôlée au paramètre du processeur",
+      "environnement": "Serveur / grille + Simulateur",
+      "prerequis": "Démo ACME réinitialisable, IntrusionProcessor actif, `intrusion_simulator` disponible et capteur simulé visible dans Smart Shield",
       "prerequis_et_moyens": [
-        "Démo ACME de test, capteur simulé réinitialisable et `intrusion_simulator`.",
-        "Accès à la configuration d'IsapGrid-Application pour modifier `inhibition-duration` et redémarrer le processeur.",
-        "Accès en lecture à l'état du capteur et aux journaux des processeurs.",
-        "Exécuter ensuite le contrôle de nettoyage de la base défini dans l'analyse #9014."
+        "Démo ACME de test réinitialisable et `intrusion_simulator`.",
+        "Accès contrôlé au fichier IsapGrid-Application pour modifier `inhibition-duration` et redémarrer IntrusionProcessor.",
+        "Accès en lecture à l'état des capteurs simulés et aux journaux du processeur.",
+        "Exécuter le contrôle de nettoyage de la base défini par le ticket lié #9014 après ces scénarios."
       ],
       "playwright": null,
       "etapes": [
         {
           "sous_titre": "Inhibition temporisée — IntrusionProcessor",
-          "action": "Dans la configuration de la démo ACME, régler `inhibition-duration` à `1` minute et redémarrer IntrusionProcessor.",
-          "attendu": "le processeur démarre sans erreur et applique la valeur configurée. (#8717)"
+          "action": "Dans la configuration d'IsapGrid-Application de la démo ACME, régler `inhibition-duration` à `1` minute et redémarrer IntrusionProcessor.",
+          "attendu": "le processeur démarre sans erreur avec la valeur configurée. (#8717)"
         },
         {
           "sous_titre": "Inhibition temporisée — IntrusionProcessor",
-          "action": "Démarrer `intrusion_simulator` et vérifier qu'un capteur simulé est actif et visible dans Smart Shield.",
-          "attendu": "le capteur peut recevoir une commande et son état initial est désinhibé. (#8717)"
+          "action": "Démarrer `intrusion_simulator` et repérer un capteur simulé actif et désinhibé dans Smart Shield.",
+          "attendu": "le capteur est visible, actif et prêt à recevoir une commande. (#8717)"
         },
         {
           "sous_titre": "Inhibition temporisée — IntrusionProcessor",
-          "action": "Inhiber le capteur simulé depuis Smart Shield.",
-          "attendu": "l'état du capteur devient inhibé et aucune erreur liée à l'auteur processeur n'apparaît dans les journaux. (#8717)"
+          "action": "Envoyer une commande d'inhibition à ce capteur depuis Smart Shield.",
+          "attendu": "son état visible passe à inhibé et aucune erreur de commande n'est signalée. (#8717)"
         },
         {
           "sous_titre": "Inhibition temporisée — IntrusionProcessor",
-          "action": "Attendre un peu plus d'une minute, puis observer l'état du même capteur.",
-          "attendu": "le capteur revient automatiquement à l'état désinhibé après expiration du délai. (#8717)"
+          "action": "Attendre un peu plus d'une minute après l'inhibition et observer le même capteur.",
+          "attendu": "il revient automatiquement à l'état désinhibé après expiration du délai. (#8717)"
         },
         {
           "sous_titre": "Inhibition temporisée — IntrusionProcessor",
-          "action": "Régler `inhibition-duration` à `0`, redémarrer IntrusionProcessor, puis inhiber de nouveau le capteur simulé.",
-          "attendu": "le capteur reste inhibé au-delà d'une minute et aucune désinhibition automatique n'est envoyée. (#8717)"
+          "action": "Régler `inhibition-duration` à `0`, redémarrer IntrusionProcessor et inhiber de nouveau un capteur simulé actif.",
+          "attendu": "le capteur reste inhibé après plus d'une minute, aucune désinhibition automatique n'étant configurée. (#8717)"
         },
         {
           "sous_titre": "Inhibition temporisée — IntrusionProcessor",
-          "action": "Consulter les journaux d'IntrusionProcessor et de traitement des actions après les deux scénarios.",
-          "attendu": "aucune erreur de traitement n'est enregistrée lors de la désinhibition automatique. (#8717)"
+          "action": "Consulter les journaux d'IntrusionProcessor après les deux scénarios.",
+          "attendu": "aucune erreur de traitement liée à la temporisation ou à l'envoi de la désinhibition n'est présente. (#8717)"
         }
       ],
       "analyse": "analyses/ISAP-V27.1/8717.md"
@@ -748,6 +752,463 @@
       "analyse": "analyses/ISAP-V27.1/8965.md"
     },
     {
+      "ticket": 8898,
+      "sujet": "Le script SendMailOnIncident.py n'envoi pas la cartographie dans le mail",
+      "mis_a_jour": "2026-10-07T08:47:54Z",
+      "issue": "D",
+      "issue_libelle": "D — Nouvelle procédure manuelle",
+      "application": "WebApp",
+      "plan": "À créer — Test script python - Envoi de mail",
+      "fiche": "À créer — Notification mail avec cartographie",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Re-test ciblé",
+      "automatisabilite": "Impossible sans script externe",
+      "environnement": "WebApp + Serveur / grille",
+      "prerequis": "Démo ACME de test, script `SendMailOnIncident.py`, incident géolocalisé de test, service de courriels de test accessible et destinataire de test",
+      "prerequis_et_moyens": [
+        "Boîte mail et paramètres SMTP réservés au test ; ne pas copier d'identifiant ni de mot de passe depuis le plan.",
+        "Position géographique valide et connexion au service cartographique prévu par la configuration de test.",
+        "Supprimer ou anonymiser les mails et incidents de test selon les règles de l'environnement après validation."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Notification mail avec cartographie",
+          "action": "Préparer un incident de test avec un niveau au moins égal à 3, un nom d'affichage, un type, une description et une position géographique valide.",
+          "attendu": "l'incident apparaît dans la WebApp avec les attributs et la position renseignés. (#8898)"
+        },
+        {
+          "sous_titre": "Notification mail avec cartographie",
+          "action": "Depuis l'environnement de scripts de test, exécuter `SendMailOnIncident.py` avec l'option de génération de carte et des paramètres SMTP/destinataire réservés au test.",
+          "attendu": "le script termine sans erreur de génération cartographique ni d'envoi SMTP. (#8898)"
+        },
+        {
+          "sous_titre": "Notification mail avec cartographie",
+          "action": "Vérifier la réception du message dans la boîte du destinataire de test.",
+          "attendu": "le mail contient les attributs demandés et une pièce jointe cartographique lisible. (#8898)"
+        },
+        {
+          "sous_titre": "Notification mail avec cartographie",
+          "action": "Ouvrir la carte jointe et comparer le repère avec la position de l'incident dans la WebApp.",
+          "attendu": "la carte situe l'incident à l'emplacement correspondant et comporte l'attribution OpenStreetMap. (#8898)"
+        },
+        {
+          "sous_titre": "Notification mail avec cartographie",
+          "action": "Répéter l'envoi avec un incident placé à un autre emplacement valide.",
+          "attendu": "la seconde carte représente le nouvel emplacement et le service cartographique ne produit pas d'erreur de ressource indisponible. (#8898)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8898.md"
+    },
+    {
+      "ticket": 7987,
+      "sujet": "[DesktopApp] Lenteur d'affichage des cônes caméras sur ville de Paris",
+      "mis_a_jour": "2026-09-25T13:47:13Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "WinApp",
+      "plan": "07 Performances / charges",
+      "fiche": "PERF01 — Robustesse",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Re-test ciblé",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "WinApp + Serveur / grille",
+      "prerequis": "Données de caméras réelles de test, WinApp réinitialisable, simulateur d'événements de déplacement caméra et enregistrement des temps de démarrage et d'actualisation",
+      "prerequis_et_moyens": [
+        "Jeux de caméras de test réinitialisables correspondant aux volumes retenus ; vérifier leur contenu avant l'essai plutôt que de supposer que chaque fichier contient des entités.",
+        "Simulateur capable de générer des événements `eventdirection` et une WinApp avec journaux accessibles.",
+        "Chronomètre ou outil de mesure des temps d'événement et d'actualisation."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Réactivité des cônes sous charge caméra",
+          "action": "Restaurer une base de test contenant le jeu de caméras VGP utilisé pour le scénario, vérifier que les caméras non quad visées sont présentes et relever le nombre de caméras avant l'essai.",
+          "attendu": "le jeu de données correspond au scénario préparé et n'est pas vide. (#7987)"
+        },
+        {
+          "sous_titre": "Réactivité des cônes sous charge caméra",
+          "action": "Démarrer la grille puis la WinApp sans lancer le simulateur d'événements. Mesurer et consigner le temps jusqu'à l'affichage de la 3D et des cônes attendus.",
+          "attendu": "la WinApp démarre et les cônes sont visibles ; le temps mesuré peut être comparé au résultat sous charge. (#7987)"
+        },
+        {
+          "sous_titre": "Réactivité des cônes sous charge caméra",
+          "action": "Lancer le simulateur d'événements `eventdirection` sur le jeu de caméras, en reproduisant les changements d'orientation des caméras non quad décrits dans le ticket.",
+          "attendu": "les événements sont reçus et les cônes suivent les nouvelles orientations sans blocage de la WinApp. (#7987)"
+        },
+        {
+          "sous_titre": "Réactivité des cônes sous charge caméra",
+          "action": "Pendant la simulation, sélectionner plusieurs caméras puis enchaîner plusieurs vues. Mesurer le délai entre chaque événement de direction et l'actualisation du cône ; constater également le temps de disparition et de réapparition des cônes entre les vues.",
+          "attendu": "les cônes affichés correspondent à l'orientation courante et les délais observés restent dans l'intervalle acceptable de 5 à 10 secondes. (#7987)"
+        },
+        {
+          "sous_titre": "Réactivité des cônes sous charge caméra",
+          "action": "Répéter l'essai avec le jeu de charge maximal prévu, jusqu'à 4 048 caméras si ce jeu de données est disponible et complet.",
+          "attendu": "la WinApp reste utilisable, démarre sans erreur et les cônes continuent de refléter les événements de direction. (#7987)"
+        },
+        {
+          "sous_titre": "Réactivité des cônes sous charge caméra",
+          "action": "Arrêter la simulation et consulter les journaux de la WinApp et des processeurs.",
+          "attendu": "aucune erreur ou crash n'est enregistré pendant le test de charge. (#7987)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/7987.md"
+    },
+    {
+      "ticket": 9030,
+      "sujet": "WebApp : Paramètre permettant de masquer les labels de certaines caméras",
+      "mis_a_jour": "2026-10-13T14:10:43Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "WebApp",
+      "plan": "01 WebApp",
+      "fiche": "MC04 — Onglet Situation",
+      "playwright_existant": {
+        "fiche_couverte": {
+          "fiche": "MC04 — Onglet Situation",
+          "fichiers": [
+            "situation/Automatique_mc04-situation.spec.ts"
+          ],
+          "groupes": [
+            "MC04 - Situation"
+          ],
+          "tests": 35,
+          "a_valider": 35
+        },
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Re-test ciblé",
+      "automatisabilite": "Impossible sans script externe",
+      "environnement": "WebApp + Serveur / grille",
+      "prerequis": "VGP-Sandbox réinitialisable, plusieurs caméras de test partageant une position et accès à leur attribut `DisplayLabel`",
+      "prerequis_et_moyens": [
+        "Utiliser un environnement isolé, tel que VGP-Sandbox, avec des entités caméra de test réinitialisables.",
+        "Modifier l'attribut au niveau des entités ou du template selon la configuration approuvée, puis appliquer/actualiser la grille si nécessaire.",
+        "Relever les valeurs initiales et les restaurer après le test."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Labels de caméras superposées",
+          "action": "Dans l'environnement de test, configurer au moins trois caméras partageant la même position : une avec `DisplayLabel` omis, une avec `DisplayLabel=true` et une avec `DisplayLabel=false`.",
+          "attendu": "les caméras et leurs valeurs sont enregistrées sans erreur. (#9030)"
+        },
+        {
+          "sous_titre": "Labels de caméras superposées",
+          "action": "Ouvrir la Situation WebApp en mode 2D et afficher la position commune.",
+          "attendu": "les caméras dont le label est activé ou laissé à sa valeur par défaut affichent leur nom ; la caméra dont la valeur est fausse reste représentée mais son label est masqué. (#9030)"
+        },
+        {
+          "sous_titre": "Labels de caméras superposées",
+          "action": "Basculer la Situation WebApp en mode 3D sans modifier la configuration des caméras.",
+          "attendu": "les mêmes règles s'appliquent aux labels et les caméras restent visibles. (#9030)"
+        },
+        {
+          "sous_titre": "Labels de caméras superposées",
+          "action": "Modifier `DisplayLabel` de la caméra initialement masquée à vrai, puis actualiser la Situation.",
+          "attendu": "son label apparaît sans devoir modifier la position ou les paramètres des autres caméras. (#9030)"
+        },
+        {
+          "sous_titre": "Labels de caméras superposées",
+          "action": "Rétablir `DisplayLabel=false` pour cette caméra et actualiser la Situation 2D puis 3D.",
+          "attendu": "seul son label disparaît dans les deux modes ; la représentation des autres caméras reste inchangée. (#9030)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9030.md"
+    },
+    {
+      "ticket": 7122,
+      "sujet": "[IsapReporting] Migration vers Tomcat 11",
+      "mis_a_jour": "2026-10-16T11:43:26Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "Serveur et services",
+      "plan": "12 Update version",
+      "fiche": "NRT01 — Passe de non-régression technique",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Non-régression technique",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "Serveur de test réinitialisable, sauvegarde des configurations et données, Tomcat 11, archive GeoServer 3 et WAR issus de la version livrée",
+      "prerequis_et_moyens": [
+        "Exécuter l'essai sur un serveur isolé et réinitialisable, jamais sur un environnement client ou partagé.",
+        "Disposer des paquets approuvés de Tomcat 11 et GeoServer 3, des trois WAR livrés et de jeux de données non sensibles.",
+        "Préparer les comptes de test et le contrat de test des services ; ne pas recopier d'identifiants ni de mots de passe du ticket ou des plans.",
+        "Prévoir une procédure de restauration de la sauvegarde si un déploiement échoue."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Tomcat 11 et applications Java",
+          "action": "Sur un serveur de test réinitialisable, sauvegarder les configurations, les données utiles et les paramètres du serveur Web ; relever les versions de Tomcat, GeoServer et des trois WAR avant migration.",
+          "attendu": "les versions et éléments à restaurer sont consignés et la sauvegarde est disponible. (#7122)"
+        },
+        {
+          "sous_titre": "Tomcat 11 et applications Java",
+          "action": "Installer Tomcat 11 et GeoServer 3.0, puis déployer les WAR livrés `IsapReporting.war`, `EgidiumWebServices.war` et `LostPassword.war`.",
+          "attendu": "les fichiers de déploiement sont acceptés et les applications sont présentes dans le conteneur Servlet 6.0. (#7122)"
+        },
+        {
+          "sous_titre": "Tomcat 11 et applications Java",
+          "action": "Redémarrer Tomcat et consulter ses journaux ainsi que ceux de GeoServer.",
+          "attendu": "le serveur et GeoServer démarrent sans erreur de chargement de servlet, de classe ou de déploiement. (#7122)"
+        },
+        {
+          "sous_titre": "Tomcat 11 et applications Java",
+          "action": "Ouvrir la WebApp et IsapReporting avec un compte de test et accéder à une fonction principale de chacun.",
+          "attendu": "les pages se chargent, les données de test sont accessibles et aucune erreur serveur n'apparaît. (#7122)"
+        },
+        {
+          "sous_titre": "Tomcat 11 et applications Java",
+          "action": "Appeler un point de terminaison de test d'EgidiumWebServices et vérifier le parcours de LostPassword dans l'environnement de test.",
+          "attendu": "le service répond selon son contrat de test et le parcours de réinitialisation produit la réponse observable attendue sans erreur de déploiement. (#7122)"
+        },
+        {
+          "sous_titre": "Tomcat 11 et applications Java",
+          "action": "Ouvrir une couche cartographique gérée par GeoServer 3.0 depuis la WebApp.",
+          "attendu": "la couche attendue est servie et s'affiche sans erreur. (#7122)"
+        },
+        {
+          "sous_titre": "Tomcat 11 et applications Java",
+          "action": "Comparer les fichiers de configuration et les liens symboliques conservés pendant la migration avec la sauvegarde initiale.",
+          "attendu": "les configurations nécessaires aux applications, dont le fichier principal de configuration Main Courante, sont présentes et les liens pointent vers les ressources attendues. (#7122)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/7122.md"
+    },
+    {
+      "ticket": 6918,
+      "sujet": "Migration POCO 1.15.3",
+      "mis_a_jour": "2026-10-02T07:35:06Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "Transverse",
+      "plan": "12 Update version",
+      "fiche": "NRT01 — Passe de non-régression technique",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Non-régression technique",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "Environnement de compilation isolé, version POCO livrée pour ISAP-V27.1, OpenSSL correspondant à la cible Linux et composant de test consommant POCO",
+      "prerequis_et_moyens": [
+        "Utiliser un serveur de test réinitialisable avec la livraison ISAP-V27.1.",
+        "Effectuer les contrôles d'authentification avec un compte de test et un navigateur pris en charge.",
+        "Ne pas installer de bibliothèques sur un environnement partagé ou de production."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "POCO 1.15.3 — compilation et cookies SameSite",
+          "action": "Relever la version de POCO et d'OpenSSL utilisée par le serveur de test.",
+          "attendu": "POCO 1.15.3 et la version OpenSSL prévue dans la livraison ISAP-V27.1 sont effectivement chargées, et POCO 1.9.4 n'est plus utilisée. (#6918)"
+        },
+        {
+          "sous_titre": "POCO 1.15.3 — compilation et cookies SameSite",
+          "action": "Démarrer les services de la grille, puis ouvrir la WebApp et IsapReporting dans un navigateur.",
+          "attendu": "les services passent à l'état démarré, les applications se chargent et leurs fonctions principales sont accessibles. (#6918)"
+        },
+        {
+          "sous_titre": "POCO 1.15.3 — compilation et cookies SameSite",
+          "action": "Se connecter à la WebApp et réaliser une action qui utilise une session authentifiée, puis actualiser la page.",
+          "attendu": "la session reste valide et les requêtes authentifiées aboutissent sans erreur liée au cookie. (#6918)"
+        },
+        {
+          "sous_titre": "POCO 1.15.3 — compilation et cookies SameSite",
+          "action": "Dans les outils de développement du navigateur, inspecter les cookies de la réponse d'authentification.",
+          "attendu": "les cookies comportant l'attribut `SameSite` sont acceptés et transmis conformément à leur configuration, sans erreur de parsing du serveur. (#6918)"
+        },
+        {
+          "sous_titre": "POCO 1.15.3 — compilation et cookies SameSite",
+          "action": "Consulter les journaux des services après navigation et authentification.",
+          "attendu": "aucune erreur de chargement POCO, de session ou de traitement des cookies n'est enregistrée. (#6918)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/6918.md"
+    },
+    {
+      "ticket": 8080,
+      "sujet": "Compilation Linux sur Debian 13",
+      "mis_a_jour": "2026-09-25T13:44:29Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "Serveur et services",
+      "plan": "12 Update version",
+      "fiche": "NRT01 — Passe de non-régression technique",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Non-régression technique",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "Environnement Debian 13 de test réinitialisable, chaîne de compilation et dépendances prévues pour le build, binaires ISAP compilés et accès aux journaux",
+      "prerequis_et_moyens": [
+        "VM Debian 13 réinitialisable ; utiliser les versions de POCO, OpenSSL et Ice validées dans les tickets de dépendances liés.",
+        "Les outils de compilation et journaux du pipeline sont accessibles au testeur.",
+        "Exécuter les essais dans une VM dédiée, sans modifier les machines partagées de build ou les serveurs clients."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Compilation et exécution Linux — Debian 13",
+          "action": "Relever la version de Debian, du compilateur, des outils de construction et des bibliothèques système utilisées par le build de test.",
+          "attendu": "l'environnement correspond à Debian 13 et les dépendances installées sont identifiées sans recopier de donnée sensible. (#8080)"
+        },
+        {
+          "sous_titre": "Compilation et exécution Linux — Debian 13",
+          "action": "Compiler les projets Linux inclus dans le périmètre de la livraison ISAP-V27.1.",
+          "attendu": "les étapes de compilation et d'édition de liens se terminent sans erreur ; les avertissements restants sont consignés et distingués des erreurs bloquantes. (#8080)"
+        },
+        {
+          "sous_titre": "Compilation et exécution Linux — Debian 13",
+          "action": "Vérifier les bibliothèques partagées référencées par les binaires compilés.",
+          "attendu": "les bibliothèques Ice, POCO et OpenSSL chargées correspondent aux versions prévues par la livraison et aucun conflit libcrypto non résolu n'est signalé au lancement. (#8080)"
+        },
+        {
+          "sous_titre": "Compilation et exécution Linux — Debian 13",
+          "action": "Installer les binaires dans un environnement Debian 13 réinitialisable avec la configuration de grille de test et démarrer IsapServer.",
+          "attendu": "IsapServer reste actif sans segmentation fault ni erreur de chargement de bibliothèque. (#8080)"
+        },
+        {
+          "sous_titre": "Compilation et exécution Linux — Debian 13",
+          "action": "Démarrer les composants serveur compilés dans le périmètre, notamment les processeurs et services Linux livrés, puis consulter leurs journaux.",
+          "attendu": "les composants atteignent l'état démarré et aucune erreur d'édition de liens ou de bibliothèque absente n'est présente. (#8080)"
+        },
+        {
+          "sous_titre": "Compilation et exécution Linux — Debian 13",
+          "action": "Exécuter un parcours d'accès de base à la WebApp et à IsapReporting depuis un client de test.",
+          "attendu": "les applications se chargent et communiquent avec les services sans erreur attribuable à la compilation ou aux bibliothèques natives. (#8080)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8080.md"
+    },
+    {
+      "ticket": 8805,
+      "sujet": "Mise à jour OpenSSL 3.5.8",
+      "mis_a_jour": "2026-10-01T12:37:33Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "Transverse",
+      "plan": "12 Update version",
+      "fiche": "NRT01 — Passe de non-régression technique",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Non-régression technique",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "Installation ISAP-V27.1 de test, bibliothèque OpenSSL 3.5.8 livrée dans shared et composants compilés pour les plateformes prises en charge",
+      "prerequis_et_moyens": [
+        "Réaliser les essais sur une installation isolée de la version ISAP-V27.1 ; établir la liste des composants utilisant réellement OpenSSL partagé.",
+        "Utiliser des certificats, licences et comptes de test ; ne pas reprendre d'identifiants ou de clés de production.",
+        "Ne pas considérer comme migrés les composants conservant une version OpenSSL propre ou une dépendance tierce séparée, sauf validation distincte."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "OpenSSL 3.5.8 — composants dépendants",
+          "action": "Relever la version OpenSSL livrée et les bibliothèques associées dans l'installation de test.",
+          "attendu": "la version partagée destinée aux composants migrés est OpenSSL 3.5.8 et les noms de bibliothèques correspondent à la plateforme. (#8805)"
+        },
+        {
+          "sous_titre": "OpenSSL 3.5.8 — composants dépendants",
+          "action": "Démarrer chaque service de la grille identifié comme utilisant OpenSSL partagé dans la livraison.",
+          "attendu": "les services passent à l'état démarré et les journaux ne signalent ni symbole manquant ni chargement de bibliothèque OpenSSL incompatible. (#8805)"
+        },
+        {
+          "sous_titre": "OpenSSL 3.5.8 — composants dépendants",
+          "action": "Sur une cible Linux, consulter les dépendances dynamiques des binaires de service selon l'outil d'administration approuvé.",
+          "attendu": "les composants concernés utilisent les bibliothèques OpenSSL 3.5.8 prévues et ne chargent pas simultanément `libcrypto.so.1.0.0` et `libcrypto.so.3`. (#8805)"
+        },
+        {
+          "sous_titre": "OpenSSL 3.5.8 — composants dépendants",
+          "action": "Depuis un client de test, exécuter un parcours qui utilise une connexion TLS vers chaque service concerné.",
+          "attendu": "la négociation TLS aboutit et l'échange fonctionnel se termine sans erreur de certificat, de chiffrement ou de transport. (#8805)"
+        },
+        {
+          "sous_titre": "OpenSSL 3.5.8 — composants dépendants",
+          "action": "Pour les composants de licence inclus dans le périmètre, vérifier le chargement d'une licence de test valide et l'accès à une fonction autorisée.",
+          "attendu": "la licence est acceptée sans erreur OpenSSL et la fonction autorisée est accessible. (#8805)"
+        },
+        {
+          "sous_titre": "OpenSSL 3.5.8 — composants dépendants",
+          "action": "Consulter les journaux de l'ensemble des services après les parcours.",
+          "attendu": "aucune erreur de chargement, de liaison ou de fonctionnement cryptographique attribuable à la mise à jour n'est présente. (#8805)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8805.md"
+    },
+    {
+      "ticket": 8939,
+      "sujet": "Tomcat ne fonctionne plus en mode non-HTTPS",
+      "mis_a_jour": "2026-10-16T11:35:43Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "Serveur et services",
+      "plan": "11 Installation client sur PC",
+      "fiche": "INS04 — Installation complète d’un serveur-client",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Re-test ciblé",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "Clone réinitialisable de VGP-Sandbox, Tomcat configuré avec connecteur HTTP et HTTPS, accès à ServerConfiguration et aux journaux",
+      "prerequis_et_moyens": [
+        "Environnement cloné et réinitialisable ; ne pas désactiver TLS sur un serveur client ou exposé.",
+        "Utiliser des comptes de test et une URL interne isolée.",
+        "Restaurer la configuration initiale après l'essai et ne pas conserver de mot de passe dans les résultats."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Accès à IsapReporting sans HTTPS",
+          "action": "Sur le clone de test, désactiver TLS dans la configuration Tomcat et appliquer la configuration du serveur.",
+          "attendu": "le connecteur HTTP est actif et la configuration n'impose pas de transport confidentiel. (#8939)"
+        },
+        {
+          "sous_titre": "Accès à IsapReporting sans HTTPS",
+          "action": "Vérifier dans la configuration déployée que `transport-guarantee` vaut `NONE` et que le paramètre HSTS est désactivé.",
+          "attendu": "le mode HTTP n'est pas redirigé ni bloqué par une exigence HTTPS ou par HSTS. (#8939)"
+        },
+        {
+          "sous_titre": "Accès à IsapReporting sans HTTPS",
+          "action": "Depuis un navigateur de test, ouvrir IsapReporting via l'URL HTTP et le port configuré.",
+          "attendu": "la page se charge en HTTP et l'utilisateur peut accéder à l'écran de connexion. (#8939)"
+        },
+        {
+          "sous_titre": "Accès à IsapReporting sans HTTPS",
+          "action": "Se connecter avec un compte de test sur le clone.",
+          "attendu": "l'authentification aboutit et la page protégée d'IsapReporting s'affiche sans redirection vers HTTPS ni erreur de transport. (#8939)"
+        },
+        {
+          "sous_titre": "Accès à IsapReporting sans HTTPS",
+          "action": "Activer TLS selon la procédure INS04 et ouvrir IsapReporting via l'URL HTTPS correspondante.",
+          "attendu": "la page se charge en HTTPS et la configuration TLS n'est pas affectée par le réglage requis pour HTTP. (#8939)"
+        },
+        {
+          "sous_titre": "Accès à IsapReporting sans HTTPS",
+          "action": "Consulter les journaux Tomcat et IsapReporting pour les deux protocoles.",
+          "attendu": "aucune erreur de contrainte de transport ni boucle de redirection n'est enregistrée. (#8939)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8939.md"
+    },
+    {
       "ticket": 8947,
       "sujet": "Évolution du modèle de licence : une licence par application WebApp",
       "mis_a_jour": "2026-08-03T11:48:39Z",
@@ -797,6 +1258,1787 @@
         }
       ],
       "analyse": "analyses/ISAP-V27.1/8947.md"
+    },
+    {
+      "ticket": 8970,
+      "sujet": "SmartShieldWebAPI : créer un incident à partir de l'EntityID du type",
+      "mis_a_jour": "2026-07-24T13:03:21Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "Serveur et services",
+      "plan": "13 Outils Externes",
+      "fiche": "SmartShieldWebAPI",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Re-test ciblé",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "SmartShieldWebAPI de test, compte API disposant du droit de création, types d'incident de test avec et sans Code, client HTTP ou API Explorer",
+      "prerequis_et_moyens": [
+        "Utiliser des types et incidents dédiés au test sur une base réinitialisable.",
+        "Disposer du schéma à jour de l'endpoint et des paramètres obligatoires de création.",
+        "Utiliser un compte API et des attributs de test ; ne pas reprendre d'identifiants ni de mots de passe du plan."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Création d'incident par EntityID",
+          "action": "Préparer deux types d'incident de test dans IsapReporting : un type manuel sans Code et un type disposant d'un Code, puis relever leurs EntityID.",
+          "attendu": "les deux types sont présents et les identifiants relevés correspondent aux types sélectionnés. (#8970)"
+        },
+        {
+          "sous_titre": "Création d'incident par EntityID",
+          "action": "S'authentifier à SmartShieldWebAPI avec un compte de test autorisé à créer des incidents.",
+          "attendu": "l'API accepte la connexion et le droit de création est disponible. (#8970)"
+        },
+        {
+          "sous_titre": "Création d'incident par EntityID",
+          "action": "Envoyer un POST `/api/alarms/alarms` avec `alarm_type_eid` correspondant au type manuel sans Code et les champs requis par le contrat de création.",
+          "attendu": "la requête aboutit et retourne l'identifiant de l'incident créé. (#8970)"
+        },
+        {
+          "sous_titre": "Création d'incident par EntityID",
+          "action": "Rechercher l'incident créé dans la Main Courante.",
+          "attendu": "l'incident existe, son type est celui correspondant à l'EntityID envoyé et ses attributs de test sont présents. (#8970)"
+        },
+        {
+          "sous_titre": "Création d'incident par EntityID",
+          "action": "Envoyer une requête de création en utilisant le champ `code` pour le type qui en possède un.",
+          "attendu": "la compatibilité ascendante est conservée et l'incident du type correspondant est créé. (#8970)"
+        },
+        {
+          "sous_titre": "Création d'incident par EntityID",
+          "action": "Envoyer une requête sans `alarm_type_eid` ni `code`, puis une requête avec un identifiant de type inconnu.",
+          "attendu": "l'API retourne une erreur explicite et ne crée aucun incident pour ces requêtes. (#8970)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8970.md"
+    },
+    {
+      "ticket": 8990,
+      "sujet": "Crash applicatif si la licence contient une limite non reconnue",
+      "mis_a_jour": "2026-08-04T14:37:59Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "Transverse",
+      "plan": "12 Update version",
+      "fiche": "NRT01 — Passe de non-régression technique",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Non-régression technique",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "Version ISAP-V27.1 installée ; licence de test comprenant une limite non reconnue ; accès aux sept applicatifs listés dans le ticket et à leurs journaux",
+      "prerequis_et_moyens": [
+        "Faire préparer par le responsable de l'environnement une licence de test qui déclenche le cas d'une limite inconnue ; ne pas modifier une licence de production.",
+        "Utiliser un environnement isolé et réinitialisable. Sauvegarder puis restaurer sa configuration et sa licence à l'issue des essais.",
+        "La validité fonctionnelle d'une licence comprenant une limite inconnue n'étant pas précisée par le ticket, ne pas interpréter son acceptation ou son refus comme un échec tant que le traitement est explicite et sans crash."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Vérification des limites de licence",
+          "action": "Sur un environnement de test réinitialisable, installer ISAP-V27.1 et configurer une licence de test contenant une limite identifiée comme non reconnue par le contrôle de licence.",
+          "attendu": "la licence est disponible pour le test et son jeu de données permet de reproduire le cas sans affecter un environnement partagé. (#8990)"
+        },
+        {
+          "sous_titre": "Vérification des limites de licence",
+          "action": "Démarrer APIServer avec cette licence et consulter son état ainsi que ses journaux.",
+          "attendu": "le serveur ne crashe pas et le traitement de licence produit un état explicite, sans exception fatale liée à la limite inconnue. (#8990)"
+        },
+        {
+          "sous_titre": "Vérification des limites de licence",
+          "action": "Démarrer successivement DBImporter, Emulator, Importer3D, IsapReportingServer, Isap3DGUI et UAEUpdater avec le même jeu de données, en déclenchant pour chaque composant son contrôle de licence.",
+          "attendu": "chaque composant démarre ou retourne une erreur fonctionnelle explicite, sans crash ni exception fatale du vérificateur de licence. (#8990)"
+        },
+        {
+          "sous_titre": "Vérification des limites de licence",
+          "action": "Démarrer les services de la grille, puis la WebApp et la WinApp.",
+          "attendu": "les composants restent disponibles et les journaux ne contiennent pas de crash attribuable au contrôle de la limite inconnue. (#8990)"
+        },
+        {
+          "sous_titre": "Vérification des limites de licence",
+          "action": "Répéter les contrôles avec une licence de référence contenant uniquement des limites reconnues.",
+          "attendu": "le fonctionnement nominal et les droits prévus par cette licence sont conservés. (#8990)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8990.md"
+    },
+    {
+      "ticket": 9016,
+      "sujet": "SmartShieldWebAPI retourne une erreur 500 avec un mot de passe contenant « : »",
+      "mis_a_jour": "2026-08-13T12:46:44Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "Serveur et services",
+      "plan": "13 Outils Externes",
+      "fiche": "SmartShieldWebAPI",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Re-test ciblé",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "SmartShieldWebAPI de test ; comptes de test avec mot de passe contenant « : », l’un autorisé à utiliser l’API et l’autre sans droits API",
+      "prerequis_et_moyens": [
+        "Utiliser uniquement des comptes et mots de passe de test sur une instance isolée.",
+        "Transmettre les identifiants par un mécanisme de saisie sécurisé ; ne pas les recopier dans l'analyse, les journaux de campagne ou une capture d'écran.",
+        "Si le contrat d'authentification renvoie un code de succès différent, constater la réponse conforme au contrat ; le critère bloquant de ce ticket est l'absence d'erreur HTTP 500."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Connexion à SmartShieldWebAPI avec un mot de passe contenant « : »",
+          "action": "Créer ou sélectionner deux comptes de test dont le mot de passe contient le caractère « : » : un compte autorisé à utiliser l'API et un compte sans droits API.",
+          "attendu": "les deux comptes sont disponibles pour le test et aucune donnée d'authentification réelle n'est inscrite dans les résultats. (#9016)"
+        },
+        {
+          "sous_titre": "Connexion à SmartShieldWebAPI avec un mot de passe contenant « : »",
+          "action": "Envoyer une requête `POST /api/connect/login` avec les identifiants du compte autorisé.",
+          "attendu": "l'API ne retourne pas HTTP 500 et établit la connexion selon le contrat d'authentification. (#9016)"
+        },
+        {
+          "sous_titre": "Connexion à SmartShieldWebAPI avec un mot de passe contenant « : »",
+          "action": "Envoyer la même requête avec le compte sans droits API.",
+          "attendu": "l'API ne retourne pas HTTP 500 et répond par un refus explicite lié aux droits, notamment HTTP 403 comme indiqué dans le ticket. (#9016)"
+        },
+        {
+          "sous_titre": "Connexion à SmartShieldWebAPI avec un mot de passe contenant « : »",
+          "action": "Consulter les journaux SmartShieldWebAPI après les deux requêtes.",
+          "attendu": "aucune exception serveur fatale ni erreur de traitement liée au caractère deux-points n'est enregistrée. (#9016)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9016.md"
+    },
+    {
+      "ticket": 9033,
+      "sujet": "Migration Ice 3.7 : Java",
+      "mis_a_jour": "2026-09-23T15:59:23Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "Transverse",
+      "plan": "12 Update version",
+      "fiche": "NRT01 — Passe de non-régression technique",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Non-régression technique",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "ISAP-V27.1 installée ; Tomcat 9 ; services Ice Java de la livraison et journaux accessibles",
+      "prerequis_et_moyens": [
+        "Utiliser l'environnement ISAP-V27.1 prévu pour NRT01, installé par UPD01 ou UPD02, et des comptes de test.",
+        "Exécuter les requêtes WebServices à partir de son contrat d'API et de l'environnement de test ; ne pas inventer de paramètres ou d'URL.",
+        "Ne pas inclure dans ce scénario un parcours SSO tant que son périmètre et ses résultats attendus ne sont pas validés."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Migration Ice Java",
+          "action": "Après installation de la version ISAP-V27.1 sur l'environnement de test, démarrer les services Ice nécessaires.",
+          "attendu": "les services passent à l'état démarré et leurs journaux ne contiennent pas d'erreur de chargement ou de compatibilité liée à Ice. (#9033)"
+        },
+        {
+          "sous_titre": "Migration Ice Java",
+          "action": "Déployer LostPassword sur Tomcat 9 et ouvrir son point d'accès de test.",
+          "attendu": "Tomcat déploie l'application sans erreur de descripteur Servlet et la page d'accès est disponible. (#9033)"
+        },
+        {
+          "sous_titre": "Migration Ice Java",
+          "action": "Ouvrir IsapReporting et se connecter avec un compte de test.",
+          "attendu": "la WebApp s'affiche, la connexion aboutit et les échanges avec les services associés ne produisent pas d'erreur Ice. (#9033)"
+        },
+        {
+          "sous_titre": "Migration Ice Java",
+          "action": "Envoyer une requête de vérification convenue au point d'accès de test de WebServices.",
+          "attendu": "le service répond conformément à son contrat et ses journaux ne contiennent pas d'erreur de compatibilité Ice. (#9033)"
+        },
+        {
+          "sous_titre": "Migration Ice Java",
+          "action": "Consulter les journaux de LostPassword, IsapReporting, WebServices et Tomcat après les essais.",
+          "attendu": "aucune exception fatale ou erreur de chargement Ice/Servlet n'est enregistrée. (#9033)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9033.md"
+    },
+    {
+      "ticket": 9039,
+      "sujet": "Migration Ice 3.7 : C++ - Slice2VT",
+      "mis_a_jour": "2026-09-25T13:44:30Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "Transverse",
+      "plan": "12 Update version",
+      "fiche": "NRT01 — Passe de non-régression technique",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Non-régression technique",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "WinApp",
+      "prerequis": "Sources Ice 3.7 et environnement de compilation Windows utilisé pour la livraison",
+      "prerequis_et_moyens": [],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Ice 3.7 — Slice2VT",
+          "action": "Dans l’environnement Windows prévu pour la livraison, reconstruire la cible Slice2VT avec Ice 3.7.",
+          "attendu": "la compilation aboutit sans erreur d’absence du fichier `Slice/Preprocessor.h`. (#9039)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9039.md"
+    },
+    {
+      "ticket": 9064,
+      "sujet": "Migration de cryptopp en 890",
+      "mis_a_jour": "2026-10-13T12:17:29Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "Transverse",
+      "plan": "12 Update version",
+      "fiche": "NRT01 — Passe de non-régression technique",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Non-régression technique",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "Livraison comprenant Crypto++ 8.9 et environnements de compilation concernés",
+      "prerequis_et_moyens": [],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Crypto++ 8.9 — compilation et démarrage",
+          "action": "Sur les environnements de compilation Windows et Linux utilisés pour la livraison, construire les composants qui intègrent Crypto++ 8.9.",
+          "attendu": "les compilations aboutissent sans erreur liée à Crypto++ et les avertissements ciblés par les adaptations du ticket ne réapparaissent pas. (#9064)"
+        },
+        {
+          "sous_titre": "Crypto++ 8.9 — compilation et démarrage",
+          "action": "Après déploiement, démarrer les services et applications concernés, puis consulter leurs journaux.",
+          "attendu": "les composants démarrent sans erreur de chargement ou d’exécution attribuable à Crypto++. (#9064)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9064.md"
+    },
+    {
+      "ticket": 8915,
+      "sujet": "Mettre à jour les packages Maven",
+      "mis_a_jour": "2026-10-06T14:53:06Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "Serveur et services",
+      "plan": "12 Update version",
+      "fiche": "NRT01 — Passe de non-régression technique",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Non-régression technique",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "Livraison ISAP-V27.1 comprenant les dépendances Maven concernées",
+      "prerequis_et_moyens": [],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Packages Maven — versions et démarrage",
+          "action": "Dans les métadonnées de dépendances de la livraison, vérifier jakarta.mail, commons-fileupload et commons-lang3.",
+          "attendu": "les versions déclarées sont respectivement 2.0.2, 1.6.0 et 3.20.0. (#8915)"
+        },
+        {
+          "sous_titre": "Packages Maven — versions et démarrage",
+          "action": "Vérifier les métadonnées de dépendances livrées pour commons-io.",
+          "attendu": "aucune référence à ce package n’est présente, conformément au dernier suivi. (#8915)"
+        },
+        {
+          "sous_titre": "Packages Maven — versions et démarrage",
+          "action": "Démarrer les services Java concernés et consulter leurs journaux.",
+          "attendu": "aucun échec de démarrage dû à la résolution ou au chargement des dépendances mises à jour. (#8915)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8915.md"
+    },
+    {
+      "ticket": 8966,
+      "sujet": "Iris : Lecture de mail HS pour curl < 7.62",
+      "mis_a_jour": "2026-09-18T12:37:43Z",
+      "issue": "D",
+      "issue_libelle": "D — Nouvelle procédure manuelle",
+      "application": "Serveur et services",
+      "plan": "13 Outils externes",
+      "fiche": "À créer — Iris — Lecture de courriels",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Nouveau test",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "Environnements de test Iris sous Windows et Linux, boîte de courriels de test et livraison ISAP-V27.1",
+      "prerequis_et_moyens": [
+        "Environnements Iris de test sous Windows et Linux, avec une boîte de courriels accessible.",
+        "Courriel de test non sensible et compte technique fourni localement ; ne pas inscrire d’identifiant ni de mot de passe dans l’analyse.",
+        "Accès aux journaux d’Iris sur les deux plateformes."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Lecture de courriels selon la plateforme",
+          "action": "Sur Windows, faire traiter par Iris un courriel de test en utilisant son identifiant séquentiel.",
+          "attendu": "Iris lit le courriel sans erreur liée à l’identifiant du message. (#8966)"
+        },
+        {
+          "sous_titre": "Lecture de courriels selon la plateforme",
+          "action": "Sur Linux, faire traiter par Iris un courriel de test en utilisant son UID.",
+          "attendu": "Iris lit le courriel sans erreur liée à l’identifiant du message. (#8966)"
+        },
+        {
+          "sous_titre": "Lecture de courriels selon la plateforme",
+          "action": "Consulter les journaux d’Iris après chaque essai.",
+          "attendu": "aucune erreur de lecture due à un identifiant incompatible avec la plateforme n’est enregistrée. (#8966)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8966.md"
+    },
+    {
+      "ticket": 8971,
+      "sujet": "Iris/MCP : créer les incidents à partir de l'entityId du type d'incident",
+      "mis_a_jour": "2026-09-18T12:37:42Z",
+      "issue": "D",
+      "issue_libelle": "D — Nouvelle procédure manuelle",
+      "application": "Serveur et services",
+      "plan": "13 Outils externes",
+      "fiche": "À créer — Iris — Création d’incident par entityId",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Nouveau test",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "Environnement de test Iris/MCP et IncidentType de test avec entityId",
+      "prerequis_et_moyens": [
+        "Environnement Iris/MCP de test avec un IncidentType de test identifiable par Name ou DisplayName et sans Code exploitable.",
+        "Compte de test autorisé à créer des incidents et à consulter la Main Courante.",
+        "Accès aux traces d’appel MCP si elles sont disponibles dans l’environnement."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Création d’un incident par entityId",
+          "action": "Dans l’environnement de test, choisir un IncidentType doté d’un entityId et sans Code exploitable.",
+          "attendu": "Name ou DisplayName permet de reconnaître le type dans la liste des IncidentType. (#8971)"
+        },
+        {
+          "sous_titre": "Création d’un incident par entityId",
+          "action": "Demander à Iris de créer un incident correspondant à ce type.",
+          "attendu": "Iris sélectionne le type demandé et le MCP transmet son entityId dans `alarm_type_eid`. (#8971)"
+        },
+        {
+          "sous_titre": "Création d’un incident par entityId",
+          "action": "Rechercher l’incident dans la Main Courante.",
+          "attendu": "l’incident est créé et son type correspond à l’IncidentType sélectionné. (#8971)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8971.md"
+    },
+    {
+      "ticket": 8765,
+      "sujet": "[MobileApp] Exécution de tâche en arrière-plan",
+      "mis_a_jour": "2026-10-14T13:21:46Z",
+      "issue": "D",
+      "issue_libelle": "D — Nouvelle procédure manuelle",
+      "application": "Application mobile",
+      "plan": "08 Tests spécifiques",
+      "fiche": "À créer — Application mobile — Exécution en arrière-plan",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Nouveau test",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Mobile",
+      "prerequis": "Appareil Android de test, application mobile disponible pour test et environnement ISAP de test",
+      "prerequis_et_moyens": [
+        "Appareil Android pris en charge et version de l’application mobile disponible pour test.",
+        "Environnement ISAP de test avec compte de test et moyen contrôlé de provoquer une perte de connexion.",
+        "Durée d’essai et critère de notification à confirmer avant l’exécution."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Maintien de la connexion en arrière-plan",
+          "action": "Se connecter à l’environnement ISAP de test, placer l’application mobile en arrière-plan et mettre l’appareil Android en veille pendant la durée validée pour la campagne.",
+          "attendu": "la connexion est maintenue pendant toute cette durée. (#8765)"
+        },
+        {
+          "sous_titre": "Maintien de la connexion en arrière-plan",
+          "action": "Rétablir l’affichage de l’application et vérifier l’état de la session.",
+          "attendu": "l’application n’a pas perdu sa connexion pendant la mise en arrière-plan. (#8765)"
+        },
+        {
+          "sous_titre": "Maintien de la connexion en arrière-plan",
+          "action": "Dans un essai distinct, provoquer une perte de connexion contrôlée.",
+          "attendu": "une notification informe l’utilisateur de cette perte, selon le comportement validé pour la campagne. (#8765)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8765.md"
+    },
+    {
+      "ticket": 8780,
+      "sujet": "[IsapMobile] Les fonctionnalités utilisant des liens FTP(S) ne fonctionnent plus",
+      "mis_a_jour": "2026-09-28T12:28:36Z",
+      "issue": "D",
+      "issue_libelle": "D — Nouvelle procédure manuelle",
+      "application": "Application mobile",
+      "plan": "08 Tests spécifiques",
+      "fiche": "À créer — Application mobile — Transfert de fichiers",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Nouveau test",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Mobile",
+      "prerequis": "Appareil Android, version mobile de test et serveur de transfert de test",
+      "prerequis_et_moyens": [
+        "Appareil Android et version de l’application mobile correspondant à la livraison.",
+        "Serveur de transfert de test et compte fournis localement ; ne pas inscrire d’identifiant ni de mot de passe dans l’analyse.",
+        "Fonction mobile, protocole livré et méthode de comparaison du fichier à confirmer avant l’essai."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Transfert de fichier depuis l’application mobile",
+          "action": "Depuis la fonction mobile désignée, transférer un fichier d’essai vers le serveur de test avec le protocole présent dans la livraison.",
+          "attendu": "le transfert aboutit sans erreur de connexion ni d’établissement du canal de données. (#8780)"
+        },
+        {
+          "sous_titre": "Transfert de fichier depuis l’application mobile",
+          "action": "Si la livraison utilise le contournement FTPS, répéter le transfert après un premier lancement propre, puis après fermeture et redémarrage de l’application.",
+          "attendu": "le transfert aboutit et l’application ne redémarre pas de façon répétée. (#8780)"
+        },
+        {
+          "sous_titre": "Transfert de fichier depuis l’application mobile",
+          "action": "Vérifier sur le serveur de test la présence et l’intégrité du fichier reçu.",
+          "attendu": "le fichier reçu correspond au fichier d’essai envoyé. (#8780)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8780.md"
+    },
+    {
+      "ticket": 6017,
+      "sujet": "Migrer vers ImageMagick++ 7.1.2",
+      "mis_a_jour": "2026-10-06T09:44:28Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "WinApp",
+      "plan": "12 Update version",
+      "fiche": "NRT01 — Passe de non-régression technique",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Non-régression technique",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "WinApp",
+      "prerequis": "Livraison comprenant ImageMagick++ 7.1.2 et les composants dépendants",
+      "prerequis_et_moyens": [],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "ImageMagick++ 7.1.2 — composants vidéo",
+          "action": "Après déploiement, démarrer les composants genericrecorderplugin, sensorrepresentationprocessor, utf8-labelgenerator et indigovisionplugin concernés par la configuration de test.",
+          "attendu": "les composants démarrent sans erreur de chargement d’ImageMagick++ ni dépendance manquante dans leurs journaux. (#6017)"
+        },
+        {
+          "sous_titre": "ImageMagick++ 7.1.2 — composants vidéo",
+          "action": "Dans la WinApp, exécuter les étapes Live de **WVID01 — Module Vidéo** sur la Démo ACME.",
+          "attendu": "les flux s’affichent sur les tuiles conformément aux contrôles Live de la fiche. (#6017)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/6017.md"
+    },
+    {
+      "ticket": 9075,
+      "sujet": "Simulateur SIA : envoyer les messages vers un récepteur secondaire",
+      "mis_a_jour": "2026-09-22T11:59:27Z",
+      "issue": "D",
+      "issue_libelle": "D — Nouvelle procédure manuelle",
+      "application": "Serveur et services",
+      "plan": "06 Intrusion",
+      "fiche": "À créer — Plugin CSR SIA — Conformité DC-09",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Nouveau test",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Simulateur",
+      "prerequis": "Démo ACME sur deux postes ; plugin SIA CSR actif sur chaque poste ; communication UDP 10001 autorisée",
+      "prerequis_et_moyens": [
+        "Deux postes distincts disposant de la démo ACME et du plugin SIA CSR.",
+        "Simulateur SIA permettant de définir les deux récepteurs.",
+        "Accès réseau entre le simulateur et les deux postes, avec UDP 10001 autorisé."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Récepteur secondaire",
+          "action": "Sur deux postes de la démo ACME, activer le plugin SIA CSR et vérifier que les échanges UDP requis sont autorisés.",
+          "attendu": "le plugin est actif sur les deux postes et la communication requise est disponible. (#9075)"
+        },
+        {
+          "sous_titre": "Récepteur secondaire",
+          "action": "Dans le simulateur SIA, configurer un récepteur primaire et un récepteur secondaire, puis appliquer la configuration.",
+          "attendu": "les deux récepteurs sont renseignés dans la configuration appliquée. (#9075)"
+        },
+        {
+          "sous_titre": "Récepteur secondaire",
+          "action": "Envoyer une alarme de test pendant que les deux plugins sont actifs.",
+          "attendu": "l’alarme correspondante est reçue sur le système primaire et sur le système secondaire. (#9075)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9075.md"
+    },
+    {
+      "ticket": 9076,
+      "sujet": "Migration net-snmp 5.9.5.2",
+      "mis_a_jour": "2026-09-23T14:44:55Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "Serveur et services",
+      "plan": "12 Update version",
+      "fiche": "NRT01 — Passe de non-régression technique",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Non-régression technique",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "Outils et dépendances nécessaires à la compilation de SNMPManager.exe",
+      "prerequis_et_moyens": [],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "net-snmp 5.9.5.2",
+          "action": "Exécuter le script de build de `SNMPManager.exe` selon son mode d’emploi.",
+          "attendu": "la compilation se termine sans erreur de liaison liée aux bibliothèques OpenSSL/net-snmp. (#9076)"
+        },
+        {
+          "sous_titre": "net-snmp 5.9.5.2",
+          "action": "Après installation ou mise à jour, démarrer les services de la grille.",
+          "attendu": "le composant concerné passe à l’état démarré sans erreur dans ses journaux. (#9076)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9076.md"
+    },
+    {
+      "ticket": 9093,
+      "sujet": "[PAVPlugin] Pouvoir désactiver la création d'alarme indépendamment du seuil",
+      "mis_a_jour": "2026-09-30T12:48:21Z",
+      "issue": "D",
+      "issue_libelle": "D — Nouvelle procédure manuelle",
+      "application": "Serveur et services",
+      "plan": "08 Tests spécifiques",
+      "fiche": "À créer — PAVPlugin — État du capteur et création d'incident",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Nouveau test",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "Possibilité de franchir le seuil configuré et d'observer l'état du capteur ainsi que les incidents créés",
+      "prerequis_et_moyens": [
+        "PAVPlugin actif et capteur PAV configuré avec un seuil de test.",
+        "Possibilité de faire franchir le seuil et d’observer l’état du capteur ainsi que les incidents remontés."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "État du capteur et création d’incident",
+          "action": "Configurer un capteur PAV avec un seuil de 20 % et l’indicateur de création d’incidents désactivé. Faire franchir le seuil.",
+          "attendu": "l’état du capteur passe à `Triggered` et aucun incident n’est créé. (#9093)"
+        },
+        {
+          "sous_titre": "État du capteur et création d’incident",
+          "action": "Activer l’indicateur de création d’incidents et faire de nouveau franchir le seuil.",
+          "attendu": "l’état du capteur passe à `Triggered` et un incident correspondant est créé. (#9093)"
+        },
+        {
+          "sous_titre": "État du capteur et création d’incident",
+          "action": "Vérifier que, sans configuration explicite de l’indicateur, la création d’incidents est désactivée par défaut.",
+          "attendu": "le comportement observé est identique au mode désactivé. (#9093)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9093.md"
+    },
+    {
+      "ticket": 9082,
+      "sujet": "Simulateur AEOS",
+      "mis_a_jour": "2026-09-24T14:56:50Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "Serveur et services",
+      "plan": "10 Contrôle d'accès",
+      "fiche": "ACS02 — Tests avec simulateur",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Nouveau test",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Simulateur",
+      "prerequis": "Démo ACME avec plugin Nedap et simulateur SocketInterface configuré ; accès aux journaux d’activité du simulateur et du plugin",
+      "prerequis_et_moyens": [],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Simulateur AEOS SocketInterface",
+          "action": "Démarrer le plugin Nedap et le simulateur SocketInterface configuré pour l’environnement de test.",
+          "attendu": "le simulateur indique qu’il écoute et qu’un client est connecté. (#9082)"
+        },
+        {
+          "sous_titre": "Simulateur AEOS SocketInterface",
+          "action": "Envoyer un événement de badge autorisé depuis le simulateur.",
+          "attendu": "une entrée d’activité apparaît dans le simulateur et l’événement correspondant est reçu par le plugin Nedap. (#9082)"
+        },
+        {
+          "sous_titre": "Simulateur AEOS SocketInterface",
+          "action": "Envoyer un événement de badge refusé et un événement de porte.",
+          "attendu": "le journal d’activité du simulateur distingue les événements transmis et le plugin reçoit les événements simulés. (#9082)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9082.md"
+    },
+    {
+      "ticket": 8183,
+      "sujet": "Pictogrammes des Sensor de type Sprinkler",
+      "mis_a_jour": "2026-10-08T13:25:43Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "WinApp",
+      "plan": "02 WinApp",
+      "fiche": "CONF03 — Configurations des labels",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Re-test ciblé",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "WinApp",
+      "prerequis": "SensorType SPK et pictogrammes livrés ; sur une installation existante, appliquer la consigne de la release note concernant le dossier SPK sous `%EGIDIUM_DATA%`",
+      "prerequis_et_moyens": [],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Vérification des pictogrammes SPK",
+          "action": "Sur une installation existante, supprimer uniquement le dossier SPK auto-généré sous `%EGIDIUM_DATA%\\com.egidium.shared\\public\\data\\Pictogram\\Sensor\\SPK`, conformément à la release note ; ne pas intervenir dans `%EGIDIUM_HOME%`.",
+          "attendu": "seul le dossier SPK généré sous `%EGIDIUM_DATA%` est supprimé. (#8183)"
+        },
+        {
+          "sous_titre": "Vérification des pictogrammes SPK",
+          "action": "Créer ou sélectionner un SensorType SPK puis lancer la WinApp.",
+          "attendu": "les pictogrammes fournis pour SPK sont présents et la génération automatique ne les remplace pas par une représentation générique. (#8183)"
+        },
+        {
+          "sous_titre": "Vérification des pictogrammes SPK",
+          "action": "Faire passer le capteur par les états Nominal, Alarme, Défaut (`Failure=True`) et Hors-service.",
+          "attendu": "pour chaque état, le pictogramme affiché correspond à l’état ; Défaut a sa représentation SPK. (#8183)"
+        },
+        {
+          "sous_titre": "Vérification des pictogrammes SPK",
+          "action": "Fermer puis relancer la WinApp.",
+          "attendu": "les pictogrammes SPK fournis restent affichés. (#8183)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8183.md"
+    },
+    {
+      "ticket": 8816,
+      "sujet": "Plugin CSR SIA (Central Station Receiver) - Plan de validation officiel du standard DC-09",
+      "mis_a_jour": "2026-04-08T14:45:33Z",
+      "issue": "D",
+      "issue_libelle": "D — Nouvelle procédure manuelle",
+      "application": "Serveur et services",
+      "plan": "06 Intrusion",
+      "fiche": "À créer — Plugin CSR SIA — Conformité DC-09",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Nouveau test",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Simulateur",
+      "prerequis": "Plugin CSR SIA actif avec configuration de test ; simulateur PE disponible ; clés de chiffrement de test non réutilisables",
+      "prerequis_et_moyens": [
+        "Démo ACME, plugin SIA CSR actif et simulateur PE.",
+        "Environnement permettant les tests de protocoles, les journaux du plugin et l’observation des événements.",
+        "Clés et valeurs de compte générées spécifiquement pour les tests ; ne pas utiliser de secrets ou d’identifiants issus d’un environnement réel.",
+        "Disponibilité d’un poste de test pendant 24 heures pour l’essai de supervision."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Conformité DC-09 avec le simulateur PE",
+          "action": "Vérifier dans la documentation du plugin les protocoles TCP/UDP pris en charge et configurer le simulateur pour chaque mode annoncé. Envoyer un message.",
+          "attendu": "une réponse est reçue sans erreur dans le journal. (#8816)"
+        },
+        {
+          "sous_titre": "Conformité DC-09 avec le simulateur PE",
+          "action": "Configurer une clé de test identique dans le simulateur et le CSR. Envoyer un message chiffré ; répéter avec une clé différente et pour les tailles prises en charge par la matrice.",
+          "attendu": "le message chiffré avec la clé identique crée un événement, celui avec une clé différente est refusé et les tailles acceptées sont traitées. (#8816)"
+        },
+        {
+          "sous_titre": "Conformité DC-09 avec le simulateur PE",
+          "action": "Envoyer un message chiffré contenant plusieurs blocs et un message avec un CRC incorrect.",
+          "attendu": "le message valide est traité et le message au CRC erroné ne reçoit pas de réponse. (#8816)"
+        },
+        {
+          "sous_titre": "Conformité DC-09 avec le simulateur PE",
+          "action": "Envoyer des messages non chiffrés avec les formats d’identification SIA-DCS et ADM-CID.",
+          "attendu": "le récepteur répond et crée l’événement attendu. (#8816)"
+        },
+        {
+          "sous_titre": "Conformité DC-09 avec le simulateur PE",
+          "action": "Envoyer des messages avec numéros de séquence répétés, puis la séquence de passage de 9998 à 0002 décrite dans la matrice.",
+          "attendu": "un message répété ne crée pas de nouvel événement et les messages suivants sont traités. (#8816)"
+        },
+        {
+          "sous_titre": "Conformité DC-09 avec le simulateur PE",
+          "action": "Exécuter les cas d’identification du récepteur, de préfixe et de compte avec des valeurs de test limites issues de la matrice.",
+          "attendu": "les messages sont acquittés et les objets créés sont associés à des centrales distinctes lorsque les préfixes ou comptes diffèrent. (#8816)"
+        },
+        {
+          "sous_titre": "Conformité DC-09 avec le simulateur PE",
+          "action": "Configurer la supervision pour envoyer un message toutes les 50 secondes et l’exiger toutes les 60 secondes. Laisser le test tourner 24 heures, puis couper la supervision.",
+          "attendu": "aucun incident de perte de centrale n’est créé pendant l’essai de 24 heures ; un incident est signalé après la coupure dans le délai prévu par le ticket. (#8816)"
+        },
+        {
+          "sous_titre": "Conformité DC-09 avec le simulateur PE",
+          "action": "Envoyer un message mal formé avec un type non pris en charge.",
+          "attendu": "le CSR répond DUH. Consigner RSP comme non applicable tant que le support des commandes requis par le ticket lié n’est pas disponible. (#8816)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8816.md"
+    },
+    {
+      "ticket": 8787,
+      "sujet": "Maquette Polestar : gestion d'étage",
+      "mis_a_jour": "2026-06-02T14:35:50Z",
+      "issue": "D",
+      "issue_libelle": "D — Nouvelle procédure manuelle",
+      "application": "WinApp",
+      "plan": "08 Tests spécifiques",
+      "fiche": "À créer — Polestar — Gestion d'étage",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Nouveau test",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "WinApp",
+      "prerequis": "Maquette Polestar de test comprenant le rez-de-chaussée et le premier étage",
+      "prerequis_et_moyens": [
+        "Maquette Polestar de test comportant le rez-de-chaussée et le premier étage.",
+        "Accès à l’affichage de la maquette pour observer le niveau de l’élément."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Passage entre étages",
+          "action": "Dans la maquette Polestar de test, reproduire le passage du rez-de-chaussée au premier étage illustré dans le ticket.",
+          "attendu": "l’élément est associé au premier étage après le passage. (#8787)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8787.md"
+    },
+    {
+      "ticket": 8982,
+      "sujet": "[WebApp] Timeout important sur les postes ne disposant pas du plugin vidéo en local",
+      "mis_a_jour": "2026-08-17T06:58:45Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "WebApp",
+      "plan": "01 WebApp",
+      "fiche": "MC01 — Généraux",
+      "playwright_existant": {
+        "fiche_couverte": {
+          "fiche": "MC01 — Généraux",
+          "fichiers": [
+            "main-courante/Automatique_mc01-generaux-connexion.spec.ts"
+          ],
+          "groupes": [
+            "MC01 - Généraux"
+          ],
+          "tests": 9,
+          "a_valider": 1
+        },
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Re-test ciblé",
+      "automatisabilite": "Difficile",
+      "environnement": "WebApp",
+      "prerequis": "Environnement de test où le plugin vidéo est arrêté ou absent ; compte autorisé à ouvrir la Main Courante",
+      "prerequis_et_moyens": [],
+      "playwright": {
+        "Type": "@lecture",
+        "Compte": "compte de test autorisé à ouvrir la Main Courante",
+        "Dossier": "ACME_Sandbox",
+        "Référentiel": "environnement WebApp de test où le plugin vidéo peut être arrêté",
+        "Données créées": "Aucune"
+      },
+      "etapes": [
+        {
+          "sous_titre": "Connexion sans plugin vidéo",
+          "action": "Dans l'environnement de test, arrêter le plugin vidéo puis ouvrir la page de la Main Courante.",
+          "attendu": "la page de connexion s'affiche et reste utilisable. (#8982)"
+        },
+        {
+          "sous_titre": "Connexion sans plugin vidéo",
+          "action": "Se connecter avec un compte autorisé.",
+          "attendu": "l'accès à la Main Courante aboutit et l'indisponibilité du plugin vidéo est signalée dans l'interface. (#8982)"
+        },
+        {
+          "sous_titre": "Connexion sans plugin vidéo",
+          "action": "Naviguer vers une fonctionnalité disponible de la Main Courante après le signalement.",
+          "attendu": "le client reste utilisable et le signalement ne bloque pas la navigation. (#8982)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8982.md"
+    },
+    {
+      "ticket": 8992,
+      "sujet": "[WebApp] Impossible de se connecter après avoir accepté les CGU",
+      "mis_a_jour": "2026-08-17T06:56:28Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "WebApp",
+      "plan": "01 WebApp",
+      "fiche": "MC02 — Onglet Main Courante",
+      "playwright_existant": {
+        "fiche_couverte": {
+          "fiche": "MC02 — Onglet Main Courante",
+          "fichiers": [
+            "main-courante/Automatique_mc02-01-presence-elements.spec.ts",
+            "main-courante/Automatique_mc02-01b-traduction.spec.ts",
+            "main-courante/Automatique_mc02-01c-parametres-avances.spec.ts",
+            "main-courante/Automatique_mc02-02-applications.spec.ts",
+            "main-courante/Automatique_mc02-03-mode-lecture.spec.ts",
+            "main-courante/Automatique_mc02-04-options-affichage.spec.ts",
+            "main-courante/Automatique_mc02-05-comportement-lignes.spec.ts",
+            "main-courante/Automatique_mc02-06-parametres-incidents.spec.ts",
+            "main-courante/Automatique_mc02-07-session-timeout.spec.ts",
+            "main-courante/Automatique_mc02-08-lieux-adresse.spec.ts",
+            "main-courante/Automatique_mc02-09-bandeau-superieur.spec.ts",
+            "main-courante/Automatique_mc02-10-bulletin.spec.ts",
+            "../fixtures/plan.ts",
+            "main-courante/Automatique_mc02-11-activites.spec.ts",
+            "main-courante/Automatique_mc02-12-administration.spec.ts"
+          ],
+          "groupes": [
+            "MC02 - Présence des éléments",
+            "MC02 - Traduction de l'interface",
+            "MC02 - Paramètres avancés",
+            "MC02 - Applications",
+            "MC02 - Bandeau inférieur de la Main Courante",
+            "MC02 - Mode Lecture",
+            "MC02 - Mode lecture",
+            "MC02 - Options d'affichage et générales de la table",
+            "MC02 - Comportement des lignes",
+            "MC02 - Paramètres incidents & formulaires",
+            "MC02 - Paramètres incidents",
+            "MC02 - Session & Timeout Multi",
+            "MC02 - Lieux, Intervenants & Champs adresse",
+            "MC02 - Bandeau supérieur",
+            "MC02 - Bulletin",
+            "MC02 - Activités",
+            "MC02 - Onglet Administration"
+          ],
+          "tests": 159,
+          "a_valider": 76
+        },
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Re-test ciblé",
+      "automatisabilite": "Automatisable",
+      "environnement": "WebApp",
+      "prerequis": "Compte de test neuf autorisé à accéder à la Main Courante, sans acceptation préalable des CGU",
+      "prerequis_et_moyens": [],
+      "playwright": {
+        "Type": "@lecture",
+        "Compte": "compte de test neuf autorisé à accéder à la Main Courante",
+        "Dossier": "ACME_Sandbox",
+        "Référentiel": "compte dont les CGU n'ont pas encore été acceptées",
+        "Données créées": "compte de test dédié, à retirer selon les règles de l'environnement"
+      },
+      "etapes": [
+        {
+          "sous_titre": "Acceptation des CGU au premier accès",
+          "action": "Ouvrir la Main Courante avec un compte de test autorisé qui n'a pas encore accepté les CGU.",
+          "attendu": "l'écran des CGU est présenté avant l'accès aux fonctions de la Main Courante. (#8992)"
+        },
+        {
+          "sous_titre": "Acceptation des CGU au premier accès",
+          "action": "Accepter les CGU et poursuivre la connexion.",
+          "attendu": "aucune erreur de droits n'apparaît et le compte accède à la Main Courante. (#8992)"
+        },
+        {
+          "sous_titre": "Acceptation des CGU au premier accès",
+          "action": "Fermer la session, puis se reconnecter avec le même compte.",
+          "attendu": "la connexion aboutit sans boucle d'avertissement et les CGU ne sont pas redemandées. (#8992)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8992.md"
+    },
+    {
+      "ticket": 8465,
+      "sujet": "[WebApp/Administration] Bugs constatés dans la configuration d'un compte",
+      "mis_a_jour": "2026-08-05T15:53:07Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "WebApp",
+      "plan": "01 WebApp",
+      "fiche": "MC10 — Onglet Administration",
+      "playwright_existant": {
+        "fiche_couverte": {
+          "fiche": "MC10 — Onglet Administration",
+          "fichiers": [
+            "administration/Automatique_mc10-00-controle-page-object.spec.ts",
+            "administration/Automatique_mc10a-dossiers-comptes.spec.ts",
+            "administration/Automatique_mc10b-referentiels.spec.ts"
+          ],
+          "groupes": [
+            "MC10 - Administration"
+          ],
+          "tests": 67,
+          "a_valider": 50
+        },
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Re-test ciblé",
+      "automatisabilite": "Difficile",
+      "environnement": "WebApp",
+      "prerequis": "Compte administrateur de test, compte secondaire de test et groupe auquel ce compte appartient",
+      "prerequis_et_moyens": [],
+      "playwright": {
+        "Type": "@lecture",
+        "Compte": "compte administrateur de test et compte secondaire de test",
+        "Dossier": "ACME_Sandbox",
+        "Référentiel": "groupe de test existant dont le compte secondaire est membre",
+        "Données créées": "aucune si des comptes et groupe de test dédiés existent ; sinon créer un groupe isolé pour l'essai"
+      },
+      "etapes": [
+        {
+          "sous_titre": "Retrait d'un utilisateur d'un groupe",
+          "action": "Dans la configuration des groupes, retirer le compte secondaire de son groupe et enregistrer.",
+          "attendu": "après déconnexion puis reconnexion du compte secondaire, celui-ci n'appartient plus au groupe. (#8465)"
+        },
+        {
+          "sous_titre": "Garde-fou sur les droits propres",
+          "action": "Avec le compte administrateur de test, tenter de régler ses propres droits Main Courante sur « Aucun » et d'enregistrer.",
+          "attendu": "le garde-fou empêche le retrait de ces droits et l'utilisateur conserve l'accès à la Main Courante. (#8465)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8465.md"
+    },
+    {
+      "ticket": 8206,
+      "sujet": "[WebApp][MainCourante] Gestion des incidents sur capteurs",
+      "mis_a_jour": "2026-09-17T12:25:17Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "WebApp",
+      "plan": "01 WebApp",
+      "fiche": "MC02 — Onglet Main Courante",
+      "playwright_existant": {
+        "fiche_couverte": {
+          "fiche": "MC02 — Onglet Main Courante",
+          "fichiers": [
+            "main-courante/Automatique_mc02-01-presence-elements.spec.ts",
+            "main-courante/Automatique_mc02-01b-traduction.spec.ts",
+            "main-courante/Automatique_mc02-01c-parametres-avances.spec.ts",
+            "main-courante/Automatique_mc02-02-applications.spec.ts",
+            "main-courante/Automatique_mc02-03-mode-lecture.spec.ts",
+            "main-courante/Automatique_mc02-04-options-affichage.spec.ts",
+            "main-courante/Automatique_mc02-05-comportement-lignes.spec.ts",
+            "main-courante/Automatique_mc02-06-parametres-incidents.spec.ts",
+            "main-courante/Automatique_mc02-07-session-timeout.spec.ts",
+            "main-courante/Automatique_mc02-08-lieux-adresse.spec.ts",
+            "main-courante/Automatique_mc02-09-bandeau-superieur.spec.ts",
+            "main-courante/Automatique_mc02-10-bulletin.spec.ts",
+            "../fixtures/plan.ts",
+            "main-courante/Automatique_mc02-11-activites.spec.ts",
+            "main-courante/Automatique_mc02-12-administration.spec.ts"
+          ],
+          "groupes": [
+            "MC02 - Présence des éléments",
+            "MC02 - Traduction de l'interface",
+            "MC02 - Paramètres avancés",
+            "MC02 - Applications",
+            "MC02 - Bandeau inférieur de la Main Courante",
+            "MC02 - Mode Lecture",
+            "MC02 - Mode lecture",
+            "MC02 - Options d'affichage et générales de la table",
+            "MC02 - Comportement des lignes",
+            "MC02 - Paramètres incidents & formulaires",
+            "MC02 - Paramètres incidents",
+            "MC02 - Session & Timeout Multi",
+            "MC02 - Lieux, Intervenants & Champs adresse",
+            "MC02 - Bandeau supérieur",
+            "MC02 - Bulletin",
+            "MC02 - Activités",
+            "MC02 - Onglet Administration"
+          ],
+          "tests": 159,
+          "a_valider": 76
+        },
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Re-test ciblé",
+      "automatisabilite": "Difficile",
+      "environnement": "WebApp",
+      "prerequis": "Jeu de test contrôlé avec capteur relié à une Place et un Local ; cas d'un capteur relié uniquement à un Local soumis à clarification",
+      "prerequis_et_moyens": [],
+      "playwright": {
+        "Type": "@lecture",
+        "Compte": "compte autorisé à consulter les incidents du jeu de test",
+        "Dossier": "dossier isolé du jeu de test",
+        "Référentiel": "capteur relié à une Place et à un Local ; éventuellement capteur relié seulement à un Local après décision",
+        "Données créées": "incidents de test à purger selon les règles de l'environnement"
+      },
+      "etapes": [
+        {
+          "sous_titre": "Incident issu d'un capteur lié à une Place et un Local",
+          "action": "Dans un jeu de données isolé, provoquer un incident sur un capteur relié à une Place et à un Local, puis compter les lignes qui correspondent à cet incident dans la Main Courante.",
+          "attendu": "une seule ligne pour l'incident ; relever toute occurrence supplémentaire. (#8206)"
+        },
+        {
+          "sous_titre": "Incident issu d'un capteur lié à une Place et un Local",
+          "action": "Relever l'adresse affichée pour cet incident.",
+          "attendu": "consigner la valeur observée ; le verdict de conformité de l'adresse reste suspendu à la décision humaine. (#8206)"
+        },
+        {
+          "sous_titre": "Incident issu d'un capteur lié à une Place et un Local",
+          "action": "Si le cas du capteur relié uniquement à un Local est retenu, provoquer un incident sur ce capteur et relever son adresse.",
+          "attendu": "à définir après décision humaine ; ne pas attribuer de verdict avant clarification. (#8206)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8206.md"
+    },
+    {
+      "ticket": 8808,
+      "sujet": "Plugin WhatsApp",
+      "mis_a_jour": "2026-07-17T07:53:51Z",
+      "issue": "D",
+      "issue_libelle": "D — Nouvelle procédure manuelle",
+      "application": "WebApp",
+      "plan": "13 Outils externes",
+      "fiche": "À créer — Plugin WhatsApp",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Nouveau test",
+      "automatisabilite": "Impossible sans script externe",
+      "environnement": "WebApp",
+      "prerequis": "Plugin et service webhook disponibles dans un environnement de test ; compte WhatsApp Business de test, templates approuvés, agent volontaire ayant accepté les messages ; valeurs sensibles conservées hors de l'analyse",
+      "prerequis_et_moyens": [
+        "Environnement de test contenant le plugin WhatsApp et le service webhook, configurés avec des paramètres de test.",
+        "Compte WhatsApp Business de test avec templates approuvés et agent volontaire ayant accepté les messages.",
+        "Téléphone de test distinct du compte qui émet les messages afin de valider la réception et les réponses."
+      ],
+      "playwright": {
+        "Type": "@lecture",
+        "Compte": "agent WhatsApp de test ayant consenti à recevoir les messages",
+        "Dossier": "dossier de test Main Courante",
+        "Référentiel": "plugin et service webhook de test configurés ; filtres, liste de destinataires et templates approuvés",
+        "Données créées": "incidents, PoliceLogs, messages et pièce jointe de test"
+      },
+      "etapes": [
+        {
+          "sous_titre": "Envoi de messages depuis la Main Courante",
+          "action": "Configurer dans l'environnement de test un filtre d'envoi et un template approuvé, puis créer un incident du type filtré et pris en charge par un agent de test consentant.",
+          "attendu": "l'agent configuré reçoit le message correspondant à l'incident. (#8808)"
+        },
+        {
+          "sous_titre": "Envoi de messages depuis la Main Courante",
+          "action": "Créer un incident d'un type exclu par le filtre de test.",
+          "attendu": "aucun message associé à cet incident n'est envoyé au destinataire de test. (#8808)"
+        },
+        {
+          "sous_titre": "Envoi de messages depuis la Main Courante",
+          "action": "Créer un PoliceLog satisfaisant les critères configurés pour une SecurityCompany.",
+          "attendu": "les agents de test associés à cette liste reçoivent le message prévu et un destinataire non inclus ne le reçoit pas. (#8808)"
+        },
+        {
+          "sous_titre": "Réception des messages et pièces jointes",
+          "action": "Répondre à un message depuis le téléphone de test avec un texte et une pièce jointe de test.",
+          "attendu": "le message entrant et la pièce jointe sont consultables dans la Main Courante selon le parcours livré. (#8808)"
+        },
+        {
+          "sous_titre": "Réception des messages et pièces jointes",
+          "action": "Envoyer plusieurs messages pendant une même minute puis un autre message à une minute distincte.",
+          "attendu": "les messages de la même minute sont regroupés dans le commentaire d'une mention et le message envoyé à une minute distincte crée une mention distincte, comme indiqué dans le test validé du ticket. (#8808)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8808.md"
+    },
+    {
+      "ticket": 9035,
+      "sujet": "[WebApp/Dashboard] Affichage des capteurs en fonction de leur type et de leur état",
+      "mis_a_jour": "2026-09-30T12:32:33Z",
+      "issue": "C",
+      "issue_libelle": "C — Nouvelle procédure automatisable",
+      "application": "WebApp",
+      "plan": "01 WebApp",
+      "fiche": "À créer — Tableau de bord des capteurs",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Nouveau test",
+      "automatisabilite": "Difficile",
+      "environnement": "WebApp",
+      "prerequis": "Compte avec droits de modification du tableau de bord et droits suffisants pour consulter les capteurs",
+      "prerequis_et_moyens": [],
+      "playwright": {
+        "Type": "@lecture",
+        "Compte": "utilisateur disposant des droits de modification du tableau de bord et de consultation des capteurs",
+        "Dossier": "dossier de test contenant des capteurs de référence",
+        "Référentiel": "capteurs VERRE, EP, OM et ARME avec états Active, Triggered et Failure connus",
+        "Données créées": "tableau de bord et panneau d'action de test ; employer les capteurs du jeu de référence"
+      },
+      "etapes": [
+        {
+          "sous_titre": "Configurer et vérifier les filtres du panneau de capteurs",
+          "action": "Dans un tableau de bord modifiable, ajouter un panneau d'action configuré pour les capteurs.",
+          "attendu": "le panneau apparaît et liste les capteurs accessibles dans le dossier sélectionné. (#9035)"
+        },
+        {
+          "sous_titre": "Configurer et vérifier les filtres du panneau de capteurs",
+          "action": "Configurer les types VERRE, EP et OM, puis régler Active et Triggered sur True.",
+          "attendu": "seules les lignes de capteurs visibles correspondant aux types choisis et aux deux états sont présentes. (#9035)"
+        },
+        {
+          "sous_titre": "Configurer et vérifier les filtres du panneau de capteurs",
+          "action": "Remplacer les filtres par le type ARME, Active = True et Triggered = False.",
+          "attendu": "les lignes restantes correspondent aux capteurs visibles satisfaisant ces critères. (#9035)"
+        },
+        {
+          "sous_titre": "Configurer et vérifier les filtres du panneau de capteurs",
+          "action": "Retirer le filtre de type, conserver Active = True et régler Failure = True.",
+          "attendu": "les capteurs visibles de tous types satisfaisant ces attributs apparaissent. (#9035)"
+        },
+        {
+          "sous_titre": "Configurer et vérifier les filtres du panneau de capteurs",
+          "action": "Dans les colonnes visibles, sélectionner DisplayName et Description.",
+          "attendu": "ces deux colonnes sont visibles et les colonnes non sélectionnées n'apparaissent pas. (#9035)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9035.md"
+    },
+    {
+      "ticket": 9091,
+      "sujet": "Migration Ice 3.7.11 - Javascript",
+      "mis_a_jour": "2026-10-13T14:10:31Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "WebApp",
+      "plan": "12 Update version",
+      "fiche": "NRT01 — Passe de non-régression technique",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Non-régression technique",
+      "automatisabilite": "Difficile",
+      "environnement": "WebApp",
+      "prerequis": "Livraison ISAP-V27.1 construite avec Ice 3.7.11 et environnement WebApp de test",
+      "prerequis_et_moyens": [],
+      "playwright": {
+        "Type": "@lecture",
+        "Compte": "compte autorisé à ouvrir la WebApp de test",
+        "Dossier": "ACME_Sandbox",
+        "Référentiel": "build ISAP-V27.1 généré avec Ice 3.7.11 et déployé en environnement de test",
+        "Données créées": "Aucune"
+      },
+      "etapes": [
+        {
+          "sous_titre": "Ice 3.7.11 — génération JavaScript",
+          "action": "Générer les fichiers JavaScript de la livraison ISAP-V27.1 avec Ice 3.7.11.",
+          "attendu": "la génération se termine sans erreur et produit les fichiers JavaScript attendus par le build. (#9091)"
+        },
+        {
+          "sous_titre": "Ice 3.7.11 — génération JavaScript",
+          "action": "Déployer le build généré dans l'environnement WebApp de test et ouvrir la Main Courante.",
+          "attendu": "la page s'ouvre, les échanges avec le serveur s'effectuent et aucune erreur liée au JavaScript généré n'est observée. (#9091)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9091.md"
+    },
+    {
+      "ticket": 7812,
+      "sujet": "[Main Courante] Client léger spécifique à l'utilisation sur mobile V2",
+      "mis_a_jour": "2026-10-14T13:23:04Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "WebApp",
+      "plan": "01 WebApp",
+      "fiche": "MC02 — Onglet Main Courante",
+      "playwright_existant": {
+        "fiche_couverte": {
+          "fiche": "MC02 — Onglet Main Courante",
+          "fichiers": [
+            "main-courante/Automatique_mc02-01-presence-elements.spec.ts",
+            "main-courante/Automatique_mc02-01b-traduction.spec.ts",
+            "main-courante/Automatique_mc02-01c-parametres-avances.spec.ts",
+            "main-courante/Automatique_mc02-02-applications.spec.ts",
+            "main-courante/Automatique_mc02-03-mode-lecture.spec.ts",
+            "main-courante/Automatique_mc02-04-options-affichage.spec.ts",
+            "main-courante/Automatique_mc02-05-comportement-lignes.spec.ts",
+            "main-courante/Automatique_mc02-06-parametres-incidents.spec.ts",
+            "main-courante/Automatique_mc02-07-session-timeout.spec.ts",
+            "main-courante/Automatique_mc02-08-lieux-adresse.spec.ts",
+            "main-courante/Automatique_mc02-09-bandeau-superieur.spec.ts",
+            "main-courante/Automatique_mc02-10-bulletin.spec.ts",
+            "../fixtures/plan.ts",
+            "main-courante/Automatique_mc02-11-activites.spec.ts",
+            "main-courante/Automatique_mc02-12-administration.spec.ts"
+          ],
+          "groupes": [
+            "MC02 - Présence des éléments",
+            "MC02 - Traduction de l'interface",
+            "MC02 - Paramètres avancés",
+            "MC02 - Applications",
+            "MC02 - Bandeau inférieur de la Main Courante",
+            "MC02 - Mode Lecture",
+            "MC02 - Mode lecture",
+            "MC02 - Options d'affichage et générales de la table",
+            "MC02 - Comportement des lignes",
+            "MC02 - Paramètres incidents & formulaires",
+            "MC02 - Paramètres incidents",
+            "MC02 - Session & Timeout Multi",
+            "MC02 - Lieux, Intervenants & Champs adresse",
+            "MC02 - Bandeau supérieur",
+            "MC02 - Bulletin",
+            "MC02 - Activités",
+            "MC02 - Onglet Administration"
+          ],
+          "tests": 159,
+          "a_valider": 76
+        },
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Re-test ciblé",
+      "automatisabilite": "Difficile",
+      "environnement": "WebApp",
+      "prerequis": "Terminal mobile, incident avec pièce jointe image, compte de test avec un seul droit de création",
+      "prerequis_et_moyens": [],
+      "playwright": {
+        "Type": "@lecture",
+        "Compte": "compte de test avec un seul droit de création",
+        "Dossier": "contexte de test Main Courante",
+        "Référentiel": "terminal mobile et incident de test comportant une image jointe",
+        "Données créées": "Aucune"
+      },
+      "etapes": [
+        {
+          "sous_titre": "Main Courante mobile — création et consultation des pièces jointes",
+          "action": "Sur un terminal mobile, ouvrir la Main Courante dans un contexte où le compte possède un seul des droits de création d'incident ou de mention, puis toucher « + ».",
+          "attendu": "le formulaire de création s'ouvre sans création immédiate d'incident. (#7812)"
+        },
+        {
+          "sous_titre": "Main Courante mobile — création et consultation des pièces jointes",
+          "action": "Fermer ou annuler le formulaire sans compléter les champs obligatoires et examiner la liste.",
+          "attendu": "aucun nouvel incident n'a été créé. (#7812)"
+        },
+        {
+          "sous_titre": "Main Courante mobile — création et consultation des pièces jointes",
+          "action": "Ouvrir le détail d'un incident comportant une pièce jointe image.",
+          "attendu": "l'image est accessible depuis le détail. (#7812)"
+        },
+        {
+          "sous_titre": "Main Courante mobile — création et consultation des pièces jointes",
+          "action": "Agrandir puis réduire l'image avec les commandes de zoom disponibles sur le terminal.",
+          "attendu": "l'image change d'échelle et peut être ramenée à une taille réduite. (#7812)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/7812.md"
+    },
+    {
+      "ticket": 9084,
+      "sujet": "[MobileApp] Score DEX inférieur au score minimum Playstore",
+      "mis_a_jour": "2026-10-14T13:18:18Z",
+      "issue": "D",
+      "issue_libelle": "D — Nouvelle procédure manuelle",
+      "application": "Application mobile",
+      "plan": "08 Tests spécifiques",
+      "fiche": "À créer — Application mobile : contrôle du score DEX",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Nouveau test",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Mobile",
+      "prerequis": "Version ISAP-V27.1 publiée et accès de lecture à l'indicateur DEX dans Play Console",
+      "prerequis_et_moyens": [
+        "Accès de lecture à Play Console et version ISAP-V27.1 publiée ; conserver la preuve de l'indicateur et du seuil affichés."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Contrôle du score DEX après publication",
+          "action": "Dans Play Console, ouvrir la fiche de la version ISAP-V27.1 publiée et relever l'indicateur DEX et le seuil minimal affiché.",
+          "attendu": "la version n'est pas signalée comme inférieure au minimum requis. (#9084)"
+        },
+        {
+          "sous_titre": "Contrôle du score DEX après publication",
+          "action": "Relever l'identifiant de version associé à l'indicateur.",
+          "attendu": "la preuve du statut DEX se rapporte sans ambiguïté à la version publiée ISAP-V27.1. (#9084)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9084.md"
+    },
+    {
+      "ticket": 8577,
+      "sujet": "Le paramètre propagateRejectedActions n'est pas correctement pris en compte",
+      "mis_a_jour": "2026-08-05T15:52:34Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "WebApp",
+      "plan": "01 WebApp",
+      "fiche": "MC12 — Tests à plusieurs personnes",
+      "playwright_existant": {
+        "fiche_couverte": {
+          "fiche": "MC12 — Tests à plusieurs personnes",
+          "fichiers": [
+            "multi-utilisateurs/Automatique_mc12-multi-utilisateurs.spec.ts"
+          ],
+          "groupes": [
+            "MC12 - Tests à plusieurs personnes"
+          ],
+          "tests": 16,
+          "a_valider": 15
+        },
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Re-test ciblé",
+      "automatisabilite": "Difficile",
+      "environnement": "WebApp",
+      "prerequis": "Deux sessions opérateur et tâche planifiée destinée à plusieurs opérateurs",
+      "prerequis_et_moyens": [],
+      "playwright": {
+        "Type": "@lecture",
+        "Compte": "deux sessions opérateur",
+        "Dossier": "contexte Runsheet de test",
+        "Référentiel": "tâche planifiée adressée aux deux opérateurs ; paramètre réglé à `false`",
+        "Données créées": "tâche de test à adresser aux deux opérateurs"
+      },
+      "etapes": [
+        {
+          "sous_titre": "Propagation du rejet d'une tâche",
+          "action": "Régler `iceMap_propagateRejectedActions` à `false`, ouvrir la même tâche dans deux sessions opérateur et vérifier son affichage avant action.",
+          "attendu": "la tâche est visible dans les deux sessions. (#8577)"
+        },
+        {
+          "sous_titre": "Propagation du rejet d'une tâche",
+          "action": "Refuser la tâche dans la première session et examiner les deux sessions.",
+          "attendu": "le destinataire du refus apparaît en rouge dans la session ayant refusé ; l'affichage dans l'autre session reste à confirmer. (#8577)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8577.md"
+    },
+    {
+      "ticket": 9108,
+      "sujet": "[WebApp][Runsheet] Changement non désiré des temps Durée et Pré-Affichage",
+      "mis_a_jour": "2026-10-13T10:59:54Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "WebApp",
+      "plan": "01 WebApp",
+      "fiche": "MC06 — Onglet Evénements",
+      "playwright_existant": {
+        "fiche_couverte": {
+          "fiche": "MC06 — Onglet Evénements",
+          "fichiers": [
+            "evenements-planifies/Automatique_mc06-evenements-planifies.spec.ts"
+          ],
+          "groupes": [
+            "MC06 - Évènements planifiés"
+          ],
+          "tests": 16,
+          "a_valider": 12
+        },
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Re-test ciblé",
+      "automatisabilite": "Automatisable",
+      "environnement": "WebApp",
+      "prerequis": "Compte de test autorisé à créer un événement et une tâche planifiés",
+      "prerequis_et_moyens": [],
+      "playwright": {
+        "Type": "@lecture",
+        "Compte": "utilisateur autorisé à créer des tâches et événements planifiés",
+        "Dossier": "contexte Runsheet de test",
+        "Référentiel": "page Événements planifiés de la WebApp",
+        "Données créées": "lignes de test non enregistrées, annulées en fin de test"
+      },
+      "etapes": [
+        {
+          "sous_titre": "Stabilité des durées lors de l'édition",
+          "action": "Créer une tâche planifiée sans l'enregistrer, saisir un début éloigné de l'heure courante, puis saisir Durée et Pré-Affichage.",
+          "attendu": "les deux champs affichent les valeurs saisies. (#9108)"
+        },
+        {
+          "sous_titre": "Stabilité des durées lors de l'édition",
+          "action": "Attendre au moins six secondes sans modifier les champs.",
+          "attendu": "Durée et Pré-Affichage conservent les valeurs saisies. (#9108)"
+        },
+        {
+          "sous_titre": "Stabilité des durées lors de l'édition",
+          "action": "Répéter le scénario sur un événement planifié.",
+          "attendu": "les deux valeurs ne changent pas après l'attente. (#9108)"
+        },
+        {
+          "sous_titre": "Stabilité des durées lors de l'édition",
+          "action": "Annuler les lignes de test non enregistrées.",
+          "attendu": "aucune tâche ni aucun événement de test ne demeure enregistré. (#9108)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9108.md"
+    },
+    {
+      "ticket": 8977,
+      "sujet": "[WebApp] Mauvaise gestion par dossiers des ressources/instances",
+      "mis_a_jour": "2026-10-13T14:10:22Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "WebApp",
+      "plan": "01 WebApp",
+      "fiche": "MC04 — Onglet Situation",
+      "playwright_existant": {
+        "fiche_couverte": {
+          "fiche": "MC04 — Onglet Situation",
+          "fichiers": [
+            "situation/Automatique_mc04-situation.spec.ts"
+          ],
+          "groupes": [
+            "MC04 - Situation"
+          ],
+          "tests": 35,
+          "a_valider": 35
+        },
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Re-test ciblé",
+      "automatisabilite": "Difficile",
+      "environnement": "WebApp",
+      "prerequis": "Deux dossiers de test et ressource visible depuis son dossier d'origine",
+      "prerequis_et_moyens": [],
+      "playwright": {
+        "Type": "@lecture",
+        "Compte": "compte autorisé à consulter les deux dossiers",
+        "Dossier": "dossier associé à la ressource et dossier courant non associé",
+        "Référentiel": "ressource de test associée à un seul dossier",
+        "Données créées": "Aucune"
+      },
+      "etapes": [
+        {
+          "sous_titre": "Visibilité des ressources selon le dossier",
+          "action": "Depuis le dossier associé à une ressource de test, afficher la Situation.",
+          "attendu": "la ressource est visible dans son dossier d'origine. (#8977)"
+        },
+        {
+          "sous_titre": "Visibilité des ressources selon le dossier",
+          "action": "Sélectionner un autre dossier non associé à cette ressource et afficher la Situation.",
+          "attendu": "la ressource n'est pas affichée dans la vue du dossier courant. (#8977)"
+        },
+        {
+          "sous_titre": "Visibilité des ressources selon le dossier",
+          "action": "Revenir au dossier d'origine et actualiser la Situation.",
+          "attendu": "la ressource y est de nouveau visible. (#8977)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8977.md"
+    },
+    {
+      "ticket": 8838,
+      "sujet": "[WebApp] Base du dashboard",
+      "mis_a_jour": "2026-09-28T12:36:53Z",
+      "issue": "C",
+      "issue_libelle": "C — Nouvelle procédure automatisable",
+      "application": "WebApp",
+      "plan": "01 WebApp",
+      "fiche": "À créer — Tableau de bord WebApp",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Nouveau test",
+      "automatisabilite": "Difficile",
+      "environnement": "WebApp",
+      "prerequis": "Version ISAP-V27.1 et critères d'acceptation du dashboard à confirmer",
+      "prerequis_et_moyens": [],
+      "playwright": {
+        "Type": "@lecture",
+        "Compte": "compte disposant des droits de modification du dashboard",
+        "Dossier": "dossier de test",
+        "Référentiel": "dashboard de test et widgets disponibles dans ISAP-V27.1",
+        "Données créées": "dashboard et widgets de test ; importer uniquement un fichier de configuration de test contrôlé"
+      },
+      "etapes": [
+        {
+          "sous_titre": "Tableau de bord WebApp — proposition",
+          "action": "Ouvrir le dashboard de la version ISAP-V27.1.",
+          "attendu": "la page du dashboard s'affiche sans erreur bloquante. (#8838)"
+        },
+        {
+          "sous_titre": "Tableau de bord WebApp — proposition",
+          "action": "En mode édition, ajouter ou renommer un widget puis valider la modification.",
+          "attendu": "le widget est visible et son nom reflète la valeur saisie. (#8838)"
+        },
+        {
+          "sous_titre": "Tableau de bord WebApp — proposition",
+          "action": "Modifier la largeur de la fenêtre du navigateur.",
+          "attendu": "les widgets restent affichés dans la page sans chevauchement manifeste. (#8838)"
+        },
+        {
+          "sous_titre": "Tableau de bord WebApp — proposition",
+          "action": "Utiliser les fonctions d'import et d'export du dashboard.",
+          "attendu": "l'import accepte la configuration de test et l'export produit un fichier exploitable ; le format et le contenu exacts restent à définir. (#8838)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8838.md"
+    },
+    {
+      "ticket": 8887,
+      "sujet": "WebApp : Permettre une utilisation de la vidéo sans Joystick",
+      "mis_a_jour": "2026-10-13T14:10:53Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "WebApp",
+      "plan": "01 WebApp",
+      "fiche": "MC05 — Onglet Vidéo",
+      "playwright_existant": {
+        "fiche_couverte": {
+          "fiche": "MC05 — Onglet Vidéo",
+          "fichiers": [
+            "video/Automatique_mc05-video.spec.ts"
+          ],
+          "groupes": [
+            "MC05 - Vidéo"
+          ],
+          "tests": 26,
+          "a_valider": 25
+        },
+        "tests_citant_le_ticket": [
+          {
+            "fichier": "video/Automatique_mc05-video.spec.ts",
+            "titre": "[MC05-015] Molette avant = zoom, arrière = dézoom (PTZ)"
+          },
+          {
+            "fichier": "video/Automatique_mc05-video.spec.ts",
+            "titre": "[MC05-016] Touches + / - du clavier : même comportement que la molette"
+          },
+          {
+            "fichier": "video/Automatique_mc05-video.spec.ts",
+            "titre": "[MC05-017] Les flèches déplacent la caméra"
+          },
+          {
+            "fichier": "video/Automatique_mc05-video.spec.ts",
+            "titre": "[MC05-018 / MC05-019] Saisir l'ID d'une autre caméra actualise l'interface ; Entrée affiche cette caméra"
+          },
+          {
+            "fichier": "video/Automatique_mc05-video.spec.ts",
+            "titre": "[MC05-020] Un ID inexistant affiche un message d'erreur"
+          },
+          {
+            "fichier": "video/Automatique_mc05-video.spec.ts",
+            "titre": "[MC05-021] Touche Suppr sur une tuile active : flux retiré, tuile vide"
+          },
+          {
+            "fichier": "video/Automatique_mc05-video.spec.ts",
+            "titre": "[MC05-022 à MC05-025] Presets « P<n> » : positionnement sur 3 presets ; preset inexistant sans crash"
+          }
+        ]
+      },
+      "nature": "Re-test ciblé",
+      "automatisabilite": "Difficile",
+      "environnement": "WebApp",
+      "prerequis": "Plugin CCTV lancé, caméra PTZ avec presets et enregistrements accessibles",
+      "prerequis_et_moyens": [],
+      "playwright": {
+        "Type": "@lecture",
+        "Compte": "compte de test autorisé à consulter la vidéo",
+        "Dossier": "contexte vidéo de test",
+        "Référentiel": "caméra PTZ avec presets et enregistrements disponibles ; plugin CCTV lancé",
+        "Données créées": "Aucune"
+      },
+      "etapes": [
+        {
+          "sous_titre": "Interactions caméra avec clavier et souris",
+          "action": "Afficher le flux d'une caméra PTZ et actionner la molette vers l'avant puis vers l'arrière.",
+          "attendu": "le champ de vision se rapproche puis s'éloigne. (#8887)"
+        },
+        {
+          "sous_titre": "Interactions caméra avec clavier et souris",
+          "action": "Utiliser les touches +/- puis les flèches du clavier.",
+          "attendu": "zoom et déplacement de la caméra correspondent aux commandes saisies. (#8887)"
+        },
+        {
+          "sous_titre": "Interactions caméra avec clavier et souris",
+          "action": "Entrer l'identifiant physique d'une autre caméra et valider avec Entrée.",
+          "attendu": "le flux affiché correspond à cette caméra ; une ID incorrecte produit le message d'erreur prévu sans crash. (#8887)"
+        },
+        {
+          "sous_titre": "Interactions caméra avec clavier et souris",
+          "action": "Sélectionner une tuile avec un flux actif et appuyer sur Suppr (Delete).",
+          "attendu": "le flux est retiré et la tuile est vide. (#8887)"
+        },
+        {
+          "sous_titre": "Interactions caméra avec clavier et souris",
+          "action": "Saisir P suivi du numéro de chacun de trois presets configurés.",
+          "attendu": "la caméra rejoint le champ de vision du preset demandé. (#8887)"
+        },
+        {
+          "sous_titre": "Interactions caméra avec clavier et souris",
+          "action": "Saisir P suivi du numéro d'un preset inexistant.",
+          "attendu": "l'application ne plante pas. (#8887)"
+        },
+        {
+          "sous_titre": "Rejeu et dichotomie",
+          "action": "Afficher une caméra en direct, passer en rejeu, puis revenir au mode Live.",
+          "attendu": "le flux de la caméra sélectionnée s'affiche de nouveau en direct. (#8887)"
+        },
+        {
+          "sous_titre": "Rejeu et dichotomie",
+          "action": "Ouvrir la dichotomie pour une caméra disposant d'enregistrements antérieurs à l'heure courante.",
+          "attendu": "les horodatages affichés ne sont pas dans le futur et les images disponibles de la période sont affichées. (#8887)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8887.md"
+    },
+    {
+      "ticket": 8941,
+      "sujet": "[WebApp] Droits spécifique pour la vidéo + gestion du plugin en local",
+      "mis_a_jour": "2026-07-23T11:22:53Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "WebApp",
+      "plan": "01 WebApp",
+      "fiche": "MC05 — Onglet Vidéo",
+      "playwright_existant": {
+        "fiche_couverte": {
+          "fiche": "MC05 — Onglet Vidéo",
+          "fichiers": [
+            "video/Automatique_mc05-video.spec.ts"
+          ],
+          "groupes": [
+            "MC05 - Vidéo"
+          ],
+          "tests": 26,
+          "a_valider": 25
+        },
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Re-test ciblé",
+      "automatisabilite": "Impossible sans script externe",
+      "environnement": "WebApp",
+      "prerequis": "Poste client sur le réseau vidéo avec plugin local ; caméra de test ; profils des quatre droits vidéo",
+      "prerequis_et_moyens": [
+        "WebApp distante et poste client situé sur le réseau vidéo avec plugin local configuré.",
+        "Caméra de test accessible depuis le poste client.",
+        "Profils ou comptes de test permettant d'exercer séparément les quatre droits, sans inscrire d'identifiant ni de mot de passe dans l'analyse."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Accès vidéo local",
+          "action": "Depuis le navigateur d'un poste client disposant du plugin local, ouvrir la WebApp distante et demander le flux d'une caméra configurée.",
+          "attendu": "le flux s'affiche au poste client. (#8941)"
+        },
+        {
+          "sous_titre": "Droits vidéo — matrice à valider",
+          "action": "Attribuer successivement à un utilisateur chacun des droits « Aucun », « Flux », « Dichotomie » et « Enregistrements », puis tenter d'accéder aux modes vidéo de la WebApp.",
+          "attendu": "chaque mode est accessible ou refusé selon la matrice de permissions approuvée ; les résultats par droit restent à confirmer. (#8941)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8941.md"
+    },
+    {
+      "ticket": 9090,
+      "sujet": "[WebApp] Vision NOK dans le cas d'incident ayant pour source un capteur relié à une place",
+      "mis_a_jour": "2026-10-13T14:10:08Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "WebApp",
+      "plan": "01 WebApp",
+      "fiche": "MC04 — Onglet Situation",
+      "playwright_existant": {
+        "fiche_couverte": {
+          "fiche": "MC04 — Onglet Situation",
+          "fichiers": [
+            "situation/Automatique_mc04-situation.spec.ts"
+          ],
+          "groupes": [
+            "MC04 - Situation"
+          ],
+          "tests": 35,
+          "a_valider": 35
+        },
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Re-test ciblé",
+      "automatisabilite": "Difficile",
+      "environnement": "WebApp",
+      "prerequis": "Démo ACME, simulateur SIA, capteur dans le champ d'une caméra et lien d'étage configurable",
+      "prerequis_et_moyens": [
+        "Environnement Démo ACME avec caméra Atlantique visible depuis le capteur.",
+        "Simulateur SIA et accès de configuration au lien du capteur vers l'étage.",
+        "Compte WebApp autorisé à consulter les incidents et la vidéo."
+      ],
+      "playwright": {
+        "Type": "@lecture",
+        "Compte": "compte WebApp habilité à consulter les incidents et la vidéo",
+        "Dossier": "Démo ACME",
+        "Référentiel": "capteur simulé dans le champ d'Atlantique ; simulateur SIA disponible",
+        "Données créées": "deux incidents de test déclenchés par alarmes simulées"
+      },
+      "etapes": [
+        {
+          "sous_titre": "Vision depuis un incident source capteur",
+          "action": "Dans la Démo ACME, placer un capteur simulé dans le champ de vision d'Atlantique et le relier à l'étage 1.",
+          "attendu": "la configuration du scénario avec relation est en place. (#9090)"
+        },
+        {
+          "sous_titre": "Vision depuis un incident source capteur",
+          "action": "Simuler une alarme SIA sur ce capteur et ouvrir l'incident créé dans la WebApp.",
+          "attendu": "l'incident indique le capteur comme source et l'étage associé. (#9090)"
+        },
+        {
+          "sous_titre": "Vision depuis un incident source capteur",
+          "action": "Depuis l'incident, ouvrir Vision dans la WebApp.",
+          "attendu": "la caméra correspondante s'affiche et « pas de caméra » n'est pas affiché. (#9090)"
+        },
+        {
+          "sous_titre": "Vision depuis un incident source capteur",
+          "action": "Retirer le lien entre capteur et étage, simuler une nouvelle alarme et ouvrir Vision depuis le nouvel incident.",
+          "attendu": "la caméra s'affiche également sans relation à l'étage. (#9090)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9090.md"
     }
   ]
 }

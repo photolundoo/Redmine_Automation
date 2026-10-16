@@ -49,3 +49,53 @@
 - 2026-10-16 16:45 — #8717 — analyse reprise — adaptation INT03, inhibition temporisée
 - 2026-10-16 16:45 — #9014 — analyse reprise — adaptation INT03, nettoyage des actions liées à #8717
 - 2026-10-16 16:47 — #8965 — analyse reprise — nouvelle fiche MobileApp, relecture humaine demandée
+- 2026-10-16 17:12 — #9006 — analyse reprise — adaptation section Genetec, SecurityCenter 5.14
+- 2026-10-16 17:13 — #9079 — analyse reprise — rattachement NRT01, migration Ice 3.7
+- 2026-10-16 17:14 — #8717 — analyse reprise — adaptation INT03, tests inhibition temporisée
+- 2026-10-16 17:15 — #8898 — analyse reprise — adaptation MC13, carte OpenStreetMap ; question ouverte sur l'index incident.parents[6]
+- 2026-10-16 17:16 — #7987 — analyse reprise — adaptation PERF01, charge caméra et mesure des cônes ; seuil demandé
+- 2026-10-16 17:17 — #9030 — analyse reprise — adaptation MC04, visibilité des labels des caméras en 2D et 3D
+- 2026-10-16 17:19 — #7122 — analyse reprise — adaptation NRT01, Tomcat 11/GeoServer ; version GeoServer à confirmer
+- 2026-10-16 17:20 — #6918 — analyse reprise — adaptation NRT01, POCO 1.15.3 ; périmètre et composant à confirmer
+- 2026-10-16 17:35 — #8898 — décision nouveau plan appliquée — Test script python - Envoi de mail
+- 2026-10-16 17:36 — #7987 — décision appliquée — délai acceptable des cônes fixé à 5-10 secondes
+- 2026-10-16 17:36 — #7122 — décision appliquée — Tomcat 11, GeoServer 3.0, vérification WebApp et services
+- 2026-10-16 17:36 — #6918 — décision appliquée — POCO 1.15.3 et support SameSite en ISAP-V27.1
+- 2026-10-16 17:38 — #8080 — analyse reprise — adaptation NRT01, compilation et exécution Debian 13
+- 2026-10-16 17:38 — #8805 — analyse reprise — adaptation NRT01, OpenSSL 3.5.8
+- 2026-10-16 17:39 — #8939 — analyse reprise — adaptation INS04, configurations HTTP/TLS de Tomcat
+- 2026-10-16 17:40 — #8970 — analyse reprise — ajout création d’incident SmartShieldWebAPI par EntityID du type
+- 2026-10-16 17:41 — #8990 — analyse reprise — ajout vérification de non-crash StaticLicenseChecker dans NRT01
+- 2026-10-16 17:42 — #9016 — analyse reprise — mot de passe avec deux-points à la connexion SmartShieldWebAPI
+- 2026-10-16 17:43 — #9033 — analyse reprise — contrôles Ice Java dans NRT01 ; question SSO inscrite
+- 2026-10-16 17:52 — #9039 — analyse rédigée pour le lot 58
+- 2026-10-16 17:52 — #9064 — analyse rédigée pour le lot 58
+- 2026-10-16 17:52 — #8915 — analyse rédigée pour le lot 58
+- 2026-10-16 17:52 — #8966 — analyse rédigée pour le lot 58
+- 2026-10-16 17:52 — #8971 — analyse rédigée pour le lot 58
+- 2026-10-16 17:52 — #8765 — analyse rédigée pour le lot 58
+- 2026-10-16 17:52 — #8780 — analyse rédigée pour le lot 58
+- 2026-10-16 17:52 — #6017 — analyse rédigée pour le lot 58
+- 2026-10-16 17:52 — #9075 — analyse rédigée pour le lot 58
+- 2026-10-16 17:52 — #9076 — analyse rédigée pour le lot 58
+- 2026-10-16 17:52 — #9093 — analyse rédigée pour le lot 58
+- 2026-10-16 17:52 — #9082 — analyse rédigée pour le lot 58
+- 2026-10-16 17:52 — #8183 — analyse rédigée pour le lot 58
+- 2026-10-16 17:52 — #8816 — analyse rédigée pour le lot 58
+- 2026-10-16 17:52 — #8787 — analyse rédigée pour le lot 58
+- 2026-10-16 17:52 — #9091 — analyse rédigée pour le lot 58
+- 2026-10-16 17:52 — #7812 — analyse rédigée pour le lot 58
+- 2026-10-16 17:52 — #9084 — analyse rédigée pour le lot 58
+- 2026-10-16 17:52 — #8577 — analyse rédigée pour le lot 58
+- 2026-10-16 17:52 — #9108 — analyse rédigée pour le lot 58
+- 2026-10-16 17:52 — #8977 — analyse rédigée pour le lot 58
+- 2026-10-16 17:53 — #8887 — analyse rédigée pour le lot 58
+- 2026-10-16 17:53 — #8941 — analyse rédigée pour le lot 58
+- 2026-10-16 17:53 — #9090 — analyse rédigée pour le lot 58
+- 2026-10-16 17:55 — #8982 — analyse rédigée pour le lot 58
+- 2026-10-16 17:55 — #8992 — analyse rédigée pour le lot 58
+- 2026-10-16 17:55 — #8465 — analyse rédigée pour le lot 58
+- 2026-10-16 17:55 — #8206 — analyse rédigée pour le lot 58
+- 2026-10-16 17:55 — #8808 — analyse rédigée pour le lot 58
+- 2026-10-16 17:55 — #9035 — analyse rédigée pour le lot 58
+- 2026-10-16 17:55 — #8838 — analyse rédigée pour le lot 58

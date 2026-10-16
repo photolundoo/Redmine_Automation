@@ -1,6 +1,6 @@
 # Couverture Playwright
 
-Générée le 16/10/2026 16:39 par `python analyses.py couverture`. Ne pas modifier à la main : corriger les rattachements dans `referentiel/correspondance-playwright.md`.
+Générée le 16/10/2026 17:34 par `python analyses.py couverture`. Ne pas modifier à la main : corriger les rattachements dans `referentiel/correspondance-playwright.md`.
 
 - Tests lus : 437
 - Fiches du plan 01 couvertes : 11 sur 15

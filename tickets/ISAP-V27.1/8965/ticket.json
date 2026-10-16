@@ -1,0 +1,324 @@
+{
+  "issue": {
+    "id": 8965,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 6,
+      "name": "Urgent"
+    },
+    "author": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "assigned_to": {
+      "id": 60,
+      "name": "Lucie Thomas"
+    },
+    "category": {
+      "id": 132,
+      "name": "com.egidium.isap.reporting"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "parent": {
+      "id": 8754
+    },
+    "subject": "[MobileApp] Permettre de configurer son serveur au lancement",
+    "description": "Ce sera à demander au premier lancement. Mettre aussi une option (bouton \"pas trop visible\") pour permettre de le changer.\r\nPlutôt que de permettre de taper \"vgp\" qu'on transformera en vgp.egidium.fr/isap-vgp.egidium.fr, j'ai pensé à transformer vgp en un code réversible pour éviter les \"force brutes\" surtout si on connait nos clients.\r\n\r\nFaudra adapter le code python ci-joint généré par IA pour faire le décodage dans la MobileApp.\r\n\r\nL'idéal est sans doute d'avoir un serveur intermédiaire que ferait le liens entre un code/chiffre et une machine ? Mais bon ça ira dans un premier temps.\r\n\r\nAvec l'algo généré, on est limité à 11 caractères pour le nom du client. Au pire on créera des alias, par exemple torann-fr pour torann-france.\r\nOn pourrait aussi essayer de trouver un meilleur algo.\r\n\r\n*Il ne faut pas déployer sur le PlayStore une nouvelle appli sans ce mécanisme (et contenant à la place vgp en dur).*",
+    "start_date": "2026-07-22",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 8.0,
+    "total_estimated_hours": 8.0,
+    "spent_hours": 10.0,
+    "total_spent_hours": 10.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Versailles Grand Parc"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - Gestion mobilité"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": "0"
+      }
+    ],
+    "created_on": "2026-07-22T09:37:22Z",
+    "updated_on": "2026-09-25T13:44:29Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 4956,
+        "filename": "numeric_cipher.py",
+        "filesize": 8007,
+        "content_type": "text/x-python",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4956/numeric_cipher.py",
+        "author": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "created_on": "2026-07-22T09:36:40Z"
+      }
+    ],
+    "journals": [
+      {
+        "id": 78983,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "<pre>\n$ python numeric_cipher.py encode vgp\n9zhL0QXCcX\n$ python numeric_cipher.py decode 9zhL0QXCcX\nvgp\n$\n</pre>",
+        "created_on": "2026-07-22T09:37:43Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 78984,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-07-22T09:40:05Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "description",
+            "old_value": "Ce sera à demander au premier lancement. Mettre aussi une option (bouton \"pas trop visible\") pour permettre de le changer.\r\nPlutôt que de permettre de taper \"vgp\" qu'on transformera en vgp.egidium.fr/isap-vgp.egidium.fr, j'ai pensé à transformer vgp en un code réversible pour éviter les \"force brutes\" surtout si on connait nos clients.\r\n\r\nFaudra adapter le code python ci-joint généré par IA pour faire le décodage dans la MobileApp.\r\n\r\nL'idéal est sans doute d'avoir un serveur intermédiaire que ferait le liens entre un code/chiffre et une machine ? Mais bon ça ira dans un premier temps.",
+            "new_value": "Ce sera à demander au premier lancement. Mettre aussi une option (bouton \"pas trop visible\") pour permettre de le changer.\r\nPlutôt que de permettre de taper \"vgp\" qu'on transformera en vgp.egidium.fr/isap-vgp.egidium.fr, j'ai pensé à transformer vgp en un code réversible pour éviter les \"force brutes\" surtout si on connait nos clients.\r\n\r\nFaudra adapter le code python ci-joint généré par IA pour faire le décodage dans la MobileApp.\r\n\r\nL'idéal est sans doute d'avoir un serveur intermédiaire que ferait le liens entre un code/chiffre et une machine ? Mais bon ça ira dans un premier temps.\r\n\r\nAvec l'algo généré, on est limité à 11 caractères pour le nom du client. Au pire on créera des alias, par exemple torann-fr pour torann-france.\r\nOn pourrait aussi essayer de trouver un meilleur algo."
+          }
+        ]
+      },
+      {
+        "id": 78985,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Commité ici avec un autre nom : /c/DEV/EGIDIUM/com.egidium.tools.python/private/Crypt-DNS-ShortName.py\nIl nous le faudra pour générer les codes à transmettre au client.\n<pre>\n$ priv tools.python\n$ python Crypt-DNS-ShortName.py encode vgp\n9zhL0QXCcX\n$ python Crypt-DNS-ShortName.py decode 9zhL0QXCcX\nvgp\n$ \n</pre>",
+        "created_on": "2026-07-22T09:44:06Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 78987,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-07-22T10:29:05Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "description",
+            "old_value": "Ce sera à demander au premier lancement. Mettre aussi une option (bouton \"pas trop visible\") pour permettre de le changer.\r\nPlutôt que de permettre de taper \"vgp\" qu'on transformera en vgp.egidium.fr/isap-vgp.egidium.fr, j'ai pensé à transformer vgp en un code réversible pour éviter les \"force brutes\" surtout si on connait nos clients.\r\n\r\nFaudra adapter le code python ci-joint généré par IA pour faire le décodage dans la MobileApp.\r\n\r\nL'idéal est sans doute d'avoir un serveur intermédiaire que ferait le liens entre un code/chiffre et une machine ? Mais bon ça ira dans un premier temps.\r\n\r\nAvec l'algo généré, on est limité à 11 caractères pour le nom du client. Au pire on créera des alias, par exemple torann-fr pour torann-france.\r\nOn pourrait aussi essayer de trouver un meilleur algo.",
+            "new_value": "Ce sera à demander au premier lancement. Mettre aussi une option (bouton \"pas trop visible\") pour permettre de le changer.\r\nPlutôt que de permettre de taper \"vgp\" qu'on transformera en vgp.egidium.fr/isap-vgp.egidium.fr, j'ai pensé à transformer vgp en un code réversible pour éviter les \"force brutes\" surtout si on connait nos clients.\r\n\r\nFaudra adapter le code python ci-joint généré par IA pour faire le décodage dans la MobileApp.\r\n\r\nL'idéal est sans doute d'avoir un serveur intermédiaire que ferait le liens entre un code/chiffre et une machine ? Mais bon ça ira dans un premier temps.\r\n\r\nAvec l'algo généré, on est limité à 11 caractères pour le nom du client. Au pire on créera des alias, par exemple torann-fr pour torann-france.\r\nOn pourrait aussi essayer de trouver un meilleur algo.\r\n\r\n*Il ne faut pas déployer sur le PlayStore une nouvelle appli sans ce mécanisme (et contenant à la place vgp en dur).*"
+          }
+        ]
+      },
+      {
+        "id": 79612,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "Est-ce qu'il ne serait pas bon de communiquer le code au serveur qui lui décode et redirige le client vers le bon serveur (puis stocké en cache blablabla) ?\n\nEst-ce que je fais le dev dans le serveur de la webapp ou le python (ou autre) serait un service à part ?\n\nIl nous faut plus de 11 charactère si on veut pouvoir y mettre typiquement \"isap-demo-smartshield-erp.egidium.fr\"",
+        "created_on": "2026-08-03T08:07:27Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "14",
+            "old_value": null,
+            "new_value": "0"
+          }
+        ]
+      },
+      {
+        "id": 79712,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "Décision :\n\nL'utilisateur doit taper l'url vers le serveur en question avant la page de login. Une fois spécifié, c'est stocké dans les sharedPreferences. Pour le modifier, ajout d'un bouton sa la page de login.\n\nPas de cipher ni d'accès à serveur distant pour rerouter. (car c'est l'équivalent de le faire sur le web, juste plus compliqué sur mobile)",
+        "created_on": "2026-08-10T13:34:13Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 79756,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "",
+        "created_on": "2026-08-12T09:50:43Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "80"
+          }
+        ]
+      },
+      {
+        "id": 79828,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2026-08-14T10:55:46Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          }
+        ]
+      },
+      {
+        "id": 79838,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "",
+        "created_on": "2026-08-14T15:01:24Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "80",
+            "new_value": "90"
+          }
+        ]
+      },
+      {
+        "id": 80008,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "",
+        "created_on": "2026-08-31T11:45:18Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "90",
+            "new_value": "100"
+          }
+        ]
+      },
+      {
+        "id": 80229,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "",
+        "created_on": "2026-09-18T09:20:54Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "parent_id",
+            "old_value": null,
+            "new_value": "8754"
+          }
+        ]
+      },
+      {
+        "id": 80390,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2026-09-25T13:44:29Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "67"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "issue": {
+    "id": 9006,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 6,
+      "name": "Configuration"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 5,
+      "name": "Haut"
+    },
+    "author": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "assigned_to": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "parent": {
+      "id": 9003
+    },
+    "subject": "Installation et configuration de SecurityCenter 5.14",
+    "description": "",
+    "start_date": null,
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 4.0,
+    "total_estimated_hours": 4.0,
+    "spent_hours": 8.0,
+    "total_spent_hours": 8.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      }
+    ],
+    "created_on": "2026-08-10T12:30:15Z",
+    "updated_on": "2026-08-18T09:29:42Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 5039,
+        "filename": "clipboard-202608171721-igmn2.png",
+        "filesize": 20385,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/5039/clipboard-202608171721-igmn2.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/5039",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-08-17T15:21:06Z"
+      }
+    ],
+    "journals": [
+      {
+        "id": 79710,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-08-10T12:31:15Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "subject",
+            "old_value": "Installation et configuration de SecurityCenter 5.13",
+            "new_value": "Installation et configuration de SecurityCenter 5.14"
+          },
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "66",
+            "new_value": "67"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "100",
+            "new_value": "0"
+          }
+        ]
+      },
+      {
+        "id": 79851,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Genetec NOK après migration.\r\n\r\nD'après les logs, il semble y avoir un problème dans la base de donnée :\r\n<pre>\r\n2026-08-17T15:29:10.378+02:00, dskfr-orleans, StartupDiagnostics (Debug): >> PersistenceManager::CreateDefaultEntities\r\n2026-08-17T15:29:10.396+02:00, dskfr-orleans, StartupDiagnostics (Performance): Step: 'WFDefaultEntities::CreateDefaultEntities' @ 03:29:10.396 =>  & 17,053s from start (20m0,693s from root)\r\n2026-08-17T15:29:10.486+02:00, dskfr-orleans, StartupDiagnostics (Performance): Step: 'AssemblyLoad: System.Xml.resources, Version=4.0.0.0, Culture=fr, PublicKeyToken=b77a5c561934e089' @ 03:29:10.486 =>  & 17,143s from start (20m0,783s from root)\r\n2026-08-17T15:29:10.929+02:00, dskfr-orleans, SqlCommandWarnings#DirectoryDomain_0 (Warning): SqlException occurred, sql error: 242\r\nException:\r\nMicrosoft.Data.SqlClient.SqlException (0x80131904): La conversion d'un type de données varchar en type de données datetime a créé une valeur hors limites.\r\n   à Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   à Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   à Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   à Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)\r\n   à Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)\r\n   à Microsoft.Data.SqlClient.SqlDataReader.Read()\r\n   à Microsoft.Data.SqlClient.SqlCommand.CompleteExecuteScalar(SqlDataReader ds, Boolean returnLastResult)\r\n   à Microsoft.Data.SqlClient.SqlCommand.ExecuteScalar()\r\n   à Genetec.Data.SqlCommandExtensions.ExecuteWithRetry(ExecuteType action, SqlCommand command, Boolean exposeCommandOnError, Boolean enableRetry, CommandBehavior commandBehavior, SqlTracingState traceSession, Boolean createTraceSessionIfNull)\r\nClientConnectionId:e31fa799-3d44-4c0f-a638-d82cb9f5615a\r\nError Number:242,State:3,Class:16\r\n</pre>",
+        "created_on": "2026-08-17T13:35:07Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 79869,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Similaire à https://techdocs.genetec.com/r/en-US/KBA-79205-5.12.2.0-Directory-upgrade-fails-when-expansion-server-is-upgraded-first\r\nmais l'erreur n'est pas tout à fait la même",
+        "created_on": "2026-08-17T15:19:36Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 79870,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "!clipboard-202608171721-igmn2.png!\r\n",
+        "created_on": "2026-08-17T15:21:08Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "5039",
+            "old_value": null,
+            "new_value": "clipboard-202608171721-igmn2.png"
+          }
+        ]
+      },
+      {
+        "id": 79871,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Problème contourné avec\r\n\r\n<pre><code class=\"sql\">\r\nALTER LOGIN sa WITH DEFAULT_LANGUAGE = us_english;\r\n</code></pre>\r\n",
+        "created_on": "2026-08-17T16:01:25Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 79899,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-08-18T09:29:42Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

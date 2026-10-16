@@ -1,0 +1,309 @@
+{
+  "issue": {
+    "id": 8780,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 1,
+      "name": "Anomalie"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 5,
+      "name": "Haut"
+    },
+    "author": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "assigned_to": {
+      "id": 60,
+      "name": "Lucie Thomas"
+    },
+    "category": {
+      "id": 20,
+      "name": "com.egidium.isap.mobile"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "[IsapMobile] Les fonctionnalités utilisant des liens FTP(S) ne fonctionnent plus",
+    "description": "Surement un problème côté serveur suite à une MàJ de FileZilla Server.",
+    "start_date": null,
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 4.0,
+    "total_estimated_hours": 4.0,
+    "spent_hours": 11.0,
+    "total_spent_hours": 11.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 6,
+        "name": "Version source",
+        "value": "ISAP-V25.1"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Fonctions mobiles - Tracking mobile des positions"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      }
+    ],
+    "created_on": "2026-02-23T11:35:20Z",
+    "updated_on": "2026-09-28T12:28:36Z",
+    "closed_on": null,
+    "attachments": [],
+    "relations": [
+      {
+        "id": 2900,
+        "issue_id": 8346,
+        "issue_to_id": 8780,
+        "relation_type": "relates",
+        "delay": null
+      },
+      {
+        "id": 2914,
+        "issue_id": 2541,
+        "issue_to_id": 8780,
+        "relation_type": "relates",
+        "delay": null
+      }
+    ],
+    "journals": [
+      {
+        "id": 77579,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-02-23T12:48:40Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "8346"
+          }
+        ]
+      },
+      {
+        "id": 77938,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-03-16T13:08:21Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "assigned_to_id",
+            "old_value": "3",
+            "new_value": "60"
+          }
+        ]
+      },
+      {
+        "id": 77983,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "Le FTPs fonctionne, c'était un problème avec les sessions TLS (Problème connu sur FTPs). \nPour ça on contourne des restrictions mise sur android avec une librairie tiers. (apk android 28+)\n\nIl y a des problèmes lors du premier lancement de l'application. J'ai du forcer l'arrêt dans les paramètres pour que l'application fonctionne correctement. (FTPs server puis si on swipe l'application, elle redémarre à plusieurs reprise. Second comportement pas constant)\n\nApk push\n\nJ'ai suivis ce qui a été fait dans ce stackoverflow (la seule réponse)\nhttps://stackoverflow.com/questions/79026706/android-ftps-upload-issue-425-unable-to-build-data-connection-tls-session-of\n\nil mène à ces deux réponses :\nhttps://stackoverflow.com/questions/61348963/android-ftps-session-reuse-no-field-sessionhostportcache/62425820#62425820\nhttps://stackoverflow.com/questions/61348963/android-ftps-session-reuse-no-field-sessionhostportcache/75539799#75539799",
+        "created_on": "2026-03-17T15:56:47Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "80"
+          }
+        ]
+      },
+      {
+        "id": 77988,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Le site SFTP est : sftp.egidium.fr\nMême user/mdp que pour l'ancien FTPS.\n\nRestera à sécuriser :\n* J'ai dû mettre @PasswordAuthentication yes@ dans /etc/ssh/sshd_config pour permettre de se connecter avec un mdp et donc sans certificats (obligerait à avoir un certificat par téléphone).\n* Si on fait @sudo usermod -s /sbin/nologin isap_mobile@ pour désactiver la connexion via ssh, la connexion à SFTP ne se fonctionne plus\n* Rendre le compte captif dans son répertoire (ne pas permettre d'aller vers ..)\n* Obligation d'ouvrir le port ssh à public\n* ...",
+        "created_on": "2026-03-18T13:00:12Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 77989,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "J'ai commencer à documenter ici : M:\\DEVELOPPEMENTS\\Documentation interne\\Linux\\01_Setup_VM.docx § 35",
+        "created_on": "2026-03-18T13:02:16Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 78011,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Point oublié hier :\r\n* Obligation d'ouvrir le port ssh à public",
+        "created_on": "2026-03-19T09:11:16Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 78036,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-03-20T09:14:38Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "2541"
+          }
+        ]
+      },
+      {
+        "id": 78073,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2026-03-24T10:29:17Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          }
+        ]
+      },
+      {
+        "id": 78220,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "Les logs se trouvent dans @Android/data/com.egidium.isap.mobile/files@\r\n\r\nAttention, il ne faut pas utiliser l'application de google\r\ndémarche avec files (google) :\r\n- Ouvrir *Autre espace de stockage*\r\n- *Trace du système*\r\n- dans l'explorateur, choisir le téléphone (chez moi pixel 10)\r\n- accèder aux logs @Android/data/com.egidium.isap.mobile/files@",
+        "created_on": "2026-04-09T08:45:36Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 78228,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Sur FairPhone c'est plus compliqué. Avec Files de google :\r\n* Autres espace de stockage en bas\r\n* Rapports de bugs\r\n* Puis icônes en haut à gauche choisir 'The FairPhone'\r\n* Puis comme Lucie Android/data/com.egidium.isap.mobile/files/logs\r\n\r\nComme les fichiers de logs reçu via FTPS sur tacticplan, il n'y a que des fichiers YYYY-MM-DD-LogCat.log qui contiennent très peu de choses. Aucun vrai fichiers de logs applicatifs.",
+        "created_on": "2026-04-10T11:39:19Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80436,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "On a un contournement degeu. La vrai solution sera SFTP #2541 ",
+        "created_on": "2026-09-28T12:28:28Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": "2026-02-23",
+            "new_value": null
+          }
+        ]
+      },
+      {
+        "id": 80437,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-09-28T12:28:36Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "80",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

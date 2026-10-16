@@ -1,0 +1,309 @@
+{
+  "issue": {
+    "id": 8947,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 5,
+      "name": "Haut"
+    },
+    "author": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "assigned_to": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "category": {
+      "id": 59,
+      "name": "com.egidium.isap.sdk"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "parent": {
+      "id": 8986
+    },
+    "subject": "Evolution du modèle de licence : une licence par app WebApp",
+    "description": "Il y a quelques licences spécifiques à la WebApp comme la planification.\r\nIl en faudrait une pour chaque App de la WebApp.\r\nPour \"Situation\", il y en a 2 en fait :\r\n* Partage de situation\r\n* Situation",
+    "start_date": "2026-08-03",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 2.0,
+    "total_estimated_hours": 2.0,
+    "spent_hours": 2.0,
+    "total_spent_hours": 2.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - SDK"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": "0"
+      }
+    ],
+    "created_on": "2026-07-07T15:24:18Z",
+    "updated_on": "2026-08-03T11:48:39Z",
+    "closed_on": "2026-08-03T11:07:55Z",
+    "attachments": [],
+    "relations": [
+      {
+        "id": 2958,
+        "issue_id": 8947,
+        "issue_to_id": 4834,
+        "relation_type": "blocks",
+        "delay": null
+      }
+    ],
+    "journals": [
+      {
+        "id": 78878,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Le besoin n'est pas technique mais commercial.\r\n\r\nIl semble clairement nécessaire d'avoir une licence spécifique pour Iris, mais est-ce nécessaire pour la MCE, pour les statistiques ? Ie. est-ce qu'on souhaite être capable de vendre une WebApp qui n'a pas ces apps ? Quelles apps sont \"cœur\", et lesquelles sont des options que l'on souhaite être capable d'activer/désactiver.\r\n\r\nCe qui existe déjà :\r\n* Planification\r\n\r\nTrès certainement à ajouter :\r\n* Iris",
+        "created_on": "2026-07-15T12:57:43Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "4"
+          },
+          {
+            "property": "attr",
+            "name": "assigned_to_id",
+            "old_value": "11",
+            "new_value": "46"
+          }
+        ]
+      },
+      {
+        "id": 78888,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Laurent souhaite effectivement une licence pour chaque App.\r\nAttention pour App Situation : Lic Partage de situation et/ou Lic Situation",
+        "created_on": "2026-07-16T10:52:39Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 79532,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-07-31T08:39:44Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "4",
+            "new_value": "2"
+          },
+          {
+            "property": "attr",
+            "name": "assigned_to_id",
+            "old_value": "46",
+            "new_value": "11"
+          },
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": null,
+            "new_value": "2026-08-03"
+          },
+          {
+            "property": "cf",
+            "name": "14",
+            "old_value": null,
+            "new_value": "0"
+          }
+        ]
+      },
+      {
+        "id": 79536,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-07-31T09:28:09Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "parent_id",
+            "old_value": null,
+            "new_value": "8986"
+          }
+        ]
+      },
+      {
+        "id": 79539,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-07-31T09:30:33Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "subject",
+            "old_value": "Licences WebApp",
+            "new_value": "Evolution du modèle de licence : une licence par app WebApp"
+          },
+          {
+            "property": "attr",
+            "name": "estimated_hours",
+            "old_value": "8.0",
+            "new_value": "2.0"
+          }
+        ]
+      },
+      {
+        "id": 79544,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-07-31T09:32:58Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "blocks",
+            "old_value": null,
+            "new_value": "4834"
+          }
+        ]
+      },
+      {
+        "id": 79555,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-07-31T12:13:51Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "100"
+          }
+        ]
+      },
+      {
+        "id": 79615,
+        "user": {
+          "id": 56,
+          "name": "Guillaume Lemaitre"
+        },
+        "notes": "",
+        "created_on": "2026-08-03T11:07:55Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "3",
+            "new_value": "5"
+          }
+        ]
+      },
+      {
+        "id": 79617,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-08-03T11:48:39Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "5",
+            "new_value": "3"
+          }
+        ]
+      }
+    ]
+  }
+}

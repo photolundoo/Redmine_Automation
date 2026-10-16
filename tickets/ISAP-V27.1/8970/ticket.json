@@ -1,0 +1,184 @@
+{
+  "issue": {
+    "id": 8970,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 4,
+      "name": "Normal"
+    },
+    "author": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "assigned_to": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "category": {
+      "id": 147,
+      "name": "com.egidium.iris"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "parent": {
+      "id": 8962
+    },
+    "subject": "SmartShieldWebAPI : Pouvoir demander la création d'un incident à partir de l'entityid de l'IncidentType",
+    "description": "Requiert actuellement le @Code@, qui n'est configuré que sur certains types.",
+    "start_date": null,
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 8.0,
+    "total_estimated_hours": 8.0,
+    "spent_hours": 4.0,
+    "total_spent_hours": 4.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - SDK"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": null
+      }
+    ],
+    "created_on": "2026-07-23T13:06:04Z",
+    "updated_on": "2026-07-24T13:03:21Z",
+    "closed_on": null,
+    "attachments": [],
+    "relations": [
+      {
+        "id": 2953,
+        "issue_id": 8970,
+        "issue_to_id": 8971,
+        "relation_type": "blocks",
+        "delay": null
+      }
+    ],
+    "journals": [
+      {
+        "id": 79010,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-07-23T13:09:20Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "blocks",
+            "old_value": null,
+            "new_value": "8971"
+          }
+        ]
+      },
+      {
+        "id": 79020,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-07-23T14:54:26Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "50"
+          }
+        ]
+      },
+      {
+        "id": 79033,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-07-24T13:03:21Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "50",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

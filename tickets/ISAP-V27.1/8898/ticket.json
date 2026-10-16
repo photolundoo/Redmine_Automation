@@ -1,0 +1,287 @@
+{
+  "issue": {
+    "id": 8898,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 1,
+      "name": "Anomalie"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 4,
+      "name": "Normal"
+    },
+    "author": {
+      "id": 56,
+      "name": "Guillaume Lemaitre"
+    },
+    "assigned_to": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "category": {
+      "id": 129,
+      "name": "com.egidium.pr.python"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "Le script SendMailOnIncident.py n'envoi pas la cartographie dans le mail",
+    "description": "Procédure de test :\r\n\r\n!clipboard-202605221002-bxshv.png!\r\n\r\nConstaté dans la fenêtre cygwin du script : \r\n!clipboard-202605221010-hikzh.png!\r\n\r\nNotes : les valeurs sont abberrantes pour les champs, c'est normal c'est du smash clavier",
+    "start_date": null,
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 2.0,
+    "total_estimated_hours": 2.0,
+    "spent_hours": 1.0,
+    "total_spent_hours": 1.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 6,
+        "name": "Version source",
+        "value": "ISAP-V25.1"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - Main Courante"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      }
+    ],
+    "created_on": "2026-05-22T08:11:25Z",
+    "updated_on": "2026-10-07T08:47:54Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 4765,
+        "filename": "clipboard-202605221002-bxshv.png",
+        "filesize": 42744,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4765/clipboard-202605221002-bxshv.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4765",
+        "author": {
+          "id": 56,
+          "name": "Guillaume Lemaitre"
+        },
+        "created_on": "2026-05-22T08:02:46Z"
+      },
+      {
+        "id": 4766,
+        "filename": "clipboard-202605221010-hikzh.png",
+        "filesize": 52194,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4766/clipboard-202605221010-hikzh.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4766",
+        "author": {
+          "id": 56,
+          "name": "Guillaume Lemaitre"
+        },
+        "created_on": "2026-05-22T08:10:12Z"
+      }
+    ],
+    "relations": [
+      {
+        "id": 2944,
+        "issue_id": 8725,
+        "issue_to_id": 8898,
+        "relation_type": "relates",
+        "delay": null
+      }
+    ],
+    "journals": [
+      {
+        "id": 78486,
+        "user": {
+          "id": 56,
+          "name": "Guillaume Lemaitre"
+        },
+        "notes": "",
+        "created_on": "2026-05-28T07:13:44Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "category_id",
+            "old_value": null,
+            "new_value": "129"
+          },
+          {
+            "property": "attr",
+            "name": "assigned_to_id",
+            "old_value": null,
+            "new_value": "11"
+          },
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": null,
+            "new_value": "2026-05-22"
+          }
+        ]
+      },
+      {
+        "id": 78527,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-06-01T11:44:47Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "8725"
+          }
+        ]
+      },
+      {
+        "id": 78746,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-06-23T09:14:23Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "subject",
+            "old_value": "Script Python n'envoi pas la cartographie dans le mail",
+            "new_value": "Le script SendMailOnIncident.py n'envoi pas la cartographie dans le mail"
+          },
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "67"
+          }
+        ]
+      },
+      {
+        "id": 79690,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-08-07T14:51:03Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": "2026-05-22",
+            "new_value": null
+          }
+        ]
+      },
+      {
+        "id": 79809,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-08-14T07:39:12Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "estimated_hours",
+            "old_value": null,
+            "new_value": "2.0"
+          }
+        ]
+      },
+      {
+        "id": 80492,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "En profiter pour analyser la ligne louche :\r\n\r\n<pre><code class=\"python\">\r\n    type_eid = incident[\"parents\"][6]\r\n</code></pre>\r\n",
+        "created_on": "2026-10-02T12:21:14Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80548,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Résolu : remplacement du service de tuiles igngp.geoapi.fr, qui n'était plus disponible, par OpenStreetMap comme pour le ticket #8725. Ajout de l'attribution OpenStreetMap dans la carte jointe et remplacement du chargement spécifique de arial.ttf par la police par défaut de Pillow. Testé : l'envoi du mail avec la carte en pièce jointe fonctionne.",
+        "created_on": "2026-10-07T08:47:54Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

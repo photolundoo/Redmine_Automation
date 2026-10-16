@@ -1,0 +1,175 @@
+{
+  "issue": {
+    "id": 9014,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 1,
+      "name": "Anomalie"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 6,
+      "name": "Urgent"
+    },
+    "author": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "assigned_to": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "category": {
+      "id": 94,
+      "name": "com.egidium.pr.action"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "[ActionManager] Erreur de traitement pour les desinhibitions automatiques",
+    "description": "Cause par le code suivant :\r\n<pre><code class=\"cpp\">\r\n\t\tif(l_oldAuthor != author)\r\n\t\t{\r\n\t\t\tif(l_oldAuthor != -1)\r\n\t\t\t{\r\n\t\t\t\tCoreIsap::IsapClient::GetInstance().DeleteRelation(l_iInstance, author, ACTIONINSTANCE_AUTHOR_REL_BASE_TYPE);\r\n\t\t\t}\r\n\t\t\tCoreIsap::IsapClient::GetInstance().SendRelation(l_iInstance, author, ACTIONINSTANCE_AUTHOR_REL_BASE_TYPE, ACTIONINSTANCE_AUTHOR_REL_TYPE);\r\n\t\t\t\r\n\t\t}\r\n</code></pre>\r\n\r\nDans le cas d'une désinhibition automatique, \"l'auteur\" est un processeur, ce qui provoque une erreur car la relation entre Processor et ActionDelayedInstance n'est pas autorisée.\r\n\r\nConséquences :\r\n* des erreurs dans les logs\r\n* les désinhibitions programmées sont mal effacées de la base",
+    "start_date": null,
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 1.0,
+    "total_estimated_hours": 1.0,
+    "spent_hours": 1.0,
+    "total_spent_hours": 1.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "EIFFAGE ES"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 6,
+        "name": "Version source",
+        "value": "ISAP-V25.1"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - Gestion des capteurs"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": "Oui"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      }
+    ],
+    "created_on": "2026-08-11T13:22:22Z",
+    "updated_on": "2026-08-11T13:41:31Z",
+    "closed_on": null,
+    "attachments": [],
+    "relations": [
+      {
+        "id": 2965,
+        "issue_id": 8717,
+        "issue_to_id": 9014,
+        "relation_type": "relates",
+        "delay": null
+      }
+    ],
+    "journals": [
+      {
+        "id": 79741,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-08-11T13:22:30Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "8717"
+          }
+        ]
+      },
+      {
+        "id": 79742,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "A tester dans le cadre du test du #8717 \r\n\r\nUne fois les tests terminés, vérifier qu'il ne reste aucun ActionDelayer ou ActionInstance en base.",
+        "created_on": "2026-08-11T13:40:43Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "100"
+          }
+        ]
+      },
+      {
+        "id": 79743,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Premier cas où le problème pouvait apparaitre : #8450 ",
+        "created_on": "2026-08-11T13:41:31Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "6",
+            "old_value": "ISAP-V5.6.2",
+            "new_value": "ISAP-V25.1"
+          }
+        ]
+      }
+    ]
+  }
+}

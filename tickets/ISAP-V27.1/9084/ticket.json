@@ -1,0 +1,312 @@
+{
+  "issue": {
+    "id": 9084,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 1,
+      "name": "Anomalie"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 6,
+      "name": "Urgent"
+    },
+    "author": {
+      "id": 60,
+      "name": "Lucie Thomas"
+    },
+    "assigned_to": {
+      "id": 60,
+      "name": "Lucie Thomas"
+    },
+    "category": {
+      "id": 132,
+      "name": "com.egidium.isap.reporting"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "parent": {
+      "id": 8754
+    },
+    "subject": "[MobileApp] Score DEX inférieur au score minimum Playstore",
+    "description": "Nous avons un indice DEX très faible sur un point. Il nous est demandé par le playstore de le corriger d'ici février 2027.\r\n\r\n!clipboard-202609251335-9xyya.png!\r\n\r\n\r\nhttps://developer.android.com/topic/performance/issues/code-optimization?hl=fr",
+    "start_date": "2026-09-28",
+    "due_date": "2027-02-01",
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 15.0,
+    "total_estimated_hours": 15.0,
+    "spent_hours": 12.0,
+    "total_spent_hours": 12.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 6,
+        "name": "Version source",
+        "value": "ISAP-V27.1"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "WebApp - Mobile"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": "Non"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      }
+    ],
+    "created_on": "2026-09-25T11:43:52Z",
+    "updated_on": "2026-10-14T13:18:18Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 5137,
+        "filename": "clipboard-202609251335-9xyya.png",
+        "filesize": 12905,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/5137/clipboard-202609251335-9xyya.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/5137",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-09-25T11:35:42Z"
+      }
+    ],
+    "relations": [
+      {
+        "id": 2983,
+        "issue_id": 9084,
+        "issue_to_id": 6474,
+        "relation_type": "blocks",
+        "delay": null
+      }
+    ],
+    "journals": [
+      {
+        "id": 80370,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "",
+        "created_on": "2026-09-25T11:44:12Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "description",
+            "old_value": "Nous avons un indice DEX très faible sur un point. Il nous est demandé par le playstore de le corriger d'ici février 2027.\r\n\r\n!clipboard-202609251335-9xyya.png!\r\nhttps://developer.android.com/topic/performance/issues/code-optimization?hl=fr",
+            "new_value": "Nous avons un indice DEX très faible sur un point. Il nous est demandé par le playstore de le corriger d'ici février 2027.\r\n\r\n!clipboard-202609251335-9xyya.png!\r\n\r\n\r\nhttps://developer.android.com/topic/performance/issues/code-optimization?hl=fr"
+          }
+        ]
+      },
+      {
+        "id": 80373,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "J'ajoute dans le sprint du coup",
+        "created_on": "2026-09-25T12:14:52Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "priority_id",
+            "old_value": "5",
+            "new_value": "6"
+          },
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": null,
+            "new_value": "2026-09-28"
+          }
+        ]
+      },
+      {
+        "id": 80380,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-09-25T13:39:28Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "parent_id",
+            "old_value": "6474",
+            "new_value": "8754"
+          }
+        ]
+      },
+      {
+        "id": 80412,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-09-28T11:38:38Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "blocks",
+            "old_value": null,
+            "new_value": "6474"
+          }
+        ]
+      },
+      {
+        "id": 80480,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "J'ai mis en place des règles de minimisation et d'obfuscation, on a réduit la taille de l'apk de manière assez conséquente et réduit le nombre de classes exposées.\r\n\r\nL'application est en plein test par guillaume et moi même afin de vérifier que ces règles n'ont pas rendu inutilisable certains aspects de l'application.",
+        "created_on": "2026-10-01T09:32:13Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80498,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-10-02T15:06:16Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "67"
+          }
+        ]
+      },
+      {
+        "id": 80501,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Anomalie : le titre indique le problème\r\nCase interne à la version : pas en release note",
+        "created_on": "2026-10-05T15:41:41Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "subject",
+            "old_value": "[MobileApp] optimisation du code DEX",
+            "new_value": "[MobileApp] Score DEX inférieur au score minimum Playstore"
+          },
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          },
+          {
+            "property": "cf",
+            "name": "8",
+            "old_value": "",
+            "new_value": "Non"
+          }
+        ]
+      },
+      {
+        "id": 80601,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "obfuscation et minification faites, sans pertes.\r\n\r\nIl ne reste plus qu'à publier sur le playstore et vérifier que c'est bon.",
+        "created_on": "2026-10-12T07:52:40Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "90"
+          }
+        ]
+      },
+      {
+        "id": 80679,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "application publiée sur le playstore, aucun message d'erreur",
+        "created_on": "2026-10-14T13:18:19Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "90",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

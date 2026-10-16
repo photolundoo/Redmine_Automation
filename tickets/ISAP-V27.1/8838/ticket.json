@@ -1,0 +1,1051 @@
+{
+  "issue": {
+    "id": 8838,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 6,
+      "name": "Urgent"
+    },
+    "author": {
+      "id": 60,
+      "name": "Lucie Thomas"
+    },
+    "assigned_to": {
+      "id": 60,
+      "name": "Lucie Thomas"
+    },
+    "category": {
+      "id": 106,
+      "name": "com.egidium.isap.gui.web"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "parent": {
+      "id": 8837
+    },
+    "subject": "[WebApp] Base du dashboard",
+    "description": "Créer le moteur du dashboard, implémenter les comportement du tableau et des wrapperssur la page",
+    "start_date": "2026-03-23",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 30.0,
+    "total_estimated_hours": 30.0,
+    "spent_hours": 152.0,
+    "total_spent_hours": 152.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "WebApp - Statistiques"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": "0"
+      }
+    ],
+    "created_on": "2026-03-27T13:19:04Z",
+    "updated_on": "2026-09-28T12:36:53Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 4632,
+        "filename": "clipboard-202603301343-hkoyv.png",
+        "filesize": 1515439,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4632/clipboard-202603301343-hkoyv.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4632",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-03-30T11:43:43Z"
+      },
+      {
+        "id": 4633,
+        "filename": "clipboard-202603301343-klkq1.png",
+        "filesize": 793006,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4633/clipboard-202603301343-klkq1.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4633",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-03-30T11:43:59Z"
+      },
+      {
+        "id": 4634,
+        "filename": "clipboard-202603301344-doffx.png",
+        "filesize": 249731,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4634/clipboard-202603301344-doffx.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4634",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-03-30T11:44:31Z"
+      },
+      {
+        "id": 4636,
+        "filename": "clipboard-202603301716-gnmfc.png",
+        "filesize": 1912124,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4636/clipboard-202603301716-gnmfc.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4636",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-03-30T15:16:47Z"
+      },
+      {
+        "id": 4669,
+        "filename": "clipboard-202604171004-gwr9k.png",
+        "filesize": 3707729,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4669/clipboard-202604171004-gwr9k.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4669",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-17T08:04:20Z"
+      },
+      {
+        "id": 4670,
+        "filename": "clipboard-202604171004-wrkyk.png",
+        "filesize": 2471640,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4670/clipboard-202604171004-wrkyk.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4670",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-17T08:04:47Z"
+      },
+      {
+        "id": 4671,
+        "filename": "Capture d_écran 2026-04-17 100557.png",
+        "filesize": 2974681,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4671/Capture%20d_%C3%A9cran%202026-04-17%20100557.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4671",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-17T08:06:50Z"
+      },
+      {
+        "id": 4672,
+        "filename": "clipboard-202604171010-vogsn.png",
+        "filesize": 1106430,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4672/clipboard-202604171010-vogsn.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4672",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-17T08:10:34Z"
+      },
+      {
+        "id": 4679,
+        "filename": "clipboard-202604201709-wi48v.png",
+        "filesize": 179562,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4679/clipboard-202604201709-wi48v.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4679",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-20T15:09:09Z"
+      },
+      {
+        "id": 4680,
+        "filename": "clipboard-202604201709-yrjhp.png",
+        "filesize": 375860,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4680/clipboard-202604201709-yrjhp.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4680",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-20T15:09:21Z"
+      },
+      {
+        "id": 4681,
+        "filename": "clipboard-202604201709-apb8r.png",
+        "filesize": 506583,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4681/clipboard-202604201709-apb8r.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4681",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-20T15:09:30Z"
+      },
+      {
+        "id": 4682,
+        "filename": "clipboard-202604201710-wvbin.png",
+        "filesize": 916459,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4682/clipboard-202604201710-wvbin.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4682",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-20T15:10:20Z"
+      },
+      {
+        "id": 4683,
+        "filename": "clipboard-202604201711-z7ehv.png",
+        "filesize": 918947,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4683/clipboard-202604201711-z7ehv.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4683",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-20T15:11:02Z"
+      },
+      {
+        "id": 4684,
+        "filename": "clipboard-202604201711-22naz.png",
+        "filesize": 1603660,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4684/clipboard-202604201711-22naz.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4684",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-20T15:11:49Z"
+      },
+      {
+        "id": 4692,
+        "filename": "clipboard-202604221717-p1ari.png",
+        "filesize": 5191,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4692/clipboard-202604221717-p1ari.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4692",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-22T15:17:07Z"
+      },
+      {
+        "id": 4693,
+        "filename": "clipboard-202604221719-44qdm.png",
+        "filesize": 54873,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4693/clipboard-202604221719-44qdm.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4693",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-22T15:19:37Z"
+      },
+      {
+        "id": 4694,
+        "filename": "clipboard-202604221719-gu0iw.png",
+        "filesize": 1914,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4694/clipboard-202604221719-gu0iw.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4694",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-22T15:19:59Z"
+      },
+      {
+        "id": 4695,
+        "filename": "clipboard-202604221720-w8c27.png",
+        "filesize": 102756,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4695/clipboard-202604221720-w8c27.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4695",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-22T15:20:38Z"
+      },
+      {
+        "id": 4696,
+        "filename": "clipboard-202604241726-ilstr.png",
+        "filesize": 832950,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4696/clipboard-202604241726-ilstr.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4696",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-24T15:26:30Z"
+      },
+      {
+        "id": 4709,
+        "filename": "clipboard-202604271704-u3ump.png",
+        "filesize": 75510,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4709/clipboard-202604271704-u3ump.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4709",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-27T15:04:20Z"
+      },
+      {
+        "id": 4710,
+        "filename": "clipboard-202604271710-j3fkz.png",
+        "filesize": 268423,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4710/clipboard-202604271710-j3fkz.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4710",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-27T15:10:35Z"
+      },
+      {
+        "id": 4711,
+        "filename": "clipboard-202604271710-ffuby.png",
+        "filesize": 26270,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4711/clipboard-202604271710-ffuby.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4711",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-27T15:10:56Z"
+      },
+      {
+        "id": 4712,
+        "filename": "clipboard-202604271711-dmtsn.png",
+        "filesize": 18203,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4712/clipboard-202604271711-dmtsn.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4712",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-27T15:11:26Z"
+      },
+      {
+        "id": 4713,
+        "filename": "clipboard-202604271711-dhykc.png",
+        "filesize": 22535,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4713/clipboard-202604271711-dhykc.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4713",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-27T15:11:57Z"
+      },
+      {
+        "id": 4720,
+        "filename": "clipboard-202604301701-9aj9a.png",
+        "filesize": 64511,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4720/clipboard-202604301701-9aj9a.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4720",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-30T15:01:41Z"
+      },
+      {
+        "id": 4721,
+        "filename": "clipboard-202604301701-rms1i.png",
+        "filesize": 3875,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4721/clipboard-202604301701-rms1i.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4721",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-30T15:01:58Z"
+      },
+      {
+        "id": 4722,
+        "filename": "clipboard-202604301703-ssxxf.png",
+        "filesize": 8820,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4722/clipboard-202604301703-ssxxf.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4722",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-30T15:03:37Z"
+      },
+      {
+        "id": 4723,
+        "filename": "clipboard-202604301703-arkgu.png",
+        "filesize": 58721,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4723/clipboard-202604301703-arkgu.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4723",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-30T15:03:57Z"
+      },
+      {
+        "id": 4724,
+        "filename": "Dashboard_2026-04-30-1.pdf",
+        "filesize": 7132983,
+        "content_type": "application/pdf",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4724/Dashboard_2026-04-30-1.pdf",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4724",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-30T15:04:43Z"
+      },
+      {
+        "id": 4726,
+        "filename": "Dashboard_2026-04-30.pdf",
+        "filesize": 12555625,
+        "content_type": "application/pdf",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4726/Dashboard_2026-04-30.pdf",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4726",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-30T15:06:03Z"
+      },
+      {
+        "id": 4727,
+        "filename": "Dashboard_2026-04-30-2.pdf",
+        "filesize": 4805401,
+        "content_type": "application/pdf",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4727/Dashboard_2026-04-30-2.pdf",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4727",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-04-30T15:07:02Z"
+      }
+    ],
+    "relations": [
+      {
+        "id": 2927,
+        "issue_id": 8838,
+        "issue_to_id": 8862,
+        "relation_type": "relates",
+        "delay": null
+      },
+      {
+        "id": 2928,
+        "issue_id": 8838,
+        "issue_to_id": 8861,
+        "relation_type": "relates",
+        "delay": null
+      }
+    ],
+    "journals": [
+      {
+        "id": 78144,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "!clipboard-202603301343-hkoyv.png!\r\n!clipboard-202603301343-klkq1.png!\r\n!clipboard-202603301344-doffx.png!\r\n",
+        "created_on": "2026-03-30T11:44:34Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4632",
+            "old_value": null,
+            "new_value": "clipboard-202603301343-hkoyv.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4633",
+            "old_value": null,
+            "new_value": "clipboard-202603301343-klkq1.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4634",
+            "old_value": null,
+            "new_value": "clipboard-202603301344-doffx.png"
+          }
+        ]
+      },
+      {
+        "id": 78150,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "Pas mal de trucs bugués réglés, j'ai ajouté le fil d'activités\n\n!clipboard-202603301716-gnmfc.png!\n",
+        "created_on": "2026-03-30T15:17:27Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4636",
+            "old_value": null,
+            "new_value": "clipboard-202603301716-gnmfc.png"
+          }
+        ]
+      },
+      {
+        "id": 78190,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-04-02T13:21:29Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": null,
+            "new_value": "2026-03-23"
+          }
+        ]
+      },
+      {
+        "id": 78239,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "",
+        "created_on": "2026-04-10T14:15:32Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "3",
+            "old_value": "Produit",
+            "new_value": "Versailles Grand Parc"
+          }
+        ]
+      },
+      {
+        "id": 78241,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "",
+        "created_on": "2026-04-10T14:17:16Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "3",
+            "old_value": "Versailles Grand Parc",
+            "new_value": "Produit"
+          }
+        ]
+      },
+      {
+        "id": 78253,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "",
+        "created_on": "2026-04-10T15:00:16Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "8862"
+          }
+        ]
+      },
+      {
+        "id": 78255,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "",
+        "created_on": "2026-04-10T15:00:26Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "8861"
+          }
+        ]
+      },
+      {
+        "id": 78277,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "!clipboard-202604171004-gwr9k.png!\n\n",
+        "created_on": "2026-04-17T08:05:06Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4669",
+            "old_value": null,
+            "new_value": "clipboard-202604171004-gwr9k.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4670",
+            "old_value": null,
+            "new_value": "clipboard-202604171004-wrkyk.png"
+          }
+        ]
+      },
+      {
+        "id": 78278,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "!Capture%20d_%C3%A9cran%202026-04-17%20100557.png!\r\n",
+        "created_on": "2026-04-17T08:06:52Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4671",
+            "old_value": null,
+            "new_value": "Capture d_écran 2026-04-17 100557.png"
+          }
+        ]
+      },
+      {
+        "id": 78279,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "Et sur plus petit écran :\r\n!clipboard-202604171010-vogsn.png!\r\n",
+        "created_on": "2026-04-17T08:10:37Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4672",
+            "old_value": null,
+            "new_value": "clipboard-202604171010-vogsn.png"
+          }
+        ]
+      },
+      {
+        "id": 78286,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "",
+        "created_on": "2026-04-20T07:34:05Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "30",
+            "new_value": "40"
+          }
+        ]
+      },
+      {
+        "id": 78293,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "Amélioration de la responsiveness des widgets, ajout des fonctionnalités import/export et la possibilité d'éditer les nom des widgets\r\n\r\n!clipboard-202604201709-wi48v.png!\r\n!clipboard-202604201711-z7ehv.png!\r\n!clipboard-202604201711-22naz.png!\r\n",
+        "created_on": "2026-04-20T15:13:47Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4679",
+            "old_value": null,
+            "new_value": "clipboard-202604201709-wi48v.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4680",
+            "old_value": null,
+            "new_value": "clipboard-202604201709-yrjhp.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4681",
+            "old_value": null,
+            "new_value": "clipboard-202604201709-apb8r.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4682",
+            "old_value": null,
+            "new_value": "clipboard-202604201710-wvbin.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4683",
+            "old_value": null,
+            "new_value": "clipboard-202604201711-z7ehv.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4684",
+            "old_value": null,
+            "new_value": "clipboard-202604201711-22naz.png"
+          }
+        ]
+      },
+      {
+        "id": 78322,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "Ajout de :\r\n- plusieurs type de graphiques.\r\n- des avancées sur l'ui en tout genres\r\n- gestion du temps du tableau de bord\r\n- possibilité de figer un widget dans le dashboard (jaune quand bloqué) ; visibile uniquement mode édition\r\n\r\n!clipboard-202604221717-p1ari.png!\r\n!clipboard-202604221719-44qdm.png! !clipboard-202604221719-gu0iw.png! \r\n!clipboard-202604221720-w8c27.png!\r\n",
+        "created_on": "2026-04-22T15:21:04Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4692",
+            "old_value": null,
+            "new_value": "clipboard-202604221717-p1ari.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4693",
+            "old_value": null,
+            "new_value": "clipboard-202604221719-44qdm.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4694",
+            "old_value": null,
+            "new_value": "clipboard-202604221719-gu0iw.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4695",
+            "old_value": null,
+            "new_value": "clipboard-202604221720-w8c27.png"
+          }
+        ]
+      },
+      {
+        "id": 78329,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "Dashboard dans dashboard, incidents et actions sur objets\n!clipboard-202604241726-ilstr.png!\n",
+        "created_on": "2026-04-24T15:26:59Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4696",
+            "old_value": null,
+            "new_value": "clipboard-202604241726-ilstr.png"
+          }
+        ]
+      },
+      {
+        "id": 78342,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "Ajout de l'import dans le widget dashboard ; ajout de set de règles à mettre au widgets (clignotement sur nouvel élément, dépassement d'un certain nombre d'éléments...) ; amélioration du widget incident ; ajout de fonctionnalités dans le json (tels que grouper des configurations)\r\n\r\nvidéos disponibles dans @V:\\Lucie\\Vidéos Dashboard@\r\n\r\n!clipboard-202604271710-ffuby.png! !clipboard-202604271711-dmtsn.png! !clipboard-202604271711-dhykc.png!\r\n\r\n!clipboard-202604271704-u3ump.png!\r\n!clipboard-202604271710-j3fkz.png!\r\n",
+        "created_on": "2026-04-27T15:15:28Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4709",
+            "old_value": null,
+            "new_value": "clipboard-202604271704-u3ump.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4710",
+            "old_value": null,
+            "new_value": "clipboard-202604271710-j3fkz.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4711",
+            "old_value": null,
+            "new_value": "clipboard-202604271710-ffuby.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4712",
+            "old_value": null,
+            "new_value": "clipboard-202604271711-dmtsn.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4713",
+            "old_value": null,
+            "new_value": "clipboard-202604271711-dhykc.png"
+          }
+        ]
+      },
+      {
+        "id": 78364,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "Correction de bugs sur un peu tout les plans. (règles des widgets, bugs au niveau des resize des tableaux...) ; ajout de bouton de creation d'incident, mention... ; Export pdf de dashboards. (encore un peu cassé mais c'est un enfer au niveau tailles)\r\n\r\n\r\n!clipboard-202604301701-rms1i.png!\r\n!clipboard-202604301701-9aj9a.png!\r\n\r\n\r\n!clipboard-202604301703-ssxxf.png! \r\n!clipboard-202604301703-arkgu.png!\r\n",
+        "created_on": "2026-04-30T15:07:21Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4720",
+            "old_value": null,
+            "new_value": "clipboard-202604301701-9aj9a.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4721",
+            "old_value": null,
+            "new_value": "clipboard-202604301701-rms1i.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4722",
+            "old_value": null,
+            "new_value": "clipboard-202604301703-ssxxf.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4723",
+            "old_value": null,
+            "new_value": "clipboard-202604301703-arkgu.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4724",
+            "old_value": null,
+            "new_value": "Dashboard_2026-04-30-1.pdf"
+          },
+          {
+            "property": "attachment",
+            "name": "4726",
+            "old_value": null,
+            "new_value": "Dashboard_2026-04-30.pdf"
+          },
+          {
+            "property": "attachment",
+            "name": "4727",
+            "old_value": null,
+            "new_value": "Dashboard_2026-04-30-2.pdf"
+          }
+        ]
+      },
+      {
+        "id": 79130,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2026-07-27T16:28:47Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          }
+        ]
+      },
+      {
+        "id": 79609,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "La mise en base du dashboard est faite ; il faut encore que j'implémente le système de \"breakpoint\" pour les différentes tailles d'écran pour que le dashboard soit utilisable",
+        "created_on": "2026-08-03T07:35:15Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "40",
+            "new_value": "70"
+          },
+          {
+            "property": "cf",
+            "name": "14",
+            "old_value": null,
+            "new_value": "0"
+          }
+        ]
+      },
+      {
+        "id": 79694,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "implémentation du système de \"breakpoint\" pour les différentes tailles d'écran pour que le dashboard soit utilisable.\r\n\r\nremplacement de l'attribute STRING par un BLOB\r\nconfiguration -> configuration*s*",
+        "created_on": "2026-08-07T15:06:06Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80444,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "v2 du case à faire quand on aura les retours utilisateurs",
+        "created_on": "2026-09-28T12:36:53Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "70",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

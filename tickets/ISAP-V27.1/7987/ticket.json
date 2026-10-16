@@ -1,0 +1,206 @@
+{
+  "issue": {
+    "id": 7987,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 1,
+      "name": "Anomalie"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 5,
+      "name": "Haut"
+    },
+    "author": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "assigned_to": {
+      "id": 5,
+      "name": "Rodrigue Favrot"
+    },
+    "category": {
+      "id": 36,
+      "name": "com.egidium.isap.gui"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "[DesktopApp] Lenteur d'affichage des cônes caméras sur ville de Paris",
+    "description": "Dans fr.paris/public/install il y a 2 fichiers cisap pour créer des caméras :\r\n* 91_VideoCamera-VDP.cisap (1516 caméras)\r\n* 92_VideoCamera-VDP.cisap (2532 caméras)\r\n\r\nJ'avais remarqué que le CameraProcesseur calculait relativement vite mais que les cônes mettaient longtemps à s'afficher. Et si on fait plusieurs vision de suite, ça prenait du temps à disparaitre et à réapparaitre avec les nouvelles caméras. Etait-ce juste avec 1516 caméras ou bien avec les 1516+2532 ?\r\n\r\nDans le cadre VGP, essayez déjà avec le fichier avec 1516 caméras. Est-ce OK ?\r\nConfirmer que c'est bien lent avec 2532 caméras supplémentaires et essayer de voir si optimisation rapide mais ne pas y passer trop de temps si OK avec 1516 caméras, car c'est la cible pour VGP.\r\n\r\nManip à faire :\r\n* sqlsfillisap fr.paris\r\n* testisapserver 91_VideoCamera-VDP.cisap \r\n* sqlsbak (pour pouvoir revenir à 1516 caméras rapidement) + renommer le fichier pour ne pas être écraser avec le prochain sqlsbak.\r\n* testisapserver 92_VideoCamera-VDP.cisap \r\n* sqlsbak (pour pouvoir revenir à 1516+2532 caméras rapidement) + renommer le fichier.\r\n",
+    "start_date": "2026-09-22",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 8.0,
+    "total_estimated_hours": 8.0,
+    "spent_hours": 7.699999809265137,
+    "total_spent_hours": 7.699999809265137,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Ville de Paris"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Versailles Grand Parc"
+      },
+      {
+        "id": 6,
+        "name": "Version source",
+        "value": "ISAP-V5.6.1"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - Navigation 3D"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": "Non"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      }
+    ],
+    "created_on": "2024-06-17T13:49:47Z",
+    "updated_on": "2026-09-25T13:47:13Z",
+    "closed_on": null,
+    "attachments": [],
+    "journals": [
+      {
+        "id": 70902,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Case hors version pas démarré --> Hors sprint",
+        "created_on": "2024-09-02T15:24:58Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": "2024-06-17",
+            "new_value": null
+          }
+        ]
+      },
+      {
+        "id": 71789,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2024-10-30T14:39:36Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "priority_id",
+            "old_value": "6",
+            "new_value": "5"
+          }
+        ]
+      },
+      {
+        "id": 80319,
+        "user": {
+          "id": 5,
+          "name": "Rodrigue Favrot"
+        },
+        "notes": "Pendant le POC JOP2024, il avait été constaté l'impossibilité de démarrer l'application WinApp en raison du trop grand nombre d'évènements caméra reçus par IceStorm. Il avait fallu couper les retours des mouvements caméra pour pouvoir démarrer l'application.\nAfin d'avoir l'état actuel +pour anticiper le POC de la ville de Meaux+ , j'ai testé avec 4048 caméras et un script de simulation d'event caméra.\n\nAprès test, avec une configuration lourde et un nombre important d'évènement envoyés :\n* L'application a bien démarré \n* L'affichage des cônes caméra réagissaient rapidement\n\nh4. Test réalisé\n\nsqlsfillisap fr.paris\ntestisapserver 92_VideoCamera-VDP.cisap\nSimulation massive d'appel \"eventdirection\"\n\n=> Ne reproduisant pas la lenteur d'affichage des cônes, je résous le case.",
+        "created_on": "2026-09-23T09:43:38Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "67"
+          },
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": null,
+            "new_value": "2026-09-22"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "100"
+          },
+          {
+            "property": "cf",
+            "name": "8",
+            "old_value": "",
+            "new_value": "Non"
+          }
+        ]
+      },
+      {
+        "id": 80336,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Il n'y avait pas de caméras sur fr.paris.\r\nLe pb était sur VGP avec les caméras non quad qui \"simulaient des quads\" en bougeant de 90° toutes les 5 secondes environ.",
+        "created_on": "2026-09-23T11:55:49Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80407,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Le pb a donc disparu par enchantement. Surement dû à la migration VS 2019/2026 et l'optimisation de la mémoire des fenêtres vidéo ... ?",
+        "created_on": "2026-09-25T13:47:13Z",
+        "private_notes": false,
+        "details": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "issue": {
+    "id": 8465,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 1,
+      "name": "Anomalie"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 5,
+      "name": "Haut"
+    },
+    "author": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "assigned_to": {
+      "id": 55,
+      "name": "Vincent Tellier"
+    },
+    "category": {
+      "id": 106,
+      "name": "com.egidium.isap.gui.web"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "[WebApp/Administration] Bugs constatés dans la configuration d'un compte",
+    "description": "J'ai voulu enlever Wilfrid du groupe Mercure Salle C3, mais ça ne disparait pas :\r\n!clipboard-202506151701-mrbhk.png!\r\n\r\nMais en fait si :\r\n!clipboard-202506151701-sneux.png!\r\n\r\nEt si je me reconnecte pour vérifier c'est bon :\r\n!clipboard-202506151701-sjmq4.png!\r\n\r\nAutre mais qui lui ne marche pas du tout :\r\nSi je veux me passer (ou qq'un d'autre) à aucun sur Main Courante pour arriver directement à la connexion sur Situation ça ne sauvegarde pas :\r\n!clipboard-202506151700-yqogs.png!\r\n",
+    "start_date": "2026-07-21",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 4.0,
+    "total_estimated_hours": 4.0,
+    "spent_hours": 2.0,
+    "total_spent_hours": 2.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 6,
+        "name": "Version source",
+        "value": "ISAP-V5.6.2"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "WebApp - Administration"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      }
+    ],
+    "created_on": "2025-06-15T15:02:20Z",
+    "updated_on": "2026-08-05T15:53:07Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 3830,
+        "filename": "clipboard-202506151700-yqogs.png",
+        "filesize": 100287,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/3830/clipboard-202506151700-yqogs.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/3830",
+        "author": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "created_on": "2025-06-15T15:00:41Z"
+      },
+      {
+        "id": 3831,
+        "filename": "clipboard-202506151701-sjmq4.png",
+        "filesize": 10442,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/3831/clipboard-202506151701-sjmq4.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/3831",
+        "author": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "created_on": "2025-06-15T15:01:00Z"
+      },
+      {
+        "id": 3832,
+        "filename": "clipboard-202506151701-sneux.png",
+        "filesize": 26728,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/3832/clipboard-202506151701-sneux.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/3832",
+        "author": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "created_on": "2025-06-15T15:01:10Z"
+      },
+      {
+        "id": 3833,
+        "filename": "clipboard-202506151701-mrbhk.png",
+        "filesize": 10660,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/3833/clipboard-202506151701-mrbhk.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/3833",
+        "author": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "created_on": "2025-06-15T15:01:19Z"
+      }
+    ],
+    "journals": [
+      {
+        "id": 78973,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-07-21T12:11:36Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "67"
+          },
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": null,
+            "new_value": "2026-07-21"
+          }
+        ]
+      },
+      {
+        "id": 79037,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "",
+        "created_on": "2026-07-27T06:58:04Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "50"
+          }
+        ]
+      },
+      {
+        "id": 79125,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2026-07-27T16:28:46Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          }
+        ]
+      },
+      {
+        "id": 79502,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "Actuellement, il y a un garde fou qui empêche de retirer ses propres droits sur les droits: Maincourante, Consigne, Partage de situation, Iris, Statistiques, Planification",
+        "created_on": "2026-07-29T09:52:30Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 79658,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "",
+        "created_on": "2026-08-05T15:53:07Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "50",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

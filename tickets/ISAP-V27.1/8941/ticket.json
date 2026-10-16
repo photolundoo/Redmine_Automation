@@ -1,0 +1,356 @@
+{
+  "issue": {
+    "id": 8941,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 7,
+      "name": "Immédiat"
+    },
+    "author": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "assigned_to": {
+      "id": 55,
+      "name": "Vincent Tellier"
+    },
+    "category": {
+      "id": 106,
+      "name": "com.egidium.isap.gui.web"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "[WebApp] Droits spécifique pour la vidéo + gestion du plugin en local",
+    "description": "Indispensable pour VGP/Buc.\r\nLe serveur n'est pas sur le réseau vidéo.\r\nLe poste client lui l'est.\r\nIl faut donc installer le plugin sur celui-ci et ne pas faire faire des A/R à la vidéo par le serveur via le routeur. Pour cela on fera comme dans la WinApp avec un proxy en direct sur localhost.\r\nSeul ces postes là auront accès donc à la vidéo, mais en plus seul les utilisateurs autorisés devront voir les vidéos. Il faut donc aussi gérer un droit spécifique à la vidéo :\r\n* Aucun\r\n* Flux\r\n* Dichotomie\r\n* Enregistrements",
+    "start_date": "2026-07-02",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 24.0,
+    "total_estimated_hours": 24.0,
+    "spent_hours": 22.0,
+    "total_spent_hours": 22.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "WebApp - Video"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": "Oui"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": null
+      }
+    ],
+    "created_on": "2026-07-03T08:20:25Z",
+    "updated_on": "2026-07-23T11:22:53Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 4966,
+        "filename": "clipboard-202607231012-gz7o6.png",
+        "filesize": 306463,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4966/clipboard-202607231012-gz7o6.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4966",
+        "author": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "created_on": "2026-07-23T08:12:23Z"
+      }
+    ],
+    "relations": [
+      {
+        "id": 2946,
+        "issue_id": 4910,
+        "issue_to_id": 8941,
+        "relation_type": "relates",
+        "delay": null
+      },
+      {
+        "id": 2952,
+        "issue_id": 8941,
+        "issue_to_id": 8968,
+        "relation_type": "relates",
+        "delay": null
+      },
+      {
+        "id": 2955,
+        "issue_id": 8941,
+        "issue_to_id": 8984,
+        "relation_type": "relates",
+        "delay": null
+      }
+    ],
+    "journals": [
+      {
+        "id": 78808,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-07-03T08:21:14Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "priority_id",
+            "old_value": "4",
+            "new_value": "7"
+          }
+        ]
+      },
+      {
+        "id": 78810,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "",
+        "created_on": "2026-07-03T08:46:23Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "4910"
+          }
+        ]
+      },
+      {
+        "id": 78811,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "Voici ce qu'on fait pour construire le proxy sans information locator et routeur\r\n\r\nhttps://srvfr-redmine/issues/4910#note-11",
+        "created_on": "2026-07-03T08:47:00Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 78864,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "",
+        "created_on": "2026-07-09T10:00:54Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "90"
+          }
+        ]
+      },
+      {
+        "id": 78873,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "Utilisation du plugin local a la place du distant fonctionnel, reste a tester si on passe par le routeur",
+        "created_on": "2026-07-10T09:58:31Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "90",
+            "new_value": "100"
+          }
+        ]
+      },
+      {
+        "id": 78874,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "J'avais oublié à point à résoudre. Sur la WinApp le proxy est dans chaque MenuBar du poste client et donc différent.\r\nSur la WebApp le proxy est unique (maincourante.config.js) et donc le le nom Wellknown Object : SecurityCenterVideoPlugin-*FA*\r\n\r\nIl faut donc trouvé un astuce pour le rendre spécifique à chaque poste client et donc le War/JS doit être en mesure de récupérer un identifiant unique du poste comme son volID.\r\n\r\nAinsi on mettra dans dans maincourante.config.js un truc du genre SecurityCenterVideoPlugin-*VOLID* et VOLID sera substitué par le volID récupéré par le war.\r\n",
+        "created_on": "2026-07-10T11:12:35Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "3",
+            "new_value": "2"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "100",
+            "new_value": "80"
+          }
+        ]
+      },
+      {
+        "id": 78991,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Avec un serveur Smart Shield sur OVH on pourrait même avoir un accès vidéo sur le poste de la garde champêtre :\r\n* Il faut mettre une grid/noeud en localhost sur son poste avec le plugin securitycenter.\r\n* Configurer main courante.config.js avec le mode isLocal sur localhost.\r\n\r\nA tester depuis chez nous quand on aura vgp.egidium.fr. Je m'y met du coup.",
+        "created_on": "2026-07-22T12:34:06Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 78999,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-07-23T08:52:00Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "8968"
+          }
+        ]
+      },
+      {
+        "id": 79001,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Ca marche ! A partir d'une machine OVH et plugin sur grille locale sur mon PC :\n!clipboard-202607231012-gz7o6.png!\n\nh4. Config serveur :\n\n<pre><code class=\"diff\">\n++ diff -bw /var/www/isap/vgp/maincourante.config.js /usr/local/isap/com.egidium.isap.reporting/public/conf/maincourante.config.example.js\n9,13c9,13\n< this.localStorage.iceMap_video_prx = \"SecurityCenterVideoPlugin-Main:ws -p 10059 -h localhost\" // \"SecurityCenterVideoPlugin-Main\"\n< this.localStorage.iceMap_useLocalVideo = true\n< this.localStorage.iceMap_cctv_prx = \"Cctv-Main:ws -p 10059 -h localhost\" // \"Cctv-Main\"\n< this.localStorage.iceMap_useLocalCctv = true\n< this.localStorage.iceMap_dataProvider_prx = \"CountingDataProvider\" // \"CountingDataProvider\"\n---\n> this.localStorage.iceMap_video_prx = \"\" // \"SecurityCenterVideoPlugin-Main\"\n> this.localStorage.iceMap_useLocalVideo = false\n> this.localStorage.iceMap_cctv_prx = \"\" // \"Cctv-Main\"\n> this.localStorage.iceMap_useLocalCctv = false\n> this.localStorage.iceMap_dataProvider_prx = \"\" // \"CountingDataProvider\" \"FloodAlertDataProvider\"\n</code></pre>\n\nh4. Config client :\n\n<pre><code class=\"diff\">\n/c/DEV/EGIDIUM) M com.acme.sandbox/public/conf/grid/demo/IsapGrid-ClientNodes.xml\nIndex: com.acme.sandbox/public/conf/grid/demo/IsapGrid-ClientNodes.xml\n===================================================================\nRCS file: /CVS_Repositories/EGIDIUM/com.acme.sandbox/public/conf/grid/demo/IsapGrid-ClientNodes.xml,v\nretrieving revision 1.14\ndiff -b -w -r1.14 IsapGrid-ClientNodes.xml\n4c4\n< \t\t<server-instance template=\"SecurityCenterVideoPlugin\"\n---\n> \t\t<server-instance template=\"SecurityCenterVideoPluginRouted\"\n6c6\n< \t\t\tinterface=\"${CLIENT_NODE_HOST01}\"\n---\n> \t\t\tinterface=\"-h localhost\"\n17a18\n> \t\t\trouter-endpoint=\"wss -p 443 -h isap-vgp.egidium.fr\"\n/c/DEV/EGIDIUM) M com.egidium.node/public/conf/MainClientNode.cfg\nIndex: com.egidium.node/public/conf/MainClientNode.cfg\n===================================================================\nRCS file: /CVS_Repositories/EGIDIUM/com.egidium.node/public/conf/MainClientNode.cfg,v\nretrieving revision 1.18\ndiff -b -w -r1.18 MainClientNode.cfg\n24c24\n< IceGrid.Node.PropertiesOverride='Ice.MessageSizeMax=0' 'Ice.Plugin.IceSSL.cpp=IceSSL:createIceSSL' 'Ice.Plugin.IceSSL.clr=IceSSL.dll:IceSSL.PluginFactory' 'IceSSL.DefaultDir=C:/DEV/EGIDIUM/com.egidium.grid/public/data' 'IceSSL.CertFile=C:/ProgramData/EGIDIUM Technologies/certificats/IsapLocalhostCert.pfx' 'IceSSL.Password=4dm1n/1s4pD3f4ult' 'IceSSL.VerifyPeer=2' 'IceSSL.VerifyDepthMax=4' 'IceSSL.UsePlatformCAs=1' 'IceSSL.CheckCertName=1'\n---\n> IceGrid.Node.PropertiesOverride='Ice.MessageSizeMax=0' 'Ice.Plugin.IceSSL.cpp=IceSSL:createIceSSL' 'Ice.Plugin.IceSSL.clr=IceSSL.dll:IceSSL.PluginFactory' 'IceSSL.DefaultDir=C:/DEV/EGIDIUM/com.egidium.grid/public/data' 'IceSSL.CertFile=C:/ProgramData/EGIDIUM Technologies/certificats/egidium.pfx' 'IceSSL.Password=4dm1n/1s4pD3f4ult' 'IceSSL.VerifyPeer=0' 'IceSSL.VerifyDepthMax=4' 'IceSSL.UsePlatformCAs=1' 'IceSSL.CheckCertName=0'\n/c/DEV/EGIDIUM) M com.egidium.video/public/conf/grid/T-Server-SecurityCenterVideoPlugin.xml\nIndex: com.egidium.video/public/conf/grid/T-Server-SecurityCenterVideoPlugin.xml\n===================================================================\nRCS file: /CVS_Repositories/EGIDIUM/com.egidium.video/public/conf/grid/T-Server-SecurityCenterVideoPlugin.xml,v\nretrieving revision 1.34\ndiff -b -w -r1.34 T-Server-SecurityCenterVideoPlugin.xml\n132c132\n< \t\t\t<adapter name=\"Isap.SecurityCenterVideoPlugin.Adapter\" endpoints=\"tcp -p ${port-number} ${interface}\" id=\"${instance-adapter-id}.${unique-id}\">\n---\n> \t\t\t<adapter name=\"Isap.SecurityCenterVideoPlugin.Adapter\" endpoints=\"ws -p ${port-number} ${interface}\" id=\"${instance-adapter-id}.${unique-id}\">\n274c274\n< \t\t\t\t<property name=\"Isap.SecurityCenterVideoPlugin.Adapter.Video.Endpoints\" value=\"tcp -p ${port-number} ${interface}\" />\n---\n> \t\t\t\t<property name=\"Isap.SecurityCenterVideoPlugin.Adapter.Video.Endpoints\" value=\"ws -p ${port-number} ${interface}\" />\n/c/DEV/EGIDIUM)\n</code></pre>\n\nIl a fallut aussi passé le HAProxy en TLS1.2 car Ice 3.6.5 (utilisé par le plugin local) ne supporte pas TLS 1.3.\n",
+        "created_on": "2026-07-23T08:59:45Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4966",
+            "old_value": null,
+            "new_value": "clipboard-202607231012-gz7o6.png"
+          },
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "80",
+            "new_value": "100"
+          }
+        ]
+      },
+      {
+        "id": 79002,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Je vais configurer avignon correctement et indiquer comment s'y connecter.\r\nCe qui permettra de remettre vgp en \"config vgp\" ;-)",
+        "created_on": "2026-07-23T09:00:49Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 79004,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Avignon à jour pour tests :\r\n<pre><code class=\"diff\">\r\n/c/DEV/EGIDIUM) M com.acme.sandbox/public/conf/grid/demo/IsapGrid-ClientNodes.xml\r\nIndex: com.acme.sandbox/public/conf/grid/demo/IsapGrid-ClientNodes.xml\r\n===================================================================\r\nRCS file: /CVS_Repositories/EGIDIUM/com.acme.sandbox/public/conf/grid/demo/IsapGrid-ClientNodes.xml,v\r\nretrieving revision 1.14\r\ndiff -b -w -r1.14 IsapGrid-ClientNodes.xml\r\n4,6c4,6\r\n<               <server-instance template=\"SecurityCenterVideoPlugin\"\r\n<                       activation-mode=\"manual\"\r\n<                       interface=\"${CLIENT_NODE_HOST01}\"\r\n---\r\n>               <server-instance template=\"SecurityCenterVideoPluginRouted\"\r\n>                       activation-mode=\"always\"\r\n>                       interface=\"-h localhost\"\r\n17a18\r\n>                       router-endpoint=\"wss -p 8444 ${ROUTER_NODE_HOST}\"\r\n/c/DEV/EGIDIUM) M com.egidium.isap.reporting/public/conf/maincourante.config.example.js\r\nIndex: com.egidium.isap.reporting/public/conf/maincourante.config.example.js\r\n===================================================================\r\nRCS file: /CVS_Repositories/EGIDIUM/com.egidium.isap.reporting/public/conf/maincourante.config.example.js,v\r\nretrieving revision 1.105\r\ndiff -b -w -r1.105 maincourante.config.example.js\r\n9,12c9,16\r\n< this.localStorage.iceMap_video_prx = \"\" // \"SecurityCenterVideoPlugin-Main\"\r\n< this.localStorage.iceMap_useLocalVideo = false\r\n< this.localStorage.iceMap_cctv_prx = \"\" // \"Cctv-Main\"\r\n< this.localStorage.iceMap_useLocalCctv = false\r\n---\r\n> this.localStorage.iceMap_video_prx = \"SecurityCenterVideoPlugin-Main:ws -p 10059 -h localhost\" // \"SecurityCenterVideoPlugin-Main\"\r\n> this.localStorage.iceMap_useLocalVideo = true\r\n> this.localStorage.iceMap_cctv_prx = \"Cctv-Main:ws -p 10059 -h localhost\" // \"Cctv-Main\"\r\n> this.localStorage.iceMap_useLocalCctv = true\r\n/c/DEV/EGIDIUM) M com.egidium.node/public/conf/MainClientNode.cfg\r\nIndex: com.egidium.node/public/conf/MainClientNode.cfg\r\n===================================================================\r\nRCS file: /CVS_Repositories/EGIDIUM/com.egidium.node/public/conf/MainClientNode.cfg,v\r\nretrieving revision 1.18\r\ndiff -b -w -r1.18 MainClientNode.cfg\r\n4c4\r\n< Ice.Default.Locator=IsapGrid/Locator:ssl -p 4062 -h localhost\r\n---\r\n> Ice.Default.Locator=IsapGrid/Locator:ssl -p 4062 -h dskfr-avignon.egidium.fr\r\n8c8\r\n< IceSSL.CertFile=C:/ProgramData/EGIDIUM Technologies/certificats/IsapLocalhostCert.pfx\r\n---\r\n> IceSSL.CertFile=C:/ProgramData/EGIDIUM Technologies/certificats/egidium.pfx\r\n13,14c13,14\r\n< IceSSL.CheckCertName=1\r\n< # IceSSL.TrustOnly=\r\n---\r\n> IceSSL.CheckCertName=0\r\n> IceSSL.TrustOnly=CN=*.egidium.fr\r\n20c20\r\n< IceGrid.Node.Endpoints=ssl -p 10033 -h localhost\r\n---\r\n> IceGrid.Node.Endpoints=ssl -p 10033 -h dskfr-avignon.egidium.fr\r\n24c24\r\n< IceGrid.Node.PropertiesOverride='Ice.MessageSizeMax=0' 'Ice.Plugin.IceSSL.cpp=IceSSL:createIceSSL' 'Ice.Plugin.IceSSL.clr=IceSSL.dll:IceSSL.PluginFactory' 'IceSSL.DefaultDir=C:/DEV/EGIDIUM/com.egidium.grid/public/data' 'IceSSL.CertFile=C:/ProgramData/EGIDIUM Technologies/certificats/IsapLocalhostCert.pfx' 'IceSSL.Password=4dm1n/1s4pD3f4ult' 'IceSSL.VerifyPeer=2' 'IceSSL.VerifyDepthMax=4' 'IceSSL.UsePlatformCAs=1' 'IceSSL.CheckCertName=1'\r\n---\r\n> IceGrid.Node.PropertiesOverride='Ice.MessageSizeMax=0' 'Ice.Plugin.IceSSL.cpp=IceSSL:createIceSSL' 'Ice.Plugin.IceSSL.clr=IceSSL.dll:IceSSL.PluginFactory' 'IceSSL.DefaultDir=C:/DEV/EGIDIUM/com.egidium.grid/public/data' 'IceSSL.CertFile=C:/ProgramData/EGIDIUM Technologies/certificats/egidium.pfx' 'IceSSL.Password=4dm1n/1s4pD3f4ult' 'IceSSL.VerifyPeer=0' 'IceSSL.VerifyDepthMax=4' 'IceSSL.UsePlatformCAs=1' 'IceSSL.TrustOnly=CN=*.egidium.fr' 'IceSSL.CheckCertName=0'\r\n/c/DEV/EGIDIUM) M com.egidium.video/public/conf/grid/T-Server-SecurityCenterVideoPlugin.xml\r\nIndex: com.egidium.video/public/conf/grid/T-Server-SecurityCenterVideoPlugin.xml\r\n===================================================================\r\nRCS file: /CVS_Repositories/EGIDIUM/com.egidium.video/public/conf/grid/T-Server-SecurityCenterVideoPlugin.xml,v\r\nretrieving revision 1.34\r\ndiff -b -w -r1.34 T-Server-SecurityCenterVideoPlugin.xml\r\n132c132\r\n<                       <adapter name=\"Isap.SecurityCenterVideoPlugin.Adapter\" endpoints=\"tcp -p ${port-number} ${interface}\" id=\"${instance-adapter-id}.${unique-id}\">\r\n---\r\n>                       <adapter name=\"Isap.SecurityCenterVideoPlugin.Adapter\" endpoints=\"ws -p ${port-number} ${interface}\" id=\"${instance-adapter-id}.${unique-id}\">\r\n274c274\r\n<                               <property name=\"Isap.SecurityCenterVideoPlugin.Adapter.Video.Endpoints\" value=\"tcp -p ${port-number} ${interface}\" />\r\n---\r\n>                               <property name=\"Isap.SecurityCenterVideoPlugin.Adapter.Video.Endpoints\" value=\"ws -p ${port-number} ${interface}\" />\r\n/c/DEV/EGIDIUM)\r\n</code></pre>\r\n\r\nh4. Pour tester sur son poste client :\r\n\r\n<pre><code class=\"diff\">\r\n/c/DEV/EGIDIUM) M com.acme.sandbox/public/conf/grid/demo/IsapGrid-ClientNodes.xml\r\nIndex: com.acme.sandbox/public/conf/grid/demo/IsapGrid-ClientNodes.xml\r\n===================================================================\r\nRCS file: /CVS_Repositories/EGIDIUM/com.acme.sandbox/public/conf/grid/demo/IsapGrid-ClientNodes.xml,v\r\nretrieving revision 1.14\r\ndiff -b -w -r1.14 IsapGrid-ClientNodes.xml\r\n4c4\r\n< \t\t<server-instance template=\"SecurityCenterVideoPlugin\"\r\n---\r\n> \t\t<server-instance template=\"SecurityCenterVideoPluginRouted\"\r\n6c6\r\n< \t\t\tinterface=\"${CLIENT_NODE_HOST01}\"\r\n---\r\n> \t\t\tinterface=\"-h localhost\"\r\n17a18\r\n> \t\t\trouter-endpoint=\"wss -p 8444 -h dskfr-avignon.egidium.fr\"\r\n/c/DEV/EGIDIUM) M com.egidium.node/public/conf/MainClientNode.cfg\r\nIndex: com.egidium.node/public/conf/MainClientNode.cfg\r\n===================================================================\r\nRCS file: /CVS_Repositories/EGIDIUM/com.egidium.node/public/conf/MainClientNode.cfg,v\r\nretrieving revision 1.18\r\ndiff -b -w -r1.18 MainClientNode.cfg\r\n24c24\r\n< IceGrid.Node.PropertiesOverride='Ice.MessageSizeMax=0' 'Ice.Plugin.IceSSL.cpp=IceSSL:createIceSSL' 'Ice.Plugin.IceSSL.clr=IceSSL.dll:IceSSL.PluginFactory' 'IceSSL.DefaultDir=C:/DEV/EGIDIUM/com.egidium.grid/public/data' 'IceSSL.CertFile=C:/ProgramData/EGIDIUM Technologies/certificats/IsapLocalhostCert.pfx' 'IceSSL.Password=4dm1n/1s4pD3f4ult' 'IceSSL.VerifyPeer=2' 'IceSSL.VerifyDepthMax=4' 'IceSSL.UsePlatformCAs=1' 'IceSSL.CheckCertName=1'\r\n---\r\n> IceGrid.Node.PropertiesOverride='Ice.MessageSizeMax=0' 'Ice.Plugin.IceSSL.cpp=IceSSL:createIceSSL' 'Ice.Plugin.IceSSL.clr=IceSSL.dll:IceSSL.PluginFactory' 'IceSSL.DefaultDir=C:/DEV/EGIDIUM/com.egidium.grid/public/data' 'IceSSL.CertFile=C:/ProgramData/EGIDIUM Technologies/certificats/egidium.pfx' 'IceSSL.Password=4dm1n/1s4pD3f4ult' 'IceSSL.VerifyPeer=0' 'IceSSL.VerifyDepthMax=4' 'IceSSL.UsePlatformCAs=1' 'IceSSL.CheckCertName=0'\r\n/c/DEV/EGIDIUM) M com.egidium.video/public/conf/grid/T-Server-SecurityCenterVideoPlugin.xml\r\nIndex: com.egidium.video/public/conf/grid/T-Server-SecurityCenterVideoPlugin.xml\r\n===================================================================\r\nRCS file: /CVS_Repositories/EGIDIUM/com.egidium.video/public/conf/grid/T-Server-SecurityCenterVideoPlugin.xml,v\r\nretrieving revision 1.34\r\ndiff -b -w -r1.34 T-Server-SecurityCenterVideoPlugin.xml\r\n132c132\r\n< \t\t\t<adapter name=\"Isap.SecurityCenterVideoPlugin.Adapter\" endpoints=\"tcp -p ${port-number} ${interface}\" id=\"${instance-adapter-id}.${unique-id}\">\r\n---\r\n> \t\t\t<adapter name=\"Isap.SecurityCenterVideoPlugin.Adapter\" endpoints=\"ws -p ${port-number} ${interface}\" id=\"${instance-adapter-id}.${unique-id}\">\r\n274c274\r\n< \t\t\t\t<property name=\"Isap.SecurityCenterVideoPlugin.Adapter.Video.Endpoints\" value=\"tcp -p ${port-number} ${interface}\" />\r\n---\r\n> \t\t\t\t<property name=\"Isap.SecurityCenterVideoPlugin.Adapter.Video.Endpoints\" value=\"ws -p ${port-number} ${interface}\" />\r\n/c/DEV/EGIDIUM)\r\n</code></pre>\r\n\r\nJ'ai testé la WebApp depuis le navigateur sur mon PC et le navigateur sur Avignon et c'est OK.\r\n\r\nOK aussi pour WinApp sur Avignon.",
+        "created_on": "2026-07-23T11:22:53Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 79081,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-07-27T15:22:43Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "8984"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,324 @@
+{
+  "issue": {
+    "id": 8844,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 6,
+      "name": "Configuration"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 4,
+      "name": "Normal"
+    },
+    "author": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "assigned_to": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "parent": {
+      "id": 8841
+    },
+    "subject": "Configurer le site ACME avec les caméra Hanwha",
+    "description": "* Installer et configurer un broker MQTT\r\n* Installer et configurer les caméras (dont algos)\r\n* Intégrer les caméras dans Genetec\r\n* Màj la demo Acme avec ces caméras",
+    "start_date": null,
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 4.0,
+    "total_estimated_hours": 4.0,
+    "spent_hours": 3.0,
+    "total_spent_hours": 3.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      }
+    ],
+    "created_on": "2026-04-01T08:27:23Z",
+    "updated_on": "2026-10-13T12:19:58Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 4643,
+        "filename": "clipboard-202604011722-wlvuq.png",
+        "filesize": 337931,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4643/clipboard-202604011722-wlvuq.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4643",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-04-01T15:22:47Z"
+      },
+      {
+        "id": 4644,
+        "filename": "clipboard-202604011723-pt6rk.png",
+        "filesize": 364895,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4644/clipboard-202604011723-pt6rk.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4644",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-04-01T15:23:06Z"
+      },
+      {
+        "id": 4645,
+        "filename": "clipboard-202604011725-axydd.png",
+        "filesize": 396679,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4645/clipboard-202604011725-axydd.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4645",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-04-01T15:25:23Z"
+      }
+    ],
+    "journals": [
+      {
+        "id": 78168,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-04-01T09:23:58Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "description",
+            "old_value": "* Installer et configurer les caméras (dont algos)\r\n* Intégrer les caméras dans Genetec\r\n* Màj la demo Acme avec ces caméras",
+            "new_value": "* Installer et configurer un broker MQTT\r\n* Installer et configurer les caméras (dont algos)\r\n* Intégrer les caméras dans Genetec\r\n* Màj la demo Acme avec ces caméras"
+          }
+        ]
+      },
+      {
+        "id": 78171,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-04-01T11:30:23Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "blocked",
+            "old_value": null,
+            "new_value": "8848"
+          }
+        ]
+      },
+      {
+        "id": 78180,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Broker Mosquitto installé sur srvfr-satory, port 1883\r\n\r\nComptes :\r\n* Pour les caméra : hanwha/hanwha\r\n* Pour le plugin : hanwha_plugin/hanwha_plugin\r\n",
+        "created_on": "2026-04-01T15:20:59Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 78181,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Algos configurés sur la caméra :\r\n\r\n* Comptage de personnes\r\n** Ligne : devant la porte d'entrée (niveau des boites aux lettre)\r\n** Cible : piétons\r\n* Comptage de véhicules\r\n** Ligne : moitié du parking\r\n** Cible : tous vehicule\r\n** *Actuellement désactivé à cause de #8848*\r\n* Détection de présence prolongée\r\n** Zone : devant la porte d'entrée\r\n** Sensibilité : 10s\r\n* Détection de départ/arrivé\r\n** Zone : sur la place de parking handicapé \r\n\r\nConfiguration MQTT :\r\n* Vers srvfr-satory\r\n* Prefixe de topic : Hanwha/241\r\n\r\n\r\n!clipboard-202604011722-wlvuq.png!\r\n\r\n!clipboard-202604011723-pt6rk.png!\r\n\r\n!clipboard-202604011725-axydd.png!\r\n",
+        "created_on": "2026-04-01T15:26:34Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4643",
+            "old_value": null,
+            "new_value": "clipboard-202604011722-wlvuq.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4644",
+            "old_value": null,
+            "new_value": "clipboard-202604011723-pt6rk.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4645",
+            "old_value": null,
+            "new_value": "clipboard-202604011725-axydd.png"
+          }
+        ]
+      },
+      {
+        "id": 78182,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Reste à mettre les caméras dans la 3D",
+        "created_on": "2026-04-01T15:27:00Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "80"
+          }
+        ]
+      },
+      {
+        "id": 78186,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Reste à activer le compteur de vehicule quand #8848 sera résolu",
+        "created_on": "2026-04-02T12:04:13Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "7"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "80",
+            "new_value": "90"
+          }
+        ]
+      },
+      {
+        "id": 78325,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "J'ai basculé le broker MQTT vers dskfr-orleans",
+        "created_on": "2026-04-23T14:50:15Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 79051,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-07-27T12:50:06Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": "2026-04-01",
+            "new_value": null
+          }
+        ]
+      },
+      {
+        "id": 80654,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-10-13T12:19:42Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "blocked",
+            "old_value": "8848",
+            "new_value": null
+          }
+        ]
+      },
+      {
+        "id": 80655,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-10-13T12:19:58Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "7",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "90",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

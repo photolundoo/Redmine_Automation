@@ -1,0 +1,172 @@
+{
+  "issue": {
+    "id": 9049,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 1,
+      "name": "Anomalie"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 6,
+      "name": "Urgent"
+    },
+    "author": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "assigned_to": {
+      "id": 17,
+      "name": "Pascal Vognin"
+    },
+    "category": {
+      "id": 63,
+      "name": "com.egidium.configuration"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "[ServerConfiguration] Lors du remplissage initial de la base, le configurateur cherche des fichiers dans le dossier Fingerprint",
+    "description": "La dossier fingerprint sert à migrer les bases d'une version à l'autre.\r\n\r\nLes fichiers ne ce dossier ne doivent donc pas être utilisés pour le remplissage initial de la base.\r\n\r\nOr, si des fichier .priv y sont présents, le configurateur les execute, ce qui provoque des erreurs car les templates se retrouvent alors en doublon.\r\n\r\nLe problème existe depuis longtemps mais n'avait jamais été detecté car il n'y a habituellement pas de priv dans de dossier.\r\n\r\n*NOTE* : En attendant j'ai renommé le Priv.isap en Priv.cisap pour débloquer la situation. Lors des tests bien vérifier que c'est redevenu un .isap sinon demandé à Fernand de le renommer sur le serveur CVS.",
+    "start_date": "2026-09-07",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 2.0,
+    "total_estimated_hours": 2.0,
+    "spent_hours": 2.0,
+    "total_spent_hours": 2.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 6,
+        "name": "Version source",
+        "value": "ISAP-V5.5.1"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - Configuration"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": "Non"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      }
+    ],
+    "created_on": "2026-09-07T14:40:38Z",
+    "updated_on": "2026-09-30T09:08:19Z",
+    "closed_on": null,
+    "attachments": [],
+    "journals": [
+      {
+        "id": 80042,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Le problème n'est rencontré qu'en interne (priv), donc pas RN",
+        "created_on": "2026-09-07T14:40:59Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "8",
+            "old_value": "",
+            "new_value": "Non"
+          }
+        ]
+      },
+      {
+        "id": 80120,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-09-09T11:47:32Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "description",
+            "old_value": "La dossier fingerprint sert à migrer les bases d'une version à l'autre.\r\n\r\nLes fichiers ne ce dossier ne doivent donc pas être utilisés pour le remplissage initial de la base.\r\n\r\nOr, si des fichier .priv y sont présents, le configurateur les execute, ce qui provoque des erreurs car les templates se retrouvent alors en doublon.\r\n\r\nLe problème existe depuis longtemps mais n'avait jamais été detecté car il n'y a habituellement pas de priv dans de dossier.",
+            "new_value": "La dossier fingerprint sert à migrer les bases d'une version à l'autre.\r\n\r\nLes fichiers ne ce dossier ne doivent donc pas être utilisés pour le remplissage initial de la base.\r\n\r\nOr, si des fichier .priv y sont présents, le configurateur les execute, ce qui provoque des erreurs car les templates se retrouvent alors en doublon.\r\n\r\nLe problème existe depuis longtemps mais n'avait jamais été detecté car il n'y a habituellement pas de priv dans de dossier.\r\n\r\n*NOTE* : En attendant j'ai renommé le Priv.isap en Priv.cisap pour débloquer la situation. Lors des tests bien vérifier que c'est redevenu un .isap sinon demandé à Fernand de le renommer sur le serveur CVS."
+          },
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": null,
+            "new_value": "2026-09-07"
+          }
+        ]
+      },
+      {
+        "id": 80458,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "Corrigé, il n'y a qu'à cet endroit que la regex était permissive.\r\nOn skip le dossier si il contient dans son nom FingerPrints",
+        "created_on": "2026-09-30T09:08:19Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

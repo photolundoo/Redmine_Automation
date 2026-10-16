@@ -1,0 +1,255 @@
+{
+  "issue": {
+    "id": 8992,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 1,
+      "name": "Anomalie"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 6,
+      "name": "Urgent"
+    },
+    "author": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "assigned_to": {
+      "id": 55,
+      "name": "Vincent Tellier"
+    },
+    "category": {
+      "id": 106,
+      "name": "com.egidium.isap.gui.web"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "[WebApp] Impossible de se connecter après avoir accepté les CGU",
+    "description": "Nouveau compte créé.\r\nOn se connecte avec et on accepte les CGU : IsapSystem::ExceptionsManagement::UserDoNotHaveRightsToPerformAction\r\nA vérifier en 25.1 !\r\n\r\nSecond problème. Si on refait connecté, ça considère qu'on est toujours connecté et popup d'avertissement.\r\n\r\nPI, AcceptedCGU ne passe pas à 1 donc on tourne en rond.",
+    "start_date": "2026-07-31",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 2.0,
+    "total_estimated_hours": 2.0,
+    "spent_hours": 2.0,
+    "total_spent_hours": 2.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 6,
+        "name": "Version source",
+        "value": "ISAP-V27.1"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "WebApp - Accès & Ressources"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      }
+    ],
+    "created_on": "2026-07-31T12:57:11Z",
+    "updated_on": "2026-08-17T06:56:28Z",
+    "closed_on": null,
+    "attachments": [],
+    "journals": [
+      {
+        "id": 79560,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "OK en 25.1 ;-)",
+        "created_on": "2026-07-31T13:07:15Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 79561,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-07-31T13:08:27Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "description",
+            "old_value": "Nouveau compte créé.\r\nOn se connecte avec et on accepte les CGU : IsapSystem::ExceptionsManagement::UserDoNotHaveRightsToPerformAction\r\nA vérifier en 25.1 !\r\n\r\nSecond problème. Si on refait connecté, ça considère qu'on est toujours connecté et popup d'avertissement.",
+            "new_value": "Nouveau compte créé.\r\nOn se connecte avec et on accepte les CGU : IsapSystem::ExceptionsManagement::UserDoNotHaveRightsToPerformAction\r\nA vérifier en 25.1 !\r\n\r\nSecond problème. Si on refait connecté, ça considère qu'on est toujours connecté et popup d'avertissement.\r\n\r\nPI, AcceptedCGU ne passe pas à 1 donc on tourne en rond."
+          }
+        ]
+      },
+      {
+        "id": 79571,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2026-07-31T14:25:32Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "67"
+          }
+        ]
+      },
+      {
+        "id": 79587,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2026-07-31T14:27:11Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "6",
+            "old_value": "ISAP-V26.1",
+            "new_value": "ISAP-V27.1"
+          }
+        ]
+      },
+      {
+        "id": 79590,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-07-31T14:28:55Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "67",
+            "new_value": "16"
+          }
+        ]
+      },
+      {
+        "id": 79591,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-07-31T14:29:30Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "67"
+          }
+        ]
+      },
+      {
+        "id": 79648,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "",
+        "created_on": "2026-08-05T15:41:49Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "90"
+          }
+        ]
+      },
+      {
+        "id": 79843,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "",
+        "created_on": "2026-08-17T06:56:28Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "90",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

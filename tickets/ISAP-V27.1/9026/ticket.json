@@ -1,0 +1,228 @@
+{
+  "issue": {
+    "id": 9026,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 4,
+      "name": "Normal"
+    },
+    "author": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "assigned_to": {
+      "id": 53,
+      "name": "Mathieu Fournet-Carcopino"
+    },
+    "category": {
+      "id": 33,
+      "name": "com.egidium.installer"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "[Ansible] Prendre en compte WebAPI/Iris",
+    "description": "Avec paramètres oui/non et autres paramètres nécessaires comme la clé Mistral ...\r\nPour WebAPI, voir doc : m:\\DEVELOPPEMENTS\\Documentation CD\\com.egidium.api\\private\\doc",
+    "start_date": "2026-08-17",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 8.0,
+    "total_estimated_hours": 8.0,
+    "spent_hours": 11.0,
+    "total_spent_hours": 11.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - Administration"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": "0"
+      }
+    ],
+    "created_on": "2026-08-13T14:05:43Z",
+    "updated_on": "2026-10-12T12:31:29Z",
+    "closed_on": null,
+    "attachments": [],
+    "journals": [
+      {
+        "id": 80597,
+        "user": {
+          "id": 53,
+          "name": "Mathieu Fournet-Carcopino"
+        },
+        "notes": "Iris et l'API s'installent lors d'une instalation d'ISAP en version supérieur ou égale à la version 27.1 via Ansible ",
+        "created_on": "2026-10-12T07:09:49Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "100"
+          }
+        ]
+      },
+      {
+        "id": 80598,
+        "user": {
+          "id": 53,
+          "name": "Mathieu Fournet-Carcopino"
+        },
+        "notes": "Par conséquent, ajout des variables suivantes dans les inventories : \nmistral_api_key: \nemail_agent_user: \nemail_agent_password: \nemail_imap: \nemail_password: \nemail_poll_interval: \nemail_user: ",
+        "created_on": "2026-10-12T07:22:18Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80607,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-10-12T11:12:18Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "67"
+          }
+        ]
+      },
+      {
+        "id": 80614,
+        "user": {
+          "id": 53,
+          "name": "Mathieu Fournet-Carcopino"
+        },
+        "notes": "",
+        "created_on": "2026-10-12T12:10:08Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "parent_id",
+            "old_value": null,
+            "new_value": "9052"
+          }
+        ]
+      },
+      {
+        "id": 80617,
+        "user": {
+          "id": 53,
+          "name": "Mathieu Fournet-Carcopino"
+        },
+        "notes": "",
+        "created_on": "2026-10-12T12:13:58Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "parent_id",
+            "old_value": "9052",
+            "new_value": null
+          }
+        ]
+      },
+      {
+        "id": 80622,
+        "user": {
+          "id": 53,
+          "name": "Mathieu Fournet-Carcopino"
+        },
+        "notes": "De plus, pour la création de l'utilisateur IrisMail (par defaut) pour la gestion des mails en utilisant la WebAPI, j'ai modifié / créer les fichiers suivants :\r\n- \"C:\\DEV\\EGIDIUM\\com.egidium.bb.events\\public\\install\\CreateEntities.isap\" : Ajout de la création de l'utilisateur\r\n- \"C:\\DEV\\EGIDIUM\\com.egidium.bb.events\\public\\install\\LinkEntities.isap\" : Ajout de la relation pour l'utilisateur IrisMail vers le dossier parent\r\n- \"C:\\DEV\\EGIDIUM\\com.egidium.bb.events\\public\\install\\FingerPrints\\27.1.00\\Patch-25.1.00-27.1.00.isap\" : Ajout de la création de l'utilisateur\r\n- \"C:\\DEV\\EGIDIUM\\com.egidium.bb.events\\public\\install\\FingerPrints\\27.1.00\\Patch-25.1.00-27.1.00-Links.isap\" : Ajout de la relation pour l'utilisateur IrisMail vers le dossier parent",
+        "created_on": "2026-10-12T12:18:02Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80623,
+        "user": {
+          "id": 53,
+          "name": "Mathieu Fournet-Carcopino"
+        },
+        "notes": "Aussi, ces ajouts m'ont permis de voir qu'il y avait des erreurs dans mon script de mise à jour de la base de données via les FingerPrint : \r\n- Les Patchs se lançaient plusieurs fois au lieu d'une seule\r\n- Les Patch-*-Links ne se lançaient pas car il y avait des problèmes dans la liste des dossiers.\r\n\r\nPar conséquence (pour prendre l'exemple d'Iris) je me retrouvais avec deux utilisateurs IrisMail dont aucun qui n'était reliés au Dossier.\r\n\r\nAprès modification du script, cela est à présent résolu.",
+        "created_on": "2026-10-12T12:23:11Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80624,
+        "user": {
+          "id": 53,
+          "name": "Mathieu Fournet-Carcopino"
+        },
+        "notes": "A noter, le fait d'installer la WebAPI nécessite la création du venv dans \"/home/isap/venv/\" mais aussi l'installation de smartshieldwebapi prennent un peu plus de temps lors de l'installation.",
+        "created_on": "2026-10-12T12:31:29Z",
+        "private_notes": false,
+        "details": []
+      }
+    ]
+  }
+}

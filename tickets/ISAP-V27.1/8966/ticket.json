@@ -1,0 +1,294 @@
+{
+  "issue": {
+    "id": 8966,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 1,
+      "name": "Anomalie"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 4,
+      "name": "Normal"
+    },
+    "author": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "assigned_to": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "category": {
+      "id": 147,
+      "name": "com.egidium.iris"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "parent": {
+      "id": 8955
+    },
+    "subject": "Iris : Lecture de mail HS pour curl < 7.62",
+    "description": "Causé par un bug résolu sous curl 7.62\r\n\r\nOr, le package curl disponible sous VS2019 via Nuget est curl 7.59",
+    "start_date": null,
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 4.0,
+    "total_estimated_hours": 4.0,
+    "spent_hours": 4.5,
+    "total_spent_hours": 4.5,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 6,
+        "name": "Version source",
+        "value": "ISAP-V27.1"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Fonctions - Iris"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      }
+    ],
+    "created_on": "2026-07-22T11:52:35Z",
+    "updated_on": "2026-09-18T12:37:43Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 4964,
+        "filename": "clipboard-202607231006-xl2nu.png",
+        "filesize": 11360,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4964/clipboard-202607231006-xl2nu.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4964",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-07-23T08:06:11Z"
+      },
+      {
+        "id": 4965,
+        "filename": "clipboard-202607231006-eivd8.png",
+        "filesize": 140593,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4965/clipboard-202607231006-eivd8.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4965",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-07-23T08:06:27Z"
+      }
+    ],
+    "journals": [
+      {
+        "id": 78996,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Contournement : \r\n* Sous Windows, utiliser les ID séquentiels\r\n* Sous Linux : utiliser les UID",
+        "created_on": "2026-07-23T08:05:56Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "100"
+          }
+        ]
+      },
+      {
+        "id": 78997,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "!clipboard-202607231006-xl2nu.png!\r\n\r\n\r\n!clipboard-202607231006-eivd8.png!\r\n\r\n",
+        "created_on": "2026-07-23T08:06:31Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4964",
+            "old_value": null,
+            "new_value": "clipboard-202607231006-xl2nu.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4965",
+            "old_value": null,
+            "new_value": "clipboard-202607231006-eivd8.png"
+          }
+        ]
+      },
+      {
+        "id": 79583,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2026-07-31T14:27:10Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "6",
+            "old_value": "ISAP-V26.1",
+            "new_value": "ISAP-V27.1"
+          }
+        ]
+      },
+      {
+        "id": 79754,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Problème également rencontré sous Linux car la version utilisée sur vmsfr-jenkins est une 7.47",
+        "created_on": "2026-08-12T08:49:37Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "subject",
+            "old_value": "Iris : Lecture de mail HS sous Windows",
+            "new_value": "Iris : Lecture de mail HS pour curl < 7.62"
+          },
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "3",
+            "new_value": "2"
+          }
+        ]
+      },
+      {
+        "id": 79755,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Reste à relivrer Linux",
+        "created_on": "2026-08-12T08:55:19Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "assigned_to_id",
+            "old_value": "11",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "100",
+            "new_value": "90"
+          }
+        ]
+      },
+      {
+        "id": 79758,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-08-12T11:43:14Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "90",
+            "new_value": "100"
+          }
+        ]
+      },
+      {
+        "id": 80248,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2026-09-18T12:37:43Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "7",
+            "old_value": "ISAP Core - SDK",
+            "new_value": "ISAP Fonctions - Iris"
+          }
+        ]
+      }
+    ]
+  }
+}

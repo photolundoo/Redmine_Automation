@@ -1,0 +1,231 @@
+{
+  "issue": {
+    "id": 8982,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 1,
+      "name": "Anomalie"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 5,
+      "name": "Haut"
+    },
+    "author": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "assigned_to": {
+      "id": 55,
+      "name": "Vincent Tellier"
+    },
+    "category": {
+      "id": 106,
+      "name": "com.egidium.isap.gui.web"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "[WebApp] Timeout important sur les postes ne disposant pas du plugin vidéo en local",
+    "description": "J'ai vu ça sur le serveur VGP, et testé à l'instant sur mon PC :\r\n* Voir config #8941\r\n* Arrêter son plugin video (depuis grid avignon ou en arrêtant le service sur son PC)\r\n\r\nSe connecter à la main courante avignon : timeout de 4s :\r\nhttps://dskfr-avignon.egidium.fr\r\n!clipboard-202607271127-oorca.png!\r\n\r\nDu coup j'ai désactivé sur la machine VGP pour ne pas pénaliser tout le monde (pas encore de plugin déployé).\r\n\r\nAlan pense qu'il faut tester les proxies dans des threads pour ne pas bloquer le client.",
+    "start_date": "2026-07-27",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 4.0,
+    "total_estimated_hours": 4.0,
+    "spent_hours": 2.0,
+    "total_spent_hours": 2.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 6,
+        "name": "Version source",
+        "value": "ISAP-V27.1"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "WebApp - Accès & Ressources"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      }
+    ],
+    "created_on": "2026-07-27T09:30:15Z",
+    "updated_on": "2026-08-17T06:58:45Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 4974,
+        "filename": "clipboard-202607271127-oorca.png",
+        "filesize": 13365,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4974/clipboard-202607271127-oorca.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4974",
+        "author": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "created_on": "2026-07-27T09:27:58Z"
+      },
+      {
+        "id": 4992,
+        "filename": "clipboard-202607281239-5giso.png",
+        "filesize": 77565,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4992/clipboard-202607281239-5giso.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4992",
+        "author": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "created_on": "2026-07-28T10:39:35Z"
+      }
+    ],
+    "journals": [
+      {
+        "id": 79348,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Je viens d'avoir ce problème car mon plugin n'était pas lancé. J'ai pas pensé à ça de suite. J'ai simplement voulu allé voir ici ce qui merdait et le plugin vidéo n'est pas présent avec l'alerte :\r\n!clipboard-202607281239-5giso.png!\r\n",
+        "created_on": "2026-07-28T10:39:37Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4992",
+            "old_value": null,
+            "new_value": "clipboard-202607281239-5giso.png"
+          }
+        ]
+      },
+      {
+        "id": 79585,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2026-07-31T14:27:11Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "6",
+            "old_value": "ISAP-V26.1",
+            "new_value": "ISAP-V27.1"
+          }
+        ]
+      },
+      {
+        "id": 79654,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "",
+        "created_on": "2026-08-05T15:51:10Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "90"
+          }
+        ]
+      },
+      {
+        "id": 79829,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2026-08-14T10:55:47Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          }
+        ]
+      },
+      {
+        "id": 79846,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "",
+        "created_on": "2026-08-17T06:58:45Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "90",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

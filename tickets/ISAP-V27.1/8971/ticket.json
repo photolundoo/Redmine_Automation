@@ -1,0 +1,184 @@
+{
+  "issue": {
+    "id": 8971,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 4,
+      "name": "Normal"
+    },
+    "author": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "assigned_to": {
+      "id": 53,
+      "name": "Mathieu Fournet-Carcopino"
+    },
+    "category": {
+      "id": 147,
+      "name": "com.egidium.iris"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "parent": {
+      "id": 8962
+    },
+    "subject": "Iris/MCP : créer les incident à partir de l'entityid du type d'incident",
+    "description": "Utilise ajourd'hui le @Code@, qui sert principalement à communiquer avec les systèmes tiers, pour des types convenus à l'avance. Peu de type, en particulier les types manuels, ont donc un @Code@ pré-défini. Cela limite donc la capacité d'Iris à créer des incidents.\r\n\r\nL'API va être étendue afin de permettre de créer un incident à partir de l'entityid de l'IncidentType.",
+    "start_date": null,
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 4.0,
+    "total_estimated_hours": 4.0,
+    "spent_hours": 5.0,
+    "total_spent_hours": 5.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Fonctions - Iris"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": "0"
+      }
+    ],
+    "created_on": "2026-07-23T13:09:08Z",
+    "updated_on": "2026-09-18T12:37:42Z",
+    "closed_on": null,
+    "attachments": [],
+    "relations": [
+      {
+        "id": 2953,
+        "issue_id": 8970,
+        "issue_to_id": 8971,
+        "relation_type": "blocks",
+        "delay": null
+      }
+    ],
+    "journals": [
+      {
+        "id": 79011,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-07-23T13:09:20Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "blocked",
+            "old_value": null,
+            "new_value": "8970"
+          }
+        ]
+      },
+      {
+        "id": 79674,
+        "user": {
+          "id": 53,
+          "name": "Mathieu Fournet-Carcopino"
+        },
+        "notes": "smartshield-mcp :\r\n\r\nAjout du paramètre alarm_type_eid (entier) dans le schéma du tool — il est désormais transmis tel quel dans le body de la requête POST /api/alarms/alarms\r\nLe champ code reste disponible pour compatibilité ascendante mais n'est plus requis\r\nUne erreur est levée si ni alarm_type_eid ni code ne sont fournis / trouvés\r\n\r\nIris  :\r\nL'agent appelle directement data_list_entities(template=\"IncidentType\", compact=false) pour récupérer tous les types avec leurs attributs\r\nL'identification du type se fait par correspondance sur Name ou DisplayName (et non plus sur le Code)\r\nL'entityId du type sélectionné est passé dans alarm_type_eid — Iris n'utilise plus de code texte ; code reste accepté par le MCP pour la compatibilité avec d'autres clients.",
+        "created_on": "2026-08-06T14:50:18Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "100"
+          },
+          {
+            "property": "cf",
+            "name": "14",
+            "old_value": null,
+            "new_value": "0"
+          }
+        ]
+      },
+      {
+        "id": 80246,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2026-09-18T12:37:43Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "7",
+            "old_value": "ISAP Core - SDK",
+            "new_value": "ISAP Fonctions - Iris"
+          }
+        ]
+      }
+    ]
+  }
+}

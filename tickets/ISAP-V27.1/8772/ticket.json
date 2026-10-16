@@ -1,0 +1,652 @@
+{
+  "issue": {
+    "id": 8772,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 4,
+      "name": "Normal"
+    },
+    "author": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "assigned_to": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "category": {
+      "id": 19,
+      "name": "com.egidium.grid"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "Outils d'ajout de plugin",
+    "description": "En croisant Damien à Verdun, j'ai pensé qu'il était assez complexe d'ajouter un plugin, même dans le cas où le métier est déjà prêt.\r\n\r\nCf. par exemple pour Vanderbilt, où on a dû mettre une procédure : https://support.egidium.fr/projects/common/wiki/Vanderbilt_SPC6300#Dupliquer-les-plugins-SPC6300\r\n\r\nIl faut effectivement :\r\n* Modifier la grille pour ajouter le plugin ET le processeur\r\n* Créer un fichier .cfg pour les logs\r\n* Créer des choses en base (SubSystemCollection) pour faire le lien entre processor et plugin\r\n\r\nCes étapes pourraient être facilitées par un outils qui permette à un intégrateur de facilement ajouter une nouvelle centrale.",
+    "start_date": "2026-02-11",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 8.0,
+    "total_estimated_hours": 8.0,
+    "spent_hours": 13.100000001490116,
+    "total_spent_hours": 13.100000001490116,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - Administration"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": "Oui"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": "L'outils PluginWizard (com.egidium.grid\\public\\tools\\PluginWizard) a pour but de faciliter l'ajout de nouveaux plugin dans le système. Il est particulièrement utile dans le cas des systèmes qui requièrent une instance de plugin par équipement (ex: centrales anti-intrusion).\r\n\r\nIl gère pour le moment les plugins suivants :\r\n* Vanderbilt SPC\r\n* Honeywell Galaxy"
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": "0"
+      }
+    ],
+    "created_on": "2026-02-11T14:11:14Z",
+    "updated_on": "2026-10-02T11:59:10Z",
+    "closed_on": "2026-03-17T12:48:41Z",
+    "attachments": [
+      {
+        "id": 4462,
+        "filename": "clipboard-202602121717-tofux.png",
+        "filesize": 17153,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4462/clipboard-202602121717-tofux.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4462",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-02-12T16:17:25Z"
+      },
+      {
+        "id": 4463,
+        "filename": "clipboard-202602121717-xovgm.png",
+        "filesize": 13710,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4463/clipboard-202602121717-xovgm.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4463",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-02-12T16:17:35Z"
+      },
+      {
+        "id": 4464,
+        "filename": "clipboard-202602121717-nvbi3.png",
+        "filesize": 13712,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4464/clipboard-202602121717-nvbi3.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4464",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-02-12T16:17:44Z"
+      },
+      {
+        "id": 4465,
+        "filename": "clipboard-202602121717-ggaxi.png",
+        "filesize": 14740,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4465/clipboard-202602121717-ggaxi.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4465",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-02-12T16:17:53Z"
+      },
+      {
+        "id": 4466,
+        "filename": "clipboard-202602121718-pgf9y.png",
+        "filesize": 22135,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4466/clipboard-202602121718-pgf9y.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4466",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-02-12T16:18:31Z"
+      },
+      {
+        "id": 4467,
+        "filename": "clipboard-202602121718-ybh19.png",
+        "filesize": 35397,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4467/clipboard-202602121718-ybh19.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4467",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-02-12T16:18:42Z"
+      },
+      {
+        "id": 4468,
+        "filename": "clipboard-202602121719-nus7n.png",
+        "filesize": 42818,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4468/clipboard-202602121719-nus7n.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4468",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-02-12T16:19:08Z"
+      },
+      {
+        "id": 4469,
+        "filename": "clipboard-202602121719-7sjlv.png",
+        "filesize": 23172,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4469/clipboard-202602121719-7sjlv.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4469",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-02-12T16:19:30Z"
+      },
+      {
+        "id": 4470,
+        "filename": "clipboard-202602121719-nn30i.png",
+        "filesize": 19634,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4470/clipboard-202602121719-nn30i.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4470",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-02-12T16:19:39Z"
+      },
+      {
+        "id": 4471,
+        "filename": "clipboard-202602121719-7e1bb.png",
+        "filesize": 2860,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4471/clipboard-202602121719-7e1bb.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4471",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-02-12T16:19:49Z"
+      },
+      {
+        "id": 4560,
+        "filename": "clipboard-202603121416-vr7ef.png",
+        "filesize": 231144,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4560/clipboard-202603121416-vr7ef.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4560",
+        "author": {
+          "id": 56,
+          "name": "Guillaume Lemaitre"
+        },
+        "created_on": "2026-03-12T13:16:47Z"
+      },
+      {
+        "id": 4581,
+        "filename": "clipboard-202603171348-txnaj.png",
+        "filesize": 6124,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4581/clipboard-202603171348-txnaj.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4581",
+        "author": {
+          "id": 56,
+          "name": "Guillaume Lemaitre"
+        },
+        "created_on": "2026-03-17T12:48:12Z"
+      },
+      {
+        "id": 4582,
+        "filename": "clipboard-202603171348-blahn.png",
+        "filesize": 6124,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4582/clipboard-202603171348-blahn.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4582",
+        "author": {
+          "id": 56,
+          "name": "Guillaume Lemaitre"
+        },
+        "created_on": "2026-03-17T12:48:19Z"
+      }
+    ],
+    "journals": [
+      {
+        "id": 77517,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-02-11T16:22:46Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": null,
+            "new_value": "2026-02-11"
+          }
+        ]
+      },
+      {
+        "id": 77518,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "En rédigeant une procédure d'ajout de centrale pour QQVL, je me rends compte que la procédure est en fait beaucoup plus longue et complexe qu'on pourrait le croire.\r\n\r\nEx, le wiki indique :\r\n> Que chaque plugin ait un SubsystemCollection unique, créé en base ISAP.\r\n> (Celui-ci doit lui-même avoir un OperationalState dédié)\r\n\r\nCes deux lignes masquent une grande complexité, au niveau des entités à créer, attributs à remplir et relations à faire.",
+        "created_on": "2026-02-12T12:29:33Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 77520,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Reste à faire :\r\n* Mise en base\r\n** SSC (dont lien vers SSC supérieur et icone)\r\n** OpS (dont option lien vers MainHeart)\r\n* IsapTemplate si manquant\r\n* Retour",
+        "created_on": "2026-02-12T13:51:14Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 77523,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "!clipboard-202602121717-tofux.png!\r\n\r\n!clipboard-202602121717-xovgm.png!\r\n\r\n!clipboard-202602121717-nvbi3.png!\r\n\r\n!clipboard-202602121717-ggaxi.png!\r\n",
+        "created_on": "2026-02-12T16:18:00Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4462",
+            "old_value": null,
+            "new_value": "clipboard-202602121717-tofux.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4463",
+            "old_value": null,
+            "new_value": "clipboard-202602121717-xovgm.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4464",
+            "old_value": null,
+            "new_value": "clipboard-202602121717-nvbi3.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4465",
+            "old_value": null,
+            "new_value": "clipboard-202602121717-ggaxi.png"
+          }
+        ]
+      },
+      {
+        "id": 77524,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "!clipboard-202602121718-pgf9y.png!\r\n\r\n!clipboard-202602121718-ybh19.png!\r\n\r\n!clipboard-202602121719-nus7n.png!\r\n",
+        "created_on": "2026-02-12T16:19:14Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4466",
+            "old_value": null,
+            "new_value": "clipboard-202602121718-pgf9y.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4467",
+            "old_value": null,
+            "new_value": "clipboard-202602121718-ybh19.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4468",
+            "old_value": null,
+            "new_value": "clipboard-202602121719-nus7n.png"
+          }
+        ]
+      },
+      {
+        "id": 77525,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "!clipboard-202602121719-7sjlv.png!\r\n\r\n!clipboard-202602121719-nn30i.png!\r\n\r\n!clipboard-202602121719-7e1bb.png!\r\n",
+        "created_on": "2026-02-12T16:20:00Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4469",
+            "old_value": null,
+            "new_value": "clipboard-202602121719-7sjlv.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4470",
+            "old_value": null,
+            "new_value": "clipboard-202602121719-nn30i.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4471",
+            "old_value": null,
+            "new_value": "clipboard-202602121719-7e1bb.png"
+          }
+        ]
+      },
+      {
+        "id": 77526,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Outils indépendant sans interaction avec les autres système et qu'il va être intéressant d'avoir en prod assez vite.",
+        "created_on": "2026-02-12T16:25:32Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "67",
+            "new_value": "66"
+          }
+        ]
+      },
+      {
+        "id": 77532,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-02-13T15:11:30Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "100"
+          }
+        ]
+      },
+      {
+        "id": 77875,
+        "user": {
+          "id": 56,
+          "name": "Guillaume Lemaitre"
+        },
+        "notes": "Test invalidé  - éléments ajoutés au plan de validation 25.1 Outils Externe\r\n\r\n\r\nh3. *Erreur constaté sur la configuration de Honeywell Galaxy*\r\n\r\n!clipboard-202603121416-vr7ef.png!",
+        "created_on": "2026-03-12T13:17:37Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4560",
+            "old_value": null,
+            "new_value": "clipboard-202603121416-vr7ef.png"
+          },
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "3",
+            "new_value": "2"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "100",
+            "new_value": "90"
+          }
+        ]
+      },
+      {
+        "id": 77941,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Cause du problème trouvée + corrigé.\r\n\r\nAttention, si le fichier grille a été corrompu par la version précédente de cet outils, il faut le supprimer et le récupérer à nouveau depuis CVS.",
+        "created_on": "2026-03-16T14:09:33Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "90",
+            "new_value": "100"
+          }
+        ]
+      },
+      {
+        "id": 77942,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-03-16T14:13:03Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "13",
+            "old_value": "",
+            "new_value": "L'outils PluginWizard (com.egidium.grid\\public\\tools\\PluginWizard) a pour but de faciliter l'ajout de nouveaux plugin dans le système. Il est particulièrement utile dans le cas des systèmes qui requièrent une instance de plugin par équipement (ex: centrales anti-intrusion).\r\n\r\nIl gère pour le moment les plugins suivants :\r\n* Vanderbilt SPC\r\n* Honeywell Galaxy"
+          }
+        ]
+      },
+      {
+        "id": 77977,
+        "user": {
+          "id": 56,
+          "name": "Guillaume Lemaitre"
+        },
+        "notes": "Test validé - Ajouté et documenté dans le plan de validation *Outils externes 25.1*\r\n!clipboard-202603171348-blahn.png!",
+        "created_on": "2026-03-17T12:48:41Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4581",
+            "old_value": null,
+            "new_value": "clipboard-202603171348-txnaj.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4582",
+            "old_value": null,
+            "new_value": "clipboard-202603171348-blahn.png"
+          },
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "3",
+            "new_value": "5"
+          }
+        ]
+      },
+      {
+        "id": 78267,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Le plan de validation a montré qu'il y a pas mal de souci. En particulier, si la grille met trop de temps à se mettre à jour (ex: IsapReportingServer tarde à s'arrêter), l'opération est interrompue et le relancer va créer des doublons.\r\n\r\nDe plus, la liste des plugin est encore trop limitée pour être pratique. Autant repousser à la version suivante pour l'améliorer (peut avec d'autres sous-cases, etc.) ",
+        "created_on": "2026-04-16T08:42:11Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "5",
+            "new_value": "2"
+          },
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "66",
+            "new_value": "67"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "100",
+            "new_value": "60"
+          }
+        ]
+      },
+      {
+        "id": 80489,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Utilisé lors du déploiement Verdun, et a très largement facilité l'ajout de centrales Vanderbilt.\r\n\r\nProblèmes constaté :\r\n* Problème dans le nom de l'OpS créé vs attendu (_OpS au lieu de -OpS) --> corrigé à la volée\r\n* Les plugin sont actuellement mis en @manual@ par défaut --> corrigé à la volée\r\n* Si l'application de grille échoue (ex: certains services mettent du temps à s'arrêter), les entités sont toute de même crées, ce qui provoque au final des doublons. Il faudrait appliquer les modifications de grille avant tout changement en base.\r\n* Peu de choix de plugin : sera fait dans un autre case, pas à gérer ici\r\n\r\nPar ailleurs, étant donné que cet outils ne sera disponible que sur les nouveaux site, il serait intéressant de faire un peu de reverse engineering sur la procédure complète pour ajouter un nouveau plugin intrusion. En effet, les difficultés rencontrées lors du développement de ce case n'ont pas très bien été documentée (ex: note 2). L'ajout de plugin intrusion est particulièrement notable, car l'ajout d'une nouvelle centrale est une opération courante (contrairement à l'ajout d'un nouveau serveur de contrôle d'accès).",
+        "created_on": "2026-10-02T08:16:12Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "14",
+            "old_value": null,
+            "new_value": "0"
+          }
+        ]
+      },
+      {
+        "id": 80490,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-10-02T11:57:58Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "60",
+            "new_value": "100"
+          }
+        ]
+      },
+      {
+        "id": 80491,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Wiki entièrement revu : https://support.egidium.fr/projects/common/wiki/Vanderbilt_SPC6300#Int%C3%A9gration-dune-nouvelle-centrale-Vanderbilt\r\n\r\nOn a désormais la procédure complète pour l'ajout d'une nouvelle centrale. Sera en particulier utile à LMV.",
+        "created_on": "2026-10-02T11:59:10Z",
+        "private_notes": false,
+        "details": []
+      }
+    ]
+  }
+}

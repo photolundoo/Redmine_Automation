@@ -1,0 +1,207 @@
+{
+  "issue": {
+    "id": 9079,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 4,
+      "name": "Normal"
+    },
+    "author": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "assigned_to": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "category": {
+      "id": 3,
+      "name": "com.egidium.isap"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "parent": {
+      "id": 8842
+    },
+    "subject": "Migration Ice 3.7 : IsapGridGUI",
+    "description": "",
+    "start_date": "2026-09-23",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 2.0,
+    "total_estimated_hours": 2.0,
+    "spent_hours": 3.5,
+    "total_spent_hours": 3.5,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - Configuration"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": "0"
+      }
+    ],
+    "created_on": "2026-09-23T09:33:18Z",
+    "updated_on": "2026-09-25T08:26:34Z",
+    "closed_on": null,
+    "attachments": [],
+    "relations": [
+      {
+        "id": 2980,
+        "issue_id": 2866,
+        "issue_to_id": 9079,
+        "relation_type": "relates",
+        "delay": null
+      }
+    ],
+    "journals": [
+      {
+        "id": 80318,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-09-23T09:33:35Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "2866"
+          }
+        ]
+      },
+      {
+        "id": 80326,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Procédure inspirée de #2866. J'ai fait sur mon PC dans un répertoire temporaire et pas livré dans le private CVS.\nLa procédure avec Ice 3.7 (déjà ancien ...) ne fonctionne pas avec un JDK 21. Il faut un JDK 17.\nJ'ai téléchargé un jdk-17.0.12 sous forme de zip et mis dans @\"c:/Program Files/Java/jdk-17.0.12-TODEL\"@.\n\n<pre><code class=\"shell\">\ncd /c/DEV/SRC-EXTRA\ngit clone -b 3.7 https://github.com/zeroc-ice/ice.git\ncd ice/java\n# Chercher chaines contenant \"IceGrid GUI\" et remplacer par \"ISAP Grid\" et \"Copyright...ZeroC, Inc\" par \"Copyright...Egidium Technologies\"\nexport PATH=\"/cygdrive/c/Program Files/Java/jdk-17.0.12-TODEL/bin:$PATH\"\nexport JAVA_HOME=\"c:/Program Files/Java/jdk-17.0.12-TODEL\"\n./gradlew.bat build\ncpfp ./lib/icegridgui.jar /c/DEV/EGIDIUM/com.egidium.grid/public/bin/IsapGridGUI.jar\n</code></pre>\n\nFichiers modifiées :\n<pre>\nmodified:   src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/Coordinator.java\nmodified:   src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/LiveDeployment/ApplicationDetailsDialog.java\nmodified:   src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/LiveDeployment/LogFilterDialog.java\nmodified:   src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/LiveDeployment/LogPrefsDialog.java\nmodified:   src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/LiveDeployment/ObjectDialog.java\nmodified:   src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/LiveDeployment/ShowIceLogDialog.java\nmodified:   src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/LiveDeployment/ShowLogFileDialog.java\nmodified:   src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/LiveDeployment/WriteMessageDialog.java\nmodified:   src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/Logger.java\nmodified:   src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/Main.java\nmodified:   src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/SessionKeeper.java\nmodified:   src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/XMLWriter.java\n</pre>\n\nDiffs:\n<pre>\n/c/DEV/SRC-EXTRA/ice/java) git diff | grep -e '^[\\+\\-]'\n--- a/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/Coordinator.java\n+++ b/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/Coordinator.java\n-        getMainFrame().setTitle(\"IceGrid GUI\");\n+        getMainFrame().setTitle(\"Isap Grid\");\n-                getMainFrame().setTitle(info.getInstanceName() + \" (\" + _replicaName + \") - IceGrid GUI\");\n+                getMainFrame().setTitle(info.getInstanceName() + \" (\" + _replicaName + \") - ISAP Grid\");\n-                                                                          \"This version of IceGrid GUI requires an IceGrid Registry \"\n+                                                                          \"This version of ISAP Grid requires an IceGrid Registry \"\n-                                          \"IceGrid GUI was built without Metrics Graph Support\",\n-                                          \"IceGrid GUI Info\",\n+                                          \"ISAP Grid was built without Metrics Graph Support\",\n+                                          \"ISAP Grid Info\",\n-                                          \"IceGrid GUI Info\",\n+                                          \"ISAP Grid Info\",\n-        String text = \"IceGrid GUI version \"\n-            + com.zeroc.Ice.Util.stringVersion() + \"\\n\"\n-            + \"Copyright \\u00A9 ZeroC, Inc. All rights reserved.\\n\";\n+        String text = \"ISAP Grid version \"\n+            + \"27.1\" + \"\\n\"\n+            + \"Copyright \\u00A9 Egidium Technologies. All rights reserved.\\n\";\n-            \"About - IceGrid GUI\",\n+            \"About - ISAP Grid\",\n-            super(owner, \"Connection Security Warning - IceGrid GUI\");\n+            super(owner, \"Connection Security Warning - ISAP Grid\");\n--- a/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/LiveDeployment/ApplicationDetailsDialog.java\n+++ b/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/LiveDeployment/ApplicationDetailsDialog.java\n-        super(root.getCoordinator().getMainFrame(), \"Application Details - IceGrid GUI\", true);\n+        super(root.getCoordinator().getMainFrame(), \"Application Details - ISAP Grid\", true);\n--- a/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/LiveDeployment/LogFilterDialog.java\n+++ b/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/LiveDeployment/LogFilterDialog.java\n-        super(dialog, \"Ice log filter - IceGrid GUI\", true);\n+        super(dialog, \"Ice log filter - ISAP Grid\", true);\n--- a/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/LiveDeployment/LogPrefsDialog.java\n+++ b/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/LiveDeployment/LogPrefsDialog.java\n-        super(dialog, \"Preferences - IceGrid GUI\", true);\n+        super(dialog, \"Preferences - ISAP Grid\", true);\n-        super(dialog, \"Preferences - IceGrid GUI\", true);\n+        super(dialog, \"Preferences - ISAP Grid\", true);\n--- a/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/LiveDeployment/ObjectDialog.java\n+++ b/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/LiveDeployment/ObjectDialog.java\n-              (readOnly ? \"\" : \"New \") + \"Dynamic Well-Known Object - IceGrid GUI\", true);\n+              (readOnly ? \"\" : \"New \") + \"Dynamic Well-Known Object - ISAP Grid\", true);\n--- a/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/LiveDeployment/ShowIceLogDialog.java\n+++ b/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/LiveDeployment/ShowIceLogDialog.java\n-        super(parent.getRoot().getCoordinator().getMainFrame(), title + \" - IceGrid GUI\", false);\n+        super(parent.getRoot().getCoordinator().getMainFrame(), title + \" - ISAP Grid\", false);\n-                setTitle(_title + \" (Filtered) - IceGrid GUI\");\n+                setTitle(_title + \" (Filtered) - ISAP Grid\");\n-                setTitle(_title + \" (No filter) - IceGrid GUI\");\n+                setTitle(_title + \" (No filter) - ISAP Grid\");\n--- a/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/LiveDeployment/ShowLogFileDialog.java\n+++ b/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/LiveDeployment/ShowLogFileDialog.java\n-                                \"IceGrid GUI caught: \" + e.toString(),\n+                                \"ISAP Grid caught: \" + e.toString(),\n-                                \"IceGrid GUI caught: \" + e.toString(),\n+                                \"ISAP Grid caught: \" + e.toString(),\n-        super(root.getCoordinator().getMainFrame(), factory.getTitle() + \" - IceGrid GUI\", false);\n+        super(root.getCoordinator().getMainFrame(), factory.getTitle() + \" - ISAP Grid\", false);\n--- a/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/LiveDeployment/WriteMessageDialog.java\n+++ b/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/LiveDeployment/WriteMessageDialog.java\n-        super(root.getCoordinator().getMainFrame(), \"Write Message - IceGrid GUI\", true);\n+        super(root.getCoordinator().getMainFrame(), \"Write Message - ISAP Grid\", true);\n--- a/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/Logger.java\n+++ b/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/Logger.java\n-        super(\"IceGrid GUI\", \"\");\n+        super(\"ISAP Grid\", \"\");\n-                JOptionPane.showMessageDialog(_mainFrame, message, \"Warning - IceGrid GUI Logger\",\n+                JOptionPane.showMessageDialog(_mainFrame, message, \"Warning - ISAP Grid Logger\",\n-                JOptionPane.showMessageDialog(_mainFrame, message, \"Error - IceGrid GUI Logger\",\n+                JOptionPane.showMessageDialog(_mainFrame, message, \"Error - ISAP Grid Logger\",\n--- a/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/Main.java\n+++ b/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/Main.java\n-                System.setProperty(\"com.apple.mrj.application.apple.menu.about.name\", \"IceGrid GUI\");\n+                System.setProperty(\"com.apple.mrj.application.apple.menu.about.name\", \"ISAP Grid\");\n-        super(\"IceGrid GUI\");\n+        super(\"ISAP Grid\");\n--- a/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/SessionKeeper.java\n+++ b/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/SessionKeeper.java\n-                                    \"This version of IceGrid GUI requires a newer IceGrid Registry\",\n+                                    \"This version of ISAP Grid requires a newer IceGrid Registry\",\n-            initialize(\"New Connection - IceGrid GUI\", parent);\n+            initialize(\"New Connection - ISAP Grid\", parent);\n-            initialize(\"Edit Connection - IceGrid GUI\", parent);\n+            initialize(\"Edit Connection - ISAP Grid\", parent);\n-            super(_coordinator.getMainFrame(), \"Connection Details - IceGrid GUI\", true);\n+            super(_coordinator.getMainFrame(), \"Connection Details - ISAP Grid\", true);\n-            super(_coordinator.getMainFrame(), \"Saved Connections - IceGrid GUI\", true);\n+            super(_coordinator.getMainFrame(), \"Saved Connections - ISAP Grid\", true);\n-                                        \"Remove Configuration - IceGrid GUI\",\n+                                        \"Remove Configuration - ISAP Grid\",\n-                                        RequestPasswordResult r = requestPassword(\"KeyStore Password - IceGrid GUI\",\n+                                        RequestPasswordResult r = requestPassword(\"KeyStore Password - ISAP Grid\",\n-                                                    \"Confirm Certificate Update - IceGrid GUI\",\n+                                                    \"Confirm Certificate Update - ISAP Grid\",\n-                                    \"Remove Certificate - IceGrid GUI\",\n+                                    \"Remove Certificate - ISAP Grid\",\n-                            r = requestPassword(\"Certificate Password For <\" + alias + \"> - IceGrid GUI\",\n+                            r = requestPassword(\"Certificate Password For <\" + alias + \"> - ISAP Grid\",\n-                            \"Confirm Certificate Update - IceGrid GUI\",\n+                            \"Confirm Certificate Update - ISAP Grid\",\n-                            \"Confirm Certificate Update - IceGrid GUI\",\n+                            \"Confirm Certificate Update - ISAP Grid\",\n-            super(_coordinator.getMainFrame(), \"Certificate Details - IceGrid GUI\", true);\n+            super(_coordinator.getMainFrame(), \"Certificate Details - ISAP Grid\", true);\n-            super(_coordinator.getMainFrame(), \"Certificate Manager - IceGrid GUI\", true);\n+            super(_coordinator.getMainFrame(), \"Certificate Manager - ISAP Grid\", true);\n-            super(parent, \"Login - IceGrid GUI\");\n+            super(parent, \"Login - ISAP Grid\");\n-                    super(parent, \"Login - IceGrid GUI\");\n+                    super(parent, \"Login - ISAP Grid\");\n-                    super(parent, \"Login - IceGrid GUI\");\n+                    super(parent, \"Login - ISAP Grid\");\n-                super(parent, \"Login - IceGrid GUI\");\n+                super(parent, \"Login - ISAP Grid\");\n--- a/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/XMLWriter.java\n+++ b/java/src/IceGridGUI/src/main/java/com/zeroc/IceGridGUI/XMLWriter.java\n-        _writer.write(\"<!-- This file was written by IceGrid GUI -->\" + _newline);\n+        _writer.write(\"<!-- This file was written by ISAP Gridv -->\" + _newline);\n/c/DEV/SRC-EXTRA/ice/java)\n</pre>\n\nAlan pour l'installer, il n'y a plus besoin des paramètres supplémentaires (--add-exports=java.desktop/com.sun.java.swing.plaf.windows=ALL-UNNAMED).",
+        "created_on": "2026-09-23T09:59:11Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          },
+          {
+            "property": "attr",
+            "name": "assigned_to_id",
+            "old_value": "3",
+            "new_value": "11"
+          },
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "67"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "90"
+          }
+        ]
+      },
+      {
+        "id": 80340,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Manquait ça !\r\n<pre>\r\n/c/DEV/SRC-EXTRA/ice/java) git diff | grep VerifyDepthMax\r\n-        _verifyDepthMax = properties.getPropertyAsIntWithDefault(prefix + \"VerifyDepthMax\", 3);\r\n+        _verifyDepthMax = properties.getPropertyAsIntWithDefault(prefix + \"VerifyDepthMax\", 4);\r\n/c/DEV/SRC-EXTRA/ice/java)\r\n</pre>",
+        "created_on": "2026-09-23T13:21:00Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80355,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Installer serveur màj",
+        "created_on": "2026-09-25T08:26:34Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "90",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

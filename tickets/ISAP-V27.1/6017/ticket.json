@@ -1,0 +1,710 @@
+{
+  "issue": {
+    "id": 6017,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 6,
+      "name": "Urgent"
+    },
+    "author": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "assigned_to": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "category": {
+      "id": 4,
+      "name": "com.egidium.video"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "Migrer vers ImageMagick++ 7.1.2",
+    "description": "* Lister les plugin utilisant ImageMagick\r\n* Les recompiler + tester avec la dernière version\r\n* Trouver comment livrer le runtime ImageMagick",
+    "start_date": "2026-09-23",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 8.0,
+    "total_estimated_hours": 8.0,
+    "spent_hours": 7.0,
+    "total_spent_hours": 7.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Plugins - Cameras & Encodeurs"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": "Non"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": "0"
+      }
+    ],
+    "created_on": "2020-10-23T09:49:01Z",
+    "updated_on": "2026-10-06T09:44:28Z",
+    "closed_on": null,
+    "attachments": [],
+    "relations": [
+      {
+        "id": 1627,
+        "issue_id": 5958,
+        "issue_to_id": 6017,
+        "relation_type": "relates",
+        "delay": null
+      },
+      {
+        "id": 1690,
+        "issue_id": 6017,
+        "issue_to_id": 6135,
+        "relation_type": "relates",
+        "delay": null
+      },
+      {
+        "id": 2987,
+        "issue_id": 6017,
+        "issue_to_id": 9022,
+        "relation_type": "relates",
+        "delay": null
+      },
+      {
+        "id": 2962,
+        "issue_id": 6017,
+        "issue_to_id": 8994,
+        "relation_type": "blocks",
+        "delay": null
+      },
+      {
+        "id": 2978,
+        "issue_id": 6017,
+        "issue_to_id": 6918,
+        "relation_type": "blocks",
+        "delay": null
+      }
+    ],
+    "journals": [
+      {
+        "id": 48629,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2020-10-23T09:49:13Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "5958"
+          }
+        ]
+      },
+      {
+        "id": 48644,
+        "user": {
+          "id": 37,
+          "name": "Thibaut Wiart"
+        },
+        "notes": "",
+        "created_on": "2020-10-26T08:36:50Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "subject",
+            "old_value": "Migrer vers la dernière version d'ImageMagcik",
+            "new_value": "Migrer vers la dernière version d'ImageMagick"
+          }
+        ]
+      },
+      {
+        "id": 49602,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2020-12-02T05:35:52Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "59",
+            "new_value": "60"
+          }
+        ]
+      },
+      {
+        "id": 50534,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2021-02-01T09:25:26Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "6135"
+          }
+        ]
+      },
+      {
+        "id": 50536,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2021-02-01T09:25:54Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": "2020-10-26",
+            "new_value": "2021-02-15"
+          }
+        ]
+      },
+      {
+        "id": 51117,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2021-03-23T14:14:16Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "60",
+            "new_value": "56"
+          }
+        ]
+      },
+      {
+        "id": 53580,
+        "user": {
+          "id": 37,
+          "name": "Thibaut Wiart"
+        },
+        "notes": "",
+        "created_on": "2021-07-07T07:45:51Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "8",
+            "old_value": "",
+            "new_value": "Non"
+          }
+        ]
+      },
+      {
+        "id": 55080,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2021-09-21T08:36:17Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "56",
+            "new_value": "58"
+          }
+        ]
+      },
+      {
+        "id": 55248,
+        "user": {
+          "id": 37,
+          "name": "Thibaut Wiart"
+        },
+        "notes": "",
+        "created_on": "2021-09-22T12:29:31Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "priority_id",
+            "old_value": "5",
+            "new_value": "3"
+          }
+        ]
+      },
+      {
+        "id": 56358,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": null,
+        "created_on": "2021-11-22T09:07:26Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "58",
+            "new_value": "61"
+          }
+        ]
+      },
+      {
+        "id": 56862,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2021-12-13T09:40:51Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": "2021-02-15",
+            "new_value": "2022-02-01"
+          }
+        ]
+      },
+      {
+        "id": 57762,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2022-01-31T09:18:54Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": "2022-02-01",
+            "new_value": "2022-02-07"
+          }
+        ]
+      },
+      {
+        "id": 58347,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": null,
+        "created_on": "2022-03-07T09:29:47Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "61",
+            "new_value": "62"
+          }
+        ]
+      },
+      {
+        "id": 59374,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2022-05-16T08:10:44Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": "2022-02-07",
+            "new_value": null
+          }
+        ]
+      },
+      {
+        "id": 60323,
+        "user": {
+          "id": 37,
+          "name": "Thibaut Wiart"
+        },
+        "notes": "",
+        "created_on": "2022-06-29T11:07:06Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "62",
+            "new_value": "16"
+          }
+        ]
+      },
+      {
+        "id": 79600,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "",
+        "created_on": "2026-07-31T14:48:44Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "blocks",
+            "old_value": null,
+            "new_value": "8994"
+          }
+        ]
+      },
+      {
+        "id": 80281,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "",
+        "created_on": "2026-09-22T09:14:59Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "6918"
+          }
+        ]
+      },
+      {
+        "id": 80284,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-09-22T09:17:33Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": "6918",
+            "new_value": null
+          }
+        ]
+      },
+      {
+        "id": 80286,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-09-22T09:17:39Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "blocks",
+            "old_value": null,
+            "new_value": "6918"
+          }
+        ]
+      },
+      {
+        "id": 80288,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "La version actuellement utilisée n'est pas compatible C++20.",
+        "created_on": "2026-09-22T09:18:12Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "priority_id",
+            "old_value": "3",
+            "new_value": "6"
+          },
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "67"
+          },
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": null,
+            "new_value": "2026-09-23"
+          },
+          {
+            "property": "cf",
+            "name": "14",
+            "old_value": null,
+            "new_value": "0"
+          }
+        ]
+      },
+      {
+        "id": 80361,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-09-25T09:11:15Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "subject",
+            "old_value": "Migrer vers la dernière version d'ImageMagick",
+            "new_value": "Migrer vers ImageMagick 7.1.2"
+          }
+        ]
+      },
+      {
+        "id": 80367,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-09-25T11:24:59Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          }
+        ]
+      },
+      {
+        "id": 80368,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Dépendances C++ :\r\n* genericrecorderplugin\r\n* sensorrepresentationprocessor\r\n* utf8-labelgenerator\r\n* indigovisionplugin",
+        "created_on": "2026-09-25T11:29:50Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80372,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-09-25T12:02:59Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "subject",
+            "old_value": "Migrer vers ImageMagick 7.1.2",
+            "new_value": "Migrer vers ImageMagick++ 7.1.2"
+          }
+        ]
+      },
+      {
+        "id": 80408,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-09-25T14:32:13Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "100"
+          }
+        ]
+      },
+      {
+        "id": 80505,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "NOK pour utf8-labelgenerator\r\n",
+        "created_on": "2026-10-06T09:17:31Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "3",
+            "new_value": "2"
+          }
+        ]
+      },
+      {
+        "id": 80506,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-10-06T09:17:38Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "100",
+            "new_value": "60"
+          }
+        ]
+      },
+      {
+        "id": 80507,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Deux soucis :\r\n* Le calcul de dépendance ne détecte pas que vsnSystem dépend de UTF8Generator, donc la lib UTF8 generator apparait comme une lib obsolète\r\n* Utf8 generator utilise des fonctions dépréciée de ImageMagick",
+        "created_on": "2026-10-06T09:23:05Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80510,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Autre souci : vsnSystem n'est pas compatible C++20.",
+        "created_on": "2026-10-06T09:36:48Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80512,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-10-06T09:43:15Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "9022"
+          }
+        ]
+      },
+      {
+        "id": 80514,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Cause :\r\n* UTF8-Generator utilisait une fonction dépréciée de ImageMagick\r\n* vsnSystem, qui utilise UTF8-Generator n'est pas détecté par l'algo de calcul de dépendances",
+        "created_on": "2026-10-06T09:44:28Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "60",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

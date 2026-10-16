@@ -1,0 +1,274 @@
+{
+  "issue": {
+    "id": 8990,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 1,
+      "name": "Anomalie"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 6,
+      "name": "Urgent"
+    },
+    "author": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "assigned_to": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "category": {
+      "id": 47,
+      "name": "com.egidium.licensing"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "parent": {
+      "id": 8986
+    },
+    "subject": "Crash applicatif si la licence contient une limite non reconnue",
+    "description": "Recompilations nécessaires :\r\n* La dll StaticLicenseChecker.dll\r\n* Les applicatifs qui utilisent les fonctions de plus bas niveau pour vérifier les éléments de licence exacts \r\n** APIServer\r\n** DBImporter\r\n** Emulator\r\n** Importer3D\r\n** IsapReportingServer\r\n** Isap3DGUI\r\n** UAEUpdater",
+    "start_date": "2026-08-03",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 2.0,
+    "total_estimated_hours": 2.0,
+    "spent_hours": 3.0,
+    "total_spent_hours": 3.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 6,
+        "name": "Version source",
+        "value": "ISAP-V5.5.1"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - SDK"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": "Oui"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      }
+    ],
+    "created_on": "2026-07-31T11:40:27Z",
+    "updated_on": "2026-08-04T14:37:59Z",
+    "closed_on": "2026-08-03T11:06:07Z",
+    "attachments": [],
+    "relations": [
+      {
+        "id": 2959,
+        "issue_id": 8551,
+        "issue_to_id": 8990,
+        "relation_type": "relates",
+        "delay": null
+      },
+      {
+        "id": 2960,
+        "issue_id": 7903,
+        "issue_to_id": 8990,
+        "relation_type": "relates",
+        "delay": null
+      }
+    ],
+    "journals": [
+      {
+        "id": 79552,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-07-31T12:04:28Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "8551"
+          }
+        ]
+      },
+      {
+        "id": 79553,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-07-31T12:12:35Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "description",
+            "old_value": "",
+            "new_value": "Recompilations nécessaires :\r\n* La dll StaticLicenseChecker.dll\r\n* Les applicatifs qui utilisent les fonctions de plus bas niveau pour vérifier les éléments de licence exacts \r\n** APIServer\r\n** DBImporter\r\n** Emulator\r\n** Importer3D\r\n** IsapReportingServer\r\n** Isap3DGUI\r\n** UAEUpdater"
+          }
+        ]
+      },
+      {
+        "id": 79558,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-07-31T12:17:14Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "7903"
+          }
+        ]
+      },
+      {
+        "id": 79563,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-07-31T14:03:48Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "80"
+          }
+        ]
+      },
+      {
+        "id": 79564,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Reste à recompiler :\n* DBImporter\n* Emulator\n* Importer3D\n* Isap3DGUI\n* UAEUpdater",
+        "created_on": "2026-07-31T14:04:16Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 79613,
+        "user": {
+          "id": 56,
+          "name": "Guillaume Lemaitre"
+        },
+        "notes": "",
+        "created_on": "2026-08-03T11:06:07Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "3",
+            "new_value": "5"
+          }
+        ]
+      },
+      {
+        "id": 79616,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-08-03T11:23:20Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "5",
+            "new_value": "2"
+          }
+        ]
+      },
+      {
+        "id": 79640,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-08-04T14:38:00Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "80",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

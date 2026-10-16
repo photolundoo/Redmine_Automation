@@ -1,0 +1,267 @@
+{
+  "issue": {
+    "id": 9001,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 1,
+      "name": "Anomalie"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 6,
+      "name": "Urgent"
+    },
+    "author": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "assigned_to": {
+      "id": 53,
+      "name": "Mathieu Fournet-Carcopino"
+    },
+    "category": {
+      "id": 33,
+      "name": "com.egidium.installer"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "[Ansible] Anomalies constatés dont templates non à jours",
+    "description": "En vrac ci-dessous les anomalies constatées sur déploiement machines vgp et letouquet.\r\n\r\nLe plus important c'est les \"templates\" du style \"maincourante.config.example.js\" qui ont évolués et non maintenus dans Ansible.\r\nGros impact sur maincourante.config.js qui devra être revu sur toutes les machines, par exemple :\r\n<pre><code class=\"diff\">\r\n< this.localStorage.iceMap_addressManagerFieldLinked = ['CustomReport6'] // ['CustomReport1', 'CustomReport2', 'CustomReport3', 'CustomReport4', 'CustomReport5', 'CustomReport6', 'CustomReport7', 'CustomReport8', 'CustomReport9', 'CustomReport10']\r\n---\r\n> this.localStorage.iceMap_addressManagerFieldLinked = JSON.stringify(['CustomReport6']) // JSON.stringify(['type', 'entityID', 'status', 'description', 'handledBy', 'notifiedBy'])\r\n</code></pre>\r\n\r\nDu coup, est-ce une bonne idée de garder ces templates ???\r\n\r\n__________________________________________________________\r\nDe : Fernand Alcatrao \r\nEnvoyé : mercredi 29 juillet 2026 14:22\r\nÀ : Mathieu Fournet Carcopino <mathieu.fournet-carcopino@egidium-technologies.com>\r\nObjet : RE: Install Ansible\r\n\r\nEt ça c’est quoi ?\r\n<pre>\r\n\"./com.egidium.logical/public/Ansible/install_and_update/check_maincourante.py\"\r\n</pre>\r\n\r\nC’est « check » mais ça écrase :\r\n<pre>\r\n    with open(\"/var/www/isap/vgp/maincourante.config.js\", \"w\") as nfile:\r\n</pre>\r\n\r\n__________________________________________________________\r\nDe : Fernand Alcatrao \r\nEnvoyé : mercredi 29 juillet 2026 13:00\r\nÀ : Mathieu Fournet Carcopino <mathieu.fournet-carcopino@egidium-technologies.com>\r\nObjet : RE: Install Ansible\r\n\r\nPas la peine de changer ça :\r\n<pre><code class=\"diff\">\r\n23c22\r\n<                               tls-cert-file-path=\"${EGIDIUM_DATA}/certificats/egidium.pfx\"\r\n---\r\n>                               tls-cert-file-path=\"/var/lib/isap/certificats/egidium.pfx\"\r\n</code></pre>\r\n\r\n__________________________________________________________\r\nDe : Fernand Alcatrao \r\nEnvoyé : jeudi 23 juillet 2026 17:56\r\nÀ : Mathieu Fournet Carcopino <mathieu.fournet-carcopino@egidium-technologies.com>\r\nObjet : RE: Install Ansible\r\n\r\n<pre>\r\n~ -> debian\r\n</pre>\r\n\r\n__________________________________________________________\r\nDe : Fernand Alcatrao \r\nEnvoyé : jeudi 23 juillet 2026 17:56\r\nÀ : Mathieu Fournet Carcopino <mathieu.fournet-carcopino@egidium-technologies.com>\r\nObjet : RE: Install Ansible\r\n\r\nAjoutez ça aussi après l’installation d’emacs :\r\n<pre>\r\nsudo DEBIAN_FRONTEND=noninteractive apt-get install emacs-nox -y > /dev/null\r\ncat > ~/.emacs <<!\r\n(global-set-key (kbd \"<f9>\")   'compile)\r\n(global-set-key (kbd \"<f4>\")   'next-error)\r\n(global-set-key (kbd \"S-<f4>\") 'previous-error)\r\n(setq create-lockfiles nil)\r\n!\r\n</pre>\r\n\r\n__________________________________________________________\r\nDe : Fernand Alcatrao \r\nEnvoyé : jeudi 23 juillet 2026 17:52\r\nÀ : Mathieu Fournet Carcopino <mathieu.fournet-carcopino@egidium-technologies.com>\r\nObjet : RE: Install Ansible\r\n\r\nA ajouter dans ansible :\r\n<pre>\r\nsudo DEBIAN_FRONTEND=noninteractive apt-get install python3-utm -y > /dev/null\r\n</pre>\r\n\r\nPour les templates, il y aura un gros travail pour vérifier les machines précédentes.\r\nFaudra me donner la liste des « templates ».\r\n\r\n__________________________________________________________\r\nDe : Fernand Alcatrao \r\nEnvoyé : jeudi 23 juillet 2026 16:35\r\nÀ : Mathieu Fournet Carcopino <mathieu.fournet-carcopino@egidium-technologies.com>\r\nObjet : RE: Install Ansible\r\n\r\nEn fait tes templates ne sont pas maintenu, ce qui est très problématique, surtout sur des machines en mode « dev /beta » ou maincourante.config.example.js bouge souvent.\r\nDu coup pas bonne idée les templates.\r\n\r\n__________________________________________________________\r\nDe : Fernand Alcatrao \r\nEnvoyé : jeudi 23 juillet 2026 10:20\r\nÀ : Mathieu Fournet Carcopino <mathieu.fournet-carcopino@egidium-technologies.com>\r\nObjet : RE: Install Ansible\r\n\r\nEt pourquoi ces différences ?\r\n<pre><code class=\"diff\">\r\ndiffbw /var/www/isap/vgp/maincourante.config.js /usr/local/isap/com.egidium.isap.reporting/public/conf/maincourante.config.example.js\r\n…\r\n18c18\r\n< this.localStorage.iceMap_itfgeocoder_prx = \"Geocoder\"\r\n---\r\n> this.localStorage.iceMap_itfgeocoder_prx = \"GeocoderWeb\"\r\n28c28\r\n< this.localStorage.iceMap_enableIncidentWithoutPositionOnCreation = false\r\n---\r\n> this.localStorage.iceMap_enableIncidentWithoutPositionOnCreation = true\r\n44c44\r\n< this.localStorage.iceMap_satellitePublicUrl = 'https://igngp.geoapi.fr/tile.php/orthos/{z}/{x}/{y}.png'\r\n---\r\n> this.localStorage.iceMap_satellitePublicUrl = 'https://data.geopf.fr/wmts'\r\n76,78c76,78\r\n< this.localStorage.iceMap_expertLink = \"https://vgp.egidium.fr:8443/IsapReporting\"\r\n< this.localStorage.iceMap_resetPWDLink = \"https://vgp.egidium.fr\"\r\n< this.localStorage.iceMap_tableColumnDefaultFocus = 'description'\r\n---\r\n> this.localStorage.iceMap_expertLink = \"https://localhost/IsapReporting\"\r\n> this.localStorage.iceMap_resetPWDLink = \"https://localhost\"\r\n> this.localStorage.iceMap_tableColumnDefaultFocus = 'Description'\r\n88c88\r\n< this.localStorage.iceMap_consigneDataProvider = [] // ex: ['source1', 'source2']\r\n---\r\n> this.localStorage.iceMap_consigneDataProvider = [] // ex: [\"FloodReport:7\", \"FloodReport:9\"]\r\n95c95\r\n< this.localStorage.iceMap_showCredits = true\r\n---\r\n> this.localStorage.iceMap_showCredits = false\r\n\r\n…\r\n</code></pre>\r\n\r\n__________________________________________________________\r\nDe : Fernand Alcatrao \r\nEnvoyé : jeudi 23 juillet 2026 10:14\r\nÀ : Mathieu Fournet Carcopino <mathieu.fournet-carcopino@egidium-technologies.com>\r\nObjet : RE: Install Ansible\r\n\r\nPas bon :\r\n<pre>\r\nvgp:~/tmp/tmp) ll \"/usr/local/isap/com.egidium.til/public/bin/*.dll\"\r\nlrwxrwxrwx 1 isap isap 58 Jul 22 16:03 '/usr/local/isap/com.egidium.til/public/bin/*.dll' -> '/usr/local/isap//com.egidium.shared/public/bin/linux/*.dll'\r\nvgp:~/tmp/tmp) ll \"/usr/local/isap/com.egidium.video/public/bin/MetaMat/*.dll\"\r\nlrwxrwxrwx 1 isap isap 58 Jul 22 16:03 '/usr/local/isap/com.egidium.video/public/bin/MetaMat/*.dll' -> '/usr/local/isap//com.egidium.shared/public/bin/linux/*.dll'\r\nvgp:~/tmp/tmp)\r\n</pre>\r\n\r\n__________________________________________________________\r\nDe : Fernand Alcatrao \r\nEnvoyé : mercredi 22 juillet 2026 15:51\r\nÀ : Mathieu Fournet Carcopino <mathieu.fournet-carcopino@egidium-technologies.com>\r\nObjet : RE: Install Ansible\r\n\r\nJe me suis méfiez et j’ai bien ça sinon ça échouait encore …\r\n<pre>\r\n-rw-r--r-- 1 isap adm 6019 Jul 22 15:12 /var/lib/isap/certificats/egidium.pfx\r\n-rw------- 1 isap adm 6019 Jul 22 15:12 /var/lib/isap/certificats/egidium.pfx\r\n-rw------- 1 isap adm 6019 Jul 22 15:12 /var/lib/isap/certificats/egidium.pfx\r\n-rw------- 1 isap adm 6019 Jul 22 15:12 /var/lib/isap/certificats/egidium.pfx\r\n-rw------- 1 isap adm 6019 Jul 22 15:12 /var/lib/isap/certificats/egidium.pfx\r\n-rw------- 1 isap adm 6019 Jul 22 15:12 /var/lib/isap/certificats/egidium.pfx\r\n^C\r\nvgp:/usr/local/isap) sudo chmod 644 /var/lib/isap/certificats/egidium.pfx\r\nvgp:/usr/local/isap) while : ; do ll /var/lib/isap/certificats/egidium.pfx ; sleep 1 ; done\r\n-rw-r--r-- 1 isap adm 6019 Jul 22 15:12 /var/lib/isap/certificats/egidium.pfx\r\n-rw-r--r-- 1 isap adm 6019 Jul 22 15:12 /var/lib/isap/certificats/egidium.pfx\r\n-rw-r--r-- 1 isap adm 6019 Jul 22 15:12 /var/lib/isap/certificats/egidium.pfx\r\n</pre>\r\n\r\nPI, ça a passé 10 bonnes minutes à changer les droits dans /var/www/isap/vgp … un script sh aurait été immédiat\r\n\r\nCa a aussi replanté à cause de la licence :\r\n<pre>\r\n./tmp/IsapLicense-Linux-Priv.lic\r\n</pre>\r\n\r\nIl faudrait par précaution faire un dos2unix avant de l’utiliser.\r\n\r\n__________________________________________________________\r\nDe : Fernand Alcatrao \r\nEnvoyé : mercredi 22 juillet 2026 15:32\r\nÀ : Mathieu Fournet Carcopino <mathieu.fournet-carcopino@egidium-technologies.com>\r\nObjet : RE: Install Ansible\r\n\r\nPour la « reprise sur erreur », j’ai fait comme ça :\r\n<pre>\r\nvgp:/usr/local/isap) rm INSTALLED_26.1.00_ON\r\nvgp:/usr/local/isap)\r\n</pre>\r\n\r\nC’est bien ça ?\r\n\r\n__________________________________________________________\r\nDe : Fernand Alcatrao \r\nEnvoyé : mercredi 22 juillet 2026 15:30\r\nÀ : Mathieu Fournet Carcopino <mathieu.fournet-carcopino@egidium-technologies.com>\r\nObjet : Install Ansible\r\n\r\nBonjour Mathieu,\r\n\r\nJ’installe une nouvelle machine. J’ai dû faire ça :\r\n<pre>\r\nsudo chmod 644 /var/lib/isap/certificats/egidium.pfx\r\n</pre>\r\n\r\nIl faudrait aussi ajouter le fichier de licence dans les paramètres pour penser à le MàJ …\r\n\r\nPour le nom du CD, mettre le chemin relatif comme pour le fichier licence. Comme ça on saura où c’est plutôt que d’avoir à chercher.\r\n",
+    "start_date": "2026-08-10",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 8.0,
+    "total_estimated_hours": 8.0,
+    "spent_hours": 36.0,
+    "total_spent_hours": 36.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 6,
+        "name": "Version source",
+        "value": "ISAP-V25.1"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - Configuration"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      }
+    ],
+    "created_on": "2026-08-10T09:48:03Z",
+    "updated_on": "2026-10-07T11:34:58Z",
+    "closed_on": null,
+    "attachments": [],
+    "relations": [
+      {
+        "id": 2964,
+        "issue_id": 8993,
+        "issue_to_id": 9001,
+        "relation_type": "duplicates",
+        "delay": null
+      }
+    ],
+    "journals": [
+      {
+        "id": 79699,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-08-10T09:52:28Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "duplicated",
+            "old_value": null,
+            "new_value": "8993"
+          }
+        ]
+      },
+      {
+        "id": 79719,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Faudra aussi en profiter pour ajouter ce paquet :\r\n<pre>\r\nsudo DEBIAN_FRONTEND=noninteractive apt-get install python3-socketio-client -y  > /dev/null\r\n</pre>\r\n\r\nAlan en a eu besoin pour instavox sur machine letouquet.",
+        "created_on": "2026-08-10T16:38:33Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80290,
+        "user": {
+          "id": 53,
+          "name": "Mathieu Fournet-Carcopino"
+        },
+        "notes": "Les droits du certificat sont corrects : \r\n<pre>\r\nvmlfr-debian13:~) ll /var/lib/isap/certificats/egidium.pfx\r\n-rw-r--r-- 1 isap adm 8355 22 sept. 11:02 /var/lib/isap/certificats/egidium.pfx\r\n</pre>__________________________________________________\r\nLes droits dans /var/www/isap/[MACHINE] sont maintenant fait via des commandes linux et donc sont plus rapide\r\n__________________________________________________\r\nLes liens symbolique des dll sont corrigés : \r\n<pre>\r\nvmlfr-debian13:~) ll \"/usr/local/isap/com.egidium.til/public/bin/\"\r\ntotal 1676\r\ndrwxrwxr-x 2 isap isap   4096 22 sept. 10:55 .\r\ndrwxrwxr-x 5 isap isap   4096 22 sept. 10:55 ..\r\nlrwxrwxrwx 1 isap isap     70 22 sept. 10:55 AccessControlSDKNet.dll -> /usr/local/isap//com.egidium.shared/public/bin/AccessControlSDKNet.dll\r\nlrwxrwxrwx 1 isap isap     63 22 sept. 10:55 ConfigParser.dll -> /usr/local/isap//com.egidium.shared/public/bin/ConfigParser.dll\r\nlrwxrwxrwx 1 isap isap     59 22 sept. 10:55 CoreIsap.dll -> /usr/local/isap//com.egidium.shared/public/bin/CoreIsap.dll\r\nlrwxrwxrwx 1 isap isap     75 22 sept. 10:55 EgidiumLoggingUtilityNET.dll -> /usr/local/isap//com.egidium.shared/public/bin/EgidiumLoggingUtilityNET.dll\r\nlrwxrwxrwx 1 isap isap     75 22 sept. 10:55 EgidiumNetworkUtilityNET.dll -> /usr/local/isap//com.egidium.shared/public/bin/EgidiumNetworkUtilityNET.dll\r\nlrwxrwxrwx 1 isap isap     70 22 sept. 10:55 EgidiumUtilitiesNET.dll -> /usr/local/isap//com.egidium.shared/public/bin/EgidiumUtilitiesNET.dll\r\nlrwxrwxrwx 1 isap isap     59 22 sept. 10:55 Glacier2.dll -> /usr/local/isap//com.egidium.shared/public/bin/Glacier2.dll\r\nlrwxrwxrwx 1 isap isap     57 22 sept. 10:55 IceBox.dll -> /usr/local/isap//com.egidium.shared/public/bin/IceBox.dll\r\nlrwxrwxrwx 1 isap isap     63 22 sept. 10:55 IceDiscovery.dll -> /usr/local/isap//com.egidium.shared/public/bin/IceDiscovery.dll\r\n-rwxrwxr-x 1 isap isap 802304 21 mars   2025 Ice.dll\r\n[...]\r\nlrwxrwxrwx 1 isap isap     60 22 sept. 10:55 SnowFlake.dll -> /usr/local/isap//com.egidium.shared/public/bin/SnowFlake.dll\r\nlrwxrwxrwx 1 isap isap     62 22 sept. 10:55 VideoSource.dll -> /usr/local/isap//com.egidium.shared/public/bin/VideoSource.dll\r\nlrwxrwxrwx 1 isap isap     61 22 sept. 10:55 XMLManager.dll -> /usr/local/isap//com.egidium.shared/public/bin/XMLManager.dll\r\n</pre>\r\n<pre>\r\nvmlfr-debian13:~) ll \"/usr/local/isap/com.egidium.video/public/bin/MetaMat/\"\r\ntotal 19968\r\ndrwxrwxr-x 3 isap isap     4096 22 sept. 10:55 .\r\ndrwxrwxr-x 3 isap isap     4096 22 sept. 10:55 ..\r\nlrwxrwxrwx 1 isap isap       70 22 sept. 10:55 AccessControlSDKNet.dll -> /usr/local/isap//com.egidium.shared/public/bin/AccessControlSDKNet.dll\r\ndrwxrwxr-x 5 isap isap     4096 22 mars   2025 cards\r\n-rw-rw-r-- 1 isap isap      800  1 sept.  2021 config.cfg\r\nlrwxrwxrwx 1 isap isap       63 22 sept. 10:55 ConfigParser.dll -> /usr/local/isap//com.egidium.shared/public/bin/ConfigParser.dll\r\n-rwxrwxr-x 1 isap isap   498176  5 sept.  2024 CoreIsap.dll\r\n-rwxrwxr-x 1 isap isap     7168  5 sept.  2024 EgidiumLoggingUtilityNET.dll\r\n-rwxrwxr-x 1 isap isap    45056 31 janv.  2025 EgidiumNetworkUtilityNET.dll\r\n-rwxrwxr-x 1 isap isap    13824  5 sept.  2024 EgidiumUtilitiesNET.dll\r\n[...]\r\n-rw-rw-r-- 1 isap isap     2220 27 sept.  2016 policy.xml\r\nlrwxrwxrwx 1 isap isap       58 22 sept. 10:55 ProjNet.dll -> /usr/local/isap//com.egidium.shared/public/bin/ProjNet.dll\r\nlrwxrwxrwx 1 isap isap       70 22 sept. 10:55 SharedMemoryManager.dll -> /usr/local/isap//com.egidium.shared/public/bin/SharedMemoryManager.dll\r\nlrwxrwxrwx 1 isap isap       60 22 sept. 10:55 SnowFlake.dll -> /usr/local/isap//com.egidium.shared/public/bin/SnowFlake.dll\r\n-rwxrwxr-x 1 isap isap  7444664  6 févr.  2025 VideoGrabberNET.dll\r\nlrwxrwxrwx 1 isap isap       62 22 sept. 10:55 VideoSource.dll -> /usr/local/isap//com.egidium.shared/public/bin/VideoSource.dll\r\nlrwxrwxrwx 1 isap isap       61 22 sept. 10:55 XMLManager.dll -> /usr/local/isap//com.egidium.shared/public/bin/XMLManager.dll\r\n</pre>__________________________________________________\r\nLes différences pour maincourante.config.js ne sont que les modifications essentielles à savoir : \r\n<pre>\r\nvmlfr-debian13:~) diffbw /var/www/isap/vmlfr-debian13/maincourante.config.js /usr/local/isap/com.egidium.isap.reporting/public/conf/maincourante.config.example.js\r\n++ diff -bw /var/www/isap/vmlfr-debian13/maincourante.config.js /usr/local/isap/com.egidium.isap.reporting/public/conf/maincourante.config.example.js\r\n12c12\r\n< this.localStorage.iceMap_locator = \"EgidiumRouter/router:wss -p 443 -h isap-vmlfr-debian13.egidium.fr\"\r\n---\r\n> this.localStorage.iceMap_locator = \"EgidiumRouter/router:wss -p 8444 -h localhost\"\r\n72,73c72,73\r\n< this.localStorage.iceMap_expertLink = \"https://vmlfr-debian13.egidium.fr:8443/IsapReporting\"\r\n< this.localStorage.iceMap_resetPWDLink = \"https://vmlfr-debian13.egidium.fr\"\r\n---\r\n> this.localStorage.iceMap_expertLink = \"https://localhost/IsapReporting\"\r\n> this.localStorage.iceMap_resetPWDLink = \"https://localhost\"\r\n</pre>__________________________________________________\r\nLes templates on étés remplacés par des regex seulement sur les éléments à modifier. Exemple: \r\n<pre>\r\n      - name: Configuration avancée de maincourante.config.js avec regex\r\n        block:\r\n\r\n        - name: Appliquer les remplacements regex à maincourante.config.js\r\n          block:\r\n\r\n            - name: Modifier la ligne pour iceMap_locator\r\n              replace:\r\n                path: \"{{ isap_reporting_war_dest }}/maincourante.config.js\"\r\n                regexp: '^this\\.localStorage\\.iceMap_locator.*$'\r\n                replace: 'this.localStorage.iceMap_locator = \"EgidiumRouter/router:wss -p {{ install_haproxy | ternary(443, routeur_port) }} -h {{ isap_server }}.egidium.fr\"'\r\n\r\n            - name: Modifier la ligne pour iceMap_expertLink\r\n              replace:\r\n                path: \"{{ isap_reporting_war_dest }}/maincourante.config.js\"\r\n                regexp: '^this\\.localStorage\\.iceMap_expertLink.*$'\r\n                replace: 'this.localStorage.iceMap_expertLink = \"https://{{ isap_server_short }}.egidium.fr:8443/IsapReporting\"'\r\n              \r\n            - name: Modifier la ligne pour iceMap_resetPWDLink\r\n              replace:\r\n                path: \"{{ isap_reporting_war_dest }}/maincourante.config.js\"\r\n                regexp: '^this\\.localStorage\\.iceMap_resetPWDLink.*$'\r\n                replace: 'this.localStorage.iceMap_resetPWDLink = \"https://{{ isap_server_short }}.egidium.fr\"'\r\n</pre>\r\nLes packages python ont été ajouté à l'installation : \r\n<pre>\r\npython_dependencies:\r\n  - python3-flask\r\n[...]\r\n  - python3-socketio-client\r\n  - python3-utm\r\n[...]\r\n</pre>__________________________________________________\r\nLa configuration .emacs a été ajouté : \r\n<pre>\r\nvmlfr-debian13:~) cat .emacs\r\n(global-set-key (kbd \"<f9>\")   'compile)\r\n(global-set-key (kbd \"<f4>\")   'next-error)\r\n(global-set-key (kbd \"S-<f4>\") 'previous-error)\r\n(setq create-lockfiles nil)\r\n\r\n</pre>__________________________________________________\r\n\r\n<pre>\r\nvmlfr-debian13:~) cat /usr/local/isap/com.acme.sandbox/public/conf/grid/linux/IsapGrid-Application.xml | grep  tls-cert-file-path\r\n                                tls-cert-file-path=\"${EGIDIUM_DATA}/certificats/egidium.pfx\"\r\n                                tls-cert-file-path=\"${EGIDIUM_DATA}/certificats/egidium.pfx\"\r\n\r\n</pre>__________________________________________________\r\nLe check_maincourante a été retiré, il me reste à vérifier que l'ajout/modification de clef dans le fichier maincourante.config.js fonctionne.\r\n\r\n",
+        "created_on": "2026-09-22T10:20:44Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80291,
+        "user": {
+          "id": 53,
+          "name": "Mathieu Fournet-Carcopino"
+        },
+        "notes": "",
+        "created_on": "2026-09-22T10:21:03Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "60"
+          }
+        ]
+      },
+      {
+        "id": 80299,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Faudra mettre à jour les inventories. En particulier stats_webapp pas à jour :\r\n<pre>\r\n./inventory/ocpr.yaml:      stats_webapp: 0\r\n./inventory/sport.yaml:      stats_webapp: 0\r\n./inventory/viparis.yaml:      stats_webapp: 0\r\n</pre>\r\n\r\net :\r\n<pre>\r\n./inventory/ALL.yaml:      stats_webapp: 0\r\n</pre>\r\n\r\nLe ALL semble dupliquer. On ne peut pas faire d'include ?",
+        "created_on": "2026-09-22T12:09:30Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80300,
+        "user": {
+          "id": 53,
+          "name": "Mathieu Fournet-Carcopino"
+        },
+        "notes": "Voir le ticket #8934 pour ça",
+        "created_on": "2026-09-22T12:14:09Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80403,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2026-09-25T13:45:18Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          }
+        ]
+      },
+      {
+        "id": 80409,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-09-25T14:51:34Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "67"
+          }
+        ]
+      },
+      {
+        "id": 80556,
+        "user": {
+          "id": 53,
+          "name": "Mathieu Fournet-Carcopino"
+        },
+        "notes": "",
+        "created_on": "2026-10-07T11:34:51Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "60",
+            "new_value": "100"
+          }
+        ]
+      },
+      {
+        "id": 80557,
+        "user": {
+          "id": 53,
+          "name": "Mathieu Fournet-Carcopino"
+        },
+        "notes": "",
+        "created_on": "2026-10-07T11:34:58Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          }
+        ]
+      }
+    ]
+  }
+}

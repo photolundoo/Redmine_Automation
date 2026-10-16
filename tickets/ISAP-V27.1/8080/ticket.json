@@ -1,0 +1,398 @@
+{
+  "issue": {
+    "id": 8080,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 4,
+      "name": "Normal"
+    },
+    "author": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "assigned_to": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "category": {
+      "id": 3,
+      "name": "com.egidium.isap"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "Compilation linux sur un environnement récent (Debian 13)",
+    "description": "La compilation linux se fait aujourd’hui sur un ubuntu 16.04 (vmlfr-jenkins) qui commence à dater.\r\nIl faudrait avoir une nouvelle VM (vmlfr-ubuntu24) pour faire cette compilation.\r\n\r\nLes instructions se trouvent ici :\r\n\"M:\\DEVELOPPEMENTS\\Documentation interne\\Linux\\02_Compilation_Linux.docx\"\r\n\r\nC'est un peu brouillon et j'ai commencé à MàJ. Faudra bien le mettre au propre.",
+    "start_date": "2024-08-01",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 40.0,
+    "total_estimated_hours": 40.0,
+    "spent_hours": 44.0,
+    "total_spent_hours": 44.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - SDK"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": "0"
+      }
+    ],
+    "created_on": "2024-08-05T12:31:29Z",
+    "updated_on": "2026-09-25T13:44:29Z",
+    "closed_on": null,
+    "attachments": [],
+    "relations": [
+      {
+        "id": 2738,
+        "issue_id": 8080,
+        "issue_to_id": 8309,
+        "relation_type": "relates",
+        "delay": null
+      },
+      {
+        "id": 2975,
+        "issue_id": 8080,
+        "issue_to_id": 9052,
+        "relation_type": "relates",
+        "delay": null
+      }
+    ],
+    "journals": [
+      {
+        "id": 70723,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2024-08-05T12:33:22Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "description",
+            "old_value": "La compilation linux se fait aujourd’hui sur un ubuntu 16.04 (vmlfr-jenkins) qui commence à dater.\r\nIl faudrait avoir une nouvelle VM (vmlfr-ubuntu24) pour faire cette compilation.",
+            "new_value": "La compilation linux se fait aujourd’hui sur un ubuntu 16.04 (vmlfr-jenkins) qui commence à dater.\r\nIl faudrait avoir une nouvelle VM (vmlfr-ubuntu24) pour faire cette compilation.\r\n\r\nLes instructions se trouvent ici :\r\n\"M:\\DEVELOPPEMENTS\\Documentation interne\\Linux\\02_Compilation_Linux.docx\"\r\n\r\nC'est un peu brouillon et j'ai commencé à MàJ. Faudra bien le mettre au propre."
+          }
+        ]
+      },
+      {
+        "id": 70724,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "h2. Projets à faire 1 fois (comme indiqué dans 02_Compilation_Linux.docx)\n\nh3. Ice 3.7.10 : génère un segmentation fault dans IsapServer\n\nJ'ai tenté de prendre la dernière version de Ice 3.7.10. Tout \"ISAP\" compile mais Segmentation fault (core dumped) en lançant IsapServer :\n<pre>\nvmlfr-ubuntu24:/usr/local/isap/com.egidium.bb.events/public/bin/linux) sudo su isap -c \"gdb /usr/local/isap/com.egidium.bb.events/public/bin/linux/IsapServer\"                                                              GNU gdb (Ubuntu 15.0.50.20240403-0ubuntu1) 15.0.50.20240403-git\nCopyright (C) 2024 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\nType \"show copying\" and \"show warranty\" for details.\nThis GDB was configured as \"x86_64-linux-gnu\".\nType \"show configuration\" for configuration details.\nFor bug reporting instructions, please see:\n<https://www.gnu.org/software/gdb/bugs/>.\nFind the GDB manual and other documentation resources online at:\n    <http://www.gnu.org/software/gdb/documentation/>.\n\nFor help, type \"help\".\nType \"apropos word\" to search for commands related to \"word\"...\nReading symbols from /usr/local/isap/com.egidium.bb.events/public/bin/linux/IsapServer...\n(gdb) run --Ice.Config='/var/lib/isap/data/isapgrid/data_node/servers/ISAP Server/config/config'\nStarting program: /c/DEV/EGIDIUM/com.egidium.bb.events/public/bin/linux/IsapServer --Ice.Config='/var/lib/isap/data/isapgrid/data_node/servers/ISAP Server/config/config'\n[Thread debugging using libthread_db enabled]\nUsing host libthread_db library \"/lib/x86_64-linux-gnu/libthread_db.so.1\".\nwarning: could not find '.gnu_debugaltlink' file for /lib/x86_64-linux-gnu/libcap.so.2\n\nProgram received signal SIGSEGV, Segmentation fault.\n0x00007ffff77571dc in Ice::upCast(Ice::ValueFactory*) () from /lib/x86_64-linux-gnu/libIce.so.37\n(gdb)\n</pre>\n\nDu coup retour arrière avec Ice 3.6.5 avant de poursuivre avec Ice 3.7.10.\n\nPI les Makefile utilisent $EGIDIUM_HOME et non ce qui est dans /usr/lib.\nDonc \"facile de switcher\" entre les 2.\n\nh3. SQLAPI : OK\n\nPas de nécessité de migrer du coup, j'ai pas touché. Ca a juste été recompilé.\n\nh3. POCO : ne compile plus\n\nUne erreur et plein de warnings en plus:\n<pre>\n/home/egidium/tmp/tmp/poco/Crypto/src/RSACipherImpl.cpp: In function ‘int Poco::Crypto::{anonymous}::mapPaddingMode(RSAPaddingMode)’:\n/home/egidium/tmp/tmp/poco/Crypto/src/RSACipherImpl.cpp:54:32: error: ‘RSA_SSLV23_PADDING’ was not declared in this scope; did you mean ‘RSA_NO_PADDING’?\n   54 |                         return RSA_SSLV23_PADDING;\n      |                                ^~~~~~~~~~~~~~~~~~\n      |                                RSA_NO_PADDING\n\n...\nIn file included from /home/egidium/tmp/tmp/poco/Foundation/src/DirectoryIteratorStrategy.cpp:15:\n/home/egidium/tmp/tmp/poco/Foundation/include/Poco/DirectoryIteratorStrategy.h:35:22: warning: ‘template<class _Arg, class _Result> class std::pointer_to_unary_function’ is deprecated [-Wdeprecated-declarations]\n   35 |         typedef std::pointer_to_unary_function<const Stack&, UInt16> DepthFunPtr;\n      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~\nIn file included from /usr/include/c++/13/string:49,\n                 from /home/egidium/tmp/tmp/poco/Foundation/include/Poco/Bugcheck.h:22,\n                 from /home/egidium/tmp/tmp/poco/Foundation/include/Poco/Foundation.h:163,\n                 from /home/egidium/tmp/tmp/poco/Foundation/include/Poco/DirectoryIteratorStrategy.h:21:\n/usr/include/c++/13/bits/stl_function.h:1105:11: note: declared here\n 1105 |     class pointer_to_unary_function : public unary_function<_Arg, _Result>\n      |           ^~~~~~~~~~~~~~~~~~~~~~~~~\n...\nIn file included from /home/egidium/tmp/tmp/poco/Crypto/include/Poco/Crypto/RSAKeyImpl.h:22,\n                 from /home/egidium/tmp/tmp/poco/Crypto/include/Poco/Crypto/RSAKey.h:23,\n                 from /home/egidium/tmp/tmp/poco/Crypto/src/CipherFactory.cpp:18:\n/home/egidium/tmp/tmp/poco/Crypto/include/Poco/Crypto/EVPPKey.h: In member function ‘bool Poco::Crypto::EVPPKey::operator==(const Poco::Crypto::EVPPKey&) const’:\n/home/egidium/tmp/tmp/poco/Crypto/include/Poco/Crypto/EVPPKey.h:295:34: warning: ‘int EVP_PKEY_cmp(const EVP_PKEY*, const EVP_PKEY*)’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]\n  295 |         return (1 == EVP_PKEY_cmp(_pEVPPKey, other._pEVPPKey));\n      |                      ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~\n...\n</pre>\n\nLa dernière version poco-1.13.3-release compile bien mais n'est pas compatible avec notre code (c++17 et les .h ne sont pas compatibles et du coup plein d'erreurs avec nos compilations \"ISAP\").\n\nDu coup j'ai pris la poco-1.12.5p2-release, la dernière en c++14, qui compile bien et ne provoque pas d'erreur de compilation chez nous. Il y a juste 2 warnings pas grave du tout :\n[ 74%] Building CXX object JWT/CMakeFiles/JWT.dir/src/Token.cpp.o\n<pre>\n/home/egidium/tmp/tmp/poco/Net/src/PollSet.cpp: In member function ‘Poco::Net::PollSet::SocketModeMap Poco::Net::PollSetImpl::poll(const Poco::Timespan&)’:\n/home/egidium/tmp/tmp/poco/Net/src/PollSet.cpp:224:37: warning: ignoring return value of ‘ssize_t read(int, void*, size_t)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n  224 |                                 read(_eventfd, &val, sizeof(val));\n      |                                 ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/home/egidium/tmp/tmp/poco/Net/src/PollSet.cpp: In member function ‘void Poco::Net::PollSetImpl::wakeUp()’:\n/home/egidium/tmp/tmp/poco/Net/src/PollSet.cpp:241:22: warning: ignoring return value of ‘ssize_t write(int, const void*, size_t)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n  241 |                 write(_eventfd, &val, sizeof(val));\n      |                 ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n</pre>\n\nPI, on peut mélanger les niveaux de c++ dans les so (dll) utilisés donc mélanger du c++11 avec du c++14 ne devrait pas poser de problème.\n\nD'ailleurs Ice est à priori compilé en c++98.\n\nh2. Compilation ISAP\n\nh3. com.cryptopp : le premier projet ne compile plus\n\nCa commence mal ... Il y a plein d'erreurs et il y a aussi plein de warnings :\n<pre>\nIn file included from filters.h:11,\n                 from basecode.h:4,\n                 from basecode.cpp:7:\nalgparam.h: In destructor ‘virtual CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase()’:\nalgparam.h:271:45: warning: ‘bool std::uncaught_exception()’ is deprecated: use 'std::uncaught_exceptions()' instead [-Wdeprecated-declarations]\n  271 |                 if (!std::uncaught_exception())\n...\nasn.cpp: In function ‘size_t CryptoPP::DERLengthEncode(BufferedTransformation&, lword)’:\nasn.cpp:21:24: error: reference to ‘byte’ is ambiguous\n   21 |                 bt.Put(byte(length));\n      |                        ^~~~\nIn file included from /usr/include/c++/13/bits/memory_resource.h:38,\n                 from /usr/include/c++/13/string:58,\n                 from stdcpp.h:15:\n/usr/include/c++/13/cstddef:69:14: note: candidates are: ‘enum class std::byte’\n   69 |   enum class byte : unsigned char {};\n      |              ^~~~\nIn file included from pch.h:10,\n                 from asn.cpp:3:\nconfig.h:95:23: note:                 ‘typedef unsigned char byte’\n   95 | typedef unsigned char byte;             // put in global namespace to avoid ambiguity with other byte typedefs\n      |                       ^~~~\n...\n</pre>\n\nDu coup j'ai pris la dernière version (8.9.0 au lieu de 5.6.2) et plus d'erreurs. A tester une fois que tout tournera.\n\n%{background:orange}Ce n'est pas à nous, ça mériterait d'être aussi retiré de notre compilation et mis dans 02_Compilation_Linux.docx comme à faire une fois.%\n\nh3. com.egidium.hash : RAS\n\nh3. com.egidium.isap.sdk : quelques fix à faire\n\nDu style :\n<pre><code class=\"diff\">\n- throw iceEx;\n+ throw;\n\n...\n\n+++ b/com.egidium.isap.sdk.icesslplugin/cpp/inc/IsapPasswordPrompt.h\n@@ -9,6 +9,7 @@\n #endif\n\n #include <IceSSL/Plugin.h>\n+#include <Ice/Communicator.h>\n\n...\n-#include <CoreIsap/AbstractEntityPlugin.h>\n+#include <CoreIsap/AbstractEntityPlugIn.h>\n\n...\n-#include <PovManager/PointOfView.h>\n-#include <PovManager/PovGroup.h>\n+#include <PoVManager/PointOfView.h>\n+#include <PoVManager/PovGroup.h>\n</code></pre>\n\nh3. com.egidium.tools.cpp\n\n* IsapUserUtil : RAS\n\n* CustomParsers : Gros soucis\n\nOn y a passé quelques heures et on a fini par en venir à bout avec l'aide d'Alan :\n<pre><code class=\"diff\">\nIndex: private/CustomParsers/evalToBool.l\n===================================================================\nRCS file: /CVS_Repositories/EGIDIUM/com.egidium.tools.cpp/private/CustomParsers/evalToBool.l,v\nretrieving revision 1.4\ndiff -b -w -r1.4 evalToBool.l\n13a14\n> #define YY_DECL extern \"C\" int yylex(YYSTYPE * yylval_param, void* yyscanner)\nIndex: private/CustomParsers/evalToBool.y\n===================================================================\nRCS file: /CVS_Repositories/EGIDIUM/com.egidium.tools.cpp/private/CustomParsers/evalToBool.y,v\nretrieving revision 1.3\ndiff -b -w -r1.3 evalToBool.y\n12,13c12\n< int yylex ( YYSTYPE * lvalp, void* scanner );\n<\n---\n> extern \"C\" int yylex ( YYSTYPE * lvalp, void* scanner );\n16c15\n< %pure-parser\n---\n> %define api.pure\nIndex: public/bin/linux/libCustomParsers.so\n</code></pre>\n\n-A vérifier si ça passe bien sous Windows.-\n\n\nh3. com.egidium.licensing : 1 erreur\n\n<pre><code class=\"diff\">\nIndex: private/EgidiumLicenseVerifier/LicenseVerifierImpl.cpp\n===================================================================\nRCS file: /CVS_Repositories/EGIDIUM/com.egidium.licensing/private/EgidiumLicenseVerifier/LicenseVerifierImpl.cpp,v\nretrieving revision 1.7\ndiff -b -w -r1.7 LicenseVerifierImpl.cpp\n12c12\n<\n---\n> #include <limits>\n</code></pre>\n\nh3. org.geographiclib.cpplibs : RAS\n\nh3. com.egidium.node : RAS\n\nh3. com.egidium.bb.events : 1 gros BUG détecté !!!\n\nMerci à gcc (bug en double et du coup on écrase 2 octets) :\n<pre><code class=\"diff\">\nIndex: private/IsapServer/IsapServer.cpp\n===================================================================\nRCS file: /CVS_Repositories/EGIDIUM/com.egidium.bb.events/private/IsapServer/IsapServer.cpp,v\nretrieving revision 1.113\ndiff -b -w -r1.113 IsapServer.cpp\n124c124\n<               ::Ice::Identity l_identity = communicator()->stringToIdentity(\n---\n>               ::Ice::Identity l_identity = Ice::stringToIdentity(\n439c439\n<               DWORD l_size = UNLEN+1;\n---\n>               DWORD l_size = UNLEN;\n448c448\n<               uint32_t l_size = UNLEN+1;\n---\n>               uint32_t l_size = UNLEN;\n458c458\n<               l_username[l_size+1] = '\\0';\n---\n>               l_username[l_size] = '\\0';\n</code></pre>\n\n\nQuelques warning du style celui ci-dessus.\n\nh3. com.egidium.isap.reporting : 2 erreurs\n\n<pre><code class=\"diff\">\n--- a/IsapReportingServer/ChatProcImpl.cpp\n+++ b/IsapReportingServer/ChatProcImpl.cpp\n@@ -1,4 +1,4 @@\n-#include \"ChatprocImpl.h\"\n+#include \"ChatProcImpl.h\"\n\n--- a/IsapReportingServer/Commons.h\n+++ b/IsapReportingServer/Commons.h\n@@ -285,7 +285,7 @@\n-#define pi 3.14159265358979323846\n+//#define pi 3.14159265358979323846\n</code></pre>\n\nEt quelques warnings :\n<pre>\n[  4%] Building CXX object CMakeFiles/IsapReportingServer.dir/BinaryMimeParser.cpp.o\n/usr/local/isap/com.egidium.isap.reporting/private/IsapReportingServer/BinaryMimeParser.cpp: In member function ‘std::__cxx11::list<MimeDefinition> BinaryMimeParser::getAuthorizedMimeDefinitions()’:\n/usr/local/isap/com.egidium.isap.reporting/private/IsapReportingServer/BinaryMimeParser.cpp:258:1: warning: no return statement in function returning non-void [-Wreturn-type]\n  258 | }\n      | ^\n[ 44%] Building CXX object CMakeFiles/IsapReportingServer.dir/LicenseRightManager.cpp.o\n/usr/local/isap/com.egidium.isap.reporting/private/IsapReportingServer/IsapReportingServer.cpp: In member function ‘virtual int IsapReportingServerManager::IsapReportingServerManager::run(int, char**, int)’:\n\n/usr/local/isap/com.egidium.isap.reporting/private/IsapReportingServer/IsapReportingServer.cpp:1112:71: warning: ‘this’ pointer is null [-Wnonnull]\n 1112 |                                         l_planificationIListener->stop();\n      |                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~\nIn file included from /usr/local/isap/com.egidium.isap.reporting/private/IsapReportingServer/IsapReportingServer.cpp:9:\n/usr/local/isap/com.egidium.isap.reporting/private/IsapReportingServer/PlanificationIListener.h:42:14: note: in a call to non-static member function ‘void PlanificationIListener::stop()’\n   42 |         void stop();\n      |              ^~~~\n</pre>\n\n%{background:orange}Il y a aussi des warning dans un fichier d'ITF avec Ice 3.7% :\n<pre>\nslice2cpp /usr/local/isap/com.egidium.pr.counting/public/itf/itfcounting.ice\n/c/DEV/EGIDIUM/com.egidium.pr.counting/public/itf/itfcounting.ice:7: warning: referencing enumerator `PEDESTRIAN' in its enumeration's enclosing scope is deprecated\n/c/DEV/EGIDIUM/com.egidium.pr.counting/public/itf/itfcounting.ice:17: warning: referencing enumerator `PEDESTRIAN' in its enumeration's enclosing scope is deprecated\n/c/DEV/EGIDIUM/com.egidium.pr.counting/public/itf/itfcounting.ice:19: warning: referencing enumerator `LOW' in its enumeration's enclosing scope is deprecated\n</pre>\n\nSinon à cause de Poco c++14, il faut également compiler IsapReportingServer en c++14 sinon erreurs avec les .h de Poco non compatibles.",
+        "created_on": "2024-08-05T16:06:38Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "30"
+          }
+        ]
+      },
+      {
+        "id": 70752,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Finalement, je suis revenu sur Ice 3.6.5 avec ce qu'il y a sous CVS et ça a fonctionné. Ça tourne ici : https://vmlfr-ubuntu24.egidium.fr\r\n\r\nA propos, il faut faire attention à ce qui est utilisé sous CVS vs installé dans le système avec les apt install en particulier sur :\r\n* Ice\r\n* log4cxx\r\n\r\nLog4cxx CVS ne permettait de compiler le SDK ISAP donc utilisation du nouveau log4cxx installé dans le système et qui nécessite de remplacer :\r\n<pre><code class=\"diff\">\r\nIndex: system.cfg\r\n===================================================================\r\nRCS file: /CVS_Repositories/EGIDIUM/com.egidium.bb.events/public/bin/linux/system.cfg,v\r\nretrieving revision 1.6\r\ndiff -b -w -r1.6 system.cfg\r\n9c9,10\r\n< log4j.appender.AllLogs.layout=TTCCLayout\r\n---\r\n> log4j.appender.AllLogs.layout=org.apache.log4j.PatternLayout\r\n> log4j.appender.AllLogs.layout.ConversionPattern=%d [%t] %p %c - %m%n\r\n19c20,21\r\n< log4j.appender.Errors.layout=TTCCLayout\r\n---\r\n> log4j.appender.Errors.layout=org.apache.log4j.PatternLayout\r\n> log4j.appender.Errors.layout.ConversionPattern=%d [%t] %p %c - %m%n\r\n</code></pre>\r\n\r\n%{background:orange}Ca fonctionne déjà avec la version sous CVS donc on peut anticiper la modification.%\r\n\r\nReste à mettre au propre (\"M:\\DEVELOPPEMENTS\\Documentation interne\\Linux\\02_Compilation_Linux.docx\", Makefile, ...) et commiter ce qui est compatible.\r\n\r\nFaudra aussi déployer les nouveaux binaires sur du debian 11 12 ubuntu 22 pour voir si bien compatible.",
+        "created_on": "2024-08-08T12:38:23Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "30",
+            "new_value": "80"
+          }
+        ]
+      },
+      {
+        "id": 70753,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "PI la modif dans les fichiers lex et yacc compile bien sous Windows et fonctionne :\r\n<pre>\r\n$ eventstring 1077 Status IST\r\nExecuting: eventstring 1077 Status IST ... (dtime=1723120787.48557)\r\n==============================================================================\r\nstd::exception: Outgoing.cpp:531: Ice::UnknownException:\r\nunknown exception:\r\nstd::exception: Outgoing.cpp:531: Ice::UnknownException:\r\nunknown exception:\r\nstd::exception: Constraints on attribute not satisfied.\r\n==============================================================================\r\n$\r\n</pre>\r\n\r\nJe commiterais.",
+        "created_on": "2024-08-08T12:40:59Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 70754,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Il y a aussi ce warning à analyser :\r\n%{background:orange}/usr/bin/ld: warning: libcrypto.so.1.0.0, needed by /usr/local/isap/com.egidium.shared/public/bin/linux/libIceUtil++11.so.36, may conflict with libcrypto.so.3%",
+        "created_on": "2024-08-08T12:42:30Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 70755,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "%{background:orange}IsapMobileServer ne se lance pas (dû à Poco)% :\r\n<pre>\r\n2024-08-08 16:43:42,163 [0x7a0cda200180] ERROR ISAP.Server.Mobility.UdpIncomingServer - connectFromProperties (#223) Unable to open incoming endpoint: Address family mismatch: localhost\r\n2024-08-08 16:43:42,163 [0x7a0cda200180] ERROR ISAP.Utility.Application - CRITICAL - doMain (#204) Unhandled user exception during execution: Address family mismatch: localhost\r\n</pre>\r\n\r\nCode :\r\n<pre><code class=\"cpp\">\r\n::Poco::Net::SocketAddress l_endpoint(Poco::Net::SocketAddress::IPv4, l_strIPAddress,l_usPort);\r\n</code></pre>\r\n",
+        "created_on": "2024-08-08T14:47:48Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 70756,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2024-08-08T14:49:47Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "80",
+            "new_value": "50"
+          }
+        ]
+      },
+      {
+        "id": 70921,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Layout appender log4cxx modifié et commité sous CVS pour tout les fichiers de configuration des logs :\r\n<pre>\r\ngrepalllogconf -l TTCCLayout | while read file ; do\r\n   echo \"Processing $file\"\r\n   awk -F= '\r\n/TTCCLayout/ {\r\n   print $1 \"=org.apache.log4j.PatternLayout\"\r\n   print $1 \".ConversionPattern=%d [%t] %p %c - %m%n\"\r\n}\r\n!/TTCCLayout/ {print $0}\r\n' $file > $file.new\r\n      unix2dos $file.new 2> /dev/null\r\n      diffbw $file $file.new\r\n      mv $file $file.bak\r\n      mv $file.new $file\r\ndone\r\n\r\ngrepalllogconf -l appender | xargs cvs commit -m \"#8080-Compilation linux sur un environnement recent (Ubuntu24) -> Layout appender log4cxx\"\r\n</pre>",
+        "created_on": "2024-09-04T13:59:53Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 73321,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2025-03-11T11:42:07Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "8309"
+          }
+        ]
+      },
+      {
+        "id": 73324,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Sur la machine ubuntu24, on a (utilisation des packages installés) :\n<pre>\nvmlfr-ubuntu24:~) sudo dpkg --get-selections | grep log4cxx\nliblog4cxx-dev:amd64                            install\nliblog4cxx15:amd64                              install\nvmlfr-ubuntu24:~) cgrep log4cxx.so\n/c/DEV/EGIDIUM/com.egidium.shared/public/bin/linux/liblog4cxx.so.10.old\n/usr/lib/x86_64-linux-gnu/liblog4cxx.so.15.1.0\n/usr/lib/x86_64-linux-gnu/liblog4cxx.so.15\n/usr/lib/x86_64-linux-gnu/liblog4cxx.so\nvmlfr-ubuntu24:~)\n</pre>\n\nA priori installé comme ça :\n<pre>\n  435  08/08/2024-12:55:26 -> sudo apt-get install liblog4cxx10v5-dev\n  436  08/08/2024-12:55:29 -> sudo apt-get install liblog4cxx10-dev\n  437  08/08/2024-12:55:34 -> sudo apt-get install liblog4cxx-dev\n</pre>",
+        "created_on": "2025-03-11T11:51:06Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80138,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-09-11T11:40:37Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "9052"
+          }
+        ]
+      },
+      {
+        "id": 80147,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-09-11T15:57:07Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "14",
+            "old_value": null,
+            "new_value": "0"
+          }
+        ]
+      },
+      {
+        "id": 80205,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Il reste 2 warnings qui n'empêchent pas de fonctionner correctement au moins sur la machine vmlfr-jenkins2.egidium.fr :\r\n<pre>\r\n[100%] Linking CXX executable /usr/local/isap/com.egidium.pr.incident/public/bin/linux/IncidentProcessor\r\n/usr/bin/ld : warning : libcrypto.so.1.0.0, requis par /usr/local/isap/com.egidium.shared/public/bin/linux/libPocoNetSSL.so.64, peut être en conflit avec libcrypto.so.3\r\n\r\n[100%] Linking CXX executable /usr/local/isap/com.egidium.isap.reporting/public/bin/linux/IsapReportingServer\r\n/usr/bin/ld : warning : libcrypto.so.1.0.0, requis par /usr/local/isap/com.egidium.shared/public/bin/linux/libPocoNetSSL.so.64, peut être en conflit avec libcrypto.so.3\r\n</pre>\r\n\r\nSera corrigé par la màj d'Openssl (#8805) et Poco (#6918).\r\n\r\nEn attente aussi MàJ d'Ansible (en particulier #9001) pour déployer sur notre machine de test debian13.\r\n\r\nJ'hésite encore à livrer les so ice dans shared/bin/linux ou d'utiliser apt get runtime ice sur machines cibles lors de l'installation avec Ansible.\r\n",
+        "created_on": "2026-09-16T12:59:21Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "50",
+            "new_value": "90"
+          }
+        ]
+      },
+      {
+        "id": 80212,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-09-17T08:12:14Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "subject",
+            "old_value": "Compilation linux sur un environnement récent (Ubuntu24)",
+            "new_value": "Compilation linux sur un environnement récent (Debian 13)"
+          }
+        ]
+      },
+      {
+        "id": 80219,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Commité.\r\n\r\nFinalement j'ai choisi de ne pas livrer Ice dans shared. Cela permettra de bénéficier des màj ice 3.7 s'il y en a sur les déploiements.\r\n\r\nVoir détail ici : #9052#note-4",
+        "created_on": "2026-09-17T08:46:05Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "90",
+            "new_value": "100"
+          }
+        ]
+      },
+      {
+        "id": 80376,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "PI les 2 machines jenkins (linux/windows) ont été migrées sur srvfr-dijon plus performante et avec disques SSD.\r\nvmlfr-jenkins2 (nouvelle machine) a été renommée en vmlfr-jenkins tout court et l'ancienne vmlfr-jenkins a disparue.\r\nLes IP sont identiques, donc warning à nettoyé dans known_hosts.",
+        "created_on": "2026-09-25T13:36:46Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80389,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2026-09-25T13:44:29Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "67"
+          }
+        ]
+      }
+    ]
+  }
+}

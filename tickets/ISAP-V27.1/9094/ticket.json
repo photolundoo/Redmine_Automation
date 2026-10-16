@@ -1,0 +1,171 @@
+{
+  "issue": {
+    "id": 9094,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 6,
+      "name": "Configuration"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 6,
+      "name": "Urgent"
+    },
+    "author": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "assigned_to": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "[PAVPlugin] PAV en doublons",
+    "description": "Constaté sur vgp mais pas vgp-sandbox. La différence entre les deux est la configuration du dossier de travail du plugin.\r\n\r\nA faire :\r\n* Vérifier la config\r\n* Trouver d'où vient le bug\r\n* Nettoyer les doublons sur VGP",
+    "start_date": "2026-10-01",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 4.0,
+    "total_estimated_hours": 4.0,
+    "spent_hours": 2.0,
+    "total_spent_hours": 2.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Versailles Grand Parc"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      }
+    ],
+    "created_on": "2026-10-01T08:12:29Z",
+    "updated_on": "2026-10-01T09:27:31Z",
+    "closed_on": null,
+    "attachments": [],
+    "journals": [
+      {
+        "id": 80476,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "C'est en fait la configuration du plugin sur vgp qui est complètement bizarre. Peut-être une tentative de faire une config spécial Buc ? Mais le mélange entre PAV pre-changement et PAV-post changement embrouille le plugin : il ne trouve que le PAV de BUC, mais le SIG lui renvoie tous les PAV existant, et donc créé ceux manquants.",
+        "created_on": "2026-10-01T08:51:03Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80477,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-10-01T08:53:03Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "tracker_id",
+            "old_value": "1",
+            "new_value": "6"
+          },
+          {
+            "property": "cf",
+            "name": "6",
+            "old_value": "ISAP-V25.1",
+            "new_value": null
+          },
+          {
+            "property": "cf",
+            "name": "7",
+            "old_value": "ISAP Plugins - Capteurs experts",
+            "new_value": null
+          },
+          {
+            "property": "cf",
+            "name": "8",
+            "old_value": "Non",
+            "new_value": null
+          }
+        ]
+      },
+      {
+        "id": 80478,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-10-01T08:53:09Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "3",
+            "old_value": "Produit",
+            "new_value": "Versailles Grand Parc"
+          }
+        ]
+      },
+      {
+        "id": 80479,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Config VGP corrigée + doublons nettoyés.",
+        "created_on": "2026-10-01T09:27:31Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

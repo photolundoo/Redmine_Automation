@@ -1,0 +1,367 @@
+﻿{
+    "issue":  {
+                  "id":  8887,
+                  "project":  {
+                                  "id":  3,
+                                  "name":  "EGIDIUM"
+                              },
+                  "tracker":  {
+                                  "id":  2,
+                                  "name":  "Evolution"
+                              },
+                  "status":  {
+                                 "id":  3,
+                                 "name":  "Résolu",
+                                 "is_closed":  false
+                             },
+                  "priority":  {
+                                   "id":  4,
+                                   "name":  "Normal"
+                               },
+                  "author":  {
+                                 "id":  3,
+                                 "name":  "Fernand Alcatrao"
+                             },
+                  "assigned_to":  {
+                                      "id":  55,
+                                      "name":  "Vincent Tellier"
+                                  },
+                  "category":  {
+                                   "id":  106,
+                                   "name":  "com.egidium.isap.gui.web"
+                               },
+                  "fixed_version":  {
+                                        "id":  67,
+                                        "name":  "ISAP-V27.1"
+                                    },
+                  "parent":  {
+                                 "id":  8843
+                             },
+                  "subject":  "WebApp : Permettre une utilisation de la vidéo sans Joystick",
+                  "description":  "On ne peut pas bouger les caméras sans le joystick. Du coup faire :\r\n- A la souris style genetec avec molette et @-/+@ pour zoom/dezoom\r\n- Au clavier avec les flèches et @-/+@ pour zoom/dezoom\r\n- Permettre de taper le physical ID de la camera + return pour changer de camera\r\n- Delete/Suppr pour la supprimer\r\n- PX pour aller au preset X\r\n\r\nVincent a aussi mis la dichotomie mais avec dates parfois dans le futur donc sans images. Je vais demander à Pascal d\u0027indiquer les règles dans la WinApp.",
+                  "start_date":  "2026-05-27",
+                  "due_date":  null,
+                  "done_ratio":  100,
+                  "is_private":  false,
+                  "estimated_hours":  60.0,
+                  "total_estimated_hours":  60.0,
+                  "spent_hours":  43.5,
+                  "total_spent_hours":  43.5,
+                  "custom_fields":  [
+                                        {
+                                            "id":  1,
+                                            "name":  "Origine",
+                                            "value":  "Interne"
+                                        },
+                                        {
+                                            "id":  2,
+                                            "name":  "Phase",
+                                            "value":  "RD"
+                                        },
+                                        {
+                                            "id":  3,
+                                            "name":  "Projet 1 à livrer",
+                                            "value":  "Produit"
+                                        },
+                                        {
+                                            "id":  4,
+                                            "name":  "Projet 2 à livrer",
+                                            "value":  "Produit"
+                                        },
+                                        {
+                                            "id":  7,
+                                            "name":  "Fonction",
+                                            "value":  "WebApp - Video"
+                                        },
+                                        {
+                                            "id":  8,
+                                            "name":  "Release notes",
+                                            "value":  ""
+                                        },
+                                        {
+                                            "id":  9,
+                                            "name":  "Référence support",
+                                            "value":  ""
+                                        },
+                                        {
+                                            "id":  11,
+                                            "name":  "Numéro de Patch",
+                                            "value":  ""
+                                        },
+                                        {
+                                            "id":  13,
+                                            "name":  "Description release notes",
+                                            "value":  ""
+                                        },
+                                        {
+                                            "id":  14,
+                                            "name":  "Evolution majeure",
+                                            "value":  "0"
+                                        }
+                                    ],
+                  "created_on":  "2026-05-05T16:00:58Z",
+                  "updated_on":  "2026-10-13T14:10:53Z",
+                  "closed_on":  null,
+                  "attachments":  [
+                                      {
+                                          "id":  4988,
+                                          "filename":  "clipboard-202607271754-vwrvy.png",
+                                          "filesize":  1925,
+                                          "content_type":  "image/png",
+                                          "description":  "",
+                                          "content_url":  "https://srvfr-redmine/attachments/download/4988/clipboard-202607271754-vwrvy.png",
+                                          "thumbnail_url":  "https://srvfr-redmine/attachments/thumbnail/4988",
+                                          "author":  {
+                                                         "id":  3,
+                                                         "name":  "Fernand Alcatrao"
+                                                     },
+                                          "created_on":  "2026-07-27T15:54:42Z"
+                                      }
+                                  ],
+                  "journals":  [
+                                   {
+                                       "id":  78579,
+                                       "user":  {
+                                                    "id":  3,
+                                                    "name":  "Fernand Alcatrao"
+                                                },
+                                       "notes":  "",
+                                       "created_on":  "2026-06-03T09:23:13Z",
+                                       "private_notes":  false,
+                                       "details":  [
+                                                       {
+                                                           "property":  "attr",
+                                                           "name":  "tracker_id",
+                                                           "old_value":  "6",
+                                                           "new_value":  "2"
+                                                       },
+                                                       {
+                                                           "property":  "attr",
+                                                           "name":  "subject",
+                                                           "old_value":  "Configurer et tester la vidéo dans la WebApp (dont le joystick)",
+                                                           "new_value":  "WebApp : Permettre une utilisation de la vidéo sans Joystick"
+                                                       },
+                                                       {
+                                                           "property":  "attr",
+                                                           "name":  "description",
+                                                           "old_value":  "Peut-on bouger les caméras sans le joystick ?",
+                                                           "new_value":  "On ne peut pas bouger les caméras sans le joystick. Du coup faire :\r\n- A la souris style genetec avec molette et -/+ pour zoom/dezoom\r\n- Au clavier avec les flèches et -/+ pour zoom/dezoom\r\n- Permettre de taper le physical ID de la camera + return pour changer de camera\r\n- Delete/Suppr pour la supprimer\r\n- PX pour aller au preset X"
+                                                       },
+                                                       {
+                                                           "property":  "attr",
+                                                           "name":  "category_id",
+                                                           "old_value":  null,
+                                                           "new_value":  "106"
+                                                       },
+                                                       {
+                                                           "property":  "attr",
+                                                           "name":  "fixed_version_id",
+                                                           "old_value":  "66",
+                                                           "new_value":  "67"
+                                                       },
+                                                       {
+                                                           "property":  "attr",
+                                                           "name":  "start_date",
+                                                           "old_value":  null,
+                                                           "new_value":  "2026-05-27"
+                                                       },
+                                                       {
+                                                           "property":  "attr",
+                                                           "name":  "estimated_hours",
+                                                           "old_value":  "2.0",
+                                                           "new_value":  "60.0"
+                                                       },
+                                                       {
+                                                           "property":  "cf",
+                                                           "name":  "7",
+                                                           "old_value":  null,
+                                                           "new_value":  "WebApp - Video"
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "id":  78580,
+                                       "user":  {
+                                                    "id":  3,
+                                                    "name":  "Fernand Alcatrao"
+                                                },
+                                       "notes":  "",
+                                       "created_on":  "2026-06-03T09:26:01Z",
+                                       "private_notes":  false,
+                                       "details":  [
+                                                       {
+                                                           "property":  "attr",
+                                                           "name":  "description",
+                                                           "old_value":  "On ne peut pas bouger les caméras sans le joystick. Du coup faire :\r\n- A la souris style genetec avec molette et -/+ pour zoom/dezoom\r\n- Au clavier avec les flèches et -/+ pour zoom/dezoom\r\n- Permettre de taper le physical ID de la camera + return pour changer de camera\r\n- Delete/Suppr pour la supprimer\r\n- PX pour aller au preset X",
+                                                           "new_value":  "On ne peut pas bouger les caméras sans le joystick. Du coup faire :\r\n- A la souris style genetec avec molette et @-/+@ pour zoom/dezoom\r\n- Au clavier avec les flèches et @-/+@ pour zoom/dezoom\r\n- Permettre de taper le physical ID de la camera + return pour changer de camera\r\n- Delete/Suppr pour la supprimer\r\n- PX pour aller au preset X\r\n\r\nVincent a aussi mis la dichotomie mais avec dates parfois dans le futur donc sans images. Je vais demander à Pascal d\u0027indiquer les règles dans la WinApp."
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "id":  78581,
+                                       "user":  {
+                                                    "id":  17,
+                                                    "name":  "Pascal Vognin"
+                                                },
+                                       "notes":  "Pour l\u0027investigation dans la winApp voici les règles :\r\n* Lorqu\u0027on investigue un objet on configure l\u0027UI, pour utiliser l\u0027intervalle suivant (date de départ - 1800sec) et (date de départ).\r\n** Dans le cas d\u0027un clique dans la 3D : date de départ = time of click\r\n** Dans le cas d\u0027un incident : date de départ = incident.creationtime\r\n** Dans le case d\u0027un securityevent : date de départ = securityevent.creationtime\r\n** Dans le case d\u0027une operation : date de départ = first-securityevent.creationtime\r\n\r\nLes 1800 secendes étaient prévues comme configurables, mais on a jamais fini le code qui configure ce temps, car personne n\u0027a demandé à ce que ce soit différent",
+                                       "created_on":  "2026-06-03T09:44:13Z",
+                                       "private_notes":  false,
+                                       "details":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "id":  78582,
+                                       "user":  {
+                                                    "id":  3,
+                                                    "name":  "Fernand Alcatrao"
+                                                },
+                                       "notes":  "Vincent, il faut aussi un bouton pour pouvoir dézoomer dans la dichotomie.",
+                                       "created_on":  "2026-06-03T10:51:07Z",
+                                       "private_notes":  false,
+                                       "details":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "id":  78583,
+                                       "user":  {
+                                                    "id":  17,
+                                                    "name":  "Pascal Vognin"
+                                                },
+                                       "notes":  "Pour le dézoom, on garde l\u0027idée que l\u0027opérateur cherche toujours dans le passé, donc on conserve le temps à droite (pour avoir la même image)\r\nEt on agrandis la taille entre la première et la denière\r\n\r\ncurrentTimestep = le temps entre deux images (car on en affiche 3).\r\n\u003cpre\u003e\r\n\t\tauto l_tbegin = m_currentBegin - (m_currentTimestep * 2);\r\n\t\tauto l_tend = m_currentEnd;\r\n\u003c/pre\u003e",
+                                       "created_on":  "2026-06-03T11:17:31Z",
+                                       "private_notes":  false,
+                                       "details":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "id":  79089,
+                                       "user":  {
+                                                    "id":  3,
+                                                    "name":  "Fernand Alcatrao"
+                                                },
+                                       "notes":  "Le joystick et l\u0027utilisation à la souris et clavier sont fonctionnelles.\r\n\r\nJ\u0027ai constaté ce soucis :\r\n* Afficher une caméra live.\r\n* Passer en rejeu.\r\n* Revenir au live. Il se souvient de la caméra mais n\u0027arrive pas à l\u0027afficher :\r\n!clipboard-202607271754-vwrvy.png!\r\n\r\nPour la dichotomie, c\u0027est fonctionnel à part les temps parfois affichés dans le futur et donc sans imagettes, notamment au démarrage car il centre sur le l\u0027heure courante.",
+                                       "created_on":  "2026-07-27T15:55:56Z",
+                                       "private_notes":  false,
+                                       "details":  [
+                                                       {
+                                                           "property":  "attachment",
+                                                           "name":  "4988",
+                                                           "old_value":  null,
+                                                           "new_value":  "clipboard-202607271754-vwrvy.png"
+                                                       },
+                                                       {
+                                                           "property":  "attr",
+                                                           "name":  "status_id",
+                                                           "old_value":  "1",
+                                                           "new_value":  "2"
+                                                       },
+                                                       {
+                                                           "property":  "attr",
+                                                           "name":  "done_ratio",
+                                                           "old_value":  "0",
+                                                           "new_value":  "80"
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "id":  79090,
+                                       "user":  {
+                                                    "id":  3,
+                                                    "name":  "Fernand Alcatrao"
+                                                },
+                                       "notes":  "",
+                                       "created_on":  "2026-07-27T15:56:38Z",
+                                       "private_notes":  false,
+                                       "details":  [
+                                                       {
+                                                           "property":  "attr",
+                                                           "name":  "assigned_to_id",
+                                                           "old_value":  "3",
+                                                           "new_value":  "55"
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "id":  79660,
+                                       "user":  {
+                                                    "id":  55,
+                                                    "name":  "Vincent Tellier"
+                                                },
+                                       "notes":  "",
+                                       "created_on":  "2026-08-05T15:54:13Z",
+                                       "private_notes":  false,
+                                       "details":  [
+                                                       {
+                                                           "property":  "attr",
+                                                           "name":  "status_id",
+                                                           "old_value":  "2",
+                                                           "new_value":  "3"
+                                                       },
+                                                       {
+                                                           "property":  "attr",
+                                                           "name":  "done_ratio",
+                                                           "old_value":  "80",
+                                                           "new_value":  "100"
+                                                       },
+                                                       {
+                                                           "property":  "cf",
+                                                           "name":  "14",
+                                                           "old_value":  null,
+                                                           "new_value":  "0"
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "id":  80188,
+                                       "user":  {
+                                                    "id":  56,
+                                                    "name":  "Guillaume Lemaitre"
+                                                },
+                                       "notes":  "Test non validé - La fonction Suppr (Delete) ne fonctionne pas\r\nAjouté au plan de validation 01 V26.1 - WEBAPP",
+                                       "created_on":  "2026-09-15T14:37:07Z",
+                                       "private_notes":  false,
+                                       "details":  [
+                                                       {
+                                                           "property":  "attr",
+                                                           "name":  "status_id",
+                                                           "old_value":  "3",
+                                                           "new_value":  "2"
+                                                       },
+                                                       {
+                                                           "property":  "attr",
+                                                           "name":  "done_ratio",
+                                                           "old_value":  "100",
+                                                           "new_value":  "90"
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "id":  80663,
+                                       "user":  {
+                                                    "id":  55,
+                                                    "name":  "Vincent Tellier"
+                                                },
+                                       "notes":  "",
+                                       "created_on":  "2026-10-13T14:10:53Z",
+                                       "private_notes":  false,
+                                       "details":  [
+                                                       {
+                                                           "property":  "attr",
+                                                           "name":  "status_id",
+                                                           "old_value":  "2",
+                                                           "new_value":  "3"
+                                                       },
+                                                       {
+                                                           "property":  "attr",
+                                                           "name":  "done_ratio",
+                                                           "old_value":  "90",
+                                                           "new_value":  "100"
+                                                       }
+                                                   ]
+                                   }
+                               ]
+              }
+}

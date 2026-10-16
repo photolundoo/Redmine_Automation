@@ -1,0 +1,251 @@
+{
+  "issue": {
+    "id": 8977,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 1,
+      "name": "Anomalie"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 6,
+      "name": "Urgent"
+    },
+    "author": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "assigned_to": {
+      "id": 55,
+      "name": "Vincent Tellier"
+    },
+    "category": {
+      "id": 106,
+      "name": "com.egidium.isap.gui.web"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "[WebApp] Mauvaise gestion par dossiers des ressources/instances",
+    "description": "L'App situation (3D?) affiche toutes les ressources même quand on est dans un dossier (BUC) qui ne les voient pas :\r\n!clipboard-202607241444-p9nuy.png!\r\n\r\n!clipboard-202607241446-1nhtj.png!\r\n\r\n!clipboard-202607241445-ake8i.png!\r\n",
+    "start_date": "2026-10-05",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 4.0,
+    "total_estimated_hours": 4.0,
+    "spent_hours": 2.0,
+    "total_spent_hours": 2.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 6,
+        "name": "Version source",
+        "value": "ISAP-V25.1"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "WebApp - Situation"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      }
+    ],
+    "created_on": "2026-07-24T12:46:23Z",
+    "updated_on": "2026-10-13T14:10:22Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 4969,
+        "filename": "clipboard-202607241444-p9nuy.png",
+        "filesize": 11383,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4969/clipboard-202607241444-p9nuy.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4969",
+        "author": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "created_on": "2026-07-24T12:44:29Z"
+      },
+      {
+        "id": 4970,
+        "filename": "clipboard-202607241445-ake8i.png",
+        "filesize": 210829,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4970/clipboard-202607241445-ake8i.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4970",
+        "author": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "created_on": "2026-07-24T12:45:08Z"
+      },
+      {
+        "id": 4971,
+        "filename": "clipboard-202607241446-1nhtj.png",
+        "filesize": 12422,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4971/clipboard-202607241446-1nhtj.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4971",
+        "author": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "created_on": "2026-07-24T12:46:03Z"
+      }
+    ],
+    "journals": [
+      {
+        "id": 79028,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-07-24T12:46:30Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "67"
+          }
+        ]
+      },
+      {
+        "id": 80502,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Cela va vite poser problème sur VGP, surtout si ça impact aussi les instances \"Tacticplan\".",
+        "created_on": "2026-10-05T15:49:40Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "subject",
+            "old_value": "[WebApp] Mauvaive gestion par dossiers des ressources/instances",
+            "new_value": "[WebApp] Mauvaise gestion par dossiers des ressources/instances"
+          },
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": null,
+            "new_value": "2026-10-12"
+          }
+        ]
+      },
+      {
+        "id": 80515,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "",
+        "created_on": "2026-10-06T11:05:19Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": "2026-10-12",
+            "new_value": "2026-10-05"
+          }
+        ]
+      },
+      {
+        "id": 80596,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "",
+        "created_on": "2026-10-12T07:00:33Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "70"
+          }
+        ]
+      },
+      {
+        "id": 80660,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "",
+        "created_on": "2026-10-13T14:10:22Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "70",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

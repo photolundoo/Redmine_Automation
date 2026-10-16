@@ -1,0 +1,169 @@
+{
+  "issue": {
+    "id": 9082,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 4,
+      "name": "Normal"
+    },
+    "author": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "assigned_to": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "category": {
+      "id": 103,
+      "name": "com.egidium.nedap"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "Simulateur AEOS",
+    "description": "Déjà mentionné par le passé, permettrait de :\r\n* Tester de manière plus unitaire le plugin Nedap\r\n* Avoir une solution pour les demo, etc. en cas de problème matériel\r\n\r\n",
+    "start_date": "2026-09-24",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 4.0,
+    "total_estimated_hours": 4.0,
+    "spent_hours": 4.0,
+    "total_spent_hours": 4.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Plugins - Contrôle d'Accès"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": "0"
+      }
+    ],
+    "created_on": "2026-09-24T13:30:20Z",
+    "updated_on": "2026-09-24T14:56:50Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 5136,
+        "filename": "clipboard-202609241617-vor6n.png",
+        "filesize": 50600,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/5136/clipboard-202609241617-vor6n.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/5136",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-09-24T14:17:23Z"
+      }
+    ],
+    "journals": [
+      {
+        "id": 80350,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "!clipboard-202609241617-vor6n.png!\r\n",
+        "created_on": "2026-09-24T14:19:19Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "5136",
+            "old_value": null,
+            "new_value": "clipboard-202609241617-vor6n.png"
+          }
+        ]
+      },
+      {
+        "id": 80351,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-09-24T14:56:50Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "67"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

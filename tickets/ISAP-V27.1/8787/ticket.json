@@ -1,0 +1,267 @@
+{
+  "issue": {
+    "id": 8787,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 4,
+      "name": "Normal"
+    },
+    "author": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "assigned_to": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "category": {
+      "id": 139,
+      "name": "com.egidium.polestar"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "Maquette Polestar : gestion d'étage",
+    "description": "",
+    "start_date": null,
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 2.0,
+    "total_estimated_hours": 2.0,
+    "spent_hours": 2.0,
+    "total_spent_hours": 2.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Plugins - Géolocalisation"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": "Non"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": null
+      }
+    ],
+    "created_on": "2026-02-24T15:19:15Z",
+    "updated_on": "2026-06-02T14:35:50Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 4499,
+        "filename": "clipboard-202602241622-3upua.png",
+        "filesize": 18206,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4499/clipboard-202602241622-3upua.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4499",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-02-24T15:22:52Z"
+      }
+    ],
+    "relations": [
+      {
+        "id": 2901,
+        "issue_id": 8781,
+        "issue_to_id": 8787,
+        "relation_type": "relates",
+        "delay": null
+      }
+    ],
+    "journals": [
+      {
+        "id": 77670,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-02-24T15:19:24Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          },
+          {
+            "property": "attr",
+            "name": "estimated_hours",
+            "old_value": null,
+            "new_value": "2.0"
+          }
+        ]
+      },
+      {
+        "id": 77672,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-02-24T15:19:30Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "8781"
+          }
+        ]
+      },
+      {
+        "id": 77674,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-02-24T15:20:08Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "category_id",
+            "old_value": null,
+            "new_value": "139"
+          }
+        ]
+      },
+      {
+        "id": 77675,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Passage du RDC au 1er étage\r\n\r\n!clipboard-202602241622-3upua.png!\r\n",
+        "created_on": "2026-02-24T15:23:39Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4499",
+            "old_value": null,
+            "new_value": "clipboard-202602241622-3upua.png"
+          },
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "100"
+          }
+        ]
+      },
+      {
+        "id": 77676,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Il y a également désormais un paramètre @altitude_offset@, mais qui n'est pas suffisant pour le cas ACME.",
+        "created_on": "2026-02-24T15:24:23Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 77739,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2026-03-02T12:21:23Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "67",
+            "new_value": "66"
+          }
+        ]
+      },
+      {
+        "id": 78575,
+        "user": {
+          "id": 56,
+          "name": "Guillaume Lemaitre"
+        },
+        "notes": "Déplacé en 26.1 pour ne pas polluer les tests 25.1 vu que les fonctionnalités ne sont pas encore prêtes",
+        "created_on": "2026-06-02T14:35:50Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "66",
+            "new_value": "67"
+          }
+        ]
+      }
+    ]
+  }
+}

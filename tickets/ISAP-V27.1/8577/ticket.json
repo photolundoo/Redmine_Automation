@@ -1,0 +1,208 @@
+{
+  "issue": {
+    "id": 8577,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 1,
+      "name": "Anomalie"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 5,
+      "name": "Haut"
+    },
+    "author": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "assigned_to": {
+      "id": 55,
+      "name": "Vincent Tellier"
+    },
+    "category": {
+      "id": 132,
+      "name": "com.egidium.isap.reporting"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "Le paramètre propagateRejectedActions n'est pas correctement pris en compte",
+    "description": "Sur https://demo-smartshield-erp.egidium.fr/, le paramètre est configuré de la manière suivante :\r\n\r\n<pre><code class=\"javascript\">\r\nthis.localStorage.iceMap_propagateRejectedActions = false // Supprime visuellement la tache sur un rejet pour tout le monde\r\n</code></pre>\r\n\r\n\r\nOr, dès qu'un utilisateur rejette une tâche, celle-ci n'apparait plus pour les autres utilisateurs.\r\n\r\nLe paramètre @iceMap_propagateValidatedActions@ fonctionne correctement.",
+    "start_date": "2026-07-21",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 2.0,
+    "total_estimated_hours": 2.0,
+    "spent_hours": 2.5,
+    "total_spent_hours": 2.5,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 6,
+        "name": "Version source",
+        "value": "ISAP-V25.1"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "WebApp - Runsheet"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": "Oui"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      }
+    ],
+    "created_on": "2025-09-02T12:01:20Z",
+    "updated_on": "2026-08-05T15:52:34Z",
+    "closed_on": null,
+    "attachments": [],
+    "journals": [
+      {
+        "id": 75363,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2025-09-30T14:23:00Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "8",
+            "old_value": "",
+            "new_value": "Oui"
+          }
+        ]
+      },
+      {
+        "id": 78968,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-07-21T12:05:54Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": null,
+            "new_value": "2026-07-21"
+          },
+          {
+            "property": "attr",
+            "name": "estimated_hours",
+            "old_value": null,
+            "new_value": "2.0"
+          }
+        ]
+      },
+      {
+        "id": 79041,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "",
+        "created_on": "2026-07-27T07:24:49Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "90"
+          }
+        ]
+      },
+      {
+        "id": 79126,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2026-07-27T16:28:46Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          }
+        ]
+      },
+      {
+        "id": 79656,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "",
+        "created_on": "2026-08-05T15:52:34Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "90",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

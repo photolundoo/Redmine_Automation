@@ -1,0 +1,648 @@
+{
+  "issue": {
+    "id": 8808,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 4,
+      "name": "Normal"
+    },
+    "author": {
+      "id": 46,
+      "name": "Mickael Boual"
+    },
+    "assigned_to": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "category": {
+      "id": 106,
+      "name": "com.egidium.isap.gui.web"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "parent": {
+      "id": 8843
+    },
+    "subject": "Plugin WhatsApp",
+    "description": "Fonctions attendues :\r\n* Envoi automatique de message sur Incident et PoliceLog\r\n** Filtrage en fonction du type d'incident / policelog\r\n** Envoi vers l'agent correspondant au \"Pris en charge par\" \r\n** Envoi vers une liste d'agents pour un SecurityCompany prédéfinies\r\n* Saisie dans la MCE des messages remontés par les agents\r\n** Dont PJ\r\n",
+    "start_date": "2026-03-12",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 30.0,
+    "total_estimated_hours": 30.0,
+    "spent_hours": 32.00000001490116,
+    "total_spent_hours": 32.00000001490116,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "VIPARIS"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "WebApp - Main Courante"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": "Oui"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": null
+      }
+    ],
+    "created_on": "2026-03-11T14:12:01Z",
+    "updated_on": "2026-07-17T07:53:51Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 4555,
+        "filename": "clipboard-202603121129-dag7w.png",
+        "filesize": 248621,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4555/clipboard-202603121129-dag7w.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4555",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-03-12T10:29:22Z"
+      },
+      {
+        "id": 4556,
+        "filename": "TestWhatsApp.py",
+        "filesize": 2959,
+        "content_type": "text/x-python",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4556/TestWhatsApp.py",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-03-12T10:30:49Z"
+      },
+      {
+        "id": 4647,
+        "filename": "clipboard-202604071634-hq21u.png",
+        "filesize": 59911,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4647/clipboard-202604071634-hq21u.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4647",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-04-07T14:34:46Z"
+      },
+      {
+        "id": 4649,
+        "filename": "clipboard-202604071650-czpuq.png",
+        "filesize": 478242,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4649/clipboard-202604071650-czpuq.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4649",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-04-07T14:50:57Z"
+      },
+      {
+        "id": 4927,
+        "filename": "clipboard-202607161339-anb7a.png",
+        "filesize": 136549,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4927/clipboard-202607161339-anb7a.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4927",
+        "author": {
+          "id": 56,
+          "name": "Guillaume Lemaitre"
+        },
+        "created_on": "2026-07-16T11:39:40Z"
+      },
+      {
+        "id": 4928,
+        "filename": "clipboard-202607161341-5nhhm.png",
+        "filesize": 20704,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4928/clipboard-202607161341-5nhhm.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4928",
+        "author": {
+          "id": 56,
+          "name": "Guillaume Lemaitre"
+        },
+        "created_on": "2026-07-16T11:41:28Z"
+      },
+      {
+        "id": 4929,
+        "filename": "clipboard-202607161342-fj1yl.png",
+        "filesize": 103288,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4929/clipboard-202607161342-fj1yl.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4929",
+        "author": {
+          "id": 56,
+          "name": "Guillaume Lemaitre"
+        },
+        "created_on": "2026-07-16T11:42:14Z"
+      }
+    ],
+    "relations": [
+      {
+        "id": 2922,
+        "issue_id": 8852,
+        "issue_to_id": 8808,
+        "relation_type": "blocks",
+        "delay": null
+      },
+      {
+        "id": 2923,
+        "issue_id": 8851,
+        "issue_to_id": 8808,
+        "relation_type": "blocks",
+        "delay": null
+      }
+    ],
+    "journals": [
+      {
+        "id": 77857,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "A regarder : https://developers.facebook.com/documentation/business-messaging/whatsapp/overview",
+        "created_on": "2026-03-11T14:12:51Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 77866,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Pour analyser faisabilité",
+        "created_on": "2026-03-12T09:00:44Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": null,
+            "new_value": "2026-03-12"
+          }
+        ]
+      },
+      {
+        "id": 77868,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "L'API WhatsApp existe, mais :\r\n* L'envoi à des personnes devrait être OK (POC à faire pour valider)\r\n* L'envoi à des groupes est techniquement possible, MAIS est reservé aux entreprises que Meta a approuvé pour le programme OBA, ce qui est très, très restrictif\r\n\r\n",
+        "created_on": "2026-03-12T09:39:14Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 77869,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "> L’éligibilité au statut de compte professionnel officiel est soumise au respect des critères suivants :\r\n> * [...]\r\n> * L’entreprise doit être enregistrée sur la plateforme WhatsApp Business depuis au moins 30 jours.\r\n> * L’entreprise doit représenter une entreprise, marque ou entité bénéficiant d’une certaine notoriété, bien connue et faisant l’objet de nombreuses recherches.\r\n> * Le portefeuille business auquel appartient le numéro doit avoir fait l’objet d’une vérification de l’entreprise.\r\n> * [...]\r\n> \r\n> \r\n> La notoriété nécessite qu’une entreprise représente +une marque ou une entité connue faisant l’objet de recherches fréquentes+. Cela ne doit pas être compris comme un signe d’authenticité de l’entreprise.\r\n> La notoriété reflète également une présence importante dans les articles de presse en ligne. La notoriété est évaluée sur la base de la +présence d’un compte dans les articles de presse issus de publications ayant des audiences importantes+. Les contenus rémunérés ou promotionnels, y compris les annonces professionnelles ou d’application, ne sont pas considérés comme des sources à examiner.",
+        "created_on": "2026-03-12T09:40:44Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 77870,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Remarque : il n'est pas possible d'envoyer de texte libres. Les messages doivent utiliser des templates qui doivent être manuellement approuvés par Meta.",
+        "created_on": "2026-03-12T10:18:23Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 77871,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Faisabilité technique OK\r\n\r\n!clipboard-202603121129-dag7w.png!\r\n\r\n",
+        "created_on": "2026-03-12T10:30:53Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4555",
+            "old_value": null,
+            "new_value": "clipboard-202603121129-dag7w.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4556",
+            "old_value": null,
+            "new_value": "TestWhatsApp.py"
+          }
+        ]
+      },
+      {
+        "id": 77872,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Tout a été fait avec un compte perso pour le moment.\n\nPour pouvoir passer en prod, il faudra :\n* Créer un \"Portefeuille business\" officiel pour Egidium technologies (j'en ai fait un provisoire pour mes test, je peux peut-être le transférer pour qu'il soit compléter puis deviennent officiel)\n* Faire vérifier l'entreprise (prouver que c'est bien Egidium qui administre ce portefeuille business)\n* Dans ce portefeuille Business, créer une application\n* Associer des développeurs à cette application\n* Configurer cette application (dont lien avec un numéro de téléphone emetteur)\n* Publier l'application\n",
+        "created_on": "2026-03-12T10:39:05Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 78198,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Je fais pour l'instant mes tests en mode dev, mais il faudra régler les éléments suivants pour passer en prod :\r\n* Business Manager Vérifié : Requiert de fournir des documents administratifs (KBis, etc.) dans \"Paramètres de l'entreprise / Informations sur l'entreprise\"\r\n* Application en mode \"Live\" (la doc dit de basculer l'interrupteur en haut du tableau de bord Meta de \"Développement\" à \"Live\", mais j'ai pas trouvé. Peut-être parce qu'on est pas envore vérifiés)\r\n* Token d'accès Permanent : ne plus utiliser le token temporaire mais créer un \"Système User\" dans le Business Manager, lui donner les accès à l'App, et générer un token avec les permissions whatsapp_business_messaging et whatsapp_business_management.\r\n* Définition d'un numéro \"source\" : on peut utiliser un numéro OVH ? Le numéro *ne doit pas être lié à un compte whatsapp existant*\r\n* Enregistrement du numéro : Enregistrer le numéro dans WhatsApp > Configuration de l'API et valider par SMS ou appel vocal. \r\n* Méthode de Paiement : Associer une carte bancair au compte WhatsApp Business dans le Business Manager (le \"WhatsApp Business Account\").\r\n* Validation des templates : faire valider tous les template de message à utiliser (doivent être \"Approved\")\r\n* Preuve d'Opt-in : WhatsApp est très strict, *on doit pouvoir prouver que les agents ont accepté de recevoir des alertes sur leur WhatsApp personnel* ",
+        "created_on": "2026-04-07T13:24:24Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 78199,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "POC validé :\r\n\r\n!clipboard-202604071650-czpuq.png!\r\n\r\n!clipboard-202604071634-hq21u.png!\r\n",
+        "created_on": "2026-04-07T14:56:37Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4647",
+            "old_value": null,
+            "new_value": "clipboard-202604071634-hq21u.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4649",
+            "old_value": null,
+            "new_value": "clipboard-202604071650-czpuq.png"
+          }
+        ]
+      },
+      {
+        "id": 78202,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-04-08T12:19:01Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "description",
+            "old_value": "Ajouter l'envoi d'un incident sur WhatsApp (même principe que ce qui est fait actuellement avec l'envoi de SMS et/ou mail) en fonction de critère (niveau de gravité atteint, en fonction d'un type ou autre)",
+            "new_value": "Fonctions attendues :\r\n* Envoi automatique de message sur Incident et PoliceLog\r\n** Filtrage en fonction du type d'incident / policelog\r\n** Envoi vers l'agent correspondant au \"Pris en charge par\" \r\n** Envoi vers une liste d'agents pour un SecurityCompany prédéfinies\r\n* Saisie dans la MCE des messages remontés par les agents\r\n** Dont PJ\r\n"
+          },
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          },
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "67"
+          },
+          {
+            "property": "attr",
+            "name": "parent_id",
+            "old_value": null,
+            "new_value": "8843"
+          },
+          {
+            "property": "cf",
+            "name": "3",
+            "old_value": "Autres (POC ...)",
+            "new_value": "VIPARIS"
+          }
+        ]
+      },
+      {
+        "id": 78204,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-04-08T12:19:20Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "30"
+          },
+          {
+            "property": "attr",
+            "name": "estimated_hours",
+            "old_value": null,
+            "new_value": "30.0"
+          }
+        ]
+      },
+      {
+        "id": 78212,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-04-08T12:40:51Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "subject",
+            "old_value": "[WebApp] -  Ajouter l'envoi d'un incident sur WhatsApp en fonction de critère(s) (niveau de gravité atteint, en fonction d'un type ou autre)",
+            "new_value": "Plugin WhatsApp"
+          }
+        ]
+      },
+      {
+        "id": 78214,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-04-08T12:41:15Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "blocked",
+            "old_value": null,
+            "new_value": "8852"
+          }
+        ]
+      },
+      {
+        "id": 78216,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-04-08T12:41:27Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "blocked",
+            "old_value": null,
+            "new_value": "8851"
+          }
+        ]
+      },
+      {
+        "id": 78218,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-04-08T14:40:39Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "30",
+            "new_value": "50"
+          }
+        ]
+      },
+      {
+        "id": 78323,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Nous avons désormais un numéro WhatsApp dédié : +33 9 72 55 78 50 (c'est le numéro d'astreinte)",
+        "created_on": "2026-04-23T09:37:43Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 78337,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Architecture :\r\n* Service de reception webhook sur DMZ \r\n** Basé sur flask (idem reception agnet)\r\n** En test manuel actuellement sur tacticplan\r\n** A déployer avec démarrage auto sur(ex: agnet.egidium.fr). Attention au certificat (ajouter à PRTG pour surveillance)\r\n** URL retenue à configurer sur https://developers.facebook.com/ (Cas d'usage WhatsApp / Configuration de base / Configuration de la prod / Configure Webhooks)\r\n* Plugin WhatsApp\r\n** Déployable sur réseau sécurisé à condition d'avoir des accès sortant vers meta (envoi de message) et la DMZ (récupération des messages)\r\n** A mettre dans la grille\r\n\r\n\r\n\r\nEléments de configuration :\r\n* WHATSAPP_APP_SECRET\r\n** Secret de \"l'app\", pour vérifier la signature des messages\r\n** A récupérer sur https://developers.facebook.com/ (Paramètres de l'app / Général / Clef secrètes) et configurer sur le service de reception des webhook\r\n* WHATSAPP_VERIFY_TOKEN\r\n** Authentification du whatsapp auprès du service de reception des webhook\r\n** À configurer sur https://developers.facebook.com/ (Cas d'usage WhatsApp / Configuration de base / Configuration de la prod / Configure Webhooks) et sur le service de reception des webhook\r\n* SMARTSHIELD_API_TOKEN\r\n** Clef d'authentification du plugin auprès du service de reception des webhook\r\n** À configurer sur le plugin et sur le service de reception des webhook\r\n* WABA_ID (WhatsApp Business Account ID)\r\n** \"Compte Egidium\" chez Meta\r\n** À configurer sur le plugin\r\n* PHONE_NUMBER_ID \r\n** Numéro de téléphone \"émetteur\". Doit être un numéro de téléphone enregistré sur notre compte.\r\n** À configurer sur le plugin\r\n* ACCESS_TOKEN \r\n** Token de connexion à l'API\r\n** TODO : A générer sur l'interface whatspp (où???)\r\n** À configurer sur le plugin\r\n",
+        "created_on": "2026-04-27T13:38:55Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 78338,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Actions restantes (hors dev) :\n* Mettre l'URL de Politique de Confidentialité\n* Générer un token d'accès API permanent\n* Passer l'application en mode live\n* Déployer l'outils de réception webhook sur agnet.egidium.fr\n* Définir les modèles de message",
+        "created_on": "2026-04-27T13:40:55Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 78345,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Déployé sur agnet.egidium.fr:8443 + ajouté à PRTG pour surveillance\r\n",
+        "created_on": "2026-04-28T13:13:13Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 78353,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Dev : \n* la partie PoliceLog\n* grille\n* utiliser IsapLogging\n* Gérer le multiple pris en charge par\n* Permettre de prendre TOUS les types d'incidents",
+        "created_on": "2026-04-29T14:45:11Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "50",
+            "new_value": "70"
+          }
+        ]
+      },
+      {
+        "id": 78446,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Livré sur srvfr-dijon",
+        "created_on": "2026-05-21T14:12:31Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "70",
+            "new_value": "100"
+          },
+          {
+            "property": "cf",
+            "name": "8",
+            "old_value": "",
+            "new_value": "Oui"
+          }
+        ]
+      },
+      {
+        "id": 78594,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Corrigé : envoi de message dans le cas des incident dont le type n'a pas de catégorie.",
+        "created_on": "2026-06-04T14:00:22Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 78889,
+        "user": {
+          "id": 56,
+          "name": "Guillaume Lemaitre"
+        },
+        "notes": "Réalisé depuis téléphone personnel\r\n\r\n!clipboard-202607161339-anb7a.png!\r\n\r\nCe qu'on peut noter : \r\n* Mon nom d'affichage est le bon (sur téléphone perso)\r\n* Les messages envoyé (dans la même minute) sont tous compacté dans le commentaire de la mention\r\n!clipboard-202607161341-5nhhm.png!\r\n\r\nSi pas dans la même minute, les messages envoyés créer des mention distinctes\r\n!clipboard-202607161342-fj1yl.png!\r\n\r\nCe comportement est-il celui attendu ?",
+        "created_on": "2026-07-16T11:43:20Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4927",
+            "old_value": null,
+            "new_value": "clipboard-202607161339-anb7a.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4928",
+            "old_value": null,
+            "new_value": "clipboard-202607161341-5nhhm.png"
+          },
+          {
+            "property": "attachment",
+            "name": "4929",
+            "old_value": null,
+            "new_value": "clipboard-202607161342-fj1yl.png"
+          }
+        ]
+      },
+      {
+        "id": 78890,
+        "user": {
+          "id": 56,
+          "name": "Guillaume Lemaitre"
+        },
+        "notes": "Test validé",
+        "created_on": "2026-07-16T11:58:02Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 78909,
+        "user": {
+          "id": 56,
+          "name": "Guillaume Lemaitre"
+        },
+        "notes": "Documenté dans le plan de validation 13_Plan de validation 26.1 - Outils Externes",
+        "created_on": "2026-07-17T07:53:51Z",
+        "private_notes": false,
+        "details": []
+      }
+    ]
+  }
+}

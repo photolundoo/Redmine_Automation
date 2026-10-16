@@ -1,0 +1,148 @@
+{
+  "issue": {
+    "id": 9090,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 1,
+      "name": "Anomalie"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 6,
+      "name": "Urgent"
+    },
+    "author": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "assigned_to": {
+      "id": 55,
+      "name": "Vincent Tellier"
+    },
+    "category": {
+      "id": 132,
+      "name": "com.egidium.isap.reporting"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "[WebApp] Vision NOK dans le cas d'incident ayant pour source un capteur relié à une place",
+    "description": "Exemple de scénario :\r\n* Demo ACME\r\n* Utilisation du simulateur SIA pour simuler des alarmes\r\n* Le capteur simulé est positionné dans le champs de vision d'Atlantique, dans les bureaux\r\n* Scénario NOK :\r\n## On relie le capteur à l'étage 1 du bâtiment\r\n## On simule une alarme\r\n## Un incident est créé, ayant pour source le capteur et relié à l'étage\r\n*** Vision OK dans la WinApp\r\n*** Vision NOK dans la WebApp : \"pas de caméra\", mais les logs CameraProcessor indiquent qu'ils n'y a même pas d'appel\r\n* Scénario OK\r\n## On retire la relation entre le capteur et l'étage (quand on passe au RDC, il continue donc d'être affiché en l'air)\r\n## On simule une alarme\r\n## Un incident est créé, ayant pour source le capteur \r\n*** Vision OK dans la WinApp\r\n*** Vision OK dans la WebApp\r\n",
+    "start_date": "2026-10-05",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 2.0,
+    "total_estimated_hours": 2.0,
+    "spent_hours": 1.0,
+    "total_spent_hours": 1.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 6,
+        "name": "Version source",
+        "value": "ISAP-V25.1"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "WebApp - Video"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": "Oui"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      }
+    ],
+    "created_on": "2026-09-29T09:49:20Z",
+    "updated_on": "2026-10-13T14:10:08Z",
+    "closed_on": null,
+    "attachments": [],
+    "journals": [
+      {
+        "id": 80580,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "",
+        "created_on": "2026-10-09T08:15:53Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "90"
+          }
+        ]
+      },
+      {
+        "id": 80659,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "",
+        "created_on": "2026-10-13T14:10:08Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "90",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

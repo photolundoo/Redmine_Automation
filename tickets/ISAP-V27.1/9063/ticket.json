@@ -1,0 +1,188 @@
+{
+  "issue": {
+    "id": 9063,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 1,
+      "name": "Anomalie"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 5,
+      "name": "Haut"
+    },
+    "author": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "assigned_to": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "category": {
+      "id": 33,
+      "name": "com.egidium.installer"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "[ServerSetup] L'option \"début différé\" n'est pas prise en compte pour tous les services",
+    "description": "!clipboard-202609151723-dehcf.png!\r\n\r\nSur le poste client, semble OK:\r\n!clipboard-202609151726-n9a5m.png!\r\n\r\nJe le rajoute dans la RN 25.1",
+    "start_date": "2026-09-21",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 2.0,
+    "total_estimated_hours": 2.0,
+    "spent_hours": 0.5,
+    "total_spent_hours": 0.5,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 6,
+        "name": "Version source",
+        "value": "ISAP-V25.1"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - Administration"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": "Oui"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      }
+    ],
+    "created_on": "2026-09-15T15:27:17Z",
+    "updated_on": "2026-09-22T14:46:45Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 5125,
+        "filename": "clipboard-202609151723-dehcf.png",
+        "filesize": 44445,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/5125/clipboard-202609151723-dehcf.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/5125",
+        "author": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "created_on": "2026-09-15T15:23:49Z"
+      },
+      {
+        "id": 5126,
+        "filename": "clipboard-202609151726-n9a5m.png",
+        "filesize": 3065,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/5126/clipboard-202609151726-n9a5m.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/5126",
+        "author": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "created_on": "2026-09-15T15:26:25Z"
+      }
+    ],
+    "journals": [
+      {
+        "id": 80196,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Pour les services hors-grid, il semble que l'installeur les passe en début différé puis en début auto.",
+        "created_on": "2026-09-15T15:36:09Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80198,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-09-15T15:37:31Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "90"
+          }
+        ]
+      },
+      {
+        "id": 80304,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "A tester à l'occasion d'une installation serveur : vérifier que si l'option \"démarrage différé\" est selectionnée, tous les services Smart Shield sont bien en démarrage différé.",
+        "created_on": "2026-09-22T14:46:45Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "90",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "issue": {
+    "id": 9016,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 1,
+      "name": "Anomalie"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 5,
+      "name": "Haut"
+    },
+    "author": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "assigned_to": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "category": {
+      "id": 133,
+      "name": "com.egidium.api"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "[SmartShieldWebAPI] Erreur HTTP 500 si le mot de passe du compte API contient un caractère \"deux-points\"",
+    "description": "",
+    "start_date": "2026-08-17",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 1.0,
+    "total_estimated_hours": 1.0,
+    "spent_hours": 1.0,
+    "total_spent_hours": 1.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 6,
+        "name": "Version source",
+        "value": "ISAP-V5.6.1"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - SDK"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": "Oui"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      }
+    ],
+    "created_on": "2026-08-12T11:20:12Z",
+    "updated_on": "2026-08-13T12:46:44Z",
+    "closed_on": null,
+    "attachments": [],
+    "journals": [
+      {
+        "id": 79781,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Pour tester :\r\n# Créer un compte avec un mot de passe contenant un \"deux-points\"\r\n# Se connecter à l'API avec ce compte et vérifier qu'il n'y a pas d'erreur 500\r\n\r\n\r\nExemple avec le compte toto, dont le mdp est \"tata:tutu\"\r\n\r\nCommande :\r\n<pre>\r\ncurl -i -k -u toto:toto:toto -X POST https://localhost:5000/api/connect/login\r\n</pre>\r\n\r\nRésultat :\r\n<pre>\r\nHTTP/1.1 403 FORBIDDEN\r\nContent-Type: application/json\r\nContent-Length: 38\r\nDate: Thu, 13 Aug 2026 12:37:54 GMT\r\n\r\n{\r\n  \"error\": \"Insufficient rights \"\r\n}\r\n</pre>\r\n\r\nIci, le résultat est l'erreur 403 (droits insuffisants) ce qui est le résultat attendu car l'utilisateur n'a pas les droits API. \r\n\r\nAvant correctif, le résultat était :\r\n\r\n<pre>\r\nHTTP/1.1 500 INTERNAL SERVER ERROR\r\nContent-Type: text/html; charset=utf-8\r\nContent-Length: 0\r\nDate: Thu, 13 Aug 2026 12:43:57 GMT\r\n</pre>\r\n",
+        "created_on": "2026-08-13T12:44:32Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 79782,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Rien à documenter",
+        "created_on": "2026-08-13T12:45:53Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "100"
+          }
+        ]
+      },
+      {
+        "id": 79783,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-08-13T12:46:44Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "estimated_hours",
+            "old_value": null,
+            "new_value": "1.0"
+          }
+        ]
+      }
+    ]
+  }
+}

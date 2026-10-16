@@ -1,0 +1,240 @@
+{
+  "issue": {
+    "id": 8206,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 1,
+      "name": "Anomalie"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 6,
+      "name": "Urgent"
+    },
+    "author": {
+      "id": 5,
+      "name": "Rodrigue Favrot"
+    },
+    "assigned_to": {
+      "id": 55,
+      "name": "Vincent Tellier"
+    },
+    "category": {
+      "id": 132,
+      "name": "com.egidium.isap.reporting"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "[WebApp][MainCourante] Gestion des incidents sur capteurs",
+    "description": "Vu au cours d'une présentation, la main courante récupère mal les données pour un incident sur capteur positionné dans une _place_  et un _local_ :\r\n\r\n!clipboard-202412041704-ovggy.png!\r\n\r\n*1. L'adresse n'est pas indiquée (carré rouge)*\r\n\r\nL'incident étant positionné via le capteur, il faut récupérer la position GPS du capteur pour ensuite obtenir l'adresse.\r\n \r\n*2. Il y a 2 lignes pour le même incident (carré vert)*\r\n\r\nCela est certainement dû au fait que le capteur est à la fois relié à une _place_  et un _local_. (carré bleu)\r\nLe fait d'éditer la description de l'incident 1539 fait disparaitre la 2ième ligne mais provoque l'apparition d'autres incidents en triple.\r\n\r\nA savoir: L'incident est bien positionné sur l'app _Situation_\r\n",
+    "start_date": "2026-07-21",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 8.0,
+    "total_estimated_hours": 8.0,
+    "spent_hours": 3.200000047683716,
+    "total_spent_hours": 3.200000047683716,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 6,
+        "name": "Version source",
+        "value": "ISAP-V5.6.1"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "WebApp - Main Courante"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": "Non"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      }
+    ],
+    "created_on": "2024-12-04T16:27:12Z",
+    "updated_on": "2026-09-17T12:25:17Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 3523,
+        "filename": "clipboard-202412041704-ovggy.png",
+        "filesize": 46555,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/3523/clipboard-202412041704-ovggy.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/3523",
+        "author": {
+          "id": 5,
+          "name": "Rodrigue Favrot"
+        },
+        "created_on": "2024-12-04T16:04:02Z"
+      }
+    ],
+    "journals": [
+      {
+        "id": 74980,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Urgent --> à mettre au moins dans la version suivante.",
+        "created_on": "2025-09-08T15:03:32Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "67"
+          }
+        ]
+      },
+      {
+        "id": 78941,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-07-21T11:29:47Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": null,
+            "new_value": "2026-07-21"
+          }
+        ]
+      },
+      {
+        "id": 79388,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-07-28T11:48:01Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "10"
+          },
+          {
+            "property": "attr",
+            "name": "estimated_hours",
+            "old_value": null,
+            "new_value": "8.0"
+          }
+        ]
+      },
+      {
+        "id": 79652,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "J ai juste exclu de la requete les places provenant des locals. A voir si c est ce qu on veut\r\n\r\n-\t\t\t\" \tAND er2.RELATION_TYPE_ID = \" << INCIDENT_PLACE_REL_TYPE << \" \";\r\n+\t\t\t\" \tAND er2.RELATION_TYPE_ID = \" << INCIDENT_PLACE_REL_TYPE << \" \"\r\n+\t\t\t\" \tAND er2.PAR_ENTITY_ID IN ( \"\r\n+\t\t\t\" \t\tSELECT ENTITY_ID FROM ENTITY\" << l_sqlUseTableHist << \" \"\r\n+\t\t\t\" \t\tWHERE TEMPL_ENTITY_ID <> \" << m_local_TID << \" \"\r\n+\t\t\t\" \t) \";",
+        "created_on": "2026-08-05T15:46:29Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "10",
+            "new_value": "90"
+          }
+        ]
+      },
+      {
+        "id": 79845,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "",
+        "created_on": "2026-08-17T06:58:19Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "90",
+            "new_value": "100"
+          }
+        ]
+      },
+      {
+        "id": 80221,
+        "user": {
+          "id": 56,
+          "name": "Guillaume Lemaitre"
+        },
+        "notes": "Avant de finaliser la procédure de test, j'aurais besoin d'une clarification sur deux points liés au correctif décrit dans la note #4 :\r\n\r\nL'exclusion des Places dérivées de Locals dans la requête corrige-t-elle uniquement le problème de doublon, ou traite-t-elle également l'absence d'adresse ? Les deux semblent liés mais rien ne l'indique explicitement.\r\nQuel est le comportement attendu pour un capteur relié uniquement à un Local, sans relation directe à une Place ? Avec l'exclusion des relations Local, ce capteur ne remontera plus aucune Place (donc plus d'adresse sur l'incident correspondant). Est-ce le comportement voulu, ou faut-il prévoir un repli sur la Place parente du Local dans ce cas ?",
+        "created_on": "2026-09-17T12:25:17Z",
+        "private_notes": false,
+        "details": []
+      }
+    ]
+  }
+}

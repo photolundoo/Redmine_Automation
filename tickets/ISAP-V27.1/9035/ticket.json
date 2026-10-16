@@ -1,0 +1,258 @@
+{
+  "issue": {
+    "id": 9035,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 5,
+      "name": "Haut"
+    },
+    "author": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "assigned_to": {
+      "id": 60,
+      "name": "Lucie Thomas"
+    },
+    "category": {
+      "id": 132,
+      "name": "com.egidium.isap.reporting"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "[WebApp/Dashboard] Affichage des capteurs en fonction de leur type et de leur état",
+    "description": "Pouvoir créer un dashbord qui liste les capteurs :\r\n* Filtres\r\n** Uniquement les capteurs de types choisis (ex: VERRE, EP et OM)\r\n** Uniquement les capteurs dont les attributs booléens sont dans un état définis (ex: Active=true et Triggered=true)\r\n* Colonnes : permette de choisir quels attributs des capteur afficher (DisplayName, Description, etc.)\r\n\r\nExemple de dashboard :\r\n* PAV pleins (capteurs de type VERRE, EP et OM dont les attributs sont Active=true et Triggered=true)\r\n* Guichets non-armés (capteurs de type ARME dont les attributs sont Active=true et Triggered=false)\r\n* Pannes (capteur de tous types dont les attributs sont Active=true et Failure=true)\r\n\r\nRemarque sur les attributs :\r\n* Active : est-ce que le capteur est branché / est-ce qu'on est connecté au système qui gère ce capteur. C'est seulement dans le cas True que l'on a les informations temps réel sur le capteur et donc que les autres attibuts sont pertinents\r\n* Triggered : capteur déclenché. La sémantique dépend du type de capteur.\r\n* Failure : panne du capteur. Un problème interne empêche le capteur de fonctionner correctement, son état n'est donc pas fiable.\r\n* Disrupted : capteur perturbé. Un élément externe empêche le capteur de fonctionner correctement, son état n'est donc pas fiable.\r\n* Inhibited : capteur inhibé. On ne souhaite pas que le capteur déclenche des alarmes.",
+    "start_date": "2026-08-18",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 24.0,
+    "total_estimated_hours": 24.0,
+    "spent_hours": 5.0,
+    "total_spent_hours": 5.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "WebApp - Main Courante"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": "0"
+      }
+    ],
+    "created_on": "2026-08-18T09:25:04Z",
+    "updated_on": "2026-09-30T12:32:33Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 5139,
+        "filename": "clipboard-202609281524-dzuav.png",
+        "filesize": 14490,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/5139/clipboard-202609281524-dzuav.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/5139",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-09-28T13:24:28Z"
+      },
+      {
+        "id": 5144,
+        "filename": "clipboard-202609301432-kz02i.png",
+        "filesize": 143130,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/5144/clipboard-202609301432-kz02i.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/5144",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-09-30T12:32:07Z"
+      }
+    ],
+    "relations": [
+      {
+        "id": 2985,
+        "issue_id": 9035,
+        "issue_to_id": 9093,
+        "relation_type": "relates",
+        "delay": null
+      }
+    ],
+    "journals": [
+      {
+        "id": 79939,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "",
+        "created_on": "2026-08-24T07:25:22Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "80"
+          }
+        ]
+      },
+      {
+        "id": 80404,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2026-09-25T13:45:18Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          }
+        ]
+      },
+      {
+        "id": 80447,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "Rodrigue doit faire la V2 du case\r\n\r\nCF les filtres par attributs :\r\n!clipboard-202609281522-6uwkq.png!\r\n",
+        "created_on": "2026-09-28T13:23:41Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "80",
+            "new_value": "100"
+          }
+        ]
+      },
+      {
+        "id": 80448,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "!clipboard-202609281524-dzuav.png!\r\n",
+        "created_on": "2026-09-28T13:24:31Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "5139",
+            "old_value": null,
+            "new_value": "clipboard-202609281524-dzuav.png"
+          }
+        ]
+      },
+      {
+        "id": 80463,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-09-30T12:20:15Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "9093"
+          }
+        ]
+      },
+      {
+        "id": 80465,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Sur vgp-sandbox, test de dashboard pour les PAV :\r\n\r\n!clipboard-202609301432-kz02i.png!",
+        "created_on": "2026-09-30T12:32:33Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "5144",
+            "old_value": null,
+            "new_value": "clipboard-202609301432-kz02i.png"
+          }
+        ]
+      }
+    ]
+  }
+}

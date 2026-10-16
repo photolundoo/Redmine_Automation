@@ -1,0 +1,364 @@
+{
+  "issue": {
+    "id": 9030,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 5,
+      "name": "Haut"
+    },
+    "author": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "assigned_to": {
+      "id": 55,
+      "name": "Vincent Tellier"
+    },
+    "category": {
+      "id": 106,
+      "name": "com.egidium.isap.gui.web"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "WebApp : Paramètre permettant de masquer les labels de certaines caméras",
+    "description": "QuickWin pour mieux gérer les caméras Quad : ajouter un attribut displayLabel aux caméras.\r\nSi = false, la 3D n'affiche pas le label pour ne pas qu'ils soient superposés.\r\nOn pourra ainsi mettre les 5 caméras au même endroit.\r\n\r\nOn en aura besoin pour VGP. 25.1 ?",
+    "start_date": "2026-08-17",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 8.0,
+    "total_estimated_hours": 8.0,
+    "spent_hours": 6.0,
+    "total_spent_hours": 6.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Versailles Grand Parc"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - Navigation 3D"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": "Non"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": "00"
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": "1"
+      }
+    ],
+    "created_on": "2026-08-14T09:38:47Z",
+    "updated_on": "2026-10-13T14:10:43Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 5101,
+        "filename": "clipboard-202609091512-uyglq.png",
+        "filesize": 5183,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/5101/clipboard-202609091512-uyglq.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/5101",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-09-09T13:12:31Z"
+      },
+      {
+        "id": 5102,
+        "filename": "clipboard-202609091512-pozid.png",
+        "filesize": 2151,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/5102/clipboard-202609091512-pozid.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/5102",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-09-09T13:12:42Z"
+      }
+    ],
+    "relations": [
+      {
+        "id": 2968,
+        "issue_id": 8775,
+        "issue_to_id": 9030,
+        "relation_type": "copied_to",
+        "delay": null
+      }
+    ],
+    "journals": [
+      {
+        "id": 79815,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-08-14T09:38:47Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "copied_from",
+            "old_value": null,
+            "new_value": "8775"
+          }
+        ]
+      },
+      {
+        "id": 79816,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-08-14T09:44:34Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "100",
+            "new_value": "0"
+          }
+        ]
+      },
+      {
+        "id": 79937,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "Le titre est trompeur du coup : ce sont les labels que nous masquons, pas les cameras",
+        "created_on": "2026-08-24T07:20:30Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "90"
+          }
+        ]
+      },
+      {
+        "id": 80022,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-09-01T15:56:49Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "subject",
+            "old_value": "WebApp : Paramètre permettant de masquer certaines caméras",
+            "new_value": "WebApp : Paramètre permettant de masquer les labels de certaines caméras"
+          }
+        ]
+      },
+      {
+        "id": 80024,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "#8775 déjà dans release notes. Pas la peine d'y mettre un case pour la WinApp et un autre pour la WebApp.",
+        "created_on": "2026-09-01T15:58:43Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "8",
+            "old_value": "Oui",
+            "new_value": "Non"
+          },
+          {
+            "property": "cf",
+            "name": "13",
+            "old_value": "Un nouvel attribut a été ajouté au template Camera pour permettre de masquer leur label dans la WebApp : @DisplayLabel@\r\n\r\nPar défaut les labels sont affichés, si cette valeur booléen est mise à faux, le label camera sera masqué.\r\n\r\nSuggestion d'usage : caméras \"double\" ou \"quad\" qui sont représentées par X caméras fictives dans la VMS (ex: Genetec). Ce paramètre permet de ne garder qu'un seul label dans la WinApp.\r\n\r\nSuite du case #8775 concernant la WinApp",
+            "new_value": ""
+          }
+        ]
+      },
+      {
+        "id": 80032,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "",
+        "created_on": "2026-09-02T13:03:00Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "90",
+            "new_value": "100"
+          }
+        ]
+      },
+      {
+        "id": 80121,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Testé NOK sur vgp-sandbox\r\n\r\n!clipboard-202609091512-uyglq.png!\r\n\r\n!clipboard-202609091512-pozid.png!\r\n",
+        "created_on": "2026-09-09T13:12:49Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "5101",
+            "old_value": null,
+            "new_value": "clipboard-202609091512-uyglq.png"
+          },
+          {
+            "property": "attachment",
+            "name": "5102",
+            "old_value": null,
+            "new_value": "clipboard-202609091512-pozid.png"
+          },
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "3",
+            "new_value": "2"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "100",
+            "new_value": "80"
+          }
+        ]
+      },
+      {
+        "id": 80449,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "Ca ne fonctionne effectivement pas dans la situation 2d. Cela n'a été implementé que dans la situation 3d. Je le rajoute du coup",
+        "created_on": "2026-09-29T10:01:24Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80450,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "C'est à cause du :\r\n> Copié depuis Evolution #8775: Paramètre permettant de masquer les labels de certaines caméras ajouté\r\n\r\nJe n'avais pas changé la description du case WinApp.",
+        "created_on": "2026-09-29T10:26:31Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80581,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "",
+        "created_on": "2026-10-09T08:19:05Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "80",
+            "new_value": "90"
+          }
+        ]
+      },
+      {
+        "id": 80662,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "",
+        "created_on": "2026-10-13T14:10:43Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "90",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

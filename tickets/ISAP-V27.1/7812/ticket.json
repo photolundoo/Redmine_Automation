@@ -1,0 +1,557 @@
+{
+  "issue": {
+    "id": 7812,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 6,
+      "name": "Urgent"
+    },
+    "author": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "assigned_to": {
+      "id": 60,
+      "name": "Lucie Thomas"
+    },
+    "category": {
+      "id": 106,
+      "name": "com.egidium.isap.gui.web"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "[Main Courante] Client léger spécifique à l'utilisation sur mobile V2",
+    "description": "Voir #7643 pour plus de détail mais selon moi le plus important dans le Reste à faire est :\r\n* Trop facile de créer un incident par erreur et tapant sur le +. Il faudrait une popup de confirmation\r\n* Consultation des pièces jointes: Pas de dézoom possible",
+    "start_date": "2024-05-06",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 8.0,
+    "total_estimated_hours": 8.0,
+    "spent_hours": 11.5,
+    "total_spent_hours": 11.5,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Ville de Paris"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "WebApp - Mobile"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": "Oui"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": "0"
+      }
+    ],
+    "created_on": "2024-03-20T15:11:12Z",
+    "updated_on": "2026-10-14T13:23:04Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 4437,
+        "filename": "clipboard-202602031520-ohjou.png",
+        "filesize": 21163,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/4437/clipboard-202602031520-ohjou.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/4437",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-02-03T14:20:28Z"
+      },
+      {
+        "id": 5127,
+        "filename": "clipboard-202609161505-zu1sd.png",
+        "filesize": 36134,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/5127/clipboard-202609161505-zu1sd.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/5127",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-09-16T13:05:25Z"
+      },
+      {
+        "id": 5129,
+        "filename": "clipboard-202609161506-sfkws.png",
+        "filesize": 15670,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/5129/clipboard-202609161506-sfkws.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/5129",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-09-16T13:06:52Z"
+      },
+      {
+        "id": 5145,
+        "filename": "clipboard-202610021554-2kz66.png",
+        "filesize": 215965,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/5145/clipboard-202610021554-2kz66.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/5145",
+        "author": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "created_on": "2026-10-02T13:54:44Z"
+      }
+    ],
+    "relations": [
+      {
+        "id": 2599,
+        "issue_id": 5975,
+        "issue_to_id": 7812,
+        "relation_type": "relates",
+        "delay": null
+      },
+      {
+        "id": 2885,
+        "issue_id": 7643,
+        "issue_to_id": 7812,
+        "relation_type": "relates",
+        "delay": null
+      }
+    ],
+    "journals": [
+      {
+        "id": 67555,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2024-03-20T15:11:29Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "65"
+          }
+        ]
+      },
+      {
+        "id": 68783,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "C'est pas le plus urgent si compliqué à faire (Le plus urgent = les Runsheets par places).\r\nMais si simple, ce serait sympas de voir les photos attachées.",
+        "created_on": "2024-05-03T11:43:07Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": null,
+            "new_value": "2024-05-06"
+          }
+        ]
+      },
+      {
+        "id": 68905,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "Le formulaire de création d'incident sur les champs obligatoire sert de validation",
+        "created_on": "2024-05-06T13:46:20Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 68919,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "Des tests pour le zoom mais ca me semble complexe. Je vais voir pour tester une librairie externe",
+        "created_on": "2024-05-07T14:37:30Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 69309,
+        "user": {
+          "id": 37,
+          "name": "Thibaut Wiart"
+        },
+        "notes": null,
+        "created_on": "2024-05-22T07:23:56Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "7",
+            "old_value": "ISAP Core - Main Courante",
+            "new_value": "WebApp - Main Courante"
+          }
+        ]
+      },
+      {
+        "id": 69901,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2024-06-03T08:20:19Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "5975"
+          }
+        ]
+      },
+      {
+        "id": 70162,
+        "user": {
+          "id": 37,
+          "name": "Thibaut Wiart"
+        },
+        "notes": null,
+        "created_on": "2024-06-26T07:07:52Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "7",
+            "old_value": "WebApp - Main Courante",
+            "new_value": "WebApp - Mobile"
+          }
+        ]
+      },
+      {
+        "id": 71445,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": null,
+        "created_on": "2024-10-07T11:56:45Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "65",
+            "new_value": "16"
+          }
+        ]
+      },
+      {
+        "id": 72629,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Je retire du macro case VdP JOP 2024",
+        "created_on": "2025-02-07T12:15:45Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "parent_id",
+            "old_value": "7620",
+            "new_value": null
+          }
+        ]
+      },
+      {
+        "id": 77257,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-01-27T09:04:59Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "7643"
+          }
+        ]
+      },
+      {
+        "id": 77258,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-01-27T09:05:45Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "assigned_to_id",
+            "old_value": "55",
+            "new_value": "60"
+          }
+        ]
+      },
+      {
+        "id": 77259,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-01-27T09:16:02Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "67"
+          }
+        ]
+      },
+      {
+        "id": 77414,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "Est-ce qu'on peut définir le besoin plus en détail ?",
+        "created_on": "2026-02-03T12:51:43Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 77417,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Lucie Thomas a écrit  (#note-13):\r\n> Est-ce qu'on peut définir le besoin plus en détail ?\r\n\r\nVu avec Lucie, à noter que le problème de création accidentelle d'incident ne se produit que si l'on désactive le droit de créer des mentions.\r\n",
+        "created_on": "2026-02-03T13:31:48Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 77419,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "Moitié du case réalisé, si qu'un des deux droits (incident/mention) est présent, on a quand même le même fonctionnement qu'avec les deux droits\r\n!clipboard-202602031520-ohjou.png!\r\n",
+        "created_on": "2026-02-03T14:20:33Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "4437",
+            "old_value": null,
+            "new_value": "clipboard-202602031520-ohjou.png"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "50"
+          }
+        ]
+      },
+      {
+        "id": 77538,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "Zoom fonctionnel.",
+        "created_on": "2026-02-16T08:36:34Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "50",
+            "new_value": "90"
+          }
+        ]
+      },
+      {
+        "id": 77609,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2026-02-24T09:11:02Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          }
+        ]
+      },
+      {
+        "id": 78384,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "bouton caméra ouvre la caméra sur l'application mobile",
+        "created_on": "2026-05-05T11:57:38Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80208,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "Question, est-ce que le bouton pour ajouter des pièces jointes dans le détail des incidents doit proposer d'ouvrir la caméra ? actuellement nous avons qui ouvre la caméra :\r\n!clipboard-202609161505-zu1sd.png!\r\n\r\n\r\nEst-ce qu'on veut le même comportement ici :\r\n!clipboard-202609161506-sfkws.png!\r\n",
+        "created_on": "2026-09-16T13:07:41Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "5127",
+            "old_value": null,
+            "new_value": "clipboard-202609161505-zu1sd.png"
+          },
+          {
+            "property": "attachment",
+            "name": "5129",
+            "old_value": null,
+            "new_value": "clipboard-202609161506-sfkws.png"
+          },
+          {
+            "property": "cf",
+            "name": "14",
+            "old_value": null,
+            "new_value": "0"
+          }
+        ]
+      },
+      {
+        "id": 80497,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "!clipboard-202610021554-2kz66.png!\r\n",
+        "created_on": "2026-10-02T13:54:50Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "5145",
+            "old_value": null,
+            "new_value": "clipboard-202610021554-2kz66.png"
+          }
+        ]
+      },
+      {
+        "id": 80536,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "RàF ? Ou résolu ?",
+        "created_on": "2026-10-06T14:31:10Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80682,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "",
+        "created_on": "2026-10-14T13:23:04Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "90",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

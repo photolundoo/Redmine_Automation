@@ -1,0 +1,728 @@
+{
+  "issue": {
+    "id": 6918,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 5,
+      "name": "Haut"
+    },
+    "author": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "assigned_to": {
+      "id": 17,
+      "name": "Pascal Vognin"
+    },
+    "category": {
+      "id": 3,
+      "name": "com.egidium.isap"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "Migration POCO 1.15.3",
+    "description": "Version à déterminer.\r\n\r\nLa version actuellement utilisée (1.9.4) ne gère pas les cookies contenant l'attribut SameSite, ce qui pose problème.",
+    "start_date": "2026-03-02",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 24.0,
+    "total_estimated_hours": 24.0,
+    "spent_hours": 204.0,
+    "total_spent_hours": 204.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - SDK"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": "0"
+      }
+    ],
+    "created_on": "2022-04-20T11:21:27Z",
+    "updated_on": "2026-10-02T07:35:06Z",
+    "closed_on": null,
+    "attachments": [],
+    "relations": [
+      {
+        "id": 2081,
+        "issue_id": 5705,
+        "issue_to_id": 6918,
+        "relation_type": "relates",
+        "delay": null
+      },
+      {
+        "id": 2082,
+        "issue_id": 6189,
+        "issue_to_id": 6918,
+        "relation_type": "relates",
+        "delay": null
+      },
+      {
+        "id": 2737,
+        "issue_id": 6721,
+        "issue_to_id": 6918,
+        "relation_type": "relates",
+        "delay": null
+      },
+      {
+        "id": 2904,
+        "issue_id": 6918,
+        "issue_to_id": 8805,
+        "relation_type": "relates",
+        "delay": null
+      },
+      {
+        "id": 2736,
+        "issue_id": 6918,
+        "issue_to_id": 8208,
+        "relation_type": "blocks",
+        "delay": null
+      },
+      {
+        "id": 2915,
+        "issue_id": 6918,
+        "issue_to_id": 8339,
+        "relation_type": "blocks",
+        "delay": null
+      },
+      {
+        "id": 2978,
+        "issue_id": 6017,
+        "issue_to_id": 6918,
+        "relation_type": "blocks",
+        "delay": null
+      },
+      {
+        "id": 2979,
+        "issue_id": 9076,
+        "issue_to_id": 6918,
+        "relation_type": "blocks",
+        "delay": null
+      }
+    ],
+    "journals": [
+      {
+        "id": 59028,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2022-04-20T11:21:36Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "5705"
+          }
+        ]
+      },
+      {
+        "id": 59029,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Estimation basée sur le temps passé dans #5705",
+        "created_on": "2022-04-20T11:21:51Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "estimated_hours",
+            "old_value": null,
+            "new_value": "15.0"
+          }
+        ]
+      },
+      {
+        "id": 59031,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2022-04-20T11:22:51Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "6189"
+          }
+        ]
+      },
+      {
+        "id": 59245,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "Je prends la main, on commence l'intégration dans un patch 5-4-1 pour techevent.\r\n\r\nOn pars sur la 1.11",
+        "created_on": "2022-05-04T12:44:49Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "assigned_to_id",
+            "old_value": "11",
+            "new_value": "17"
+          },
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": null,
+            "new_value": "2022-05-04"
+          }
+        ]
+      },
+      {
+        "id": 59246,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Comme indiqué ici #5705, on va être bloqué en tout cas avec poco : \"La dernière version est la poco-1.10.1 mais VS2012 (110) n'est plus supporté. Il faut donc prendre la poco-1.9.4.\"\r\n",
+        "created_on": "2022-05-04T14:14:00Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 59248,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Vu avec Pascal et Alan : on va faire un script python qui va faire les échange en FTP_TLS pour déposer sur un FTP local à la machine Viparis :\r\nhttps://askcodez.com/ftpes-ftp-explicite-tls-ssl-en-python.html\r\n\r\nComme ça pas besoin de changer pour le moment le plugin techevent.",
+        "created_on": "2022-05-04T14:54:36Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 59614,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2022-06-03T12:00:42Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": "2022-05-04",
+            "new_value": null
+          }
+        ]
+      },
+      {
+        "id": 60308,
+        "user": {
+          "id": 37,
+          "name": "Thibaut Wiart"
+        },
+        "notes": "",
+        "created_on": "2022-06-29T11:00:13Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "62",
+            "new_value": "16"
+          }
+        ]
+      },
+      {
+        "id": 73301,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2025-03-07T17:23:23Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "blocks",
+            "old_value": null,
+            "new_value": "8208"
+          }
+        ]
+      },
+      {
+        "id": 73303,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2025-03-07T17:25:44Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "subject",
+            "old_value": "Migration POCO",
+            "new_value": "Migration POCO 1.14.1"
+          },
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "66"
+          },
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": null,
+            "new_value": "2025-03-10"
+          },
+          {
+            "property": "attr",
+            "name": "estimated_hours",
+            "old_value": "15.0",
+            "new_value": "24.0"
+          }
+        ]
+      },
+      {
+        "id": 73314,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2025-03-10T15:10:39Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "6721"
+          }
+        ]
+      },
+      {
+        "id": 74461,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2025-07-28T15:19:37Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "subject",
+            "old_value": "Migration POCO 1.14.1",
+            "new_value": "Migration POCO 1.14.2"
+          }
+        ]
+      },
+      {
+        "id": 74944,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2025-09-08T12:46:59Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "66",
+            "new_value": "67"
+          }
+        ]
+      },
+      {
+        "id": 75228,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Nettoyage du sprint hebdo en retirant les cases repoussés à la prochaine version.",
+        "created_on": "2025-09-22T15:03:08Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 75246,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2025-09-22T15:03:33Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": "2025-03-10",
+            "new_value": null
+          }
+        ]
+      },
+      {
+        "id": 77733,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "J'ai essayé une première compilation avec la nouvelle version qui date de 3 semaines : 1.15.0\n\nMais il n'y a pas le nécessaire comme avant (builwin.cmd)\nJ'ai quand même installé cmake via winget, et j'ai tenté de dérouler leur façon de faire.\n\nDans le cmake on a cette erreur :\n<pre>\n-- Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_CRYPTO_LIBRARY OPENSSL_INCLUDE_DIR) (Required is at least version \"1.1.1\")\n</pre>",
+        "created_on": "2026-03-02T07:58:17Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "20"
+          }
+        ]
+      },
+      {
+        "id": 77734,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "J'ai donc essayé de revenir sur la version 1.14.2 comme indiqué par fernand (la précédente), mais je pense que openssl chez nous n'est pas à jour avec leur dépendances\n\nMais le link de la party crypto fail\n\n<pre>\nC:\\DEV\\EGIDIUM\\org.pocoproject.cpplibs\\poco2\\Crypto\\src\\EVPCipherImpl.cpp(172,55): warning C4244: 'argument' : conversion de 'std::streamsize' en 'size_t',\n perte possible de données [C:\\DEV\\EGIDIUM\\org.pocoproject.cpplibs\\poco2\\Crypto\\Crypto_vs160.vcxproj]\n  OpenSSL 1.0.1i 6 Aug 2014\n     Création de la bibliothèque ..\\lib\\PocoCrypto.lib et de l'objet ..\\lib\\PocoCrypto.exp\nRSACipherImpl.obj : error LNK2019: symbole externe non résolu _EVP_PKEY_type référencé dans la fonction \"public: virtual __thiscall Poco::Crypto::RSACipher\nImpl::~RSACipherImpl(void)\" (??1RSACipherImpl@Crypto@Poco@@UAE@XZ) [C:\\DEV\\EGIDIUM\\org.pocoproject.cpplibs\\poco2\\Crypto\\Crypto_vs160.vcxproj]\nRSADigestEngine.obj : error LNK2001: symbole externe non résolu _EVP_PKEY_type [C:\\DEV\\EGIDIUM\\org.pocoproject.cpplibs\\poco2\\Crypto\\Crypto_vs160.vcxproj]\n</pre>",
+        "created_on": "2026-03-02T07:59:03Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 77816,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "",
+        "created_on": "2026-03-09T07:17:10Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "8805"
+          }
+        ]
+      },
+      {
+        "id": 77826,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-03-09T09:09:44Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": null,
+            "new_value": "2026-03-02"
+          }
+        ]
+      },
+      {
+        "id": 78084,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-03-24T13:14:12Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "blocks",
+            "old_value": null,
+            "new_value": "8339"
+          }
+        ]
+      },
+      {
+        "id": 78138,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "",
+        "created_on": "2026-03-29T19:37:43Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "20",
+            "new_value": "60"
+          }
+        ]
+      },
+      {
+        "id": 80280,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "",
+        "created_on": "2026-09-22T09:14:42Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "subject",
+            "old_value": "Migration POCO 1.14.2",
+            "new_value": "Migration POCO 1.15.8"
+          },
+          {
+            "property": "cf",
+            "name": "14",
+            "old_value": null,
+            "new_value": "0"
+          }
+        ]
+      },
+      {
+        "id": 80282,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "",
+        "created_on": "2026-09-22T09:14:59Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": null,
+            "new_value": "6017"
+          }
+        ]
+      },
+      {
+        "id": 80283,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "",
+        "created_on": "2026-09-22T09:15:34Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "subject",
+            "old_value": "Migration POCO 1.15.8",
+            "new_value": "Migration POCO 1.15.3"
+          },
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "7"
+          }
+        ]
+      },
+      {
+        "id": 80285,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-09-22T09:17:33Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "relates",
+            "old_value": "6017",
+            "new_value": null
+          }
+        ]
+      },
+      {
+        "id": 80287,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-09-22T09:17:39Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "blocked",
+            "old_value": null,
+            "new_value": "6017"
+          }
+        ]
+      },
+      {
+        "id": 80298,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "> Migration POCO 1.15.8 à Migration POCO 1.15.3\r\nTypo ? La 1.15.8 ne semble pas encore exister.\r\n\r\n",
+        "created_on": "2026-09-22T12:06:39Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80309,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "",
+        "created_on": "2026-09-22T15:42:40Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "relation",
+            "name": "blocked",
+            "old_value": null,
+            "new_value": "9076"
+          }
+        ]
+      },
+      {
+        "id": 80352,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Pris en compte et livré sous CVS pour linux (avec OpenSSL 3 aussi).\r\n\r\nPI je me demandais quel c++ étaient utilisé par Poco qui autogénère les makefile. Voici comment :\r\n<pre>\r\nvmlfr-jenkins2:/c/DEV/EGIDIUM/org.pocoproject.cpplibs/private/cmake-build) strings ./Zip/CMakeFiles/Zip.dir/src/ZipStream.cpp.o | grep -- \"-std=\"\r\nGNU C++20 14.2.0 -mtune=generic -march=x86-64 -g -O2 -std=gnu++20 -fPIC -fasynchronous-unwind-tables\r\nvmlfr-jenkins2:/c/DEV/EGIDIUM/org.pocoproject.cpplibs/private/cmake-build)\r\n</pre>\r\n",
+        "created_on": "2026-09-24T15:55:19Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80486,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "",
+        "created_on": "2026-10-02T07:34:38Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "7",
+            "new_value": "2"
+          }
+        ]
+      },
+      {
+        "id": 80487,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "Les migrations snmp et imagemagick ont été réalisées.",
+        "created_on": "2026-10-02T07:35:06Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "60",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

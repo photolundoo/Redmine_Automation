@@ -1,0 +1,174 @@
+{
+  "issue": {
+    "id": 9075,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 6,
+      "name": "Urgent"
+    },
+    "author": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "assigned_to": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "category": {
+      "id": 143,
+      "name": "com.egidium.sia"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "Simulateur SIA : envoyer les messages vers un recepteur secondaire",
+    "description": "",
+    "start_date": "2026-09-22",
+    "due_date": "2026-09-30",
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": null,
+    "total_estimated_hours": null,
+    "spent_hours": 1.0,
+    "total_spent_hours": 1.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Plugins - Capteurs experts"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": "Non"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": "0"
+      }
+    ],
+    "created_on": "2026-09-22T11:56:35Z",
+    "updated_on": "2026-09-22T11:59:27Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 5132,
+        "filename": "clipboard-202609221357-3xagi.png",
+        "filesize": 57052,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/5132/clipboard-202609221357-3xagi.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/5132",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-09-22T11:57:42Z"
+      }
+    ],
+    "journals": [
+      {
+        "id": 80294,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Il est désormais possible de préciser un recepteur secondaire :\r\n!clipboard-202609221357-3xagi.png!\r\n\r\nDans ce cas d'illustration :\r\n* Recepteur primaire : en local\r\n* Recepteur secondaire : avignon\r\n\r\n",
+        "created_on": "2026-09-22T11:58:14Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "5132",
+            "old_value": null,
+            "new_value": "clipboard-202609221357-3xagi.png"
+          }
+        ]
+      },
+      {
+        "id": 80295,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Pour tester :\r\n* Démo ACME sur deux postes différents\r\n* Plugin SIA CSR activé sur les deux postes (dont parefeu autorisant les connexion UDP 10001)\r\n* Utiliser le simulateur pour envoyer une alarme sur les deux systèmes en même temps",
+        "created_on": "2026-09-22T11:59:16Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80296,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-09-22T11:59:27Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

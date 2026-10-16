@@ -1,0 +1,422 @@
+{
+  "version": "ISAP-V27.1",
+  "genere_le": "2026-10-16T16:24:14",
+  "format": 1,
+  "tickets": [
+    {
+      "ticket": 8844,
+      "sujet": "Configurer le site ACME avec les caméras Hanwha",
+      "mis_a_jour": "2026-10-13T12:19:58Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "Serveur et services",
+      "plan": "03 Plan de validation WINAPP_VIDEO",
+      "fiche": "WVID07 — Comptage",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Configuration d'environnement",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille + WinApp + Matériel",
+      "prerequis": "Site de test ACME, caméras Hanwha accessibles, broker MQTT de test et trafic permettant d'observer les scénarios",
+      "prerequis_et_moyens": [],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Comptage et détection par les caméras Hanwha",
+          "action": "Vérifier que le broker MQTT de test est accessible, que les caméras Hanwha publient leurs événements et que les plugins requis sont actifs dans la grille.",
+          "attendu": "les flux d'événements des caméras sont reçus sans erreur de connexion. (#8844)"
+        },
+        {
+          "sous_titre": "Comptage et détection par les caméras Hanwha",
+          "action": "Depuis la WinApp, afficher le flux d'une caméra configurée et faire traverser la ligne de comptage par un piéton.",
+          "attendu": "le compteur de personnes évolue après le passage. (#8844)"
+        },
+        {
+          "sous_titre": "Comptage et détection par les caméras Hanwha",
+          "action": "Faire traverser la ligne de comptage du parking par un véhicule.",
+          "attendu": "le compteur de véhicules évolue ; le scénario est actif dans la caméra et le plugin associé est présent dans la grille. (#8844)"
+        },
+        {
+          "sous_titre": "Comptage et détection par les caméras Hanwha",
+          "action": "Maintenir une personne dans la zone configurée au-delà du délai indiqué dans le ticket.",
+          "attendu": "l'événement de présence prolongée apparaît dans la supervision. (#8844)"
+        },
+        {
+          "sous_titre": "Comptage et détection par les caméras Hanwha",
+          "action": "Faire entrer puis sortir un véhicule de la zone configurée.",
+          "attendu": "les événements de départ et d'arrivée sont visibles dans la supervision et correspondent aux transitions observées. (#8844)"
+        },
+        {
+          "sous_titre": "Comptage et détection par les caméras Hanwha",
+          "action": "Contrôler la représentation des caméras dans la 3D et consulter les journaux des plugins concernés.",
+          "attendu": "les caméras sont présentes dans la démonstration et aucun échec de connexion ni événement parasite n'est enregistré. (#8844)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8844.md"
+    },
+    {
+      "ticket": 9006,
+      "sujet": "Installation et configuration de SecurityCenter 5.14",
+      "mis_a_jour": "2026-08-18T09:29:42Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "Serveur et services",
+      "plan": "03 WinApp Vidéo",
+      "fiche": "WVID01 — Module Vidéo WinApp",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Configuration d'environnement",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille + WinApp",
+      "prerequis": "Environnement isolé avec SecurityCenter 5.14, base SQL de test et WinApp configurée pour joindre le serveur",
+      "prerequis_et_moyens": [
+        "Un serveur de test isolé et réinitialisable, SecurityCenter 5.14 et une base SQL de test.",
+        "Les droits nécessaires pour consulter les paramètres du compte de service SQL et les journaux Genetec ; utiliser `<IDENTIFIANT_COMPTE_SQL>` si un identifiant doit être reporté.",
+        "Une WinApp reliée au serveur Genetec et une caméra de test dont le flux est disponible."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Installation et migration de SecurityCenter 5.14",
+          "action": "Avant la migration, vérifier que le compte SQL utilisé par le service Genetec a la langue par défaut requise par l'installation, sans exposer ses identifiants.",
+          "attendu": "la configuration correspond aux prérequis du service. (#9006)"
+        },
+        {
+          "sous_titre": "Installation et migration de SecurityCenter 5.14",
+          "action": "Installer ou migrer SecurityCenter vers la version 5.14 dans l'environnement de test.",
+          "attendu": "l'installation ou la migration se termine sans erreur. (#9006)"
+        },
+        {
+          "sous_titre": "Installation et migration de SecurityCenter 5.14",
+          "action": "Démarrer les services Genetec puis consulter leurs journaux de démarrage.",
+          "attendu": "le service Directory termine la création de ses entités par défaut sans erreur de conversion de date ni erreur SQL associée. (#9006)"
+        },
+        {
+          "sous_titre": "Installation et migration de SecurityCenter 5.14",
+          "action": "Ouvrir SecurityDesk et afficher Surveillance.",
+          "attendu": "l'application s'ouvre, le serveur reste connecté et aucune erreur de base de données n'apparaît au démarrage. (#9006)"
+        },
+        {
+          "sous_titre": "Installation et migration de SecurityCenter 5.14",
+          "action": "Depuis la WinApp, afficher un flux vidéo sur un moniteur externe configuré pour Genetec.",
+          "attendu": "le flux de la caméra est visible et reste disponible après un redémarrage des services. (#9006)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9006.md"
+    },
+    {
+      "ticket": 9094,
+      "sujet": "[PAVPlugin] PAV en doublons",
+      "mis_a_jour": "2026-10-01T09:27:31Z",
+      "issue": "D",
+      "issue_libelle": "D — Nouvelle procédure manuelle",
+      "application": "Serveur et services",
+      "plan": "À décider",
+      "fiche": "À décider",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Configuration d'environnement",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "Clone non-production de l'environnement PAV avec accès en lecture à sa configuration et aux entités créées par le plugin",
+      "prerequis_et_moyens": [
+        "Un clone non-production réinitialisable avec PAVPlugin, les entités PAV de référence et les outils de consultation de la grille et des entités.",
+        "Les droits nécessaires pour consulter la configuration et les journaux du plugin ; aucune opération de nettoyage ne doit être réalisée sur l'environnement de production."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Configuration du PAVPlugin et dédoublonnage",
+          "action": "Dans le clone de test, relever le dossier de travail utilisé par le PAVPlugin et comparer sa configuration avec celle du système qui fournit la liste des PAV.",
+          "attendu": "les deux composants utilisent une seule configuration cohérente, sans mélange de générations de fichiers. (#9094)"
+        },
+        {
+          "sous_titre": "Configuration du PAVPlugin et dédoublonnage",
+          "action": "Comparer la liste de PAV chargée par le plugin à la liste de référence du système.",
+          "attendu": "les listes contiennent les mêmes entités, sans PAV manquant ni PAV supplémentaire. (#9094)"
+        },
+        {
+          "sous_titre": "Configuration du PAVPlugin et dédoublonnage",
+          "action": "Démarrer le PAVPlugin et consulter les entités PAV après son initialisation.",
+          "attendu": "chaque PAV attendu est présent une seule fois et aucune entité en double n'est créée. (#9094)"
+        },
+        {
+          "sous_titre": "Configuration du PAVPlugin et dédoublonnage",
+          "action": "Redémarrer le PAVPlugin sans modifier la configuration, puis vérifier de nouveau les entités PAV.",
+          "attendu": "le nombre et les relations des entités restent identiques ; aucun doublon supplémentaire n'apparaît. (#9094)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9094.md"
+    },
+    {
+      "ticket": 8772,
+      "sujet": "Outils d'ajout de plugin",
+      "mis_a_jour": "2026-10-02T11:59:10Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "Serveur et services",
+      "plan": "13 Outils externes",
+      "fiche": "PluginWizard",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Re-test ciblé",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "Grille de test réinitialisable, configuration démo et compte administrateur de test",
+      "prerequis_et_moyens": [
+        "Un clone de grille réinitialisable avec un plugin pris en charge par PluginWizard.",
+        "Un moyen contrôlé de faire échouer l'application de la grille dans le clone, puis de la rétablir.",
+        "Un compte administrateur de test, dont l'identifiant est fourni localement sous la forme `<IDENTIFIANT_ADMIN>`."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Ajout d'un plugin et reprise après échec",
+          "action": "Sur une grille de test réinitialisée, lancer PluginWizard et sélectionner un type de plugin déjà pris en charge ; saisir les paramètres de test sans reprendre de compte ni de secret depuis le plan.",
+          "attendu": "le récapitulatif reprend les valeurs saisies et aucun changement n'est encore créé en base. (#8772)"
+        },
+        {
+          "sous_titre": "Ajout d'un plugin et reprise après échec",
+          "action": "Appliquer les changements de grille et attendre la fin de l'actualisation des services.",
+          "attendu": "le plugin et son processeur sont présents dans la grille, avec le nom d'entité attendu et un état de lancement conforme à la configuration métier, sans état « manuel » imposé par défaut. (#8772)"
+        },
+        {
+          "sous_titre": "Ajout d'un plugin et reprise après échec",
+          "action": "Dans un clone réinitialisable, provoquer un échec contrôlé de l'application de la grille avant la fin du déploiement, puis consulter les entités associées.",
+          "attendu": "aucune entité partielle n'est créée en base tant que l'application de la grille n'a pas abouti. (#8772)"
+        },
+        {
+          "sous_titre": "Ajout d'un plugin et reprise après échec",
+          "action": "Rétablir la grille et relancer une seule fois le déploiement interrompu.",
+          "attendu": "le plugin est présent une seule fois dans la grille et ses entités associées ne sont pas dupliquées. (#8772)"
+        },
+        {
+          "sous_titre": "Ajout d'un plugin et reprise après échec",
+          "action": "Redémarrer le service concerné et vérifier son état dans la grille.",
+          "attendu": "il atteint l'état prévu par la configuration et reste disponible après le redémarrage. (#8772)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8772.md"
+    },
+    {
+      "ticket": 9026,
+      "sujet": "[Ansible] Prendre en compte WebAPI/Iris",
+      "mis_a_jour": "2026-10-12T12:31:29Z",
+      "issue": "D",
+      "issue_libelle": "D — Nouvelle procédure manuelle",
+      "application": "Serveur et services",
+      "plan": "À créer — Installation serveur",
+      "fiche": "À créer — Déploiement Ansible WebAPI et Iris",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Nouveau test",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "Installation ISAP 27.1 ou ultérieure par Ansible, inventaire de test et services WebAPI et Iris",
+      "prerequis_et_moyens": [
+        "Un serveur Linux de test réinitialisable avec Ansible et accès aux journaux de déploiement.",
+        "Un inventaire de test avec les options d'installation de WebAPI et Iris et des valeurs sensibles fournies par le gestionnaire de secrets.",
+        "Un compte de test autorisé à consulter les entités et relations IrisMail dans l'administration."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Installation Ansible de WebAPI et Iris",
+          "action": "Préparer un inventaire de test avec l'activation de WebAPI et d'Iris et renseigner les variables requises avec des valeurs de test sécurisées.",
+          "attendu": "la validation de l'inventaire aboutit sans afficher ni journaliser les valeurs secrètes. (#9026)"
+        },
+        {
+          "sous_titre": "Installation Ansible de WebAPI et Iris",
+          "action": "Lancer l'installation Ansible sur une version ISAP 27.1 ou ultérieure.",
+          "attendu": "le déploiement se termine avec succès et installe les composants WebAPI et Iris demandés. (#9026)"
+        },
+        {
+          "sous_titre": "Installation Ansible de WebAPI et Iris",
+          "action": "Vérifier l'état des services déployés et appeler un point de santé autorisé de la WebAPI.",
+          "attendu": "les services sont démarrés et le point de santé retourne une réponse exploitable. (#9026)"
+        },
+        {
+          "sous_titre": "Installation Ansible de WebAPI et Iris",
+          "action": "Contrôler dans l'administration que l'utilisateur IrisMail est créé une seule fois et rattaché à son dossier parent.",
+          "attendu": "une seule entité IrisMail liée au dossier attendu est présente. (#9026)"
+        },
+        {
+          "sous_titre": "Installation Ansible de WebAPI et Iris",
+          "action": "Rejouer le déploiement sans modifier l'inventaire.",
+          "attendu": "l'opération est idempotente, ne crée aucun utilisateur IrisMail supplémentaire et ne relance pas plusieurs fois les patchs. (#9026)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9026.md"
+    },
+    {
+      "ticket": 9063,
+      "sujet": "[ServerSetup] L'option \"début différé\" n'est pas prise en compte pour tous les services",
+      "mis_a_jour": "2026-09-22T14:46:45Z",
+      "issue": "D",
+      "issue_libelle": "D — Nouvelle procédure manuelle",
+      "application": "Serveur et services",
+      "plan": "À créer — Installation serveur",
+      "fiche": "À créer — Démarrage différé des services",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Re-test ciblé",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "Installation serveur réinitialisable et droits de consultation des services Windows",
+      "prerequis_et_moyens": [
+        "Un serveur de test réinitialisable avec ServerSetup et droits administrateur Windows.",
+        "La liste des services Smart Shield installés sur ce serveur, incluant les services hors grille."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Services en démarrage différé après installation serveur",
+          "action": "Lancer ServerSetup sur un serveur de test et sélectionner l'option de configuration des services en démarrage différé.",
+          "attendu": "l'installation se termine sans modifier ce choix. (#9063)"
+        },
+        {
+          "sous_titre": "Services en démarrage différé après installation serveur",
+          "action": "Ouvrir la console des services Windows après l'installation.",
+          "attendu": "chaque service Smart Shield installé, y compris les services hors grille, est configuré avec le type de démarrage différé. (#9063)"
+        },
+        {
+          "sous_titre": "Services en démarrage différé après installation serveur",
+          "action": "Redémarrer le serveur puis consulter de nouveau la configuration des services Smart Shield.",
+          "attendu": "aucun service concerné ne repasse en démarrage automatique après le redémarrage. (#9063)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9063.md"
+    },
+    {
+      "ticket": 9087,
+      "sujet": "AffectationTool v2",
+      "mis_a_jour": "2026-09-30T12:53:09Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "Serveur et services",
+      "plan": "13 Outils externes",
+      "fiche": "Affectation Types / Places",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Nouveau test",
+      "automatisabilite": "Impossible sans script externe",
+      "environnement": "WebApp + Serveur / grille",
+      "prerequis": "Clone ACME réinitialisable, entités de test de type Camera, dossier de test, routeur accessible et certificat wildcard de test",
+      "prerequis_et_moyens": [
+        "Un clone de test réinitialisable contenant des caméras et plusieurs dossiers.",
+        "Un routeur de test accessible, doté d'un certificat wildcard de test et d'un nom commun connu ; remplacer toute valeur nominative par `<CN_CERTIFICAT_TEST>`.",
+        "Un compte administrateur de test, renseigné localement comme `<IDENTIFIANT_ADMIN>`."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Affectations au dossier et modèle Camera",
+          "action": "Ouvrir AffectationTool dans le clone de test et vérifier que l'interface de connexion, les filtres, les résultats, les affectations et le journal sont affichés.",
+          "attendu": "l'outil est utilisable et le compte administrateur de test permet d'établir la connexion. (#9087)"
+        },
+        {
+          "sous_titre": "Affectations au dossier et modèle Camera",
+          "action": "Sélectionner le modèle Camera et recharger les données.",
+          "attendu": "les caméras de test sont listées et les champs CameraType, Place et Dossier sont disponibles pour l'affectation. (#9087)"
+        },
+        {
+          "sous_titre": "Affectations au dossier et modèle Camera",
+          "action": "Filtrer les caméras par dossier, sélectionner les résultats et les affecter à un dossier cible.",
+          "attendu": "seules les caméras du dossier sélectionné apparaissent dans les résultats et la colonne Dossier reflète la nouvelle relation après l'affectation. (#9087)"
+        },
+        {
+          "sous_titre": "Affectations au dossier et modèle Camera",
+          "action": "Affecter un CameraType et une Place aux caméras de test.",
+          "attendu": "les colonnes correspondantes affichent les nouvelles valeurs et les relations consultées dans l'administration correspondent aux affectations réalisées. (#9087)"
+        },
+        {
+          "sous_titre": "Connexion au routeur avec certificat wildcard",
+          "action": "Ouvrir l'option de connexion au routeur sans l'activer.",
+          "attendu": "la case est décochée par défaut et aucune option spécifique au certificat n'est transmise. (#9087)"
+        },
+        {
+          "sous_titre": "Connexion au routeur avec certificat wildcard",
+          "action": "Activer l'option, renseigner le nom commun d'un certificat wildcard de test valide et lancer la connexion au routeur de test.",
+          "attendu": "la connexion aboutit et le routeur n'accepte que le certificat correspondant au nom commun fourni. (#9087)"
+        },
+        {
+          "sous_titre": "Connexion au routeur avec certificat wildcard",
+          "action": "Désactiver l'option puis relancer la connexion avec la configuration standard du clone.",
+          "attendu": "les paramètres propres au certificat wildcard ne sont pas transmis au routeur. (#9087)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9087.md"
+    },
+    {
+      "ticket": 9089,
+      "sujet": "Amélioration de l'outil d'import de planification",
+      "mis_a_jour": "2026-10-07T11:52:15Z",
+      "issue": "D",
+      "issue_libelle": "D — Nouvelle procédure manuelle",
+      "application": "Serveur et services",
+      "plan": "14 Planification",
+      "fiche": "À créer — PlanificationImporter",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Nouveau test",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "Clone de base de planification réinitialisable, jeu de données avec dossiers, prestataires, lots et types de poste",
+      "prerequis_et_moyens": [
+        "Un clone de base de planification réinitialisable, avec un dossier parallèle, un prestataire partagé, des lots et des types de poste.",
+        "L'outil PlanificationImporter, une version de test et les droits requis pour consulter les entités et relations créées.",
+        "Un jeu de données de test ne contenant aucun identifiant ni mot de passe réel."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Import des ressources, tarifs et calendriers",
+          "action": "Dans un clone réinitialisable, préparer un dossier de planification cible, un dossier parallèle et un prestataire déjà réutilisé dans les deux contextes.",
+          "attendu": "le jeu de données permet de vérifier les liens au dossier cible et la conservation des entités réutilisées. (#9089)"
+        },
+        {
+          "sous_titre": "Import des ressources, tarifs et calendriers",
+          "action": "Lancer PlanificationImporter avec un numéro de poste de test comportant des caractères que le type entier ne peut pas conserver.",
+          "attendu": "le numéro est stocké et restitué comme chaîne, sans conversion ni perte de caractères. (#9089)"
+        },
+        {
+          "sous_titre": "Import des ressources, tarifs et calendriers",
+          "action": "Importer dans le dossier cible une planification utilisant le prestataire déjà présent dans le dossier parallèle.",
+          "attendu": "le prestataire réutilisé est relié au dossier cible, sans création d'un doublon de prestataire. (#9089)"
+        },
+        {
+          "sous_titre": "Import des ressources, tarifs et calendriers",
+          "action": "Pour chaque combinaison Lot et type de poste importée, contrôler les tarifs jour/nuit associés aux quatre types de jour.",
+          "attendu": "huit entités Tarification sont créées avec un prix nul, la base et l'indicateur de spécificité attendus, un nom cohérent avec le lot et le type de poste, et les relations vers le lot, l'entreprise, le type de poste et la planification. (#9089)"
+        },
+        {
+          "sous_titre": "Import des ressources, tarifs et calendriers",
+          "action": "Pour chaque tarif, consulter son entité Calendar liée.",
+          "attendu": "un calendrier est associé à chaque tarif, avec les horaires jour/nuit prévus et les relations vers la Tarification et le détail de poste correspondants. (#9089)"
+        },
+        {
+          "sous_titre": "Import des ressources, tarifs et calendriers",
+          "action": "Relancer l'import du même jeu de données dans le clone et comparer le nombre d'entités et leurs relations avant et après.",
+          "attendu": "aucun tarif, calendrier ou lien en double n'est créé. (#9089)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9089.md"
+    }
+  ]
+}

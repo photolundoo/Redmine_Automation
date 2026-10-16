@@ -35,3 +35,9 @@
 - 2026-10-16 15:15 — #8947 — Analyse des licences par application WebApp ; proposition de fiche dédiée soumise à décision.
 - 2026-10-16 15:15 — #9016 — Analyse de l’authentification API avec deux-points ; intégration proposée dans SmartShieldWebAPI.
 - 2026-10-16 15:15 — #9033 — Analyse de la migration Ice Java ; intégration proposée dans NRT01.
+- 2026-10-16 16:19 — #8844 — analyse reprise — configuration d'environnement, WVID07 — Comptage
+- 2026-10-16 16:20 — #9006 — analyse reprise — configuration d'environnement, WVID01 — Module Vidéo WinApp
+- 2026-10-16 16:21 — #9094 — analyse reprise — configuration d'environnement, fiche PAV à décider
+- 2026-10-16 16:22 — #8772 — analyse reprise — re-test ciblé, PluginWizard
+- 2026-10-16 16:22 — #9087 — analyse reprise — nouveau test, Affectation Types / Places
+- 2026-10-16 16:23 — #9089 — analyse reprise — nouveau test, À créer — PlanificationImporter

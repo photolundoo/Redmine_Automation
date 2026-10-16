@@ -1,6 +1,6 @@
 # Couverture Playwright
 
-Générée le 16/10/2026 16:07 par `python analyses.py couverture`. Ne pas modifier à la main : corriger les rattachements dans `referentiel/correspondance-playwright.md`.
+Générée le 16/10/2026 16:13 par `python analyses.py couverture`. Ne pas modifier à la main : corriger les rattachements dans `referentiel/correspondance-playwright.md`.
 
 - Tests lus : 437
 - Fiches du plan 01 couvertes : 11 sur 15
@@ -29,34 +29,34 @@ Générée le 16/10/2026 16:07 par `python analyses.py couverture`. Ne pas modif
 | MC01 - Généraux | MC01 — Généraux | identifiant et libellé |  |
 | MC02 - Activités | MC02 — Onglet Main Courante | identifiant et libellé |  |
 | MC02 - Applications | MC02 — Onglet Main Courante | identifiant et libellé |  |
-| MC02 - Bandeau inférieur de la Main Courante | MC02 — Onglet Main Courante | identifiant seul | à confirmer dans correspondance-playwright.md |
-| MC02 - Bandeau supérieur | MC02 — Onglet Main Courante | identifiant seul | à confirmer dans correspondance-playwright.md |
+| MC02 - Bandeau inférieur de la Main Courante | MC02 — Onglet Main Courante | imposé |  |
+| MC02 - Bandeau supérieur | MC02 — Onglet Main Courante | imposé |  |
 | MC02 - Bulletin | MC02 — Onglet Main Courante | identifiant et libellé |  |
 | MC02 - Comportement des lignes | MC02 — Onglet Main Courante | identifiant et libellé |  |
-| MC02 - Lieux, Intervenants & Champs adresse | MC02 — Onglet Main Courante | identifiant seul | à confirmer dans correspondance-playwright.md |
+| MC02 - Lieux, Intervenants & Champs adresse | MC02 — Onglet Main Courante | imposé |  |
 | MC02 - Mode Lecture | MC02 — Onglet Main Courante | identifiant et libellé |  |
 | MC02 - Mode lecture | MC02 — Onglet Main Courante | identifiant et libellé |  |
 | MC02 - Onglet Administration | MC02 — Onglet Main Courante | identifiant et libellé |  |
-| MC02 - Options d'affichage et générales de la table | MC02 — Onglet Main Courante | identifiant seul | à confirmer dans correspondance-playwright.md |
-| MC02 - Paramètres avancés | MC02 — Onglet Main Courante | identifiant seul | à confirmer dans correspondance-playwright.md |
-| MC02 - Paramètres incidents | MC02 — Onglet Main Courante | identifiant seul | à confirmer dans correspondance-playwright.md |
-| MC02 - Paramètres incidents & formulaires | MC02 — Onglet Main Courante | identifiant seul | à confirmer dans correspondance-playwright.md |
-| MC02 - Présence des éléments | MC02 — Onglet Main Courante | identifiant seul | à confirmer dans correspondance-playwright.md |
-| MC02 - Session & Timeout Multi | MC02 — Onglet Main Courante | identifiant seul | à confirmer dans correspondance-playwright.md |
-| MC02 - Traduction de l'interface | MC02 — Onglet Main Courante | identifiant seul | à confirmer dans correspondance-playwright.md |
+| MC02 - Options d'affichage et générales de la table | MC02 — Onglet Main Courante | imposé |  |
+| MC02 - Paramètres avancés | MC02 — Onglet Main Courante | imposé |  |
+| MC02 - Paramètres incidents | MC02 — Onglet Main Courante | imposé |  |
+| MC02 - Paramètres incidents & formulaires | MC02 — Onglet Main Courante | imposé |  |
+| MC02 - Présence des éléments | MC02 — Onglet Main Courante | imposé |  |
+| MC02 - Session & Timeout Multi | MC02 — Onglet Main Courante | imposé |  |
+| MC02 - Traduction de l'interface | MC02 — Onglet Main Courante | imposé |  |
 | MC03 - Statistiques | MC03 — Onglet Statistiques | identifiant et libellé |  |
 | MC04 - Situation | MC04 — Onglet Situation | identifiant et libellé |  |
 | MC05 - Vidéo | MC05 — Onglet Vidéo | identifiant et libellé |  |
 | MC06 - Évènements planifiés | MC06 — Onglet Evénements | identifiant et libellé |  |
 | MC07 - Évènements | MC07 — Onglet Evénements | identifiant et libellé |  |
-| MC09 - Iris (#9011) | — | aucune fiche |  |
+| MC09 - Iris (#9011) | — | imposé | Aucune |
 | MC10 - Administration | MC10 — Onglet Administration | identifiant et libellé |  |
-| MC10 - SDK Python | — | — | non rattaché : préciser la fiche dans correspondance-playwright.md |
+| MC10 - SDK Python | — | imposé | MC10 — Export de données |
 | MC11 - IsapReporting | MC11 — Onglet Mode expert (IsapReporting) | identifiant et libellé |  |
 | MC12 - Tests à plusieurs personnes | MC12 — Tests à plusieurs personnes | identifiant et libellé |  |
-| MC13 - IsapReportingServer | MC13 — Manipulation des fichiers | identifiant seul | à confirmer dans correspondance-playwright.md |
-| MC13 - Log démarrage serveur et PermissionsVerifier | MC13 — Manipulation des fichiers | identifiant seul | à confirmer dans correspondance-playwright.md |
-| MC13 - Perte de connexion (#8739) | MC13 — Manipulation des fichiers | identifiant seul | à confirmer dans correspondance-playwright.md |
-| MC13 - Python SDK | MC13 — Manipulation des fichiers | identifiant seul | à confirmer dans correspondance-playwright.md |
-| MC13 - Test unitaire WebService (#8366) | MC13 — Manipulation des fichiers | identifiant seul | à confirmer dans correspondance-playwright.md |
-| MC13 - TestIsapServer (#8570) | MC13 — Manipulation des fichiers | identifiant seul | à confirmer dans correspondance-playwright.md |
+| MC13 - IsapReportingServer | MC13 — Manipulation des fichiers | imposé |  |
+| MC13 - Log démarrage serveur et PermissionsVerifier | MC13 — Manipulation des fichiers | imposé |  |
+| MC13 - Perte de connexion (#8739) | MC13 — Manipulation des fichiers | imposé |  |
+| MC13 - Python SDK | MC13 — Manipulation des fichiers | imposé |  |
+| MC13 - Test unitaire WebService (#8366) | MC13 — Manipulation des fichiers | imposé |  |
+| MC13 - TestIsapServer (#8570) | MC13 — Manipulation des fichiers | imposé |  |

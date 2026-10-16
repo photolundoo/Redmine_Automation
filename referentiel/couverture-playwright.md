@@ -1,6 +1,6 @@
 # Couverture Playwright
 
-Générée le 16/10/2026 16:13 par `python analyses.py couverture`. Ne pas modifier à la main : corriger les rattachements dans `referentiel/correspondance-playwright.md`.
+Générée le 16/10/2026 16:39 par `python analyses.py couverture`. Ne pas modifier à la main : corriger les rattachements dans `referentiel/correspondance-playwright.md`.
 
 - Tests lus : 437
 - Fiches du plan 01 couvertes : 11 sur 15
@@ -49,9 +49,9 @@ Générée le 16/10/2026 16:13 par `python analyses.py couverture`. Ne pas modif
 | MC05 - Vidéo | MC05 — Onglet Vidéo | identifiant et libellé |  |
 | MC06 - Évènements planifiés | MC06 — Onglet Evénements | identifiant et libellé |  |
 | MC07 - Évènements | MC07 — Onglet Evénements | identifiant et libellé |  |
-| MC09 - Iris (#9011) | — | imposé | Aucune |
+| MC09 - Iris (#9011) | — | imposé | fiche imposée « — » introuvable dans le plan 01 : la recopier depuis la liste « Fiches du plan 01 » ci-dessous, ou écrire « Aucune » |
 | MC10 - Administration | MC10 — Onglet Administration | identifiant et libellé |  |
-| MC10 - SDK Python | — | imposé | MC10 — Export de données |
+| MC10 - SDK Python | — | imposé | fiche imposée « — » introuvable dans le plan 01 : la recopier depuis la liste « Fiches du plan 01 » ci-dessous, ou écrire « Aucune » |
 | MC11 - IsapReporting | MC11 — Onglet Mode expert (IsapReporting) | identifiant et libellé |  |
 | MC12 - Tests à plusieurs personnes | MC12 — Tests à plusieurs personnes | identifiant et libellé |  |
 | MC13 - IsapReportingServer | MC13 — Manipulation des fichiers | imposé |  |
@@ -60,3 +60,25 @@ Générée le 16/10/2026 16:13 par `python analyses.py couverture`. Ne pas modif
 | MC13 - Python SDK | MC13 — Manipulation des fichiers | imposé |  |
 | MC13 - Test unitaire WebService (#8366) | MC13 — Manipulation des fichiers | imposé |  |
 | MC13 - TestIsapServer (#8570) | MC13 — Manipulation des fichiers | imposé |  |
+
+## Fiches du plan 01
+
+Désignations exactes, à recopier telles quelles dans `correspondance-playwright.md`.
+
+| Fiche | Titre de section | Couverte |
+|---|---|---|
+| MC01 — Généraux | Généraux – connexion | oui |
+| MC02 — Onglet Main Courante | Onglet Main Courante | oui |
+| MC03 — Onglet Statistiques | Onglet Statistiques | oui |
+| MC04 — Onglet Situation | Onglet Situation & Partage de Situation | oui |
+| MC05 — Onglet Vidéo | Onglet Vidéo | oui |
+| MC06 — Onglet Evénements | Onglet Evénements planifiés | oui |
+| MC07 — Onglet Evénements | Onglet Evénements | oui |
+| MC08 — Onglet Evénements | Onglet Planification | non |
+| MC09 — Iris | Iris | non |
+| MC10 — Onglet Administration | Onglet Administration | oui |
+| MC11 — Onglet Mode expert (IsapReporting) | Onglet Mode expert- ISAPREPORTING | oui |
+| MC10 — Export de données | Tests exports de données | non |
+| MC12 — Tests à plusieurs personnes | Tests à plusieurs personnes @ | oui |
+| MC13 — Manipulation des fichiers | Tests via modification des fichiers | oui |
+| MC12 — Configuration Grille & Droits | Configuration Grille & droits | non |

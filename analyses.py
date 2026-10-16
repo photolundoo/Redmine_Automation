@@ -320,6 +320,16 @@ def controler_fiche(champs):
     titre = re.split(r"\s+[—–-]\s+", fiche, maxsplit=1)
     if len(titre) < 2 or not titre[1].strip():
         return [f"fiche cible : préciser le titre après l'identifiant, par exemple « {identifiant.group(1)} — titre de la fiche »"]
+    # Plan structuré en « ID : … Titre : … » : le couple identifiant-titre doit y figurer tel quel.
+    couples = fiches_du_plan(numero_plan)
+    if couples:
+        memes = [f for f in couples if f["identifiant"] == identifiant.group(1)]
+        if memes and not any(normaliser(f["titre"]) == normaliser(titre[1]) for f in memes):
+            return [f"fiche cible : le plan {numero_plan} ne contient pas « {identifiant.group(1)} — {titre[1].strip()} » ; "
+                    f"titre(s) de {identifiant.group(1)} dans le plan : "
+                    + " ; ".join(f"« {f['titre']} »" for f in memes)]
+        if memes:
+            return []
     attendu = normaliser(titre[1])[:40]
     if not any(attendu in normaliser(texte[max(0, p - 400):p + 800]) for p in positions):
         return [f"fiche cible : le titre « {titre[1].strip()} » ne correspond pas à la fiche {identifiant.group(1)} "
@@ -552,6 +562,11 @@ def verifier_analyse(version, numero, decisions):
                 erreurs.append(f"fiche signalétique : environnement « {partie} » inconnu, valeurs autorisées : {' · '.join(ENVIRONNEMENTS)}")
 
     parties_env = re.split(r"\s*\+\s*", champs.get("Environnement", ""))
+    attendus = {"WebApp": "WebApp", "WinApp": "WinApp", "Application mobile": "Mobile"}
+    application = champs.get("Application", "")
+    if champs.get("Environnement") and application in attendus and attendus[application] not in parties_env:
+        erreurs.append(f"« Application » vaut « {application} » mais l'environnement ne comprend pas « {attendus[application]} » : "
+                       "l'application est celle où se joue le test (un processeur ou un outil serveur relève de « Serveur et services »)")
     if champs.get("Environnement") and "WebApp" not in parties_env and \
             champs.get("Automatisabilité") not in ("Hors outillage actuel", "Non applicable"):
         erreurs.append("« Automatisabilité » : sans WebApp dans l'environnement, la valeur doit être « Hors outillage actuel » ou « Non applicable »")
@@ -1215,7 +1230,7 @@ def synthese(version):
     def champ(a, nom):
         return a["champs"].get(nom, "")
 
-    analyses.sort(key=lambda a: (rang_environnement(champ(a, "Environnement")), champ(a, "Plan cible"),
+    analyses.sort(key=lambda a: (rang_environnement(champ(a, "Environnement")), champ(a, "Plan cible")[:2],
                                  champ(a, "Fiche cible"), a["ticket"]["id"]))
 
     lignes = [

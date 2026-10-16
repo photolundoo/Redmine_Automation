@@ -25,5 +25,5 @@ Pour une remarque de relecture sur un ticket sans question, ajouter une ligne : 
 | #8080 | Relecture | — | fiche : NRT01 — Passe de non-régression technique | 16/10/2026 |
 | #8805 | Relecture | — | fiche : NRT01 — Passe de non-régression technique | 16/10/2026 |
 | #9079 | Relecture | — | fiche : NRT01 — Passe de non-régression technique | 16/10/2026 |
-| #8947 | Quel identifiant et emplacement retenir pour la fiche Licences WebApp ? | Créer une fiche Licences WebApp dans le plan 01 avant les fiches applicatives. | valider |  |
-| #9094 | Dans quel plan et quelle fiche intégrer le contrôle du dossier de travail du PAVPlugin et de l'absence de doublons ? | Créer dans le plan 08 Tests spécifiques une fiche manuelle PAVPlugin — Configuration et dédoublonnage, qui vérifie la cohérence de la configuration et l'absence de doublons après initialisation et redémarrage. | valider |  |
+| #8947 | Quel identifiant et emplacement retenir pour la fiche Licences WebApp ? | Créer une fiche Licences WebApp dans le plan 01 avant les fiches applicatives. | valider | 16/10/2026 |
+| #9094 | Dans quel plan et quelle fiche intégrer le contrôle du dossier de travail du PAVPlugin et de l'absence de doublons ? | Créer dans le plan 08 Tests spécifiques une fiche manuelle PAVPlugin — Configuration et dédoublonnage, qui vérifie la cohérence de la configuration et l'absence de doublons après initialisation et redémarrage. | valider | 16/10/2026 |

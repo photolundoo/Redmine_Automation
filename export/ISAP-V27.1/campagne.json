@@ -1,6 +1,6 @@
 {
   "version": "ISAP-V27.1",
-  "genere_le": "2026-10-16T16:24:14",
+  "genere_le": "2026-10-16T16:47:17",
   "format": 1,
   "tickets": [
     {
@@ -115,8 +115,8 @@
       "issue": "D",
       "issue_libelle": "D — Nouvelle procédure manuelle",
       "application": "Serveur et services",
-      "plan": "À décider",
-      "fiche": "À décider",
+      "plan": "08 Tests spécifiques",
+      "fiche": "À créer — PAVPlugin — Configuration et dédoublonnage",
       "playwright_existant": {
         "fiche_couverte": null,
         "tests_citant_le_ticket": []
@@ -417,6 +417,386 @@
         }
       ],
       "analyse": "analyses/ISAP-V27.1/9089.md"
+    },
+    {
+      "ticket": 9001,
+      "sujet": "[Ansible] Anomalies constatées, dont les templates non à jour",
+      "mis_a_jour": "2026-10-07T11:34:58Z",
+      "issue": "D",
+      "issue_libelle": "D — Nouvelle procédure manuelle",
+      "application": "Serveur et services",
+      "plan": "À créer — Installation serveur",
+      "fiche": "À créer — Déploiement Ansible WebAPI et Iris",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Nouveau test",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "Clone Debian réinitialisable, accès à l'inventaire Ansible et possibilité de comparer configuration, fichiers, liens symboliques et journaux avant/après déploiement",
+      "prerequis_et_moyens": [
+        "Un clone Debian réinitialisable et un inventaire Ansible de test ; ne pas exécuter les essais sur un site client.",
+        "Les fichiers de configuration et de licence de test doivent être fournis par l'administrateur ; aucune valeur sensible ne doit être recopiée dans le compte rendu.",
+        "Un accès en lecture aux journaux de déploiement et aux liens symboliques produits."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Installation et mise à jour Ansible",
+          "action": "Restaurer un clone Debian de test avec une configuration WebApp déjà personnalisée, puis relever les valeurs des clés qui ne doivent pas changer.",
+          "attendu": "l'état initial est connu et les paramètres personnalisés sont préservés pour la comparaison. (#9001)"
+        },
+        {
+          "sous_titre": "Installation et mise à jour Ansible",
+          "action": "Lancer le playbook Ansible sur le clone avec un inventaire de test.",
+          "attendu": "l'exécution se termine sans erreur et les dépendances Python requises par le déploiement sont installées. (#9001)"
+        },
+        {
+          "sous_titre": "Installation et mise à jour Ansible",
+          "action": "Comparer `maincourante.config.js` avec sa sauvegarde initiale et le fichier d'exemple de la version déployée.",
+          "attendu": "seules les clés d'hôte et d'accès prévues par l'inventaire sont remplacées par expressions régulières ; les autres paramètres personnalisés restent présents et aucun fichier complet n'est écrasé par un contrôle de configuration. (#9001)"
+        },
+        {
+          "sous_titre": "Installation et mise à jour Ansible",
+          "action": "Vérifier les liens symboliques créés dans les répertoires de bibliothèques vidéo et TIL.",
+          "attendu": "chaque lien pointe vers une bibliothèque existante, aucun lien ne conserve un motif générique non développé et les composants dépendants peuvent charger leurs bibliothèques. (#9001)"
+        },
+        {
+          "sous_titre": "Installation et mise à jour Ansible",
+          "action": "Vérifier les permissions du certificat et des répertoires ISAP après le déploiement.",
+          "attendu": "les permissions attendues sont appliquées sans changement répétitif anormal et le service peut lire les fichiers nécessaires. (#9001)"
+        },
+        {
+          "sous_titre": "Installation et mise à jour Ansible",
+          "action": "Redémarrer les services ISAP, puis consulter leurs journaux et la configuration effective.",
+          "attendu": "les services démarrent sans erreur de fichier de licence ni de dépendance ; les valeurs personnalisées de `maincourante.config.js` sont conservées après redémarrage. (#9001)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9001.md"
+    },
+    {
+      "ticket": 9049,
+      "sujet": "[ServerConfiguration] Exclusion du dossier Fingerprints au remplissage initial de la base",
+      "mis_a_jour": "2026-09-30T09:08:19Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "Serveur et services",
+      "plan": "11 Installation client sur PC",
+      "fiche": "INS04 — Installation complète d’un serveur-client",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Nouveau test",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "Clone réinitialisable avec dossier Fingerprints contenant un fichier `.priv`, fichier de configuration de test et accès aux journaux de ServerConfiguration",
+      "prerequis_et_moyens": [
+        "Un clone de base réinitialisable et une copie de test des fichiers de configuration ; ne pas modifier les fichiers partagés du dépôt.",
+        "Un fichier `.priv` de test et des fichiers `.isap` ordinaires dans les emplacements attendus.",
+        "Un accès en lecture aux templates résultants et aux journaux de ServerConfiguration."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Remplissage initial de la base",
+          "action": "Restaurer un clone de test vierge avec un dossier nommé `FingerPrints` contenant un fichier `.priv` de test, et confirmer que le fichier de configuration attendu porte l'extension `.isap`.",
+          "attendu": "les fichiers de test sont présents avant le premier lancement sans modifier les sources partagées. (#9049)"
+        },
+        {
+          "sous_titre": "Remplissage initial de la base",
+          "action": "Lancer ServerConfiguration et effectuer le remplissage initial de la base.",
+          "attendu": "l'opération se termine sans erreur liée à des templates en double et le fichier `.priv` du dossier FingerPrints n'est pas exécuté. (#9049)"
+        },
+        {
+          "sous_titre": "Remplissage initial de la base",
+          "action": "Consulter les templates créés et comparer leur nombre et leurs noms aux données de référence avant lancement.",
+          "attendu": "aucun template provenant exclusivement du dossier FingerPrints n'est créé en doublon. (#9049)"
+        },
+        {
+          "sous_titre": "Remplissage initial de la base",
+          "action": "Vérifier le traitement des fichiers `.isap` de configuration initiale placés hors du dossier Fingerprints.",
+          "attendu": "les éléments requis de configuration sont créés normalement, sans que l'exclusion de Fingerprints ne bloque les autres fichiers. (#9049)"
+        },
+        {
+          "sous_titre": "Remplissage initial de la base",
+          "action": "Consulter les journaux de ServerConfiguration à la fin du remplissage initial.",
+          "attendu": "aucune erreur d'exécution d'un fichier `.priv` issu de Fingerprints n'est présente. (#9049)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9049.md"
+    },
+    {
+      "ticket": 9079,
+      "sujet": "Migration Ice 3.7 : IsapGridGUI",
+      "mis_a_jour": "2026-09-25T08:26:34Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "WinApp",
+      "plan": "12 Update version",
+      "fiche": "NRT01 — Passe de non-régression technique",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Nouveau test",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "Version ISAP-V27.1 installée, services de la grille démarrés, JDK 17 disponible pour vérifier la construction Java, accès au fichier IsapGridGUI.jar et à la configuration de déploiement",
+      "prerequis_et_moyens": [
+        "Une installation réinitialisable d'ISAP-V27.1 et un registre de grille de test.",
+        "JDK 17 et les outils de construction Java nécessaires uniquement si le JAR doit être reconstruit pour l'essai ; ne pas remplacer le JAR d'un environnement partagé.",
+        "Une configuration de déploiement de test comportant quatre niveaux d'imbrication, sans données sensibles.",
+        "Accès en lecture aux journaux Java et de la grille."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "IsapGridGUI — migration Ice 3.7",
+          "action": "Vérifier que la mise à jour a installé le fichier `IsapGridGUI.jar` livré pour ISAP-V27.1.",
+          "attendu": "le JAR est présent à l'emplacement de déploiement de la grille et sa date/version correspond à la livraison testée. (#9079)"
+        },
+        {
+          "sous_titre": "IsapGridGUI — migration Ice 3.7",
+          "action": "Lancer IsapGridGUI dans la configuration Java standard de la grille, sans ajouter de paramètre `--add-exports` spécifique.",
+          "attendu": "la fenêtre principale s'ouvre et aucune erreur Java n'apparaît dans la console ou les journaux. (#9079)"
+        },
+        {
+          "sous_titre": "IsapGridGUI — migration Ice 3.7",
+          "action": "Dans la fenêtre principale et dans la boîte de dialogue « À propos », contrôler le nom affiché, la version et le copyright.",
+          "attendu": "l'interface porte la marque ISAP Grid, affiche la version 27.1 et mentionne Egidium Technologies ; les intitulés de fenêtres ne réintroduisent pas la marque IceGrid GUI. (#9079)"
+        },
+        {
+          "sous_titre": "IsapGridGUI — migration Ice 3.7",
+          "action": "Se connecter au registre de la grille avec une configuration de test, ouvrir le déploiement et consulter une application dont la configuration comporte quatre niveaux d'imbrication.",
+          "attendu": "la connexion est établie et les quatre niveaux sont accessibles sans erreur de profondeur. (#9079)"
+        },
+        {
+          "sous_titre": "IsapGridGUI — migration Ice 3.7",
+          "action": "Enregistrer une configuration de déploiement de test, puis la rouvrir.",
+          "attendu": "le fichier est produit et relu sans erreur, et son commentaire de génération utilise la marque ISAP Grid. (#9079)"
+        },
+        {
+          "sous_titre": "IsapGridGUI — migration Ice 3.7",
+          "action": "Fermer IsapGridGUI et consulter les journaux de la grille.",
+          "attendu": "aucune erreur liée à Ice 3.7 ou au chargement d'IsapGridGUI n'est enregistrée. (#9079)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9079.md"
+    },
+    {
+      "ticket": 8717,
+      "sujet": "[IntrusionProcessor] Inhibition avec temporisation",
+      "mis_a_jour": "2026-08-13T12:16:20Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "WebApp",
+      "plan": "06 Intrusion",
+      "fiche": "INT03 — Tests avec simulateur",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Re-test ciblé",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "Démo ACME réinitialisable, IntrusionProcessor, simulateur `intrusion_simulator`, capteur simulé visible dans Smart Shield et accès en écriture contrôlée au paramètre du processeur",
+      "prerequis_et_moyens": [
+        "Démo ACME de test, capteur simulé réinitialisable et `intrusion_simulator`.",
+        "Accès à la configuration d'IsapGrid-Application pour modifier `inhibition-duration` et redémarrer le processeur.",
+        "Accès en lecture à l'état du capteur et aux journaux des processeurs.",
+        "Exécuter ensuite le contrôle de nettoyage de la base défini dans l'analyse #9014."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Inhibition temporisée — IntrusionProcessor",
+          "action": "Dans la configuration de la démo ACME, régler `inhibition-duration` à `1` minute et redémarrer IntrusionProcessor.",
+          "attendu": "le processeur démarre sans erreur et applique la valeur configurée. (#8717)"
+        },
+        {
+          "sous_titre": "Inhibition temporisée — IntrusionProcessor",
+          "action": "Démarrer `intrusion_simulator` et vérifier qu'un capteur simulé est actif et visible dans Smart Shield.",
+          "attendu": "le capteur peut recevoir une commande et son état initial est désinhibé. (#8717)"
+        },
+        {
+          "sous_titre": "Inhibition temporisée — IntrusionProcessor",
+          "action": "Inhiber le capteur simulé depuis Smart Shield.",
+          "attendu": "l'état du capteur devient inhibé et aucune erreur liée à l'auteur processeur n'apparaît dans les journaux. (#8717)"
+        },
+        {
+          "sous_titre": "Inhibition temporisée — IntrusionProcessor",
+          "action": "Attendre un peu plus d'une minute, puis observer l'état du même capteur.",
+          "attendu": "le capteur revient automatiquement à l'état désinhibé après expiration du délai. (#8717)"
+        },
+        {
+          "sous_titre": "Inhibition temporisée — IntrusionProcessor",
+          "action": "Régler `inhibition-duration` à `0`, redémarrer IntrusionProcessor, puis inhiber de nouveau le capteur simulé.",
+          "attendu": "le capteur reste inhibé au-delà d'une minute et aucune désinhibition automatique n'est envoyée. (#8717)"
+        },
+        {
+          "sous_titre": "Inhibition temporisée — IntrusionProcessor",
+          "action": "Consulter les journaux d'IntrusionProcessor et de traitement des actions après les deux scénarios.",
+          "attendu": "aucune erreur de traitement n'est enregistrée lors de la désinhibition automatique. (#8717)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8717.md"
+    },
+    {
+      "ticket": 9014,
+      "sujet": "[ActionManager] Erreur de traitement pour les désinhibitions automatiques",
+      "mis_a_jour": "2026-08-11T13:41:31Z",
+      "issue": "B",
+      "issue_libelle": "B — Adapter l'existant",
+      "application": "Serveur et services",
+      "plan": "06 Intrusion",
+      "fiche": "INT03 — Tests avec simulateur",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Re-test ciblé",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Serveur / grille",
+      "prerequis": "Démo ACME réinitialisable, contrôle de #8717 exécuté immédiatement avant ce contrôle et accès en lecture aux classes d'action de la base",
+      "prerequis_et_moyens": [
+        "Réaliser les vérifications immédiatement après #8717 et avant tout autre scénario susceptible de créer des actions.",
+        "Utiliser un environnement de test réinitialisable ; les recherches dans IsapReporting ou la base sont en lecture seule.",
+        "Accès aux journaux d'ActionManager et des processeurs concernés."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Nettoyage après désinhibition automatique",
+          "action": "Exécuter intégralement les étapes de #8717, en utilisant la démo ACME et `intrusion_simulator`, puis attendre la désinhibition automatique.",
+          "attendu": "le capteur simulé revient à l'état désinhibé avant le contrôle de la base. (#9014)"
+        },
+        {
+          "sous_titre": "Nettoyage après désinhibition automatique",
+          "action": "Dans IsapReporting ou l'outil de consultation de base approuvé pour le test, rechercher les instances de la classe `ActionDelayer`.",
+          "attendu": "aucune instance résiduelle n'est présente après la fin du scénario. (#9014)"
+        },
+        {
+          "sous_titre": "Nettoyage après désinhibition automatique",
+          "action": "Rechercher les instances de la classe `ActionInstance`.",
+          "attendu": "aucune instance résiduelle liée aux inhibitions et désinhibitions du scénario ne subsiste après son exécution. (#9014)"
+        },
+        {
+          "sous_titre": "Nettoyage après désinhibition automatique",
+          "action": "Consulter les journaux d'ActionManager et des processeurs après le scénario.",
+          "attendu": "aucune erreur de création ou suppression de relation liée à l'auteur processeur ni aucune erreur de nettoyage n'est enregistrée. (#9014)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/9014.md"
+    },
+    {
+      "ticket": 8965,
+      "sujet": "[MobileApp] Permettre de configurer son serveur au lancement",
+      "mis_a_jour": "2026-09-25T13:44:29Z",
+      "issue": "D",
+      "issue_libelle": "D — Nouvelle procédure manuelle",
+      "application": "Application mobile",
+      "plan": "08 Tests spécifiques",
+      "fiche": "À créer — Configuration du serveur dans MobileApp",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Nouveau test",
+      "automatisabilite": "Hors outillage actuel",
+      "environnement": "Mobile",
+      "prerequis": "Appareil ou émulateur réinitialisable, MobileApp de la version testée et accès à deux serveurs de test approuvés",
+      "prerequis_et_moyens": [
+        "Deux serveurs d'essai accessibles, avec des comptes de test ; remplacer toute adresse et tout identifiant par les repères fournis localement.",
+        "Un appareil ou émulateur pris en charge par la version MobileApp testée, avec la possibilité d'effacer les données de l'application.",
+        "Ne pas publier l'application sur le PlayStore si la demande d'URL initiale et son mécanisme de modification ne sont pas présents."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Installation et configuration initiale",
+          "action": "Effacer les données de l'application ou réinitialiser l'appareil de test, puis lancer MobileApp.",
+          "attendu": "avant la page de connexion, l'application demande l'URL du serveur et ne force pas une adresse VGP prédéfinie. (#8965)"
+        },
+        {
+          "sous_titre": "Installation et configuration initiale",
+          "action": "Saisir l'URL complète d'un premier serveur de test approuvé, dont le nom d'hôte dépasse onze caractères, puis poursuivre vers la page de connexion.",
+          "attendu": "l'URL est acceptée sans chiffrement, troncature ni transformation en code court, et la page de connexion est associée au serveur saisi. (#8965)"
+        },
+        {
+          "sous_titre": "Installation et configuration initiale",
+          "action": "Se connecter avec un compte de test valide sur ce premier serveur.",
+          "attendu": "l'authentification aboutit sur le serveur sélectionné et l'application affiche les données de l'environnement de test correspondant. (#8965)"
+        },
+        {
+          "sous_titre": "Mémorisation et changement du serveur",
+          "action": "Fermer complètement MobileApp, la relancer et atteindre la page de connexion.",
+          "attendu": "l'adresse choisie est conservée et l'application ne redemande pas une nouvelle configuration initiale. (#8965)"
+        },
+        {
+          "sous_titre": "Mémorisation et changement du serveur",
+          "action": "Depuis l'écran de connexion, activer le bouton de changement de serveur et saisir l'URL complète d'un second serveur de test approuvé.",
+          "attendu": "l'adresse peut être modifiée avant la connexion et la page de connexion est désormais associée au second serveur. (#8965)"
+        },
+        {
+          "sous_titre": "Mémorisation et changement du serveur",
+          "action": "Fermer puis relancer MobileApp et vérifier le serveur proposé sur la page de connexion.",
+          "attendu": "la seconde URL reste mémorisée et l'application ne revient pas à l'adresse du premier serveur ni à une adresse intégrée par défaut. (#8965)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8965.md"
+    },
+    {
+      "ticket": 8947,
+      "sujet": "Évolution du modèle de licence : une licence par application WebApp",
+      "mis_a_jour": "2026-08-03T11:48:39Z",
+      "issue": "D",
+      "issue_libelle": "D — Nouvelle procédure manuelle",
+      "application": "WebApp",
+      "plan": "01 WebApp",
+      "fiche": "À créer — Licences WebApp",
+      "playwright_existant": {
+        "fiche_couverte": null,
+        "tests_citant_le_ticket": []
+      },
+      "nature": "Nouveau test",
+      "automatisabilite": "Impossible sans script externe",
+      "environnement": "WebApp + Serveur / grille",
+      "prerequis": "Environnement de test réinitialisable et jeux de licences distinctes activant ou désactivant les applications",
+      "prerequis_et_moyens": [
+        "Un serveur et une WebApp de test réinitialisables, ainsi que des jeux de licences de test isolant chacune des applications demandées.",
+        "Un compte autorisé à appliquer les licences et des comptes WebApp disposant des droits d'accès nécessaires ; aucune donnée d'identification réelle n'est consignée dans l'analyse."
+      ],
+      "playwright": null,
+      "etapes": [
+        {
+          "sous_titre": "Licences par application WebApp",
+          "action": "Installer sur l'environnement de test une licence qui autorise une seule application WebApp, puis ouvrir la WebApp.",
+          "attendu": "l'application licenciée est accessible et les applications sans licence ne sont pas proposées comme accessibles. (#8947)"
+        },
+        {
+          "sous_titre": "Licences par application WebApp",
+          "action": "Remplacer la licence par un jeu de licences autorisant séparément Iris, Main Courante et Statistiques, puis ouvrir chacune des applications.",
+          "attendu": "chaque application autorisée est accessible et son accès est cohérent avec la licence activée. (#8947)"
+        },
+        {
+          "sous_titre": "Licences par application WebApp",
+          "action": "Activer seulement la licence Situation et essayer d'ouvrir Situation et Partage de situation.",
+          "attendu": "Situation est accessible, tandis que Partage de situation reste indisponible. (#8947)"
+        },
+        {
+          "sous_titre": "Licences par application WebApp",
+          "action": "Activer seulement la licence Partage de situation et répéter le contrôle des deux capacités.",
+          "attendu": "Partage de situation est accessible et Situation reste indisponible. (#8947)"
+        },
+        {
+          "sous_titre": "Licences par application WebApp",
+          "action": "Pour chaque combinaison, consulter l'accès aux autres applications autorisées et les journaux de démarrage du serveur.",
+          "attendu": "la modification d'une licence ne désactive pas une application dont la licence reste valide et aucune erreur de validation de licence n'est journalisée. (#8947)"
+        }
+      ],
+      "analyse": "analyses/ISAP-V27.1/8947.md"
     }
   ]
 }

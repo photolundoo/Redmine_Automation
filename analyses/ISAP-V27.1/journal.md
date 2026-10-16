@@ -41,3 +41,11 @@
 - 2026-10-16 16:22 — #8772 — analyse reprise — re-test ciblé, PluginWizard
 - 2026-10-16 16:22 — #9087 — analyse reprise — nouveau test, Affectation Types / Places
 - 2026-10-16 16:23 — #9089 — analyse reprise — nouveau test, À créer — PlanificationImporter
+- 2026-10-16 16:40 — #9094 — décision appliquée — fiche PAVPlugin — Configuration et dédoublonnage dans le plan 08
+- 2026-10-16 16:40 — #8947 — décision appliquée — fiche Licences WebApp dans le plan 01
+- 2026-10-16 16:42 — #9001 — analyse reprise — nouveau test, Déploiement Ansible WebAPI et Iris
+- 2026-10-16 16:43 — #9049 — analyse reprise — adaptation INS04, exclusion Fingerprints
+- 2026-10-16 16:44 — #9079 — analyse reprise — ajout NRT01, migration Ice 3.7 / IsapGridGUI
+- 2026-10-16 16:45 — #8717 — analyse reprise — adaptation INT03, inhibition temporisée
+- 2026-10-16 16:45 — #9014 — analyse reprise — adaptation INT03, nettoyage des actions liées à #8717
+- 2026-10-16 16:47 — #8965 — analyse reprise — nouvelle fiche MobileApp, relecture humaine demandée

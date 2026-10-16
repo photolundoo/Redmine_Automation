@@ -1,7 +1,7 @@
 # Tickets à tester — ISAP-V27.1
 
 Sélection : projet isapv2, statut Résolu, version ISAP-V27.1, assigné différent de l'utilisateur n° 21.
-Dernière récupération : 16/10/2026 16:13 — 58 tickets.
+Dernière récupération : 16/10/2026 16:38 — 58 tickets.
 
 | Ticket | Sujet | Tracker | Fonction | Mis à jour le |
 |---|---|---|---|---|

@@ -1,0 +1,211 @@
+{
+  "issue": {
+    "id": 9092,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 4,
+      "name": "Normal"
+    },
+    "author": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "assigned_to": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "MCP Redmine",
+    "description": "Permettre à Github Copilot d'aller directement lire les tickets du redmine interne.\r\n\r\nExemple de scénario : directement dire à Copilot d'aller voir le détails d'un ticket pour le faire travailler dessus.",
+    "start_date": "2026-09-30",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 8.0,
+    "total_estimated_hours": 8.0,
+    "spent_hours": 6.0,
+    "total_spent_hours": 6.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - SDK"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": "Non"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": "0"
+      }
+    ],
+    "created_on": "2026-09-30T12:01:04Z",
+    "updated_on": "2026-10-21T14:56:50Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 5207,
+        "filename": "clipboard-202610211656-aka9z.png",
+        "filesize": 30224,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/5207/clipboard-202610211656-aka9z.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/5207",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-10-21T14:56:40Z"
+      }
+    ],
+    "journals": [
+      {
+        "id": 80469,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Doc interne pour VS Code : https://srvfr-redmine/projects/isapv2/wiki/Github_Copilot#Configuration-du-MCP-redmine",
+        "created_on": "2026-09-30T12:55:04Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80470,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Pour tester : \r\n* Suivre la procédure interne\r\n* Tester que Copilot arrive bien à aller chercher les détails d'un ticket",
+        "created_on": "2026-09-30T12:56:59Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80471,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Pour l'instant, les MCP personnalisés ne sont pas disponible dans Visual Studio Insiders.\r\n\r\nMais quand ce sera disponible, il ne devrait pas y avoir beaucoup de chose à faire en plus par rapport à VS Code.",
+        "created_on": "2026-09-30T15:08:05Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "60"
+          }
+        ]
+      },
+      {
+        "id": 80472,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "En attente disponibilité dans Visual Studio Insiders.",
+        "created_on": "2026-09-30T15:08:31Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "7"
+          }
+        ]
+      },
+      {
+        "id": 80746,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "OK avec la dernière version de Visual Studio Insiders.\r\n\r\n!clipboard-202610211656-aka9z.png!\r\n",
+        "created_on": "2026-10-21T14:56:50Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "5207",
+            "old_value": null,
+            "new_value": "clipboard-202610211656-aka9z.png"
+          },
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "7",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "60",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

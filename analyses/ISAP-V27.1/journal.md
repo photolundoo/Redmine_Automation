@@ -99,3 +99,38 @@
 - 2026-10-16 17:55 — #8808 — analyse rédigée pour le lot 58
 - 2026-10-16 17:55 — #9035 — analyse rédigée pour le lot 58
 - 2026-10-16 17:55 — #8838 — analyse rédigée pour le lot 58
+- 2026-10-19 10:12 — #9033 — décision appliquée — ajout d’un contrôle de connexion SSO dans une procédure affiliée à NRT01
+- 2026-10-19 10:12 — #8966 — décision appliquée — nouvelle fiche Iris dédiée à la lecture de courriels dans le plan 13
+- 2026-10-19 10:12 — #8971 — décision appliquée — nouvelle fiche Iris dédiée à la création d’incidents par entityId dans le plan 13
+- 2026-10-19 10:12 — #8765 — décision appliquée — procédure mobile en arrière-plan avec durée et scénario contrôlé définis avant exécution
+- 2026-10-19 10:12 — #8780 — décision appliquée — fiche dédiée au transfert mobile de fichiers avec protocole livré à identifier
+- 2026-10-19 10:12 — #9093 — décision appliquée — sous-titre comportemental dans la fiche PAVPlugin approuvée pour #9094
+- 2026-10-19 10:12 — #8816 — décision appliquée — création d’une fiche dédiée conformité DC-09 pour CSR SIA dans le plan 06
+- 2026-10-19 10:12 — #8787 — décision appliquée — fiche Polestar gestion d’étage dans le plan 08, sans seuil altitude_offset non spécifié
+- 2026-10-19 10:12 — #8206 — décision appliquée — questions complémentaires ignorées ; dédoublonnage vérifié et adresse consignée sans verdict
+- 2026-10-19 10:12 — #8808 — décision appliquée — fiche dédiée Plugin WhatsApp dans le plan 13
+- 2026-10-19 11:50 — #9075 — décision appliquée — récepteur secondaire ajouté à la fiche DC-09 du CSR SIA
+- 2026-10-19 11:51 — #9035 — décision appliquée — création d’une fiche dédiée au tableau de bord des capteurs dans le plan 01
+- 2026-10-19 11:51 — #7812 — décision appliquée — ajout des trois destinations Appareil photo, Galerie photo et Fichiers au test mobile
+- 2026-10-19 11:52 — #9084 — décision appliquée — vérification limitée à la présence officielle de l’application sur le Play Store
+- 2026-10-19 11:53 — #8577 — décision appliquée — les rejets ne sont propagés à tous les utilisateurs que si le paramètre vaut true
+- 2026-10-19 11:54 — #8977 — décision appliquée — visibilité hiérarchique des ressources parent/enfant vérifiée dans la WinApp 3D
+- 2026-10-19 11:55 — #8838 — décision appliquée — nouvelle fiche Tableau de bord WebApp dans le plan 01, procédure soumise à relecture
+- 2026-10-19 11:56 — #8941 — décision appliquée — matrice des droits vidéo ignorée ; test focalisé sur le plugin local
+- 2026-10-19 11:57 — #6017 — reprise complète — migration ImageMagick++ NRT01 ; erreur de livraison du 19/10 inscrite en question humaine
+- 2026-10-19 11:58 — #8992 — reprise complète — scénario de première connexion, acceptation des CGU et reconnexion
+- 2026-10-19 11:59 — #9108 — reprise complète — contrôle de stabilité Durée/Pré-Affichage après modification de Début
+- 2026-10-19 11:59 — #9090 — reprise complète — vision depuis incident avec capteur relié ou non à une place
+- 2026-10-19 12:01 — #8830 — analyse — configuration du premier plan de la barre de synthèse selon opsbarAlwaysOnTop
+- 2026-10-19 12:02 — #9081 — analyse — création conditionnelle des MonitoredProcess au démarrage de la WinApp
+- 2026-10-19 12:03 — #8922 — analyse suspendue en attente de décision humaine sur la fiche cible ; aucun plan ne couvre le reset coordonné TechEventPlugin / CountingProcessor
+- 2026-10-19 12:05 — #8922 — analyse rédigée — scénario manuel de reset coordonné ; proposition de fiche dédiée au plan 10 consignée, décision de fiche encore à valider dans le terminal humain
+- 2026-10-22 15:20 — #8922 — décision humaine validée — fiche dédiée Seuils de comptage synchronisés dans le plan 10 ; analyse adaptée et vérifiée
+- 2026-10-22 15:22 — #6017 — reprise complète après mise à jour du ticket — décision intégrée : vérifier sans anomalie les fonctionnalités WebApp affiliées à ImageMagick++ 7.1.2 et signaler toute anomalie
+- 2026-10-22 15:22 — #8765 — décision humaine appliquée — essai de maintien en arrière-plan fixé à 24 h (86 400 secondes), avec scénario distinct de perte réseau
+- 2026-10-22 15:23 — #8780 — décision humaine appliquée — la question de choix FTPS/SFTP est sans objet pour ce ticket ; test ciblé sur le contournement FTPS décrit comme livré, SFTP hors périmètre
+- 2026-10-22 15:24 — #9092 — analyse — validation manuelle du MCP Redmine dans Visual Studio Insiders ; fiche cible proposée au plan 13, rattachement enregistré pour décision humaine
+- 2026-10-22 15:24 — #9129 — analyse — endpoint licence SmartShieldWebAPI, JSON générique et format PRTG intégrés à la fiche existante
+- 2026-10-22 15:26 — #8653 — analyse — reconnexion automatique après interruption 4G/5G et actualisation vidéo ; hypothèse de timeout non appliquée
+- 2026-10-22 15:33 — #9092 — décision humaine appliquée — création du nouveau plan Intégration MCP Redmine ; analyse mise à jour et conforme
+- 2026-10-22 15:37 — #8787 — décision humaine appliquée — création du nouveau plan Gestion d'étage — maquette Polestar ; analyse mise à jour et vérifiée

@@ -2,3 +2,4 @@
 referentiel/plans/
 __pycache__/
 analyses/*/.preparation
+analyses/*/.verrou

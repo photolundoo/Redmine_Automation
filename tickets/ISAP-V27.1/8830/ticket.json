@@ -1,0 +1,184 @@
+{
+  "issue": {
+    "id": 8830,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 5,
+      "name": "Haut"
+    },
+    "author": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "assigned_to": {
+      "id": 17,
+      "name": "Pascal Vognin"
+    },
+    "category": {
+      "id": 36,
+      "name": "com.egidium.isap.gui"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "[WinApp] Permettre de configuré la barre d'état au dessus de tout ou pas",
+    "description": "La barre d'état doit être au dessus de tout dans la WinApp, mais pas forcément au dessus de toutes les fenêtres Windows ...\r\nMettre un paramètre pour permettre de changer ce comportement.",
+    "start_date": null,
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 4.0,
+    "total_estimated_hours": 4.0,
+    "spent_hours": 13.0,
+    "total_spent_hours": 13.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - Navigation 3D"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": "Ajout d'un attribut sur la balise menubar\r\n<pre>\r\n<!-- opsbarAlwaysOnTop : if set to true, opsbar will be always on top of operating system - default value = true -->\r\n<menuBar opsbarAlwaysOnTop=\"true\">\r\n...\r\n</menuBar>\r\n</pre>"
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": "0"
+      }
+    ],
+    "created_on": "2026-03-24T10:43:19Z",
+    "updated_on": "2026-10-19T07:34:58Z",
+    "closed_on": null,
+    "attachments": [],
+    "journals": [
+      {
+        "id": 78082,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-03-24T10:43:41Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "67"
+          }
+        ]
+      },
+      {
+        "id": 80500,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "",
+        "created_on": "2026-10-05T09:56:24Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "90"
+          },
+          {
+            "property": "cf",
+            "name": "14",
+            "old_value": null,
+            "new_value": "0"
+          }
+        ]
+      },
+      {
+        "id": 80711,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "Ajout d'un attribut sur la balise menuBar\r\n<pre>\r\n<!-- opsbarAlwaysOnTop : if set to true, opsbar will be always on top of operating system - default value = true -->\r\n<menuBar opsbarAlwaysOnTop=\"true\">\r\n...\r\n</menuBar>\r\n</pre>\r\n\r\nSi la valeur est vraie, on garde le comportement actuelle : bar de synthèse au dessus de tout\r\nSi la valeur n'est pas vraie, la barre sera au dessus des fenêtre de l'application Isap3DGui uniquement.",
+        "created_on": "2026-10-19T07:34:58Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "90",
+            "new_value": "100"
+          },
+          {
+            "property": "cf",
+            "name": "13",
+            "old_value": "",
+            "new_value": "Ajout d'un attribut sur la balise menubar\r\n<pre>\r\n<!-- opsbarAlwaysOnTop : if set to true, opsbar will be always on top of operating system - default value = true -->\r\n<menuBar opsbarAlwaysOnTop=\"true\">\r\n...\r\n</menuBar>\r\n</pre>"
+          }
+        ]
+      }
+    ]
+  }
+}

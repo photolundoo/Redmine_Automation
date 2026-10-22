@@ -1,8 +1,8 @@
 # Couverture Playwright
 
-Générée le 16/10/2026 17:34 par `python analyses.py couverture`. Ne pas modifier à la main : corriger les rattachements dans `referentiel/correspondance-playwright.md`.
+Générée le 22/10/2026 15:36 par `python analyses.py couverture`. Ne pas modifier à la main : corriger les rattachements dans `referentiel/correspondance-playwright.md`.
 
-- Tests lus : 437
+- Tests lus : 620
 - Fiches du plan 01 couvertes : 11 sur 15
 - Tickets cités dans les titres de test : 121
 
@@ -11,7 +11,7 @@ Générée le 16/10/2026 17:34 par `python analyses.py couverture`. Ne pas modif
 | Fiche | Tests | Dont @a-valider | Fichiers |
 |---|---|---|---|
 | MC01 — Généraux | 9 | 1 | main-courante/Automatique_mc01-generaux-connexion.spec.ts |
-| MC02 — Onglet Main Courante | 159 | 76 | main-courante/Automatique_mc02-01-presence-elements.spec.ts, main-courante/Automatique_mc02-01b-traduction.spec.ts, main-courante/Automatique_mc02-01c-parametres-avances.spec.ts, main-courante/Automatique_mc02-02-applications.spec.ts, main-courante/Automatique_mc02-03-mode-lecture.spec.ts, main-courante/Automatique_mc02-04-options-affichage.spec.ts, main-courante/Automatique_mc02-05-comportement-lignes.spec.ts, main-courante/Automatique_mc02-06-parametres-incidents.spec.ts, main-courante/Automatique_mc02-07-session-timeout.spec.ts, main-courante/Automatique_mc02-08-lieux-adresse.spec.ts, main-courante/Automatique_mc02-09-bandeau-superieur.spec.ts, main-courante/Automatique_mc02-10-bulletin.spec.ts, ../fixtures/plan.ts, main-courante/Automatique_mc02-11-activites.spec.ts, main-courante/Automatique_mc02-12-administration.spec.ts |
+| MC02 — Onglet Main Courante | 321 | 151 | main-courante/Automatique_mc02-01-presence-elements.spec.ts, main-courante/Automatique_mc02-01b-traduction.spec.ts, main-courante/Automatique_mc02-01c-parametres-avances.spec.ts, main-courante/Automatique_mc02-02-applications.spec.ts, main-courante/Automatique_mc02-03-mode-lecture.spec.ts, main-courante/Automatique_mc02-04-options-affichage.spec.ts, main-courante/Automatique_mc02-05-comportement-lignes.spec.ts, main-courante/Automatique_mc02-06-parametres-incidents.spec.ts, main-courante/Automatique_mc02-07-session-timeout.spec.ts, main-courante/Automatique_mc02-08-lieux-adresse.spec.ts, main-courante/Automatique_mc02-09-bandeau-superieur.spec.ts, main-courante/Automatique_mc02-10-bulletin.spec.ts, ../fixtures/plan.ts, main-courante/Automatique_mc02-11-activites.spec.ts, main-courante/Automatique_mc02-12-administration.spec.ts, ../Tests_Propres/01 - Main Courante/MC02-01 - Présence des éléments et menu utilisateur.spec.ts, ../Tests_Propres/01 - Main Courante/MC02-02 - Applicatifs et bandeau inférieur.spec.ts, ../Tests_Propres/01 - Main Courante/MC02-03 - Paramètres avancés.spec.ts, ../Tests_Propres/01 - Main Courante/MC02-04 - Mode lecture.spec.ts, ../Tests_Propres/01 - Main Courante/MC02-05 - Options d'affichage.spec.ts, ../Tests_Propres/01 - Main Courante/MC02-06 - Comportement des lignes.spec.ts, ../Tests_Propres/01 - Main Courante/MC02-07 - Paramètres incidents et formulaires.spec.ts, ../Tests_Propres/01 - Main Courante/MC02-08 - Session et timeout.spec.ts, ../Tests_Propres/01 - Main Courante/MC02-09 - Lieux, intervenants et adresse.spec.ts, ../Tests_Propres/01 - Main Courante/MC02-10 - Bandeau supérieur et filtres.spec.ts, ../Tests_Propres/01 - Main Courante/MC02-11 - Bulletin.spec.ts, ../Tests_Propres/01 - Main Courante/MC02-12 - Activités.spec.ts, ../Tests_Propres/01 - Main Courante/MC02-13 - Onglet Administration.spec.ts |
 | MC03 — Onglet Statistiques | 40 | 35 | statistiques/Automatique_mc03-statistiques.spec.ts |
 | MC04 — Onglet Situation | 35 | 35 | situation/Automatique_mc04-situation.spec.ts |
 | MC05 — Onglet Vidéo | 26 | 25 | video/Automatique_mc05-video.spec.ts |
@@ -30,10 +30,12 @@ Générée le 16/10/2026 17:34 par `python analyses.py couverture`. Ne pas modif
 | MC02 - Activités | MC02 — Onglet Main Courante | identifiant et libellé |  |
 | MC02 - Applications | MC02 — Onglet Main Courante | identifiant et libellé |  |
 | MC02 - Bandeau inférieur de la Main Courante | MC02 — Onglet Main Courante | imposé |  |
+| MC02 - Bandeau permanent | MC02 — Onglet Main Courante | identifiant seul | à confirmer dans correspondance-playwright.md |
 | MC02 - Bandeau supérieur | MC02 — Onglet Main Courante | imposé |  |
 | MC02 - Bulletin | MC02 — Onglet Main Courante | identifiant et libellé |  |
 | MC02 - Comportement des lignes | MC02 — Onglet Main Courante | identifiant et libellé |  |
 | MC02 - Lieux, Intervenants & Champs adresse | MC02 — Onglet Main Courante | imposé |  |
+| MC02 - Menu utilisateur | MC02 — Onglet Main Courante | identifiant seul | à confirmer dans correspondance-playwright.md |
 | MC02 - Mode Lecture | MC02 — Onglet Main Courante | identifiant et libellé |  |
 | MC02 - Mode lecture | MC02 — Onglet Main Courante | identifiant et libellé |  |
 | MC02 - Onglet Administration | MC02 — Onglet Main Courante | identifiant et libellé |  |

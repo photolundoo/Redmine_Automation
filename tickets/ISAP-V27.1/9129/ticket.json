@@ -1,0 +1,233 @@
+{
+  "issue": {
+    "id": 9129,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 4,
+      "name": "Normal"
+    },
+    "author": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "assigned_to": {
+      "id": 11,
+      "name": "Alan Raynaud"
+    },
+    "category": {
+      "id": 133,
+      "name": "com.egidium.api"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "SmartShieldWebAPI : Information sur la licence",
+    "description": "Ajouter un blueprint @system@ donnant accès à des informations sur le système.\r\n\r\nLa première route à implémenter est la route @license@ qui donne les informations sur la licence du système. Cette route ne requiert pas d'authentification, puisque si la licence est expirée, le système d'authentification est de toute façon inaccessible.\r\n\r\nLe format produit par défaut est json, contenant :\r\n* La liste des postes autorisés, avec les dates de validités\r\n* La liste des modules, avec les dates de validités\r\n* Les limites, avec les dates de validités\r\n\r\nSi la requête GET demande une réponse au format \"application/PRTG\", la réponse est à la place un JSON au format attendu par PRTG, avec 1 canal par poste autorisé (modules et limites ne sont pas remontés) :\r\n* Valeur du canal : durée de validité restante (négatif si validité dépassée)\r\n* Seuils du canal :\r\n** warning : 7 jours\r\n** erreur : 0\r\n\r\nPlus d'info sur PRTG :\r\n* https://helpdesk.paessler.com/en/support/solutions/articles/76000063370\r\n* https://www.paessler.com/manuals/prtg/rest_json_data_sensor\r\n\r\nNouveau paramètre : chemin vers le fichier de licence (défaut : @%EGIDIUM_DATA%/licences/IsapLicense.lic@)\r\n\r\nFormat du fichier de licence décrit dans la page [[LicenseFile]] du wiki du redmine.\r\n\r\n",
+    "start_date": null,
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 8.0,
+    "total_estimated_hours": 8.0,
+    "spent_hours": 2.5,
+    "total_spent_hours": 2.5,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - SDK"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": "Oui"
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": "Ajout de l’endpoint  @/api/system/license@ pour consulter la licence du serveur Smartshield. Formats disponibles :\r\n* JSON générique contenant toutes les informations de licence\r\n* JSON interprétable par PRTG (requiert PRTG >= 26.3.122), contenant la durée de validité des licences des postes\r\n\r\nCela permet donc d'automatiser le suivi de l'expiration de la licence Smart Shield. Documentation complète dans SystemAPI.yaml.\r\n\r\n"
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": "1"
+      }
+    ],
+    "created_on": "2026-10-21T12:02:50Z",
+    "updated_on": "2026-10-21T13:39:22Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 5200,
+        "filename": "clipboard-202610211502-qu4ah.png",
+        "filesize": 86021,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/5200/clipboard-202610211502-qu4ah.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/5200",
+        "author": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "created_on": "2026-10-21T13:02:41Z"
+      }
+    ],
+    "journals": [
+      {
+        "id": 80739,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-10-21T12:04:08Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "description",
+            "old_value": "Ajouter un blueprint @system@ donnant accès à des informations sur le système.\r\n\r\nLa première route à implémenter est la route @license@ qui donne les informations sur la licence du système. Cette route ne requiert pas d'authentification, puisque si la licence est expirée, le système d'authentification est de toute façon inaccessible.\r\n\r\nLe format produit par défaut est json, contenant :\r\n* La liste des postes autorisés, avec les dates de validités\r\n* La liste des modules, avec les dates de validités\r\n* Les limites, avec les dates de validités\r\n\r\nSi la requête GET demande une réponse au format \"application/PRTG\", la réponse est à la place un JSON au format attendu par PRTG, avec 1 canal par poste autorisé (modules et limites ne sont pas remontés) :\r\n* Valeur du canal : durée de validité restante (négatif si validité dépassée)\r\n* Seuils du canal :\r\n** warning : 7 jours\r\n** erreur : 0\r\n\r\nPlus d'info sur PRTG :\r\n* https://helpdesk.paessler.com/en/support/solutions/articles/76000063370\r\n* https://www.paessler.com/manuals/prtg/rest_json_data_sensor\r\n\r\nNouveau paramètre : chemin vers le fichier de licence (défaut : @%EGIDIUM_DATA%/licences/IsapLicense.lic@)\r\n\r\nFormat du fichier de licence décrit dans la page @LicenseFile@ du wiki du redmine.\r\n\r\n",
+            "new_value": "Ajouter un blueprint @system@ donnant accès à des informations sur le système.\r\n\r\nLa première route à implémenter est la route @license@ qui donne les informations sur la licence du système. Cette route ne requiert pas d'authentification, puisque si la licence est expirée, le système d'authentification est de toute façon inaccessible.\r\n\r\nLe format produit par défaut est json, contenant :\r\n* La liste des postes autorisés, avec les dates de validités\r\n* La liste des modules, avec les dates de validités\r\n* Les limites, avec les dates de validités\r\n\r\nSi la requête GET demande une réponse au format \"application/PRTG\", la réponse est à la place un JSON au format attendu par PRTG, avec 1 canal par poste autorisé (modules et limites ne sont pas remontés) :\r\n* Valeur du canal : durée de validité restante (négatif si validité dépassée)\r\n* Seuils du canal :\r\n** warning : 7 jours\r\n** erreur : 0\r\n\r\nPlus d'info sur PRTG :\r\n* https://helpdesk.paessler.com/en/support/solutions/articles/76000063370\r\n* https://www.paessler.com/manuals/prtg/rest_json_data_sensor\r\n\r\nNouveau paramètre : chemin vers le fichier de licence (défaut : @%EGIDIUM_DATA%/licences/IsapLicense.lic@)\r\n\r\nFormat du fichier de licence décrit dans la page [[LicenseFile]] du wiki du redmine.\r\n\r\n"
+          }
+        ]
+      },
+      {
+        "id": 80741,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Déployé en avance de phase sur airbus pour test :\r\n!clipboard-202610211502-qu4ah.png!\r\n\r\nCela requiert une version de PRTG récente.",
+        "created_on": "2026-10-21T13:06:04Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "5200",
+            "old_value": null,
+            "new_value": "clipboard-202610211502-qu4ah.png"
+          }
+        ]
+      },
+      {
+        "id": 80742,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Implémentation terminée : ajout de l’endpoint public GET /api/system/license, avec réponse JSON détaillée et format PRTG v3 (canaux par poste, validité en jours et seuils d’alerte). Le chemin du fichier de licence est configurable ; les erreurs de lecture ou de format renvoient une erreur serveur. La documentation de l’API a été mise à jour dans public/doc/SystemAPI.yaml. La vérification de signature reste hors périmètre de cette V1.\n\nMise à jour effectuée par GitHub Copilot.",
+        "created_on": "2026-10-21T13:27:46Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "100"
+          },
+          {
+            "property": "cf",
+            "name": "13",
+            "old_value": "",
+            "new_value": "Ajout de l’endpoint public GET /api/system/license pour consulter les postes, modules et limites autorisés, avec leurs dates de validité. Une réponse au format PRTG v3 est également disponible : un canal par poste, exprimé en jours, avec seuils d’avertissement à 7 jours et d’erreur à 0. La validité illimitée est représentée par 9999 jours dans PRTG. Documentation de l’API : public/doc/SystemAPI.yaml."
+          }
+        ]
+      },
+      {
+        "id": 80743,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Evolution majeure car l'info sur licence est quelque chose qui nous a souvent été demandé.",
+        "created_on": "2026-10-21T13:37:41Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "13",
+            "old_value": "Ajout de l’endpoint public GET /api/system/license pour consulter les postes, modules et limites autorisés, avec leurs dates de validité. Une réponse au format PRTG v3 est également disponible : un canal par poste, exprimé en jours, avec seuils d’avertissement à 7 jours et d’erreur à 0. La validité illimitée est représentée par 9999 jours dans PRTG. Documentation de l’API : public/doc/SystemAPI.yaml.",
+            "new_value": "Ajout de l’endpoint  @/api/system/license@ pour consulter la licence du serveur Smartshield. Formats disponibles :\r\n* JSON générique contenant toutes les informations de licence\r\n* JSON interprétable par PRTG (requiert PRTG >= 26.3.122), contenant la durée de validité des licences des postes\r\n\r\nCela permet donc d'automatiser le suivi de l'expiration de la licence Smart Shield. Documentation complète dans SystemAPI.yaml.\r\n\r\n"
+          },
+          {
+            "property": "cf",
+            "name": "14",
+            "old_value": "0",
+            "new_value": "1"
+          }
+        ]
+      },
+      {
+        "id": 80744,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Pour tester le mode stantard, aller sur l'API à /api/system/licence pour voir que l'on a bien les informations de licence.\r\n\r\nPour tester le mode PRTG, constater sur le PRTG que les informations de licence du serveur airbus sont bien analysées par PRTG : https://tacticplan1.egidium.fr:444/sensor.htm?id=2884&tabid=1",
+        "created_on": "2026-10-21T13:39:08Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80745,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Doc (yaml + word) mis à jour",
+        "created_on": "2026-10-21T13:39:22Z",
+        "private_notes": false,
+        "details": []
+      }
+    ]
+  }
+}

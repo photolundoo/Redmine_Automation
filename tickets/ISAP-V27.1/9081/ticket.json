@@ -1,0 +1,187 @@
+{
+  "issue": {
+    "id": 9081,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 2,
+      "name": "Evolution"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 5,
+      "name": "Haut"
+    },
+    "author": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "assigned_to": {
+      "id": 17,
+      "name": "Pascal Vognin"
+    },
+    "category": {
+      "id": 36,
+      "name": "com.egidium.isap.gui"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "[WinApp] Créer le MonitoredProcess s'il n'existe pas",
+    "description": "Sur satory lors du fillisap les Monitored Process n'ont pas été créés :\r\n!clipboard-202609240941-ywvwa.png!\r\n\r\nC'est un problème récurrent quand on ajoute un nouveau poste client sans passer par le configurateur comme en dev chez nous.\r\nIl faudrait que l'iHM le créé s'il n'existe pas et si la configuration est bien \"Enabled\".\r\n\r\nPour le DisplayName fr/en mettre le nom de la machine.\r\n",
+    "start_date": "2026-09-24",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 2.0,
+    "total_estimated_hours": 2.0,
+    "spent_hours": 3.0,
+    "total_spent_hours": 3.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Core - Navigation 3D"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      },
+      {
+        "id": 14,
+        "name": "Evolution majeure",
+        "value": "0"
+      }
+    ],
+    "created_on": "2026-09-24T07:44:48Z",
+    "updated_on": "2026-10-19T07:16:44Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 5135,
+        "filename": "clipboard-202609240941-ywvwa.png",
+        "filesize": 16989,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/5135/clipboard-202609240941-ywvwa.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/5135",
+        "author": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "created_on": "2026-09-24T07:41:58Z"
+      }
+    ],
+    "journals": [
+      {
+        "id": 80599,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "",
+        "created_on": "2026-10-12T07:24:41Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "80"
+          }
+        ]
+      },
+      {
+        "id": 80609,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-10-12T11:14:39Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "67"
+          }
+        ]
+      },
+      {
+        "id": 80706,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "",
+        "created_on": "2026-10-19T07:16:44Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "80",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -42,8 +42,8 @@
     "is_private": false,
     "estimated_hours": 8.0,
     "total_estimated_hours": 8.0,
-    "spent_hours": 7.0,
-    "total_spent_hours": 7.0,
+    "spent_hours": 8.5,
+    "total_spent_hours": 8.5,
     "custom_fields": [
       {
         "id": 1,
@@ -97,9 +97,24 @@
       }
     ],
     "created_on": "2020-10-23T09:49:01Z",
-    "updated_on": "2026-10-06T09:44:28Z",
+    "updated_on": "2026-10-21T12:57:49Z",
     "closed_on": null,
-    "attachments": [],
+    "attachments": [
+      {
+        "id": 5187,
+        "filename": "clipboard-202610191043-w2au2.png",
+        "filesize": 3978,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/5187/clipboard-202610191043-w2au2.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/5187",
+        "author": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "created_on": "2026-10-19T08:43:47Z"
+      }
+    ],
     "relations": [
       {
         "id": 1627,
@@ -701,6 +716,83 @@
             "property": "attr",
             "name": "done_ratio",
             "old_value": "60",
+            "new_value": "100"
+          }
+        ]
+      },
+      {
+        "id": 80712,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "!clipboard-202610191043-w2au2.png!\r\n\r\nEst-ce qu'il manque un fichier à commit?\r\n\r\nJ'ai eu la même erreur avec SensorRepresentationProcessor",
+        "created_on": "2026-10-19T08:44:08Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "5187",
+            "old_value": null,
+            "new_value": "clipboard-202610191043-w2au2.png"
+          }
+        ]
+      },
+      {
+        "id": 80729,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-10-21T08:37:33Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "3",
+            "new_value": "2"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "100",
+            "new_value": "90"
+          }
+        ]
+      },
+      {
+        "id": 80738,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "CORE_RL_Magick_.lib n'existe plus dans la nouvelle version de ImageMagick. Suite à la migration, certains projets continuait de pointer dessus, et échouent à compiler suite à suppression de cette lib obsolète de CVS.\r\n\r\nImpactés :\r\n* SensorRepresentationProcessor -> corrigé par Pascal\r\n* GenericRecorderPlugin -> je m'en charge",
+        "created_on": "2026-10-21T11:39:22Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 80740,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-10-21T12:57:49Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "90",
             "new_value": "100"
           }
         ]

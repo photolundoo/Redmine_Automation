@@ -1,3 +1,8 @@
 {
-    "python.terminal.useEnvFile": true
+    "python.terminal.useEnvFile": true,
+    "chat.tools.terminal.autoApprove": {
+        "/^python analyses\\.py (preparer|prochain|contexte|question|journal|reprendre|appliquer|verifier|relecture|bilan|etat|synthese|exporter)\\b/": true,
+        "/^python analyses\\.py trancher\\b/": false,
+        "/--nouveau\\b/": false
+    }
 }

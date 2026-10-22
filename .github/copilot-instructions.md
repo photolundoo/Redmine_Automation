@@ -14,11 +14,14 @@
 |---|---|---|
 | `recuperer_tickets.py` | Récupère les tickets de la version dans `tickets/` | Script, lancé par l'agent ou l'utilisateur |
 | `convertir_plans.py` | Convertit les plans de validation Word en Markdown dans `referentiel/plans/` | Script |
-| `analyses.py` | `preparer` : récupération, conversion et état ; `etat` ; `verifier` : contrôle des analyses ; `reprendre` : archive une analyse à refaire ; `question`, `appliquer` et `journal` : seules écritures autorisées dans `decisions.md` et `journal.md` ; `synthese` ; `reparer-decisions` | Script |
+| `analyses.py` | `preparer` : ouvre le passage ; `prochain` : file de travail et mode de chaque ticket ; `contexte` : ouvre le travail sur un ticket et en donne le contexte ; `verifier` ; `reprendre` ; `question`, `relecture`, `appliquer` et `journal` : seules écritures autorisées dans `decisions.md` et `journal.md` ; `bilan` ; `trancher` (humain seulement) ; `synthese` ; `exporter` ; `reparer-decisions` | Script |
+| `.github/agents/` | Coordinateur tickets, Analyste ticket, Applicateur décision, Relecteur analyse | Humain |
+| `.github/prompts/` | Commandes `/analyser-tickets` et `/relire-analyses` | Humain |
 | `tickets/<version>/` | Tickets récupérés (`ticket.md`, `ticket.json`, pièces jointes) et `index.md` | Script uniquement |
 | `referentiel/plans/` | Copies de lecture des plans Word | Script uniquement |
 | `referentiel/correspondance-fonctions.md` | Fonction Redmine → plan et fiches à consulter | Humain |
 | `referentiel/modele-analyse.md` | Forme d'une analyse de ticket | Humain |
+| `referentiel/methode-analyse.md` | Méthode d'analyse en 5 étapes, appliquée par l'Analyste ticket | Humain |
 | `analyses/<version>/<numéro>.md` | Analyse d'un ticket | Agent |
 | `analyses/<version>/decisions.md` | Questions à trancher et décisions humaines | Script (questions et dates d'application), humain (décisions) |
 | `analyses/<version>/archives/` | Analyses remplacées lors d'une reprise | Script uniquement ; l'agent ne les lit pas |
@@ -42,12 +45,15 @@
 4. Ne jamais ouvrir, afficher ni recopier le contenu de `.env`.
 5. Ne jamais recopier d'identifiant ni de mot de passe lu dans un ticket ou un plan. Les remplacer par un repère explicite, par exemple `<MDP_LOCALADMIN>` ou `<IDENTIFIANT_SMTP>`.
 6. Ne jamais trancher à la place de l'humain : une anomalie probable, un choix de fiche ambigu, une fiche à créer ou une procédure à supprimer passent par `decisions.md`.
-7. Ne jamais écrire dans `decisions.md` : seules les commandes `python analyses.py question`, `appliquer` et `reparer-decisions` le modifient.
-8. Ne jamais écrire dans `journal.md` autrement que par `python analyses.py journal`.
-9. Ne jamais ajuster une analyse dans le seul but de satisfaire `python analyses.py verifier` : chaque écart signalé se corrige sur le fond, à partir du ticket et des plans.
-10. Une analyse n'est terminée que lorsque `python analyses.py verifier --ticket <numéro>` répond « Aucun écart ».
-11. Ne jamais lire ni modifier les scripts (`*.py`) ni les fichiers techniques `analyses/<version>/.preparation` et `.reprises.json`. Les messages des scripts et `python analyses.py --help` suffisent pour les utiliser.
-12. Ne jamais filtrer la sortie d'un script avec `Select-Object` ou un tube : lire la sortie complète.
+7. Ne jamais écrire dans `decisions.md` : seules les commandes `python analyses.py question`, `relecture`, `appliquer` et `reparer-decisions` le modifient, ainsi que l'humain.
+8. Ne jamais lancer `python analyses.py trancher` ni `python analyses.py preparer --nouveau` : ces commandes sont réservées à l'humain. `preparer` n'est lancé qu'une fois par passage, par le Coordinateur tickets seul.
+9. Ne travailler sur un ticket qu'après `python analyses.py contexte --ticket <numéro>`, et seulement sur ce ticket.
+10. Ne jamais écrire dans `journal.md` autrement que par `python analyses.py journal`.
+11. Ne jamais ajuster une analyse dans le seul but de satisfaire `python analyses.py verifier` : chaque écart signalé se corrige sur le fond, à partir du ticket et des plans.
+12. Une analyse n'est terminée que lorsque `python analyses.py verifier --ticket <numéro>` répond « Aucun écart ».
+13. Ne jamais lire ni modifier les scripts (`*.py`) ni les fichiers techniques `analyses/<version>/.preparation`, `.reprises.json`, `.relectures.json` et `.verrou`. Les messages des scripts et `python analyses.py --help` suffisent pour les utiliser.
+14. Ne jamais filtrer la sortie d'un script avec `Select-Object` ou un tube : lire la sortie complète.
+15. Ne jamais écrire dans le dossier `Test_Git` (projet Playwright, voisin de ce dépôt) : il se lit seulement. Les échanges avec lui passent par `echange/`, fichiers générés par `python analyses.py exporter`, qu'on ne modifie jamais à la main.
 
 ## Rédaction
 

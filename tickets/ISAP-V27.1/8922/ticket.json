@@ -1,0 +1,265 @@
+{
+  "issue": {
+    "id": 8922,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 1,
+      "name": "Anomalie"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 6,
+      "name": "Urgent"
+    },
+    "author": {
+      "id": 17,
+      "name": "Pascal Vognin"
+    },
+    "assigned_to": {
+      "id": 17,
+      "name": "Pascal Vognin"
+    },
+    "category": {
+      "id": 122,
+      "name": "com.egidium.pr.counting"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "Erreur sur calcul des seuils de comptage - Désynchronisation techevent plugin et countingprocessor",
+    "description": "Vu sur eurosatory ce weekend.\r\n\r\nLe calcul des seuils n'est pas synchronisé avec la mise à zero des comptages par techvent.\r\nJe détaillerai l'analyse qu'on a fait du code et les points à corriger améliorer.\r\n\r\nMais les objectifs de ce case sont déjà ciblés :\r\n* Faire en sorte que le plugin techvent remette à zero ses comptages avant que counting processor mette à zero le seuil actuellement dépassé\r\n** Pour ça on ajoutera une variable dans IsapGrid-Application qui est l'heure du reset des comptages\r\n** Techevent devra utiliser cette heure -15min pour faire son reset des valeurs (ça permet d'être large pour mettre à jour les valeurs en base et qu'elle soit bien traitées si on a un très gros volume de données)\r\n** CountingProcessor devra pouvoir être configuré pour utilise l'heure définie dans la grille pour reset (aujourd'hui ce n'est pas configurable)\r\n\r\n",
+    "start_date": "2026-10-12",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 21.0,
+    "total_estimated_hours": 21.0,
+    "spent_hours": 31.0,
+    "total_spent_hours": 31.0,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "SIAE"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 6,
+        "name": "Version source",
+        "value": "ISAP-V5.5.1"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "ISAP Plugins - Contrôle d'Accès"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      }
+    ],
+    "created_on": "2026-06-15T09:53:30Z",
+    "updated_on": "2026-10-19T07:21:48Z",
+    "closed_on": null,
+    "attachments": [],
+    "journals": [
+      {
+        "id": 78666,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "",
+        "created_on": "2026-06-15T09:53:40Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "66"
+          },
+          {
+            "property": "cf",
+            "name": "6",
+            "old_value": "ISAP-V25.1",
+            "new_value": "ISAP-V5.5.1"
+          }
+        ]
+      },
+      {
+        "id": 78667,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "Outre les développements et modifications de configuration à faire, on a remarqué un code assez complexe pour définir si on doit ou non appliquer le reset.\n\nLe code date depuis longtemps (Février 2015).\n\nIl est à revoir et corriger car je mélange des choses étranges/incompatibles pour déterminer si on doit reset\n* On sauvegarde la date du dernier reset\n* On vérifie si le nombre d'heures depuis ce dernier reset est > à l'heure locale au moment de la vérification du reset\n** Si oui on fait le reset\n** Si non on attend 24h apriori\n\n* La sauvegarde est faite en HK_CURRENT_USER  : il faut aussi changer ça en localmachine car ce sont des procs",
+        "created_on": "2026-06-15T10:08:01Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 78720,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "Apriori seuls les app elevated via UAC sont capable d'écrire dans HKLM :\r\n\r\nlearn.microsoft.com/fr-fr/windows/win32/api/winreg/nf-winreg-regcreatekeyexa\r\nstackoverflow.com/questions/3146666/access-to-hklm-registry-branch-on-win-7-from-within-application",
+        "created_on": "2026-06-22T09:11:03Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 78725,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-06-22T12:49:00Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "66",
+            "new_value": "67"
+          }
+        ]
+      },
+      {
+        "id": 79374,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "On pourrait aussi utiliser la base ISAP (sans doute plus simple)",
+        "created_on": "2026-07-28T11:35:12Z",
+        "private_notes": false,
+        "details": []
+      },
+      {
+        "id": 79375,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-07-28T11:35:25Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "10"
+          }
+        ]
+      },
+      {
+        "id": 80538,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-10-06T14:35:29Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "cf",
+            "name": "3",
+            "old_value": "Produit",
+            "new_value": "SIAE"
+          }
+        ]
+      },
+      {
+        "id": 80547,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "Pour en parler lundi, surtout que Pascal avait en fait été presque jusqu'au bout.",
+        "created_on": "2026-10-07T07:49:57Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "start_date",
+            "old_value": null,
+            "new_value": "2026-10-12"
+          }
+        ]
+      },
+      {
+        "id": 80707,
+        "user": {
+          "id": 17,
+          "name": "Pascal Vognin"
+        },
+        "notes": "Ajout d'une configuration dans \"C:\\DEV\\EGIDIUM\\com.egidium.pr.counting\\public\\conf\\grid\\T-Server-CountingProcessor.xml\"\r\n\r\n<pre>\r\n<parameter name=\"counting-reset-hour\" default=\"3\" />\r\n</pre>\r\n\r\nLa configuration est en accord avec TechEventPlugin : 3h du matin par défaut.\r\nTechEventPlugin fait le reset 5min avant l'heure configurée.\r\n",
+        "created_on": "2026-10-19T07:21:48Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "10",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

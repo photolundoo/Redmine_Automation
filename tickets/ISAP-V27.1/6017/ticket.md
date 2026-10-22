@@ -12,7 +12,7 @@
 | Assigné à | Alan Raynaud |
 | Avancement | 100 % |
 | Créé le | 23/10/2020 11:49 |
-| Mis à jour le | 06/10/2026 11:44 |
+| Mis à jour le | 21/10/2026 14:57 |
 | Origine | Interne |
 | Phase | RD |
 | Projet 1 à livrer | Produit |
@@ -36,6 +36,10 @@
 - Liée à #9022
 - Bloque #8994
 - Bloque #6918
+
+## Pièces jointes
+
+- [clipboard-202610191043-w2au2.png](pieces_jointes/clipboard-202610191043-w2au2.png) — 4 Ko, ajoutée par Pascal Vognin le 19/10/2026 10:43
 
 ## Historique
 
@@ -193,3 +197,35 @@ Cause :
 * UTF8-Generator utilisait une fonction dépréciée de ImageMagick
 * vsnSystem, qui utilise UTF8-Generator n'est pas détecté par l'algo de calcul de dépendances
 ~~~
+
+### 19/10/2026 10:44 — Pascal Vognin
+
+- Pièce jointe ajoutée : clipboard-202610191043-w2au2.png
+
+~~~textile
+!clipboard-202610191043-w2au2.png!
+
+Est-ce qu'il manque un fichier à commit?
+
+J'ai eu la même erreur avec SensorRepresentationProcessor
+~~~
+
+### 21/10/2026 10:37 — Alan Raynaud
+
+- Statut : Résolu → En cours
+- Avancement : 100 % → 90 %
+
+### 21/10/2026 13:39 — Alan Raynaud
+
+~~~textile
+CORE_RL_Magick_.lib n'existe plus dans la nouvelle version de ImageMagick. Suite à la migration, certains projets continuait de pointer dessus, et échouent à compiler suite à suppression de cette lib obsolète de CVS.
+
+Impactés :
+* SensorRepresentationProcessor -> corrigé par Pascal
+* GenericRecorderPlugin -> je m'en charge
+~~~
+
+### 21/10/2026 14:57 — Alan Raynaud
+
+- Statut : En cours → Résolu
+- Avancement : 90 % → 100 %

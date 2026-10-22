@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-10-16T17:34:47",
+ "genere_le": "2026-10-22T15:36:59",
  "fiches": {
   "MC10 — Onglet Administration": {
    "fiche": "MC10 — Onglet Administration",
@@ -91,7 +91,20 @@
     "main-courante/Automatique_mc02-10-bulletin.spec.ts",
     "../fixtures/plan.ts",
     "main-courante/Automatique_mc02-11-activites.spec.ts",
-    "main-courante/Automatique_mc02-12-administration.spec.ts"
+    "main-courante/Automatique_mc02-12-administration.spec.ts",
+    "../Tests_Propres/01 - Main Courante/MC02-01 - Présence des éléments et menu utilisateur.spec.ts",
+    "../Tests_Propres/01 - Main Courante/MC02-02 - Applicatifs et bandeau inférieur.spec.ts",
+    "../Tests_Propres/01 - Main Courante/MC02-03 - Paramètres avancés.spec.ts",
+    "../Tests_Propres/01 - Main Courante/MC02-04 - Mode lecture.spec.ts",
+    "../Tests_Propres/01 - Main Courante/MC02-05 - Options d'affichage.spec.ts",
+    "../Tests_Propres/01 - Main Courante/MC02-06 - Comportement des lignes.spec.ts",
+    "../Tests_Propres/01 - Main Courante/MC02-07 - Paramètres incidents et formulaires.spec.ts",
+    "../Tests_Propres/01 - Main Courante/MC02-08 - Session et timeout.spec.ts",
+    "../Tests_Propres/01 - Main Courante/MC02-09 - Lieux, intervenants et adresse.spec.ts",
+    "../Tests_Propres/01 - Main Courante/MC02-10 - Bandeau supérieur et filtres.spec.ts",
+    "../Tests_Propres/01 - Main Courante/MC02-11 - Bulletin.spec.ts",
+    "../Tests_Propres/01 - Main Courante/MC02-12 - Activités.spec.ts",
+    "../Tests_Propres/01 - Main Courante/MC02-13 - Onglet Administration.spec.ts"
    ],
    "groupes": [
     "MC02 - Présence des éléments",
@@ -110,10 +123,12 @@
     "MC02 - Bandeau supérieur",
     "MC02 - Bulletin",
     "MC02 - Activités",
-    "MC02 - Onglet Administration"
+    "MC02 - Onglet Administration",
+    "MC02 - Bandeau permanent",
+    "MC02 - Menu utilisateur"
    ],
-   "tests": 159,
-   "a_valider": 76
+   "tests": 321,
+   "a_valider": 151
   },
   "MC12 — Tests à plusieurs personnes": {
    "fiche": "MC12 — Tests à plusieurs personnes",
@@ -179,6 +194,14 @@
    {
     "fichier": "main-courante/Automatique_mc02-03-mode-lecture.spec.ts",
     "titre": "[MC02-067] Modifier l'incident depuis Operator : affichage orange temporaire des champs modifiés"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-04 - Mode lecture.spec.ts",
+    "titre": "[MC02-067 à MC02-072] Un incident PlaywrightAdmin apparaît chez Operator, sauf en Mode lecture"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-04 - Mode lecture.spec.ts",
+    "titre": "[MC02-073] Modifier l'incident depuis Operator : affichage orange temporaire des champs modifiés"
    }
   ],
   "7162": [
@@ -619,18 +642,30 @@
    {
     "fichier": "main-courante/Automatique_mc02-01-presence-elements.spec.ts",
     "titre": "[MC02-002] Le menu utilisateur affiche Administration, Mode expert, Aide, Déconnexion, Thème, FR/EN, Paramètres avancés (#4589)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-01 - Présence des éléments et menu utilisateur.spec.ts",
+    "titre": "[MC02-005] Le menu utilisateur affiche Administration, Aide, Déconnexion, Thème, FR/EN, Paramètres avancés (#4589)"
    }
   ],
   "7950": [
    {
     "fichier": "main-courante/Automatique_mc02-01c-parametres-avances.spec.ts",
     "titre": "[MC02-011] Deux mots de passe différents ne provoquent pas de freeze de la page (#7950)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-03 - Paramètres avancés.spec.ts",
+    "titre": "[MC02-036] Deux mots de passe différents ne provoquent pas de freeze de la page (#7950)"
    }
   ],
   "7933": [
    {
     "fichier": "main-courante/Automatique_mc02-01c-parametres-avances.spec.ts",
     "titre": "[MC02-019] Échanger les colonnes Niveau et Type par drag'n drop (#7933)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-03 - Paramètres avancés.spec.ts",
+    "titre": "[MC02-028] Échanger les colonnes Niveau et Type par drag'n drop (#7933)"
    }
   ],
   "8142": [
@@ -645,54 +680,98 @@
    {
     "fichier": "main-courante/Automatique_mc02-02-applications.spec.ts",
     "titre": "[MC02-035] Le contenu du fichier exporté est lisible, sans erreur d'affichage (#8142)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-02 - Applicatifs et bandeau inférieur.spec.ts",
+    "titre": "[MC02-012 / MC02-013] Export CSV de plusieurs lignes : fichier créé, colonnes affichées présentes (#8142)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-02 - Applicatifs et bandeau inférieur.spec.ts",
+    "titre": "[MC02-014] Le contenu du fichier exporté est lisible, sans erreur d'affichage (#8142)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-06 - Comportement des lignes.spec.ts",
+    "titre": "[MC02-011] Ajouter une ligne incident contenant un # dans la description (#8142)"
    }
   ],
   "8638": [
    {
     "fichier": "main-courante/Automatique_mc02-02-applications.spec.ts",
     "titre": "[MC02-040 / MC02-041] Le sélecteur propose 10/25/50, pas 100/200/500 (#8638)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-02 - Applicatifs et bandeau inférieur.spec.ts",
+    "titre": "[MC02-019 / MC02-020] Le sélecteur propose 10/25/50, pas 100/200/500 (#8638)"
    }
   ],
   "8022": [
    {
     "fichier": "main-courante/Automatique_mc02-03-mode-lecture.spec.ts",
     "titre": "[MC02-056] En Mode lecture, la page de détail reste non éditable (#8022)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-04 - Mode lecture.spec.ts",
+    "titre": "[MC02-063] En Mode lecture, la page de détail reste non éditable (#8022)"
    }
   ],
   "7846": [
    {
     "fichier": "main-courante/Automatique_mc02-04-options-affichage.spec.ts",
     "titre": "[MC02-068] Le menu Options présente les options générales et d'affichage (#7846)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-05 - Options d'affichage.spec.ts",
+    "titre": "[MC02-074] Le menu Options présente les options générales et d'affichage (#7846)"
    }
   ],
   "7882": [
    {
     "fichier": "main-courante/Automatique_mc02-04-options-affichage.spec.ts",
     "titre": "[MC02-071 à MC02-073] Option « Mettre une position » : position initiale, adresse vide puis mise à jour (#7882 #7907)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-05 - Options d'affichage.spec.ts",
+    "titre": "[MC02-077 à MC02-079] Option « Mettre une position » : position initiale, adresse vide puis mise à jour (#7882 #7907)"
    }
   ],
   "7907": [
    {
     "fichier": "main-courante/Automatique_mc02-04-options-affichage.spec.ts",
     "titre": "[MC02-071 à MC02-073] Option « Mettre une position » : position initiale, adresse vide puis mise à jour (#7882 #7907)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-05 - Options d'affichage.spec.ts",
+    "titre": "[MC02-077 à MC02-079] Option « Mettre une position » : position initiale, adresse vide puis mise à jour (#7882 #7907)"
    }
   ],
   "8855": [
    {
     "fichier": "main-courante/Automatique_mc02-05-comportement-lignes.spec.ts",
     "titre": "[MC02-086] Une vidéo uploadée est accessible depuis le détail (#8855)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-06 - Comportement des lignes.spec.ts",
+    "titre": "[MC02-092] Une vidéo uploadée est accessible depuis le détail (#8855)"
    }
   ],
   "8686": [
    {
     "fichier": "main-courante/Automatique_mc02-05-comportement-lignes.spec.ts",
     "titre": "[MC02-087] La pièce jointe est téléchargeable (#8686)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-06 - Comportement des lignes.spec.ts",
+    "titre": "[MC02-093] La pièce jointe est téléchargeable (#8686)"
    }
   ],
   "7927": [
    {
     "fichier": "main-courante/Automatique_mc02-05-comportement-lignes.spec.ts",
     "titre": "[MC02-101] Sélectionner une valeur l'ajoute dans « Pris en charge par » (#7927)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-06 - Comportement des lignes.spec.ts",
+    "titre": "[MC02-107] Sélectionner une valeur l'ajoute dans « Pris en charge par » (#7927)"
    }
   ],
   "8632": [
@@ -707,48 +786,88 @@
    {
     "fichier": "main-courante/Automatique_mc02-09-bandeau-superieur.spec.ts",
     "titre": "[MC02-148] Le choix « Incident sans lieu » perdure après fermeture du filtre (#8632)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-06 - Comportement des lignes.spec.ts",
+    "titre": "[MC02-105] Par défaut, la colonne Relevé par est vide (#8632)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-10 - Bandeau supérieur et filtres.spec.ts",
+    "titre": "[MC02-152 / MC02-153] Le filtre Lieux liste les lieux, dont « Incident sans lieu » (#8632)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-10 - Bandeau supérieur et filtres.spec.ts",
+    "titre": "[MC02-154] Le choix « Incident sans lieu » perdure après fermeture du filtre (#8632)"
    }
   ],
   "6865": [
    {
     "fichier": "main-courante/Automatique_mc02-05-comportement-lignes.spec.ts",
     "titre": "[MC02-105] Supprimer une valeur de Relevé par / Pris en charge par / Lieu affiche la confirmation (#6865)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-06 - Comportement des lignes.spec.ts",
+    "titre": "[MC02-111] Supprimer une valeur de Relevé par / Pris en charge par / Lieu affiche la confirmation (#6865)"
    }
   ],
   "7633": [
    {
     "fichier": "main-courante/Automatique_mc02-06-parametres-incidents.spec.ts",
     "titre": "[MC02-117] iceMap_newIncidentNoLevel = true : incident créé sans niveau de gravité (#7633)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-07 - Paramètres incidents et formulaires.spec.ts",
+    "titre": "[MC02-123] iceMap_newIncidentNoLevel = true : incident créé sans niveau de gravité (#7633)"
    }
   ],
   "7883": [
    {
     "fichier": "main-courante/Automatique_mc02-06-parametres-incidents.spec.ts",
     "titre": "[MC02-118] iceMap_mandatoryFieldsOpenIncident : le formulaire affiche les champs obligatoires (#7883 #8001)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-07 - Paramètres incidents et formulaires.spec.ts",
+    "titre": "[MC02-124] iceMap_mandatoryFieldsOpenIncident : le formulaire affiche les champs obligatoires (#7883 #8001)"
    }
   ],
   "8001": [
    {
     "fichier": "main-courante/Automatique_mc02-06-parametres-incidents.spec.ts",
     "titre": "[MC02-118] iceMap_mandatoryFieldsOpenIncident : le formulaire affiche les champs obligatoires (#7883 #8001)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-07 - Paramètres incidents et formulaires.spec.ts",
+    "titre": "[MC02-124] iceMap_mandatoryFieldsOpenIncident : le formulaire affiche les champs obligatoires (#7883 #8001)"
    }
   ],
   "8794": [
    {
     "fichier": "main-courante/Automatique_mc02-06-parametres-incidents.spec.ts",
     "titre": "[MC02-119] Création via formulaire possible avec « Détail au clic » activé (#8794)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-07 - Paramètres incidents et formulaires.spec.ts",
+    "titre": "[MC02-125] Création via formulaire possible avec « Détail au clic » activé (#8794)"
    }
   ],
   "7608": [
    {
     "fichier": "main-courante/Automatique_mc02-06-parametres-incidents.spec.ts",
     "titre": "[MC02-120] iceMap_maxDelayToModify = 10 : incident non modifiable après 10 minutes (#7608)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-07 - Paramètres incidents et formulaires.spec.ts",
+    "titre": "[MC02-126] iceMap_maxDelayToModify = 10 : incident non modifiable après 10 minutes (#7608)"
    }
   ],
   "8303": [
    {
     "fichier": "main-courante/Automatique_mc02-06-parametres-incidents.spec.ts",
     "titre": "[MC02-121] Clic droit → « Voir dans l'application Situation » ouvre correctement Situation (#8303)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-07 - Paramètres incidents et formulaires.spec.ts",
+    "titre": "[MC02-127] Clic droit → « Voir dans l'application Situation » ouvre correctement Situation (#8303)"
    }
   ],
   "8760": [
@@ -759,54 +878,94 @@
    {
     "fichier": "main-courante/Automatique_mc02-06-parametres-incidents.spec.ts",
     "titre": "[MC02-124 / MC02-125] Enter hors de tout champ crée une mention, à chaque appui"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-07 - Paramètres incidents et formulaires.spec.ts",
+    "titre": "[MC02-128 / MC02-129] Enter dans la Description d'un incident valide simplement la saisie"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-07 - Paramètres incidents et formulaires.spec.ts",
+    "titre": "[MC02-130 / MC02-131] Enter hors de tout champ crée une mention, à chaque appui"
    }
   ],
   "7801": [
    {
     "fichier": "main-courante/Automatique_mc02-07-session-timeout.spec.ts",
     "titre": "[MC02-126] Timeout par défaut (15 s) : bascule de session vers le 2e navigateur (#7801)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-08 - Session et timeout.spec.ts",
+    "titre": "[MC02-132] Timeout par défaut (15 s) : bascule de session vers le 2e navigateur (#7801)"
    }
   ],
   "7924": [
    {
     "fichier": "main-courante/Automatique_mc02-08-lieux-adresse.spec.ts",
     "titre": "[MC02-128] Création de Lieu / Relevé par désactivée : aucune création à la volée, message d'erreur (#7924)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-09 - Lieux, intervenants et adresse.spec.ts",
+    "titre": "[MC02-134] Création de Lieu / Relevé par désactivée : aucune création à la volée, message d'erreur (#7924)"
    }
   ],
   "8164": [
    {
     "fichier": "main-courante/Automatique_mc02-08-lieux-adresse.spec.ts",
     "titre": "[MC02-131] iceMap_addressManagerFieldLinked = ['CustomReport1'] : « circonstance » devient un champ d'adresse (#8164)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-09 - Lieux, intervenants et adresse.spec.ts",
+    "titre": "[MC02-137] iceMap_addressManagerFieldLinked = ['CustomReport1'] : « circonstance » devient un champ d'adresse (#8164)"
    }
   ],
   "7969": [
    {
     "fichier": "main-courante/Automatique_mc02-09-bandeau-superieur.spec.ts",
     "titre": "[MC02-155] Afficher + Trier par + Lieux + Niveau cumulés : aucune incohérence (#7969)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-10 - Bandeau supérieur et filtres.spec.ts",
+    "titre": "[MC02-161] Afficher + Trier par + Lieux + Niveau cumulés : aucune incohérence (#7969)"
    }
   ],
   "7862": [
    {
     "fichier": "main-courante/Automatique_mc02-10-bulletin.spec.ts",
     "titre": "[MC02-159] « Trier par » Heure / Niveau présent et fonctionnel (#7862)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-11 - Bulletin.spec.ts",
+    "titre": "[MC02-165] « Trier par » Heure / Niveau présent et fonctionnel (#7862)"
    }
   ],
   "7857": [
    {
     "fichier": "main-courante/Automatique_mc02-10-bulletin.spec.ts",
     "titre": "[MC02-177 / MC02-178] 3 incidents niveau ≥ 2, F5 : option décochée ; baisse de niveau puis bascule actuel / max (#7857)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-11 - Bulletin.spec.ts",
+    "titre": "[MC02-183 / MC02-184] 3 incidents niveau ≥ 2, F5 : option décochée ; baisse de niveau puis bascule actuel / max (#7857)"
    }
   ],
   "7461": [
    {
     "fichier": "main-courante/Automatique_mc02-10-bulletin.spec.ts",
     "titre": "[MC02-184] PDF exportés : logo Egidium lisible, aucun élément illisible, « Pris en charge par » sans bug graphique (#7461)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-11 - Bulletin.spec.ts",
+    "titre": "[MC02-190] PDF exportés : logo Egidium lisible, aucun élément illisible, « Pris en charge par » sans bug graphique (#7461)"
    }
   ],
   "7639": [
    {
     "fichier": "main-courante/Automatique_mc02-11-activites.spec.ts",
     "titre": "[MC02-189] 3 modifications successives du niveau d'un incident apparaissent dans ses Activités (#7639)"
+   },
+   {
+    "fichier": "../Tests_Propres/01 - Main Courante/MC02-12 - Activités.spec.ts",
+    "titre": "[MC02-195] 3 modifications successives du niveau d'un incident apparaissent dans ses Activités (#7639)"
    }
   ],
   "5474": [

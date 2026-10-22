@@ -1,0 +1,356 @@
+{
+  "issue": {
+    "id": 8653,
+    "project": {
+      "id": 3,
+      "name": "EGIDIUM"
+    },
+    "tracker": {
+      "id": 1,
+      "name": "Anomalie"
+    },
+    "status": {
+      "id": 3,
+      "name": "Résolu",
+      "is_closed": false
+    },
+    "priority": {
+      "id": 5,
+      "name": "Haut"
+    },
+    "author": {
+      "id": 3,
+      "name": "Fernand Alcatrao"
+    },
+    "assigned_to": {
+      "id": 55,
+      "name": "Vincent Tellier"
+    },
+    "category": {
+      "id": 106,
+      "name": "com.egidium.isap.gui.web"
+    },
+    "fixed_version": {
+      "id": 67,
+      "name": "ISAP-V27.1"
+    },
+    "subject": "[WebApp] Nombreuses déconnexions lors de la présentation NaTran",
+    "description": "D'après Mickaël il ne l'a constaté que depuis un partage de connexion en 4G (il était à l’hôtel le matin).\r\nDepuis chez lui en Wifi, il n'avait pas eu ces soucis.\r\nChez NaTran on a pu avoir un accès Wifi mais il ne permettait pas d'utiliser un VPN (déjà vu à VGP mairie de Buc). La démo préparée/utilisée est ici :\r\nhttps://vmsfr-demo01.egidium.fr/maincourante/#/\r\n\r\nJ'avais tout remis sur le PC de Mickaël pour faire la démonstration en local sur son PC, mais il me semble qu'il avait rencontré un autre soucis ?\r\n\r\nHeureusement ça ne s'est pas trop vu ...\r\n\r\nMickaël essaye de reproduire en affichant la console et appelle Vincent pour lui montrer les erreurs.\r\nAprès coup, peut-être que le paramètre iceMap_accountUseMultipleTimeTimeout=0 permet de contourner ? On pourra essayer une fois qu'on aura reproduit.\r\n\r\nPas mal de bugs aussi concernant la vidéo avec le bouton vision qui n'affichait/rafraichissait pas dans la fenêtre vidéo, ... Mickaël a souvent fermer les onglets vidéo, puis les a remis et mis les caméras en manuel.",
+    "start_date": "2025-10-30",
+    "due_date": null,
+    "done_ratio": 100,
+    "is_private": false,
+    "estimated_hours": 8.0,
+    "total_estimated_hours": 8.0,
+    "spent_hours": 73.5,
+    "total_spent_hours": 73.5,
+    "custom_fields": [
+      {
+        "id": 1,
+        "name": "Origine",
+        "value": "Interne"
+      },
+      {
+        "id": 2,
+        "name": "Phase",
+        "value": "RD"
+      },
+      {
+        "id": 3,
+        "name": "Projet 1 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 4,
+        "name": "Projet 2 à livrer",
+        "value": "Produit"
+      },
+      {
+        "id": 6,
+        "name": "Version source",
+        "value": "ISAP-V25.1"
+      },
+      {
+        "id": 7,
+        "name": "Fonction",
+        "value": "WebApp - Main Courante"
+      },
+      {
+        "id": 8,
+        "name": "Release notes",
+        "value": ""
+      },
+      {
+        "id": 9,
+        "name": "Référence support",
+        "value": ""
+      },
+      {
+        "id": 11,
+        "name": "Numéro de Patch",
+        "value": ""
+      },
+      {
+        "id": 13,
+        "name": "Description release notes",
+        "value": ""
+      }
+    ],
+    "created_on": "2025-10-30T08:17:59Z",
+    "updated_on": "2026-10-20T08:59:11Z",
+    "closed_on": null,
+    "attachments": [
+      {
+        "id": 5026,
+        "filename": "clipboard-202608101815-fbkxi.png",
+        "filesize": 38025,
+        "content_type": "image/png",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/5026/clipboard-202608101815-fbkxi.png",
+        "thumbnail_url": "https://srvfr-redmine/attachments/thumbnail/5026",
+        "author": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "created_on": "2026-08-10T16:15:32Z"
+      },
+      {
+        "id": 5077,
+        "filename": "Logs.zip",
+        "filesize": 71396,
+        "content_type": "application/zip",
+        "description": "",
+        "content_url": "https://srvfr-redmine/attachments/download/5077/Logs.zip",
+        "author": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "created_on": "2026-09-04T08:35:12Z"
+      }
+    ],
+    "journals": [
+      {
+        "id": 76174,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2025-10-30T08:18:07Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "16",
+            "new_value": "66"
+          }
+        ]
+      },
+      {
+        "id": 76244,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "D'après Mickael on perdait aussi le RDP donc pertes réseaux liées au partage réseau 5G sur téléphone.\r\nCa reconnexion devrait quand même se faire.\r\n\r\nPour reproduire, utilisé un partage de connexion 4G/5G",
+        "created_on": "2025-11-07T16:09:57Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "priority_id",
+            "old_value": "6",
+            "new_value": "5"
+          }
+        ]
+      },
+      {
+        "id": 77516,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "J'ai push sur la branche #8653-connectionLost_intempestif un correctif.\r\n\r\nCe correctif passe un paramètre à connectionManager si c'est une nouvelle connexion qui permet de ne pas utiliser l'ancien uuid et en générer un nouveau. Je ferme les proxycon après la reconnexion pour qu'ils soient régénérés de manière clean.\r\n\r\nça résout par ailleurs des problèmes sur le mobile quand on \"quitte\" l'application (veille ou background task)",
+        "created_on": "2026-02-11T16:09:47Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "0",
+            "new_value": "40"
+          }
+        ]
+      },
+      {
+        "id": 77529,
+        "user": {
+          "id": 60,
+          "name": "Lucie Thomas"
+        },
+        "notes": "",
+        "created_on": "2026-02-13T08:19:29Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "assigned_to_id",
+            "old_value": "55",
+            "new_value": "60"
+          }
+        ]
+      },
+      {
+        "id": 77610,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": null,
+        "created_on": "2026-02-24T09:11:03Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "1",
+            "new_value": "2"
+          }
+        ]
+      },
+      {
+        "id": 79353,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-07-28T11:20:24Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "fixed_version_id",
+            "old_value": "66",
+            "new_value": "67"
+          }
+        ]
+      },
+      {
+        "id": 79716,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "J'ai mis à jour la machine demo. Avant je me suis déconnecté de l'application mobile.\nPuis j'ai arrêté les services ISAP pour pouvoir appliqué les MàJ des binaires.\nL'application mobile qui affichait la page de connexion a détecté cette perte de connexion et affiché :\n",
+        "created_on": "2026-08-10T16:14:50Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "5025",
+            "old_value": null,
+            "new_value": "clipboard-202608101814-q1rvj.png"
+          }
+        ]
+      },
+      {
+        "id": 79717,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "",
+        "created_on": "2026-08-10T16:15:05Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "5025",
+            "old_value": "clipboard-202608101814-q1rvj.png",
+            "new_value": null
+          }
+        ]
+      },
+      {
+        "id": 79718,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "!clipboard-202608101815-fbkxi.png!\r\n",
+        "created_on": "2026-08-10T16:15:38Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "5026",
+            "old_value": null,
+            "new_value": "clipboard-202608101815-fbkxi.png"
+          }
+        ]
+      },
+      {
+        "id": 80039,
+        "user": {
+          "id": 3,
+          "name": "Fernand Alcatrao"
+        },
+        "notes": "Sur mobile, ça continue de se déconnecter. Vu hier soir en arrivant à la maison.\r\nMais c'est beaucoup mieux qu'au début.",
+        "created_on": "2026-09-04T08:35:30Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attachment",
+            "name": "5077",
+            "old_value": null,
+            "new_value": "Logs.zip"
+          }
+        ]
+      },
+      {
+        "id": 80442,
+        "user": {
+          "id": 11,
+          "name": "Alan Raynaud"
+        },
+        "notes": "",
+        "created_on": "2026-09-28T12:34:19Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "assigned_to_id",
+            "old_value": "60",
+            "new_value": "55"
+          }
+        ]
+      },
+      {
+        "id": 80719,
+        "user": {
+          "id": 55,
+          "name": "Vincent Tellier"
+        },
+        "notes": "",
+        "created_on": "2026-10-20T08:59:11Z",
+        "private_notes": false,
+        "details": [
+          {
+            "property": "attr",
+            "name": "status_id",
+            "old_value": "2",
+            "new_value": "3"
+          },
+          {
+            "property": "attr",
+            "name": "done_ratio",
+            "old_value": "40",
+            "new_value": "100"
+          }
+        ]
+      }
+    ]
+  }
+}

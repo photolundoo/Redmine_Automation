@@ -1,0 +1,167 @@
+{
+  "version": "ISAP-V27.1",
+  "genere_le": "2026-10-22T16:08:35",
+  "format_contrat": 1,
+  "tickets": [
+    {
+      "ticket": 6017,
+      "sujet": "Migrer vers ImageMagick++ 7.1.2",
+      "issue": "B",
+      "fiche": "NRT01 — Passe de non-régression technique",
+      "fichier": "6017.md",
+      "empreinte": "19ee61178ba8"
+    },
+    {
+      "ticket": 7812,
+      "sujet": "[Main Courante] Client léger spécifique à l'utilisation sur mobile V2",
+      "issue": "B",
+      "fiche": "MC02 — Onglet Main Courante",
+      "fichier": "7812.md",
+      "empreinte": "f44b543c7a5e"
+    },
+    {
+      "ticket": 8206,
+      "sujet": "[WebApp][MainCourante] Gestion des incidents sur capteurs",
+      "issue": "B",
+      "fiche": "MC02 — Onglet Main Courante",
+      "fichier": "8206.md",
+      "empreinte": "621d59bdb019"
+    },
+    {
+      "ticket": 8465,
+      "sujet": "[WebApp/Administration] Bugs constatés dans la configuration d'un compte",
+      "issue": "B",
+      "fiche": "MC10 — Onglet Administration",
+      "fichier": "8465.md",
+      "empreinte": "1969c4495694"
+    },
+    {
+      "ticket": 8577,
+      "sujet": "Le paramètre propagateRejectedActions n'est pas correctement pris en compte",
+      "issue": "A",
+      "fiche": "MC06 — Onglet Evénements",
+      "fichier": "8577.md",
+      "empreinte": "073b4ed422c1"
+    },
+    {
+      "ticket": 8653,
+      "sujet": "Nombreuses déconnexions lors de la présentation NaTran",
+      "issue": "B",
+      "fiche": "MC13 — Manipulation des fichiers",
+      "fichier": "8653.md",
+      "empreinte": "ace37299b7c7"
+    },
+    {
+      "ticket": 8808,
+      "sujet": "Plugin WhatsApp",
+      "issue": "D",
+      "fiche": "À créer — Plugin WhatsApp",
+      "fichier": "8808.md",
+      "empreinte": "5ab7c5c7b9f4"
+    },
+    {
+      "ticket": 8838,
+      "sujet": "[WebApp] Base du dashboard",
+      "issue": "C",
+      "fiche": "À créer — Tableau de bord WebApp",
+      "fichier": "8838.md",
+      "empreinte": "4d44980acdb0"
+    },
+    {
+      "ticket": 8887,
+      "sujet": "WebApp : Permettre une utilisation de la vidéo sans Joystick",
+      "issue": "B",
+      "fiche": "MC05 — Onglet Vidéo",
+      "fichier": "8887.md",
+      "empreinte": "bda7bc63c7c3"
+    },
+    {
+      "ticket": 8898,
+      "sujet": "Le script SendMailOnIncident.py n'envoi pas la cartographie dans le mail",
+      "issue": "D",
+      "fiche": "À créer — Notification mail avec cartographie",
+      "fichier": "8898.md",
+      "empreinte": "ee7fa289e0cc"
+    },
+    {
+      "ticket": 8941,
+      "sujet": "[WebApp] Droits spécifique pour la vidéo + gestion du plugin en local",
+      "issue": "B",
+      "fiche": "MC05 — Onglet Vidéo",
+      "fichier": "8941.md",
+      "empreinte": "6aabf8fe593c"
+    },
+    {
+      "ticket": 8947,
+      "sujet": "Évolution du modèle de licence : une licence par application WebApp",
+      "issue": "D",
+      "fiche": "À créer — Licences WebApp",
+      "fichier": "8947.md",
+      "empreinte": "27ffc01b36e5"
+    },
+    {
+      "ticket": 8982,
+      "sujet": "[WebApp] Timeout important sur les postes ne disposant pas du plugin vidéo en local",
+      "issue": "B",
+      "fiche": "MC01 — Généraux",
+      "fichier": "8982.md",
+      "empreinte": "985eedfd109f"
+    },
+    {
+      "ticket": 8992,
+      "sujet": "Impossible de se connecter après avoir accepté les CGU",
+      "issue": "B",
+      "fiche": "MC01 — Généraux",
+      "fichier": "8992.md",
+      "empreinte": "aec696ff4e7c"
+    },
+    {
+      "ticket": 9030,
+      "sujet": "WebApp : Paramètre permettant de masquer les labels de certaines caméras",
+      "issue": "B",
+      "fiche": "MC04 — Onglet Situation",
+      "fichier": "9030.md",
+      "empreinte": "83c41b481cf5"
+    },
+    {
+      "ticket": 9035,
+      "sujet": "[WebApp/Dashboard] Affichage des capteurs en fonction de leur type et de leur état",
+      "issue": "C",
+      "fiche": "À créer — Tableau de bord des capteurs",
+      "fichier": "9035.md",
+      "empreinte": "46bb852dc677"
+    },
+    {
+      "ticket": 9087,
+      "sujet": "AffectationTool v2",
+      "issue": "B",
+      "fiche": "Affectation Types / Places",
+      "fichier": "9087.md",
+      "empreinte": "c0139e07f660"
+    },
+    {
+      "ticket": 9090,
+      "sujet": "Vision NOK dans le cas d'incident ayant pour source un capteur relié à une place",
+      "issue": "B",
+      "fiche": "MC05 — Onglet Vidéo",
+      "fichier": "9090.md",
+      "empreinte": "b7c41b266a97"
+    },
+    {
+      "ticket": 9091,
+      "sujet": "Migration Ice 3.7.11 - Javascript",
+      "issue": "B",
+      "fiche": "NRT01 — Passe de non-régression technique",
+      "fichier": "9091.md",
+      "empreinte": "fc7a5f45c754"
+    },
+    {
+      "ticket": 9108,
+      "sujet": "Changement non désiré des temps Durée et Pré-Affichage",
+      "issue": "B",
+      "fiche": "MC06 — Onglet Evénements",
+      "fichier": "9108.md",
+      "empreinte": "a6c3bc66ffe6"
+    }
+  ]
+}
